@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Église Saint-Séraphim-de-Sarov — Montgeron</title>
+  <meta name="description" content="Paroisse orthodoxe russe Saint-Séraphim-de-Sarov à Montgeron. Choisissez votre langue : français ou russe."/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #4A1010 0%, #6B1A1A 60%, #832020 100%);
+      font-family: 'Lora', Palatino, serif;
+    }
+    .lang-select { text-align: center; padding: 3rem 2rem; max-width: 500px; width: 100%; }
+    .lang-select .church-illustration { width: 160px; height: auto; margin: 0 auto 1.5rem; display: block; color: #C9A84C; opacity: .7; }
+    .lang-select h1 { font-family: 'Playfair Display', Georgia, serif; color: #EDD98A; font-size: 1.6rem; line-height: 1.3; margin-bottom: .5rem; }
+    .lang-select p { color: #E8DFD0; font-size: .9rem; margin-bottom: 2.5rem; opacity: .8; font-style: italic; }
+    .lang-buttons { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+    .lang-btn { display: flex; flex-direction: column; align-items: center; gap: .5rem; background: rgba(255,255,255,.08); border: 2px solid #C9A84C; border-radius: 6px; padding: 1.5rem 2.5rem; color: #EDD98A; text-decoration: none; font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; letter-spacing: .1rem; transition: all .25s; min-width: 140px; }
+    .lang-btn span { font-size: .8rem; color: #E8DFD0; letter-spacing: .05rem; font-weight: 400; }
+    .lang-btn:hover { background: #C9A84C; color: #2C1810; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,.3); }
+    .lang-btn:hover span { color: #4A1010; }
+    .gold-divider { width: 80px; height: 1px; background: #C9A84C; margin: 1.5rem auto; opacity: .5; }
+    .address { color: #E8DFD0; font-size: .78rem; opacity: .6; letter-spacing: .06rem; margin-top: 2rem; }
+  </style>
+  <script>
+    (function() {
+      var lang = (navigator.language || navigator.userLanguage || 'fr').toLowerCase();
+      if (lang.startsWith('ru')) { window.location.replace('ru-accueil.html'); }
+      else { window.location.replace('accueil.html'); }
+    })();
+  </script>
+</head>
+<body>
+  <div class="lang-select">
+    <img src="church-silhouette.svg" alt="Illustration de l'Église Saint-Séraphim-de-Sarov" class="church-illustration"/>
+    <h1>Église Saint-Séraphim-de-Sarov</h1>
+    <p>Paroisse orthodoxe russe — Montgeron, France</p>
+    <div class="gold-divider"></div>
+    <div class="lang-buttons">
+      <a href="accueil.html" class="lang-btn">Français<span>Version française</span></a>
+      <a href="ru-accueil.html" class="lang-btn">Русский<span>Русская версия</span></a>
+    </div>
+    <p class="address">Rue du Moulin de Senlis · 91230 Montgeron · France</p>
+  </div>
+</body>
+</html>

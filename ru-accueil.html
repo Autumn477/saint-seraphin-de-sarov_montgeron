@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Главная — Храм святого Серафима Саровского, Монжерон</title>
+  <meta name="description" content="Православный приход святого Серафима Саровского в Монжероне. Службы по субботам и воскресеньям."/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="ru-accueil.html" class="site-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 84" fill="#C9A84C">
+          <rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/>
+          <rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/>
+        </svg>
+        <div class="logo-text">
+          <div class="logo-name">Храм св. Серафима Саровского</div>
+          <div class="logo-sub">Православный приход · Монжерон</div>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="ru-accueil.html" class="active">Главная</a></li>
+        <li><a href="istoriya.html">История</a></li>
+        <li><a href="bogoslujeniya.html">Богослужения</a></li>
+        <li><a href="kontakty.html">Контакты</a></li>
+        <li><a href="pozhertvovaniya.html" class="nav-donate">Пожертвовать</a></li>
+      </ul>
+      <div class="lang-toggle">
+        <a href="accueil.html">FR</a><span>|</span><a href="ru-accueil.html" class="active">RU</a>
+      </div>
+      <button class="nav-toggle" aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <main>
+    <section class="hero">
+      <div class="hero-bg" style="background-image: url('church-exterior.jpg');"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-cross">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 84" fill="#C9A84C">
+            <rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/>
+            <rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/>
+          </svg>
+        </div>
+        <h1 class="hero-title">Добро пожаловать в храм<br>святого Серафима Саровского</h1>
+        <p class="hero-subtitle">Православный приход · Монжерон, Франция</p>
+        <p class="hero-text">Основанный в 1957 году, наш приход объединяет православных верующих всех национальностей в традиции Русской Православной Церкви. Приходите молиться, общаться и укреплять веру.</p>
+        <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+          <a href="bogoslujeniya.html" class="btn btn-gold">Расписание служб</a>
+          <a href="pozhertvovaniya.html" class="btn btn-outline">Помочь реставрации</a>
+        </div>
+      </div>
+    </section>
+    <div class="banner">
+      <strong>Идёт сбор средств на реставрацию храма</strong> — Наш храм, хранящий более 65 лет истории, нуждается в вашей поддержке для сохранения этого уникального места молитвы.
+      <br/><a href="pozhertvovaniya.html" class="btn btn-gold" style="margin-top:.8rem; font-size:.82rem; padding:.6rem 1.6rem;">Сделать пожертвование</a>
+    </div>
+    <section class="section">
+      <div class="section-inner">
+        <h2 class="section-title">Наш приход</h2>
+        <p class="section-subtitle">Место веры, истории и общины</p>
+        <div class="ornament"></div>
+        <div class="card-grid">
+          <div class="card">
+            <span class="card-icon">⛪</span>
+            <h3>История</h3>
+            <p>Узнайте об истории нашего прихода — от русского приюта 1953 года до храма, построенного в 1957 году архитектором Щеблинковым.</p>
+            <a href="istoriya.html" class="btn btn-burgundy">Читать историю</a>
+          </div>
+          <div class="card">
+            <span class="card-icon">🕯️</span>
+            <h3>Богослужения</h3>
+            <p>Всенощное бдение в субботу вечером, Божественная Литургия в воскресенье утром по православному греко-русскому обряду.</p>
+            <a href="bogoslujeniya.html" class="btn btn-burgundy">Расписание</a>
+          </div>
+          <div class="card">
+            <span class="card-icon">🙏</span>
+            <h3>Пожертвования</h3>
+            <p>Поддержите реставрацию храма и помогите сохранить это место православного наследия для будущих поколений.</p>
+            <a href="pozhertvovaniya.html" class="btn btn-burgundy">Помочь храму</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section-alt">
+      <div class="section-inner">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
+          <div>
+            <h2 class="section-title" style="text-align:left;">Место, богатое историей</h2>
+            <div class="ornament" style="justify-content:flex-start;"></div>
+            <p style="margin-bottom:1.2rem; color:var(--dark-brown);">В 1953 году Софья Михайловна Зернова приобрела усадьбу Мулен-де-Санли для устройства русского сиротского приюта. В 1957 году архитектор А.П. Щеблинков построил на этом месте храм в византийском стиле, взяв за образец церковь в Охриде.</p>
+            <p style="color:var(--dark-brown);">Иконостас храма был написан монахом-иконописцем <strong>отцом Григорием Кругом</strong> — одним из великих православных иконописцев XX века.</p>
+            <a href="istoriya.html" class="btn btn-burgundy" style="margin-top:1.5rem;">Читать полную историю</a>
+          </div>
+          <div class="gallery-item" style="aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
+            <img src="church-interior.jpg" alt="Интерьер храма" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="width:100%;height:100%;object-fit:cover;"/>
+            <div class="gallery-placeholder" style="display:none;"><span>🕍</span><small>Интерьер храма</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-inner">
+        <h2 class="section-title">Расписание богослужений</h2>
+        <p class="section-subtitle">Все приглашаются</p>
+        <div class="ornament"></div>
+        <table class="schedule-table" style="max-width:600px; margin:0 auto;">
+          <thead><tr><th>День</th><th>Богослужение</th><th>Время</th></tr></thead>
+          <tbody>
+            <tr><td class="day">Суббота</td><td>Всенощное бдение</td><td>18:00</td></tr>
+            <tr><td class="day">Воскресенье</td><td>Божественная Литургия</td><td>10:00</td></tr>
+          </tbody>
+        </table>
+        <div style="text-align:center; margin-top:1.5rem;">
+          <a href="bogoslujeniya.html" class="btn btn-burgundy">Полный календарь и праздники</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-cta">
+      <div class="footer-cta-inner">
+        <div class="footer-cta-text">Поддержите реставрацию нашего храма</div>
+        <p class="footer-cta-sub">Каждое пожертвование помогает сохранить это уникальное место молитвы и православного наследия.</p>
+        <a href="pozhertvovaniya.html" class="btn btn-gold">Пожертвовать</a>
+      </div>
+<div class="footer-divider-ornament">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 84" fill="#C9A84C">
+        <rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/>
+        <rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/>
+      </svg>
+    </div>
+    <div class="footer-main">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 84" fill="#C9A84C">
+            <rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/>
+            <rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/>
+          </svg>
+          <div>
+            <div class="footer-brand-name">Св. Серафим Саровский</div>
+            <span class="footer-brand-sub">Православный приход</span>
+          </div>
+        </div>
+        <p class="footer-desc">Место веры, истории и общины на служении православным верующим с 1957 года.</p>
+        <span class="footer-badge">С 1957 года</span>
+      </div>
+      <div class="footer-col">
+        <div class="footer-nav-title">Навигация</div>
+        <nav class="footer-nav-links">
+          <a href="ru-accueil.html">Главная</a>
+          <a href="istoriya.html">История</a>
+          <a href="bogoslujeniya.html">Богослужения</a>
+          <a href="pozhertvovaniya.html">Пожертвования</a>
+          <a href="kontakty.html">Контакты</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <div class="footer-nav-title">Как нас найти</div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">&#9993;</span>
+          <span>Rue du Moulin de Senlis<br/>91230 Montgeron, France</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">&#9765;</span>
+          <span>Суббота 18:00 — Всенощное бдение<br/>Воскресенье 10:00 — Литургия</span>
+        </div>
+        <a href="https://www.openstreetmap.org/?mlat=48.7024&amp;mlon=2.4479#map=16/48.7024/2.4479" target="_blank" rel="noopener" class="footer-map-link">Показать на карте</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <p class="footer-copy">&copy; Православный приход св. Серафима Саровского — Монжерон</p>
+        <div class="footer-lang-switch">
+          <a href="accueil.html">FR</a>
+          <a href="ru-accueil.html" class="active">RU</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Наверх">&uarr;</button>
+  <script src="main.js"></script>
+</body>
+</html>
