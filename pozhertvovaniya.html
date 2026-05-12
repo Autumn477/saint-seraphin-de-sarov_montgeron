@@ -3,11 +3,26 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Пожертвования — Реставрация храма святого Серафима Саровского</title>
-  <meta name="description" content="Поддержите реставрацию храма святого Серафима Саровского в Монжероне. Пожертвование банковским переводом без комиссий."/>
+  <title>Пожертвовать — Реставрация храма святого Серафима Саровского</title>
+  <meta name="description" content="Поддержите реставрацию храма святого Серафима Саровского в Монжероне. Пожертвование банковским переводом без комиссии."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="site.css"/>
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Пожертвовать — Реставрация храма святого Серафима Саровского"/>
+  <meta property="og:description" content="Поддержите реставрацию храма святого Серафима Саровского в Монжероне. Пожертвование банковским переводом без комиссии."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="assets/eglise-exterieur.jpg"/>
+  <meta property="og:locale" content="ru_RU"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Пожертвовать — Реставрация храма святого Серафима Саровского"/>
+  <meta name="twitter:description" content="Поддержите реставрацию храма святого Серафима Саровского в Монжероне. Пожертвование банковским переводом без комиссии."/>
+  <meta name="twitter:image" content="assets/eglise-exterieur.jpg"/>
 </head>
 <body>
+  <a href="#main" class="skip-link">К содержанию</a>
   <nav>
     <div class="nav-inner">
       <a href="ru-accueil.html" class="site-logo">
@@ -22,41 +37,40 @@
       </a>
       <ul class="nav-links">
         <li><a href="ru-accueil.html">Главная</a></li>
+        <li><a href="saint.html">Святой</a></li>
         <li><a href="istoriya.html">История</a></li>
         <li><a href="bogoslujeniya.html">Богослужения</a></li>
         <li><a href="kontakty.html">Контакты</a></li>
         <li><a href="pozhertvovaniya.html" class="nav-donate active">Пожертвовать</a></li>
       </ul>
-      <div class="lang-toggle">
-        <a href="dons.html">FR</a><span>|</span><a href="pozhertvovaniya.html" class="active">RU</a>
+      <div class="nav-tools">
+        <button class="theme-toggle" aria-label="Сменить тему" title="День / ночь">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+        <div class="lang-toggle">
+          <a href="dons.html">FR</a><span>|</span><a href="pozhertvovaniya.html" class="active">RU</a>
+        </div>
       </div>
       <button class="nav-toggle" aria-label="Меню" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
-  <main>
+  <main id="main">
     <div class="donate-hero">
-      <div class="hero-cross" style="margin:0 auto 1rem;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 84" fill="#C9A84C" width="48">
-          <rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/>
-          <rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/>
-        </svg>
-      </div>
-      <h1 class="hero-title" style="font-size:clamp(1.5rem,4vw,2.4rem);">Сбор средств на реставрацию</h1>
-      <p style="color:var(--cream-dark); max-width:600px; margin:.8rem auto 1.5rem; font-style:italic; font-size:1rem;">
-        «Сохраним вместе это место молитвы и памяти для будущих поколений»
-      </p>
+      <span class="donate-hero-eyebrow">Приход святого Серафима Саровского</span>
+      <h1>Сбор средств<br><em>на реставрацию</em></h1>
+      <p class="donate-hero-quote">«Сохраним вместе это место молитвы и памяти для будущих поколений.»</p>
       <div class="progress-wrap">
         <div class="progress-label">
           <span>Цель реставрации</span>
-          <span id="progress-pct">Данные обновляются…</span>
+          <span id="progress-pct">Обновляется…</span>
         </div>
         <div class="progress-bar">
           <div class="progress-fill" data-percent="35"></div>
         </div>
-        <p style="font-size:.82rem; color:var(--cream-dark); margin-top:.5rem; font-style:italic;">
-          Сумма регулярно обновляется — свяжитесь с нами для подробностей.
+        <p style="font-size:.82rem; color:var(--cream-dark); margin-top:.6rem; font-style:italic; opacity:.7;">
+          Сумма обновляется регулярно — свяжитесь с нами для подробностей.
         </p>
       </div>
     </div>
@@ -65,35 +79,35 @@
         <h2 class="section-title">Почему важно поддержать реставрацию?</h2>
         <div class="ornament"></div>
         <div class="prose" style="margin-bottom:2rem;">
-          <p>Наш храм, построенный в 1957 году, является <strong>уникальным свидетелем</strong> истории русской эмиграции во Франции. Иконостас, написанный отцом Григорием Кругом, представляет собой произведение исключительной духовной и исторической ценности.</p>
-          <p>Спустя более 65 лет здание требует значительных реставрационных работ: <strong>кровля, фасады, столярные изделия, отопление</strong> и сохранение иконографических произведений.</p>
-          <p>Каждое пожертвование напрямую способствует сохранению этого уникального места молитвы и обеспечивает преемственность богослужений для православной общины Монжерона.</p>
+          <p>Наш храм, построенный в 1957 году, — <strong>незаменимый свидетель</strong> истории русской эмиграции во Франции и сияния православной веры. Иконостас, расписанный отцом Григорием Кругом, представляет собой произведение религиозного искусства исключительной духовной и культурной ценности.</p>
+          <p>Спустя более 65 лет здание нуждается в значительных реставрационных работах для своего сохранения: <strong>кровля, фасады, столярные работы, отопление</strong> и сохранение внутренних иконографических произведений.</p>
+          <p>Каждое пожертвование, независимо от его размера, напрямую способствует сохранению этого уникального места молитвы и продолжению богослужений для православной общины Монжерона и Иль-де-Франс.</p>
         </div>
-        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px,1fr));">
-          <div class="card"><span class="card-icon">🏛️</span><h3>Наследие</h3><p>Сохранить уникальный памятник русской православной архитектуры во Франции.</p></div>
-          <div class="card"><span class="card-icon">🖼️</span><h3>Иконостас</h3><p>Реставрировать и сберечь иконостас отца Григория Круга — шедевр иконографии XX века.</p></div>
-          <div class="card"><span class="card-icon">🕯️</span><h3>Преемственность</h3><p>Обеспечить совершение православных богослужений для верующих сегодня и завтра.</p></div>
+        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px,1fr));">
+          <div class="card"><span class="card-num">I</span><h3>Наследие</h3><p>Сохранить уникальный памятник русской православной архитектуры во Франции.</p></div>
+          <div class="card"><span class="card-num">II</span><h3>Иконостас</h3><p>Реставрировать и сохранить иконостас отца Григория Круга — шедевр иконописи XX века.</p></div>
+          <div class="card"><span class="card-num">III</span><h3>Преемственность</h3><p>Обеспечить совершение православных богослужений для верующих сегодня и завтра.</p></div>
         </div>
       </div>
     </section>
     <section class="section section-alt">
       <div class="section-inner">
         <h2 class="section-title">Пожертвование банковским переводом</h2>
-        <p class="section-subtitle">Безопасно, напрямую и без комиссий</p>
+        <p class="section-subtitle">Надёжно, напрямую, без комиссии</p>
         <div class="ornament"></div>
         <div class="bank-box">
-          <h3>🏦 Банковские реквизиты</h3>
+          <h3>Банковские реквизиты</h3>
           <div class="bank-row">
             <span class="bank-label">Получатель</span>
             <span class="bank-value">Paroisse Orthodoxe Saint-Séraphim-de-Sarov à Montgeron</span>
           </div>
           <div class="bank-row">
             <span class="bank-label">IBAN</span>
-            <span class="bank-value placeholder">[Заполнить реквизиты прихода]</span>
+            <span class="bank-value placeholder">[Заполнить приходом]</span>
           </div>
           <div class="bank-row">
             <span class="bank-label">BIC / SWIFT</span>
-            <span class="bank-value placeholder">[Заполнить реквизиты прихода]</span>
+            <span class="bank-value placeholder">[Заполнить приходом]</span>
           </div>
           <div class="bank-row">
             <span class="bank-label">Банк</span>
@@ -105,14 +119,14 @@
           </div>
         </div>
         <p class="donation-note">
-          Пожалуйста, укажите назначение платежа: <strong>DON RESTAURATION</strong>.<br/>
-          Квитанция предоставляется по запросу. По всем вопросам <a href="kontakty.html">свяжитесь с нами</a>.
+          Пожалуйста, укажите назначение <strong>DON RESTAURATION</strong> в назначении платежа.<br/>
+          Квитанция будет выслана по запросу. По любым вопросам <a href="kontakty.html">свяжитесь с нами</a>.
         </p>
         <div style="background:var(--gold-pale); border:1px solid var(--gold); border-radius:4px; padding:1.2rem 1.5rem; max-width:600px; margin:2rem auto; text-align:center;">
           <p style="color:var(--dark-brown); font-size:.9rem; line-height:1.7;">
-            🙏 <strong>Сердечно благодарим за вашу щедрость.</strong><br/>
-            Каждый вклад, большой или малый, имеет значение.<br/>
-            <em>«Да воздаст вам Господь сторицею за всё, что вы даёте.»</em>
+            <strong>От всего сердца благодарим вас за щедрость.</strong><br/>
+            Каждый вклад, большой или малый, имеет реальное значение.<br/>
+            <em>«Да воздаст вам Господь сторицею за ваше даяние.»</em>
           </p>
         </div>
       </div>
@@ -123,10 +137,10 @@
         <div class="ornament"></div>
         <div class="prose">
           <ul style="list-style:disc; padding-left:1.5rem; margin-bottom:1rem;">
-            <li style="margin-bottom:.5rem;"><strong>Расскажите о нашей кампании</strong> — поделитесь этой страницей с близкими.</li>
-            <li style="margin-bottom:.5rem;">Предложите <strong>профессиональные навыки</strong> волонтёра (ремесло, реставрация, коммуникации…).</li>
-            <li style="margin-bottom:.5rem;">Участвуйте в <strong>богослужениях и приходских событиях</strong>.</li>
-            <li>Свяжитесь с нами по вопросам <strong>любой другой формы поддержки</strong>.</li>
+            <li style="margin-bottom:.5rem;"><strong>Поделитесь этой страницей</strong> и расскажите о нашей кампании.</li>
+            <li style="margin-bottom:.5rem;">Предложите <strong>свои навыки на безвозмездной основе</strong> (ремесло, реставрация, коммуникация…).</li>
+            <li style="margin-bottom:.5rem;">Принимайте участие в <strong>богослужениях и приходских мероприятиях</strong>.</li>
+            <li>Свяжитесь с нами для <strong>любой иной формы поддержки</strong>.</li>
           </ul>
           <a href="kontakty.html" class="btn btn-burgundy">Связаться с нами</a>
         </div>
@@ -136,11 +150,12 @@
   <footer>
     <div class="footer-cta">
       <div class="footer-cta-inner">
-        <div class="footer-cta-text">Благодарим за вашу щедрость</div>
-        <p class="footer-cta-sub">Ваша поддержка помогает сохранить это уникальное место молитвы для будущих поколений.</p>
+        <div class="footer-cta-text">Спасибо за вашу щедрость</div>
+        <p class="footer-cta-sub">Ваша поддержка позволяет сохранить это уникальное место молитвы для будущих поколений.</p>
         <a href="kontakty.html" class="btn btn-gold">Связаться с нами</a>
       </div>
-<div class="footer-divider-ornament">
+    </div>
+    <div class="footer-divider-ornament">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 84" fill="#C9A84C">
         <rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/>
         <rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/>
@@ -155,7 +170,7 @@
           </svg>
           <div>
             <div class="footer-brand-name">Св. Серафим Саровский</div>
-            <span class="footer-brand-sub">Православный приход</span>
+            <span class="footer-brand-sub">Русский православный приход</span>
           </div>
         </div>
         <p class="footer-desc">Место веры, истории и общины на служении православным верующим с 1957 года.</p>
@@ -167,7 +182,7 @@
           <a href="ru-accueil.html">Главная</a>
           <a href="istoriya.html">История</a>
           <a href="bogoslujeniya.html">Богослужения</a>
-          <a href="pozhertvovaniya.html">Пожертвования</a>
+          <a href="pozhertvovaniya.html">Пожертвовать</a>
           <a href="kontakty.html">Контакты</a>
         </nav>
       </div>
@@ -179,9 +194,9 @@
         </div>
         <div class="footer-contact-item">
           <span class="footer-contact-icon">&#9765;</span>
-          <span>Суббота 18:00 — Всенощное бдение<br/>Воскресенье 10:00 — Литургия</span>
+          <span>Суббота 18:00 — Всенощное бдение<br/>Воскресенье 10:00 — Божественная литургия</span>
         </div>
-        <a href="https://www.openstreetmap.org/?mlat=48.7024&amp;mlon=2.4479#map=16/48.7024/2.4479" target="_blank" rel="noopener" class="footer-map-link">Показать на карте</a>
+        <a href="https://www.openstreetmap.org/?mlat=48.7024&amp;mlon=2.4479#map=16/48.7024/2.4479" target="_blank" rel="noopener noreferrer" class="footer-map-link">Показать на карте</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -196,9 +211,10 @@
   </footer>
   <button class="back-to-top" aria-label="Наверх">&uarr;</button>
   <script src="main.js"></script>
+  <script src="site.js"></script>
   <script>
     var fill = document.querySelector('.progress-fill');
-    if (fill) { document.getElementById('progress-pct').textContent = fill.dataset.percent + '% достигнуто'; }
+    if (fill) { document.getElementById('progress-pct').textContent = fill.dataset.percent + '% собрано'; }
   </script>
 </body>
 </html>

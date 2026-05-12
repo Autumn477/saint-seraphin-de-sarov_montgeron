@@ -3,7 +3,8 @@
    Modern & Solemn: Burgundy, Gold, Cream
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600;700&display=swap');
+/* Fonts loaded via <link> in HTML head (avoids @import render-blocking).
+   Pages declare: Cormorant Garamond / Source Serif 4 / DM Sans */
 
 /* ── Variables ─────────────────────────────────────────────── */
 :root {
@@ -30,6 +31,286 @@
   --ease-out:      cubic-bezier(.16,1,.3,1);
   --ease-spring:   cubic-bezier(.34,1.56,.64,1);
 }
+
+/* ── Palettes (dev-preview) ─────────────────────────────────
+   Switch via [data-palette] sur <html>.
+   Overrides BOTH style.css tokens (--gold/--burgundy/--cream/...)
+   AND site.css tokens (--stone/--ink/--gold-ink/--burgundy-ink/...).
+   Selectors target both html[data-palette] and html[data-palette] body
+   so the body.dark overrides in site.css don't beat us.
+
+   --white is remapped to --stone for any non-default palette so card/section
+   backgrounds (which use var(--white)) follow the palette. */
+html[data-palette]:not([data-palette="or"]),
+html[data-palette]:not([data-palette="or"]) body {
+  --white: var(--stone);
+}
+
+/* 1. Or classique (defaut) */
+html[data-palette="or"], html[data-palette="or"] body {
+  --burgundy: #6B1A1A; --burgundy-dark: #4A1010; --burgundy-mid: #832020;
+  --gold: #C9A84C; --gold-light: #EDD98A; --gold-pale: #F7EFD0;
+  --cream: #F5F0E8; --cream-dark: #E8DFD0;
+  --dark-brown: #2C1810; --text-muted: #6B5A4E;
+  --stone: #EFE9DF; --stone-warm: #E6DED0;
+  --ink: #1F1510; --ink-soft: #3A2C24;
+  --muted: #6D5B4E; --muted-soft: #8F7F72;
+  --burgundy-deep: #4A1010; --burgundy-ink: #2C0C0C;
+  --gold-ink: #A8894C; --gold-soft: #C9A84C;
+}
+
+/* 2. Bleu byzantin */
+html[data-palette="bleu"], html[data-palette="bleu"] body {
+  --burgundy: #1E5E8A; --burgundy-dark: #143F5E; --burgundy-mid: #2A7AB0;
+  --gold: #C9A84C; --gold-light: #EDD98A; --gold-pale: #F4EBCB;
+  --cream: #F2EEE5; --cream-dark: #E2DCCC;
+  --dark-brown: #122436; --text-muted: #4F6781;
+  --stone: #EEF2F6; --stone-warm: #DDE6EE;
+  --ink: #122436; --ink-soft: #1F3A52;
+  --muted: #4F6781; --muted-soft: #7589A0;
+  --burgundy-deep: #143F5E; --burgundy-ink: #0B2638;
+  --gold-ink: #1E5E8A; --gold-soft: #2A7AB0;
+}
+
+/* 3. Bordeaux profond */
+html[data-palette="bordeaux"], html[data-palette="bordeaux"] body {
+  --burgundy: #7A1F2B; --burgundy-dark: #4F0E18; --burgundy-mid: #9C2A38;
+  --gold: #B8924A; --gold-light: #DCC078; --gold-pale: #EFE3C2;
+  --cream: #F5EFE6; --cream-dark: #E5DCCB;
+  --dark-brown: #2A1014; --text-muted: #6B4E55;
+  --stone: #F1E9DD; --stone-warm: #E5D9C8;
+  --ink: #2A1014; --ink-soft: #43222A;
+  --muted: #6B4E55; --muted-soft: #8E6E76;
+  --burgundy-deep: #4F0E18; --burgundy-ink: #2E0810;
+  --gold-ink: #957338; --gold-soft: #B8924A;
+}
+
+/* 4. Vert mosaique */
+html[data-palette="vert"], html[data-palette="vert"] body {
+  --burgundy: #2E5D4F; --burgundy-dark: #1B3D33; --burgundy-mid: #3F7A66;
+  --gold: #C49A3A; --gold-light: #E0BE6E; --gold-pale: #EFE2BA;
+  --cream: #F4F0E4; --cream-dark: #E2DDC9;
+  --dark-brown: #14241F; --text-muted: #506960;
+  --stone: #EFEEE2; --stone-warm: #DFDDC9;
+  --ink: #14241F; --ink-soft: #243A33;
+  --muted: #506960; --muted-soft: #6F857C;
+  --burgundy-deep: #1B3D33; --burgundy-ink: #0E261F;
+  --gold-ink: #2E5D4F; --gold-soft: #3F7A66;
+}
+
+/* 5. Pourpre imperial */
+html[data-palette="pourpre"], html[data-palette="pourpre"] body {
+  --burgundy: #5B2C6F; --burgundy-dark: #3B1A4A; --burgundy-mid: #75408A;
+  --gold: #C9A84C; --gold-light: #E5C97D; --gold-pale: #EFE0B5;
+  --cream: #F2ECEF; --cream-dark: #DFD2DC;
+  --dark-brown: #2A1232; --text-muted: #6B5072;
+  --stone: #F0EAF3; --stone-warm: #DFD2E6;
+  --ink: #2A1232; --ink-soft: #43224F;
+  --muted: #6B5072; --muted-soft: #8A6F92;
+  --burgundy-deep: #3B1A4A; --burgundy-ink: #25102F;
+  --gold-ink: #5B2C6F; --gold-soft: #75408A;
+}
+
+/* 6. Noir & or — palette editoriale premium (opera / luxe / sombre permanent)
+   Hierarchie 4 noirs / 3 ors / 3 textes pour eviter le "tout noir plat" */
+html[data-palette="noir"], html[data-palette="noir"] body {
+  /* Or signature : chaud, lisible, contraste eleve sur noir */
+  --gold:          #E8C46A;
+  --gold-light:    #F2D88A;
+  --gold-pale:     #C9A655;       /* or attenue, pour borders/accents secondaires */
+
+  /* Noirs profonds : 3 niveaux de surface */
+  --cream:         #0A0A0A;        /* fond cards & elevated */
+  --cream-dark:    #050505;        /* fond profond */
+  --stone:         #000000;        /* page entiere */
+  --stone-warm:    #0F0F0F;        /* sections alt */
+
+  /* Textes sur fond noir */
+  --ink:           #EFEAE0;        /* body, titres principaux */
+  --ink-soft:      #C9C0AE;        /* sous-titres, paragraphes secondaires */
+  --dark-brown:    #EFEAE0;        /* alias body — cohérent */
+  --muted:         #8A8170;        /* texte tertiaire, eyebrows */
+  --muted-soft:    #5C5448;        /* placeholders, hints */
+  --text-muted:    #8A8170;        /* alias style.css */
+
+  /* "Burgundy" reaffecte a un noir profond + or pour zones d'emphase */
+  --burgundy:      #1A1A1A;        /* footer-cta, cards d'emphase */
+  --burgundy-mid:  #242424;
+  --burgundy-dark: #0F0F0F;
+  --burgundy-deep: #050505;        /* footer */
+  --burgundy-ink:  #000000;        /* extreme contrast */
+
+  /* gold-ink (utilise par site.css) : meme or que --gold */
+  --gold-ink:      #E8C46A;
+  --gold-soft:     #F2D88A;
+
+  /* Lignes : or translucide au lieu de blanc translucide */
+  --line:          rgba(232, 196, 106, 0.20);
+  --line-soft:     rgba(232, 196, 106, 0.10);
+}
+
+/* Patches specifiques palette noir : forcer transparence et fonds sur composants
+   qui ont du blanc ou du clair en dur */
+html[data-palette="noir"] body { background: #000000; }
+html[data-palette="noir"] .feature-item:hover { background: rgba(232,196,106,0.04); }
+html[data-palette="noir"] .horaire-card,
+html[data-palette="noir"] .office-card { background: #0A0A0A; border-color: rgba(232,196,106,0.15); }
+html[data-palette="noir"] .feast-banner { background: linear-gradient(135deg, #0F0F0F, #000000); border-top: 1px solid rgba(232,196,106,0.25); border-bottom: 1px solid rgba(232,196,106,0.25); }
+html[data-palette="noir"] .feast-banner-date { color: var(--gold); border-color: rgba(232,196,106,0.35); }
+html[data-palette="noir"] footer { background: #000000; border-top: 1px solid rgba(232,196,106,0.18); }
+html[data-palette="noir"] .footer-cta { background: linear-gradient(135deg, #0F0F0F, #000000); }
+html[data-palette="noir"] .quote-section { background: #050505; }
+html[data-palette="noir"] .histoire-cinematic-overlay { background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.85) 100%); }
+html[data-palette="noir"] ::selection { background: var(--gold); color: #000; }
+
+/* 7. Terre cuite & sable */
+html[data-palette="terre"], html[data-palette="terre"] body {
+  --burgundy: #B85C38; --burgundy-dark: #8A3F23; --burgundy-mid: #D17249;
+  --gold: #C99A4B; --gold-light: #E2BD79; --gold-pale: #F1E1BD;
+  --cream: #F4E9D8; --cream-dark: #E2D4BE;
+  --dark-brown: #3A1F12; --text-muted: #7A5A45;
+  --stone: #F4E9D8; --stone-warm: #E5D2B8;
+  --ink: #3A1F12; --ink-soft: #5A3522;
+  --muted: #7A5A45; --muted-soft: #9C7A60;
+  --burgundy-deep: #8A3F23; --burgundy-ink: #5C2914;
+  --gold-ink: #B85C38; --gold-soft: #D17249;
+}
+
+/* 8. Bleu nuit & argent */
+html[data-palette="nuit"], html[data-palette="nuit"] body {
+  --burgundy: #1B2A41; --burgundy-dark: #0F1A2C; --burgundy-mid: #2C3F5C;
+  --gold: #8696AB; --gold-light: #A8B5C4; --gold-pale: #DDE2E9;
+  --cream: #F0F2F5; --cream-dark: #DCE0E6;
+  --dark-brown: #0E1726; --text-muted: #586478;
+  --stone: #F0F2F5; --stone-warm: #DCE0E6;
+  --ink: #0E1726; --ink-soft: #1F2C3F;
+  --muted: #586478; --muted-soft: #7E8898;
+  --burgundy-deep: #0F1A2C; --burgundy-ink: #060B14;
+  --gold-ink: #1B2A41; --gold-soft: #2C3F5C;
+}
+
+/* 9. Sauge & lin (pastoral, paisible) */
+html[data-palette="sauge"], html[data-palette="sauge"] body {
+  --burgundy: #7A8B6F; --burgundy-dark: #556149; --burgundy-mid: #94A688;
+  --gold: #B5A47A; --gold-light: #D2C39B; --gold-pale: #EDE5C9;
+  --cream: #F2EFE5; --cream-dark: #E2DECF;
+  --dark-brown: #2A3122; --text-muted: #6A7763;
+  --stone: #F2EFE5; --stone-warm: #E2DECF;
+  --ink: #2A3122; --ink-soft: #44503B;
+  --muted: #6A7763; --muted-soft: #899483;
+  --burgundy-deep: #556149; --burgundy-ink: #3A4332;
+  --gold-ink: #7A8B6F; --gold-soft: #94A688;
+}
+
+/* 10. Marine & cuivre */
+html[data-palette="marine"], html[data-palette="marine"] body {
+  --burgundy: #0E3A5F; --burgundy-dark: #082642; --burgundy-mid: #1A547F;
+  --gold: #B87333; --gold-light: #D89456; --gold-pale: #EDD3B0;
+  --cream: #F1ECE2; --cream-dark: #DED7C6;
+  --dark-brown: #0A1F33; --text-muted: #4A6680;
+  --stone: #F1ECE2; --stone-warm: #DED7C6;
+  --ink: #0A1F33; --ink-soft: #1C3450;
+  --muted: #4A6680; --muted-soft: #6E8499;
+  --burgundy-deep: #082642; --burgundy-ink: #051628;
+  --gold-ink: #0E3A5F; --gold-soft: #1A547F;
+}
+
+/* 11. Lavande & creme */
+html[data-palette="lavande"], html[data-palette="lavande"] body {
+  --burgundy: #7E6B9F; --burgundy-dark: #5A4878; --burgundy-mid: #9784B8;
+  --gold: #B79968; --gold-light: #D4B98D; --gold-pale: #EEDFBE;
+  --cream: #F4F0F5; --cream-dark: #E2DCE7;
+  --dark-brown: #2A1F3A; --text-muted: #6E5F85;
+  --stone: #F4F0F5; --stone-warm: #E2DCE7;
+  --ink: #2A1F3A; --ink-soft: #443456;
+  --muted: #6E5F85; --muted-soft: #8E80A0;
+  --burgundy-deep: #5A4878; --burgundy-ink: #3D2F54;
+  --gold-ink: #7E6B9F; --gold-soft: #9784B8;
+}
+
+/* 12. Charbon & brique */
+html[data-palette="charbon"], html[data-palette="charbon"] body {
+  --burgundy: #A04545; --burgundy-dark: #722E2E; --burgundy-mid: #B85858;
+  --gold: #BFA57F; --gold-light: #D8C2A0; --gold-pale: #EBDFC8;
+  --cream: #EDEAE6; --cream-dark: #DAD5CF;
+  --dark-brown: #2B2B2B; --text-muted: #6B6B6B;
+  --stone: #EDEAE6; --stone-warm: #DAD5CF;
+  --ink: #2B2B2B; --ink-soft: #444444;
+  --muted: #6B6B6B; --muted-soft: #8A8A8A;
+  --burgundy-deep: #722E2E; --burgundy-ink: #4C1E1E;
+  --gold-ink: #A04545; --gold-soft: #B85858;
+}
+
+/* Hide legacy Tweaks UI + theme toggle + scroll progress bar (injected by main.js) */
+.tweaks-panel, .tweaks-toggle-btn, .theme-toggle, .scroll-progress { display: none !important; }
+
+/* ── Accessibility: respect user motion preference ─────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Accessibility: visible focus rings (keyboard nav) ─────── */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+.nav-toggle:focus-visible,
+.palette-select:focus-visible,
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ── Skip link (WCAG: bypass nav) ──────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  z-index: 9999;
+  background: var(--gold);
+  color: #1F1510;
+  padding: .8rem 1.4rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: top .2s var(--ease-out);
+}
+.skip-link:focus { top: 0; }
+
+/* ── Palette selector (dev preview, dans la nav) ─────────────── */
+.palette-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 6px;
+  color: var(--dark-brown);
+  font-family: 'DM Sans', sans-serif;
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .04rem;
+  padding: 5px 22px 5px 9px;
+  cursor: pointer;
+  transition: border-color .2s, color .2s;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 11px) 50%, calc(100% - 7px) 50%;
+  background-size: 4px 4px, 4px 4px;
+  background-repeat: no-repeat;
+}
+.palette-select:hover { border-color: var(--gold); color: var(--burgundy); }
+.palette-select:focus { outline: none; border-color: var(--gold); }
+body.dark .palette-select { color: var(--cream); border-color: rgba(255,255,255,0.18); }
+body.dark .palette-select option { background: var(--dark-surface); color: var(--cream); }
 
 /* ── Reset ──────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -257,29 +538,30 @@ nav.scrolled {
   background: var(--dark-brown);
 }
 
-/* Donate CTA */
+/* Donate CTA — octagonal badge, ALWAYS gold (signature CTA, palette-agnostic).
+   Text is pure black + bold weight to clear WCAG AA on gold (#C9A84C) */
 .nav-links a.nav-donate {
-  color: var(--dark-brown);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 110' preserveAspectRatio='none'%3E%3Cpath d='M 16,22 L 58,4 L 262,4 L 304,22 L 304,88 L 262,106 L 58,106 L 16,88 Z' fill='%23C9A84C' stroke='%23C9A84C' stroke-width='1.8'/%3E%3Cpath d='M 26,30 L 64,16 L 256,16 L 294,30 L 294,80 L 256,94 L 64,94 L 26,80 Z' fill='none' stroke='%231a1410' stroke-width='0.9' opacity='0.5'/%3E%3Cline x1='160' y1='4' x2='160' y2='16' stroke='%231a1410' stroke-width='1.2' opacity='0.4'/%3E%3Cline x1='156' y1='10' x2='164' y2='10' stroke='%231a1410' stroke-width='1.2' opacity='0.4'/%3E%3Cline x1='160' y1='106' x2='160' y2='94' stroke='%231a1410' stroke-width='1.2' opacity='0.4'/%3E%3Cline x1='156' y1='100' x2='164' y2='100' stroke='%231a1410' stroke-width='1.2' opacity='0.4'/%3E%3C/svg%3E");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-color: transparent;
+  position: relative;
+  color: #000;
+  background: #C9A84C;
+  -webkit-clip-path: polygon(14px 0%, calc(100% - 14px) 0%, 100% 50%, calc(100% - 14px) 100%, 14px 100%, 0% 50%);
+  clip-path: polygon(14px 0%, calc(100% - 14px) 0%, 100% 50%, calc(100% - 14px) 100%, 14px 100%, 0% 50%);
   border: none;
   border-radius: 0;
   margin-left: .8rem;
-  padding: .55rem 1.3rem;
+  padding: .55rem 1.6rem;
   font-size: .72rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: .1rem;
-  transition: all .35s ease;
+  transition: background .35s ease, transform .35s ease, color .35s ease;
   opacity: 1;
 }
 .nav-links a.nav-donate::before,
 .nav-links a.nav-donate::after { display: none; }
 .nav-links a.nav-donate:hover {
-  filter: drop-shadow(0 0 12px rgba(201,168,76,.35));
+  background: #EDD98A;
   transform: translateY(-1px);
-  color: var(--dark-brown);
+  color: #000;
 }
 
 /* Hamburger */
@@ -655,18 +937,25 @@ nav.scrolled {
   background: var(--gold);
 }
 .btn:hover::before {
-  background: var(--gold-dark, #a98a3a);
+  background: var(--burgundy);
 }
 
-/* Burgundy ctx (on dark footer cta) */
-.footer-cta .btn::after { background: #2a0e14; }
-.footer-cta .btn:hover { color: var(--dark-brown); }
-.footer-cta .btn:hover::after { background: var(--gold); }
+/* Footer CTA "Faire un don" — ALWAYS gold (signature CTA, palette-agnostic).
+   Black + bold for AA contrast on gold */
+.footer-cta .btn { color: #000; font-weight: 700; }
+.footer-cta .btn::before { background: #C9A84C; }
+.footer-cta .btn::after { background: #C9A84C; }
+.footer-cta .btn:hover { color: #000; }
+.footer-cta .btn:hover::before { background: #EDD98A; }
+.footer-cta .btn:hover::after { background: #EDD98A; }
 
-/* Dark cinematic context */
+/* Dark cinematic context — gold frame, transparent inner, gold text (palette-agnostic) */
+.histoire-cinematic .btn { color: #C9A84C; }
+.histoire-cinematic .btn::before { background: #C9A84C; }
 .histoire-cinematic .btn::after { background: transparent; }
-.histoire-cinematic .btn:hover { color: var(--dark-brown); }
-.histoire-cinematic .btn:hover::after { background: var(--gold); }
+.histoire-cinematic .btn:hover { color: #1F1510; }
+.histoire-cinematic .btn:hover::before { background: #EDD98A; }
+.histoire-cinematic .btn:hover::after { background: #C9A84C; }
 
 .btn-gold, .btn-burgundy, .btn-outline { color: var(--gold); }
 
@@ -1560,8 +1849,7 @@ main { min-height: 60vh; }
   transform: translateY(0);
 }
 
-.histoire-cinematic .btn { color: var(--gold); }
-.histoire-cinematic .btn:hover { color: var(--dark-brown); }
+/* (removed: now defined above as palette-agnostic gold) */
 
 @media (max-width: 768px) {
   .histoire-cinematic { min-height: 85vh; }
@@ -2012,7 +2300,7 @@ main { min-height: 60vh; }
 .office-card {
   display: grid;
   grid-template-columns: 150px 1fr;
-  background: #fff;
+  background: var(--white);
   border: 1px solid rgba(107,75,60,.08);
   border-radius: 2px;
   overflow: hidden;
@@ -2434,7 +2722,7 @@ main { min-height: 60vh; }
 
 /* ── FOOTER ─────────────────────────────────────────────────── */
 footer {
-  background: #12060a;
+  background: var(--burgundy-ink);
   color: var(--cream-dark);
   padding: 0;
   position: relative;

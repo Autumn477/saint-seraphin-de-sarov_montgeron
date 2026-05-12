@@ -4,10 +4,25 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Контакты — Храм святого Серафима Саровского, Монжерон</title>
-  <meta name="description" content="Контакты прихода святого Серафима Саровского в Монжероне. Адрес, схема проезда, форма обратной связи."/>
+  <meta name="description" content="Контакты прихода святого Серафима Саровского в Монжероне. Адрес, схема проезда, обратная связь."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="site.css"/>
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Контакты — Храм святого Серафима Саровского, Монжерон"/>
+  <meta property="og:description" content="Контакты прихода святого Серафима Саровского в Монжероне. Адрес, схема проезда, обратная связь."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="assets/eglise-exterieur.jpg"/>
+  <meta property="og:locale" content="ru_RU"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Контакты — Храм святого Серафима Саровского, Монжерон"/>
+  <meta name="twitter:description" content="Контакты прихода святого Серафима Саровского в Монжероне. Адрес, схема проезда, обратная связь."/>
+  <meta name="twitter:image" content="assets/eglise-exterieur.jpg"/>
 </head>
 <body>
+  <a href="#main" class="skip-link">К содержанию</a>
   <nav>
     <div class="nav-inner">
       <a href="ru-accueil.html" class="site-logo">
@@ -22,61 +37,67 @@
       </a>
       <ul class="nav-links">
         <li><a href="ru-accueil.html">Главная</a></li>
+        <li><a href="saint.html">Святой</a></li>
         <li><a href="istoriya.html">История</a></li>
         <li><a href="bogoslujeniya.html">Богослужения</a></li>
         <li><a href="kontakty.html" class="active">Контакты</a></li>
         <li><a href="pozhertvovaniya.html" class="nav-donate">Пожертвовать</a></li>
       </ul>
-      <div class="lang-toggle">
-        <a href="contact.html">FR</a><span>|</span><a href="kontakty.html" class="active">RU</a>
+      <div class="nav-tools">
+        <button class="theme-toggle" aria-label="Сменить тему" title="День / ночь">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
+        <div class="lang-toggle">
+          <a href="contact.html">FR</a><span>|</span><a href="kontakty.html" class="active">RU</a>
+        </div>
       </div>
       <button class="nav-toggle" aria-label="Меню" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
-  <main>
+  <main id="main">
     <div class="page-header">
-      <div class="page-header-icon">
-        <svg viewBox="0 0 180 180" width="180" height="180" style="color:var(--gold);opacity:.5;">
-          <g stroke="currentColor" stroke-width="1.8" fill="transparent" stroke-linejoin="miter">
-            <path d="M 90,10 L 94,16 L 90,22 C 105,22 114,34 114,46 C 114,58 104,66 90,66 C 76,66 66,58 66,46 C 66,34 75,22 90,22 L 86,16 Z"/>
-            <path d="M 78,66 L 102,66 L 102,80 L 78,80 Z"/>
-            <path d="M 40,80 L 140,80 L 128,96 L 52,96 Z"/>
-            <path d="M 30,96 L 150,96 L 150,170 L 30,170 Z"/>
-            <path d="M 40,104 L 140,104 L 140,162 L 40,162 Z" opacity=".4"/>
-            <path d="M 74,124 Q 74,112 90,112 Q 106,112 106,124 L 106,170 L 74,170 Z"/>
-          </g>
-          <g stroke="currentColor" stroke-width="1.1" fill="transparent" opacity=".5">
-            <rect x="46" y="118" width="16" height="20"/>
-            <rect x="118" y="118" width="16" height="20"/>
-            <line x1="90" y1="10" x2="90" y2="0" stroke-width="1.3"/>
-            <line x1="85" y1="4" x2="95" y2="4" stroke-width="1.1"/>
-          </g>
-        </svg>
-      </div>
-      <h1>Контакты и адрес</h1>
-      <p>Мы рады приветствовать вас в нашем храме</p>
+      <span class="page-header-eyebrow">Свяжитесь с нами</span>
+      <h1>Контакты<br><em>и проезд</em></h1>
+      <p>Мы рады приветствовать вас в Монжероне.</p>
+      <div class="page-header-rule"></div>
+    </div>
+    <div class="page-header-band" aria-hidden="true">
+      <img loading="lazy" decoding="async" src="assets/eglise-exterieur.jpg" alt=""/>
     </div>
     <section class="section">
       <div class="section-inner">
         <div class="contact-grid">
           <div class="contact-info">
+
+            <div class="rector-card">
+              <img loading="lazy" decoding="async" src="assets/1.webp" alt="Иеромонах Никодим Павлинчук, настоятель"/>
+              <div>
+                <div class="rector-card-title">Настоятель прихода</div>
+                <div class="rector-card-name">Иеромонах<br>Никодим Павлинчук</div>
+                <div class="rector-card-contact">
+                  <span>тел.&nbsp;: <a href="tel:+33652548297">06 52 54 82 97</a></span>
+                  <span>эл. почта&nbsp;: <a href="mailto:nikodim2003@gmail.com">nikodim2003@gmail.com</a></span>
+                </div>
+              </div>
+            </div>
+
             <h3>Наши контакты</h3>
-            <p><span class="icon">📍</span><span>Rue du Moulin de Senlis<br/>91230 Montgeron, France</span></p>
-            <p><span class="icon">📞</span><span>[Номер телефона — заполнить]</span></p>
-            <p><span class="icon">✉️</span><span>[Адрес электронной почты — заполнить]</span></p>
+            <p class="contact-line"><span>Rue du Moulin de Senlis<br/>91230 Montgeron, France</span></p>
+            <p class="contact-line"><span>06 52 54 82 97</span></p>
+            <p class="contact-line"><span>nikodim2003@gmail.com</span></p>
             <div style="margin-top:1.8rem;">
               <h3>Время богослужений</h3>
-              <p><span class="icon">🕯️</span><span>Суббота: Всенощное бдение — 18:00</span></p>
-              <p><span class="icon">🕊️</span><span>Воскресенье: Божественная Литургия — 10:00</span></p>
+              <p class="contact-line"><span><strong>Суббота</strong> · Всенощное бдение в 18:00</span></p>
+              <p class="contact-line"><span><strong>Воскресенье</strong> · Божественная Литургия в 10:00</span></p>
               <p style="color:var(--text-muted); font-size:.88rem; font-style:italic; margin-top:.8rem;">Храм открыт во время богослужений и приходских мероприятий.</p>
             </div>
             <div style="margin-top:1.8rem;">
               <h3>Как добраться</h3>
-              <p><span class="icon">🚇</span><span><strong>RER D</strong> — станция Montgeron-Crosne<br/>затем 10 мин пешком или автобус</span></p>
-              <p><span class="icon">🚗</span><span>Из Парижа: шоссе N6 в направлении Мелена, съезд Montgeron</span></p>
-              <p><span class="icon">🅿️</span><span>Парковка имеется вблизи храма</span></p>
+              <p class="contact-line"><span><strong>RER D</strong> — станция Montgeron-Crosne<br/>затем 10 мин пешком или автобусом</span></p>
+              <p class="contact-line"><span>Из Парижа: шоссе N6 в направлении Мелена, съезд Montgeron</span></p>
+              <p class="contact-line"><span>Парковка имеется поблизости</span></p>
             </div>
           </div>
           <div>
@@ -89,7 +110,7 @@
             </div>
             <p style="text-align:center; margin-top:.8rem;">
               <a href="https://www.openstreetmap.org/?mlat=48.7024&amp;mlon=2.4479#map=16/48.7024/2.4479"
-                 target="_blank" rel="noopener" style="font-size:.85rem; color:var(--gold);">
+                 target="_blank" rel="noopener noreferrer" style="font-size:.85rem; color:var(--gold);">
                 Открыть в OpenStreetMap ↗
               </a>
             </p>
@@ -98,37 +119,14 @@
       </div>
     </section>
     <section class="section section-alt">
-      <div class="section-inner">
+      <div class="section-inner" style="text-align:center;">
         <h2 class="section-title">Написать нам</h2>
         <p class="section-subtitle">Мы ответим вам в ближайшее время</p>
         <div class="ornament"></div>
-        <form class="contact-form" action="mailto:[адрес-электронной-почты-заполнить]" method="post" enctype="text/plain" style="max-width:600px; margin:0 auto;">
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
-            <div class="form-group">
-              <label for="imya">Имя</label>
-              <input type="text" id="imya" name="imya" placeholder="Ваше имя" required/>
-            </div>
-            <div class="form-group">
-              <label for="familiya">Фамилия</label>
-              <input type="text" id="familiya" name="familiya" placeholder="Ваша фамилия" required/>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="email">Электронная почта</label>
-            <input type="email" id="email" name="email" placeholder="ваш@email.com" required/>
-          </div>
-          <div class="form-group">
-            <label for="tema">Тема</label>
-            <input type="text" id="tema" name="tema" placeholder="Тема сообщения"/>
-          </div>
-          <div class="form-group">
-            <label for="soobshenie">Сообщение</label>
-            <textarea id="soobshenie" name="soobshenie" placeholder="Ваше сообщение…" required></textarea>
-          </div>
-          <div style="text-align:center;">
-            <button type="submit" class="btn btn-burgundy">Отправить сообщение</button>
-          </div>
-        </form>
+        <p style="max-width:520px; margin:1rem auto 1.8rem; color:var(--text-muted);">
+          По любым вопросам — крещение, венчание, частные требы, или просто связаться — напишите нам напрямую.
+        </p>
+        <a href="mailto:nikodim2003@gmail.com?subject=%D0%9A%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%20%D0%BF%D1%80%D0%B8%D1%85%D0%BE%D0%B4" class="btn btn-burgundy">Написать настоятелю</a>
       </div>
     </section>
   </main>
@@ -139,7 +137,8 @@
         <p class="footer-cta-sub">Каждое пожертвование помогает сохранить это уникальное место молитвы и православного наследия.</p>
         <a href="pozhertvovaniya.html" class="btn btn-gold">Пожертвовать</a>
       </div>
-<div class="footer-divider-ornament">
+    </div>
+    <div class="footer-divider-ornament">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 84" fill="#C9A84C">
         <rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/>
         <rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/>
@@ -154,7 +153,7 @@
           </svg>
           <div>
             <div class="footer-brand-name">Св. Серафим Саровский</div>
-            <span class="footer-brand-sub">Православный приход</span>
+            <span class="footer-brand-sub">Русский православный приход</span>
           </div>
         </div>
         <p class="footer-desc">Место веры, истории и общины на служении православным верующим с 1957 года.</p>
@@ -166,7 +165,7 @@
           <a href="ru-accueil.html">Главная</a>
           <a href="istoriya.html">История</a>
           <a href="bogoslujeniya.html">Богослужения</a>
-          <a href="pozhertvovaniya.html">Пожертвования</a>
+          <a href="pozhertvovaniya.html">Пожертвовать</a>
           <a href="kontakty.html">Контакты</a>
         </nav>
       </div>
@@ -178,9 +177,9 @@
         </div>
         <div class="footer-contact-item">
           <span class="footer-contact-icon">&#9765;</span>
-          <span>Суббота 18:00 — Всенощное бдение<br/>Воскресенье 10:00 — Литургия</span>
+          <span>Суббота 18:00 — Всенощное бдение<br/>Воскресенье 10:00 — Божественная литургия</span>
         </div>
-        <a href="https://www.openstreetmap.org/?mlat=48.7024&amp;mlon=2.4479#map=16/48.7024/2.4479" target="_blank" rel="noopener" class="footer-map-link">Показать на карте</a>
+        <a href="https://www.openstreetmap.org/?mlat=48.7024&amp;mlon=2.4479#map=16/48.7024/2.4479" target="_blank" rel="noopener noreferrer" class="footer-map-link">Показать на карте</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -195,5 +194,6 @@
   </footer>
   <button class="back-to-top" aria-label="Наверх">&uarr;</button>
   <script src="main.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>
