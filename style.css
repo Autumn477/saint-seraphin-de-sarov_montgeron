@@ -2636,18 +2636,59 @@ main { min-height: 60vh; }
 .contact-info .icon { color: var(--gold); flex-shrink: 0; }
 
 .map-wrap {
-  border: 1px solid rgba(232,223,208,.6);
+  border: 1px solid rgba(201, 168, 76, 0.35);
   border-radius: var(--radius);
   overflow: hidden;
-  height: 400px;
-  box-shadow: var(--shadow);
+  height: 420px;
+  box-shadow: 0 8px 32px rgba(44, 24, 16, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  background: var(--cream);
 }
 
-.map-wrap iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
+.map-wrap iframe { width: 100%; height: 100%; border: none; }
+
+/* Leaflet overrides — integration palette */
+.leaflet-container {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream) !important;
 }
+.leaflet-control-zoom a,
+.leaflet-control-zoom a:hover {
+  background: var(--cream);
+  color: var(--burgundy);
+  border-color: rgba(201, 168, 76, 0.35);
+  font-weight: 500;
+}
+.leaflet-control-zoom a:hover { background: var(--gold-pale); }
+.leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.85) !important;
+  font-size: 10px !important;
+  color: var(--text-muted) !important;
+  padding: 2px 8px !important;
+}
+.leaflet-control-attribution a { color: var(--gold-ink, var(--burgundy)) !important; }
+.gold-pin { background: transparent !important; border: none !important; }
+.leaflet-popup-content-wrapper {
+  background: var(--cream);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(44, 24, 16, 0.2);
+  font-family: 'DM Sans', sans-serif;
+}
+.leaflet-popup-content {
+  margin: 12px 16px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--dark-brown);
+}
+.leaflet-popup-content strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--burgundy);
+  letter-spacing: 0.01em;
+}
+.leaflet-popup-tip { background: var(--cream); border: 1px solid rgba(201, 168, 76, 0.35); }
+.leaflet-popup-close-button { color: var(--text-muted) !important; }
 
 /* Contact form */
 .contact-form { margin-top: 2.5rem; }
