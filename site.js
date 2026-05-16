@@ -6,7 +6,7 @@
 (function () {
   'use strict';
 
-  const STORE_KEY = 'sssarov.settings.v2';
+  const STORE_KEY = 'sssarov.settings.v3';
 
   // Defaults
   const DEFAULTS = /*EDITMODE-BEGIN*/{
@@ -16,28 +16,20 @@
   }/*EDITMODE-END*/;
 
   const PALETTES = [
-    { id: 'or',            label: 'Or classique' },
-    { id: 'bleu',          label: 'Bleu byzantin' },
-    { id: 'bordeaux',      label: 'Bordeaux profond' },
     { id: 'vert',          label: 'Vert mosaique' },
     { id: 'vert-byzantin', label: 'Vert byzantin (olive)' },
     { id: 'vert-emeraude', label: 'Vert emeraude liturgique' },
     { id: 'vert-foret',    label: 'Vert foret profond' },
     { id: 'sauge',         label: 'Vert sauge & lin' },
-    { id: 'pourpre',       label: 'Pourpre imperial' },
-    { id: 'noir',          label: 'Noir & or' },
-    { id: 'terre',         label: 'Terre cuite' },
-    { id: 'nuit',          label: 'Bleu nuit' },
-    { id: 'marine',        label: 'Marine & cuivre' },
-    { id: 'lavande',       label: 'Lavande & creme' },
-    { id: 'charbon',       label: 'Charbon & brique' },
   ];
 
   function load() {
     try {
       const raw = localStorage.getItem(STORE_KEY);
-      if (!raw) return { ...DEFAULTS };
-      return { ...DEFAULTS, ...JSON.parse(raw) };
+      const merged = raw ? { ...DEFAULTS, ...JSON.parse(raw) } : { ...DEFAULTS };
+      const allowed = new Set(PALETTES.map(p => p.id));
+      if (!allowed.has(merged.palette)) merged.palette = DEFAULTS.palette;
+      return merged;
     } catch { return { ...DEFAULTS }; }
   }
   function save(s) {
