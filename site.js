@@ -148,10 +148,16 @@
     } catch {}
   }
 
+  function setFooterYear() {
+    const y = new Date().getFullYear();
+    document.querySelectorAll('.fv2-year').forEach(el => { el.textContent = y; });
+  }
+
   function init() {
     removeLegacyTweaks();
     buildPaletteSwitch();
     wireThemeToggles();
+    setFooterYear();
     updateAllUI();
 
     try {
