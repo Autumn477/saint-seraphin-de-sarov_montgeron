@@ -3736,12 +3736,10 @@ body.dark .prose .prose-closing {
 .fv2-marquee {
   position: relative;
   overflow: hidden;
-  padding: 1.4rem 0;
-  background:
-    linear-gradient(90deg, color-mix(in srgb, #000 30%, transparent), transparent 8%, transparent 92%, color-mix(in srgb, #000 30%, transparent)),
-    color-mix(in srgb, #000 22%, transparent);
+  padding: .7rem 0;
+  background: color-mix(in srgb, #000 25%, transparent);
   border-top: 1px solid color-mix(in srgb, var(--gold) 10%, transparent);
-  border-bottom: 1px solid color-mix(in srgb, var(--gold) 14%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--gold) 12%, transparent);
   z-index: 1;
 }
 .fv2-marquee::before,
@@ -3749,7 +3747,7 @@ body.dark .prose .prose-closing {
   content: '';
   position: absolute;
   top: 0; bottom: 0;
-  width: 60px;
+  width: 50px;
   z-index: 2;
   pointer-events: none;
 }
@@ -3758,24 +3756,24 @@ body.dark .prose .prose-closing {
 .fv2-marquee-track {
   display: inline-flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1.5rem;
   white-space: nowrap;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
+  font-size: .78rem;
   font-style: italic;
   font-weight: 400;
   color: var(--cream);
-  opacity: .65;
+  opacity: .55;
   letter-spacing: .015em;
-  animation: fv2-marquee 60s linear infinite;
+  animation: fv2-marquee 55s linear infinite;
   will-change: transform;
 }
 .fv2-marquee-sep {
   color: var(--gold);
   font-family: 'Cormorant Garamond', serif;
   font-style: normal;
-  font-size: 1.4rem;
-  opacity: .85;
+  font-size: .9rem;
+  opacity: .8;
   line-height: 0;
 }
 @keyframes fv2-marquee {
@@ -3791,99 +3789,82 @@ body.dark .prose .prose-closing {
   position: relative; z-index: 1;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 5.5rem 3rem 3rem;
+  padding: 3.2rem 3rem 2.2rem;
   text-align: center;
 }
 .fv2-hero-meta {
   display: inline-flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 2.8rem;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: .9rem;
-  font-style: italic;
-  letter-spacing: .15em;
+  gap: .7rem;
+  margin-bottom: 1.4rem;
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  font-size: .62rem;
+  letter-spacing: .28em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--gold);
-  opacity: .9;
+  opacity: .8;
 }
-.fv2-meta-num { letter-spacing: .25em; }
+.fv2-meta-num { letter-spacing: .28em; }
 .fv2-meta-dot {
-  width: 4px; height: 4px;
+  width: 3px; height: 3px;
   border-radius: 50%;
   background: var(--gold);
-  opacity: .8;
+  opacity: .7;
 }
 
 .fv2-hero-title {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: clamp(2.8rem, 7.5vw, 6.5rem);
-  line-height: .95;
+  font-size: clamp(1.9rem, 4vw, 3.4rem);
+  line-height: 1;
   letter-spacing: -.015em;
   color: var(--cream);
-  margin: 0 0 3rem;
+  margin: 0 0 1.5rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: .05em;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: .3em;
 }
-.fv2-hero-title > span { display: block; }
-.fv2-hero-em {
-  position: relative;
-  padding: 0 1.2em;
-}
-.fv2-hero-em::before,
-.fv2-hero-em::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: .9em; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  transform: translateY(-50%);
-}
-.fv2-hero-em::before { left: 0; background: linear-gradient(90deg, transparent, var(--gold)); }
-.fv2-hero-em::after  { right: 0; background: linear-gradient(-90deg, transparent, var(--gold)); }
+.fv2-hero-title > span { display: inline-block; }
 .fv2-hero-em em {
   font-style: italic;
   font-weight: 400;
   color: var(--gold);
-  text-shadow: 0 0 24px color-mix(in srgb, var(--gold) 35%, transparent);
+  text-shadow: 0 0 18px color-mix(in srgb, var(--gold) 30%, transparent);
 }
 
 .fv2-hero-bottom {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
-  padding-top: 2.5rem;
+  gap: 1.1rem;
+  padding-top: 1.4rem;
   position: relative;
+  border-top: 1px solid color-mix(in srgb, var(--gold) 18%, transparent);
 }
-/* ornement central type fleuron */
 .fv2-hero-bottom::before {
   content: '✦';
   position: absolute;
   top: 0; left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.2rem;
+  font-size: .8rem;
   color: var(--gold);
   background: var(--burgundy-deep, #1B3D33);
-  padding: 0 .9rem;
-  opacity: .85;
-}
-.fv2-hero-bottom {
-  border-top: 1px solid color-mix(in srgb, var(--gold) 22%, transparent);
+  padding: 0 .6rem;
+  opacity: .8;
 }
 .fv2-hero-sub {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.2rem;
+  font-size: .92rem;
   font-style: italic;
   line-height: 1.55;
   font-weight: 400;
   color: var(--cream-dark);
-  opacity: .82;
-  max-width: 560px;
+  opacity: .72;
+  max-width: 480px;
   margin: 0;
   text-align: center;
 }
@@ -3893,18 +3874,18 @@ body.dark .prose .prose-closing {
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 1.2rem;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.05rem;
-  font-weight: 500;
-  letter-spacing: .25em;
+  gap: .7rem;
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .28em;
   text-transform: uppercase;
   color: var(--gold);
   background: transparent;
-  padding: 1.2rem 2.6rem;
+  padding: .85rem 1.8rem;
   border: none;
   text-decoration: none;
-  transition: color .5s var(--ease-out, cubic-bezier(.2,.7,.2,1));
+  transition: color .45s var(--ease-out, cubic-bezier(.2,.7,.2,1));
   isolation: isolate;
   cursor: pointer;
   white-space: nowrap;
@@ -3931,7 +3912,7 @@ body.dark .prose .prose-closing {
   display: inline-flex;
   transition: transform .5s var(--ease-out, ease);
 }
-.fv2-cta-btn .fv2-btn-arrow svg { width: 22px; height: 14px; }
+.fv2-cta-btn .fv2-btn-arrow svg { width: 16px; height: 11px; }
 .fv2-cta-btn:hover { color: var(--burgundy-ink, #0E261F); }
 .fv2-cta-btn:hover::before {
   border-color: var(--gold);
@@ -3946,12 +3927,11 @@ body.dark .prose .prose-closing {
   position: relative; z-index: 1;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 3rem 3.5rem;
+  padding: 0 3rem 2rem;
   display: grid;
   grid-template-columns: 1.5fr .9fr 1fr 1fr;
   gap: 0;
-  border-top: 1px solid color-mix(in srgb, var(--gold) 18%, transparent);
-  position: relative;
+  border-top: 1px solid color-mix(in srgb, var(--gold) 16%, transparent);
 }
 /* arabesque sous le hero */
 .fv2-grid::before {
@@ -3968,27 +3948,27 @@ body.dark .prose .prose-closing {
 }
 .fv2-cell {
   position: relative;
-  padding: 3rem 2rem 3rem 0;
+  padding: 2rem 1.4rem 2rem 0;
   display: flex;
   flex-direction: column;
 }
-.fv2-cell + .fv2-cell { padding-left: 2rem; }
+.fv2-cell + .fv2-cell { padding-left: 1.4rem; }
 .fv2-cell + .fv2-cell::before {
   content: '';
   position: absolute;
-  left: 0; top: 1.5rem; bottom: 1.5rem;
+  left: 0; top: 1rem; bottom: 1rem;
   width: 1px;
-  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--gold) 22%, transparent) 30%, color-mix(in srgb, var(--gold) 22%, transparent) 70%, transparent);
+  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--gold) 18%, transparent) 30%, color-mix(in srgb, var(--gold) 18%, transparent) 70%, transparent);
 }
 .fv2-cell-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-weight: 500;
-  font-size: .95rem;
-  letter-spacing: .25em;
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: .58rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
   color: var(--gold);
-  opacity: .7;
-  margin-bottom: .8rem;
+  opacity: .6;
+  margin-bottom: .5rem;
 }
 .fv2-cell-num::before {
   content: '— ';
@@ -3996,61 +3976,61 @@ body.dark .prose .prose-closing {
 }
 .fv2-cell-label {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.75rem;
-  font-weight: 400;
+  font-size: 1.05rem;
+  font-weight: 500;
   color: var(--cream);
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.1rem;
   letter-spacing: -.005em;
   position: relative;
-  padding-bottom: 1rem;
+  padding-bottom: .65rem;
 }
 .fv2-cell-label::after {
   content: '';
   position: absolute;
   left: 0; bottom: 0;
-  width: 28px; height: 1px;
+  width: 20px; height: 1px;
   background: var(--gold);
-  opacity: .55;
+  opacity: .5;
 }
 
 /* Cell — identity */
 .fv2-identity {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1.2rem;
+  gap: .7rem;
+  margin-bottom: .8rem;
 }
 .fv2-id-cross {
-  width: 28px; height: 38px;
+  width: 18px; height: 25px;
   fill: var(--gold);
   flex-shrink: 0;
-  filter: drop-shadow(0 0 18px color-mix(in srgb, var(--gold) 45%, transparent));
+  filter: drop-shadow(0 0 12px color-mix(in srgb, var(--gold) 40%, transparent));
 }
-.fv2-id-text { display: flex; flex-direction: column; gap: .35rem; }
+.fv2-id-text { display: flex; flex-direction: column; gap: .2rem; }
 .fv2-id-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.18rem;
+  font-size: .92rem;
   font-weight: 500;
   color: var(--cream);
   line-height: 1.2;
 }
 .fv2-id-sub {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: .82rem;
-  font-weight: 500;
-  letter-spacing: .15em;
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  font-size: .55rem;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
   color: var(--gold);
-  opacity: .8;
+  opacity: .75;
 }
 .fv2-id-desc {
   font-family: 'Source Serif 4', 'Cormorant Garamond', serif;
-  font-size: .94rem;
-  line-height: 1.75;
+  font-size: .78rem;
+  line-height: 1.65;
   color: var(--cream-dark);
-  opacity: .7;
-  margin: 0 0 1.4rem;
-  max-width: 360px;
+  opacity: .65;
+  margin: 0 0 .9rem;
+  max-width: 320px;
   font-style: italic;
 }
 .fv2-pills {
@@ -4061,15 +4041,16 @@ body.dark .prose .prose-closing {
 .fv2-pill {
   display: inline-flex;
   align-items: center;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: .8rem;
-  font-style: italic;
-  letter-spacing: .12em;
-  font-weight: 500;
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  font-size: .54rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  font-weight: 600;
   color: var(--gold);
-  padding: .35rem .9rem;
-  border: 1px solid color-mix(in srgb, var(--gold) 30%, transparent);
-  background: color-mix(in srgb, var(--gold) 5%, transparent);
+  padding: .3rem .7rem;
+  border: 1px solid color-mix(in srgb, var(--gold) 25%, transparent);
+  background: color-mix(in srgb, var(--gold) 4%, transparent);
+  border-radius: 999px;
 }
 
 /* Cell — nav */
@@ -4079,18 +4060,18 @@ body.dark .prose .prose-closing {
 }
 .fv2-links a {
   display: inline-grid;
-  grid-template-columns: 2.2rem 1fr;
+  grid-template-columns: 1.4rem 1fr;
   align-items: baseline;
-  gap: 1rem;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.08rem;
+  gap: .6rem;
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  font-size: .82rem;
   font-weight: 500;
   color: var(--cream-dark);
-  opacity: .78;
-  padding: .7rem 0;
+  opacity: .75;
+  padding: .42rem 0;
   text-decoration: none;
-  border-bottom: 1px solid color-mix(in srgb, var(--gold) 10%, transparent);
-  transition: color .35s ease, opacity .35s ease, padding-left .4s var(--ease-out, ease);
+  border-bottom: 1px solid color-mix(in srgb, var(--gold) 8%, transparent);
+  transition: color .3s ease, opacity .3s ease, padding-left .35s var(--ease-out, ease);
   position: relative;
   width: 100%;
   letter-spacing: -.003em;
@@ -4098,22 +4079,21 @@ body.dark .prose .prose-closing {
 .fv2-links a::after {
   content: '+';
   position: absolute;
-  right: .25rem; top: 50%;
+  right: .15rem; top: 50%;
   transform: translateY(-50%) scale(0);
   opacity: 0;
-  font-size: 1.1rem;
-  font-family: 'Cormorant Garamond', serif;
+  font-size: .85rem;
+  font-family: 'Inter', sans-serif;
   color: var(--gold);
-  transition: opacity .35s ease, transform .35s ease;
+  transition: opacity .3s ease, transform .3s ease;
 }
 .fv2-link-idx {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: .85rem;
-  letter-spacing: .05em;
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  font-size: .52rem;
+  letter-spacing: .15em;
   color: var(--gold);
-  opacity: .6;
-  font-weight: 500;
+  opacity: .55;
+  font-weight: 600;
 }
 .fv2-link-text { letter-spacing: -.005em; }
 .fv2-links li:last-child a { border-bottom: none; }
@@ -4127,34 +4107,34 @@ body.dark .prose .prose-closing {
 
 /* Cell — offices */
 .fv2-offices {
-  list-style: none; margin: 0 0 1.4rem; padding: 0;
+  list-style: none; margin: 0 0 .85rem; padding: 0;
   display: flex; flex-direction: column;
 }
 .fv2-offices li {
-  padding: 1.2rem 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--gold) 10%, transparent);
+  padding: .7rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--gold) 8%, transparent);
 }
 .fv2-offices li:last-child { border-bottom: none; }
 .fv2-off-row {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: .35rem;
+  gap: .8rem;
+  margin-bottom: .2rem;
 }
 .fv2-off-day {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: .95rem;
-  letter-spacing: .12em;
-  font-weight: 500;
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  font-size: .56rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  font-weight: 600;
   color: var(--gold);
-  opacity: .9;
+  opacity: .85;
 }
 .fv2-off-time {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.7rem;
-  font-weight: 400;
+  font-size: 1.1rem;
+  font-weight: 500;
   color: var(--cream);
   font-variant-numeric: tabular-nums;
   letter-spacing: -.015em;
@@ -4162,7 +4142,7 @@ body.dark .prose .prose-closing {
 .fv2-off-name {
   display: block;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem;
+  font-size: .82rem;
   color: var(--cream-dark);
   opacity: .7;
   font-style: italic;
@@ -4171,21 +4151,21 @@ body.dark .prose .prose-closing {
 .fv2-off-link {
   display: inline-flex;
   align-items: center;
-  gap: .85rem;
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: .95rem;
-  letter-spacing: .12em;
-  font-weight: 500;
+  gap: .55rem;
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  font-size: .58rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  font-weight: 600;
   color: var(--gold);
   opacity: .9;
   text-decoration: none;
-  margin-top: .3rem;
+  margin-top: .2rem;
   align-self: flex-start;
-  transition: gap .4s ease, color .35s ease;
+  transition: gap .35s ease, color .3s ease;
 }
-.fv2-off-link svg { width: 18px; height: 12px; }
-.fv2-off-link:hover { gap: 1.15rem; color: var(--gold-light, var(--gold)); }
+.fv2-off-link svg { width: 14px; height: 10px; }
+.fv2-off-link:hover { gap: .85rem; color: var(--gold-light, var(--gold)); }
 
 /* Cell — find / icon card byzantine */
 .fv2-map-card {
@@ -4194,14 +4174,14 @@ body.dark .prose .prose-closing {
   text-decoration: none;
   border: 1px solid color-mix(in srgb, var(--gold) 22%, transparent);
   background: color-mix(in srgb, #000 35%, transparent);
-  height: 250px;
+  height: 165px;
   transition: border-color .4s ease;
   color: var(--gold);
-  box-shadow: inset 0 0 0 3px var(--burgundy-deep, #1B3D33), inset 0 0 0 4px color-mix(in srgb, var(--gold) 20%, transparent);
-  padding: 5px;
+  box-shadow: inset 0 0 0 2px var(--burgundy-deep, #1B3D33), inset 0 0 0 3px color-mix(in srgb, var(--gold) 16%, transparent);
+  padding: 4px;
 }
 .fv2-map-bg {
-  position: absolute; inset: 5px;
+  position: absolute; inset: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4211,25 +4191,26 @@ body.dark .prose .prose-closing {
 .fv2-map-bg svg { width: 100%; height: 100%; }
 .fv2-map-overlay {
   position: absolute;
-  inset: auto 5px 5px 5px;
-  padding: 1rem 1.1rem;
+  inset: auto 4px 4px 4px;
+  padding: .7rem .8rem;
   background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--burgundy-ink, #0E261F) 92%, transparent) 30%, var(--burgundy-ink, #0E261F));
   display: flex;
   flex-direction: column;
-  gap: .4rem;
+  gap: .2rem;
 }
 .fv2-map-coord {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: .8rem;
-  letter-spacing: .1em;
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  font-size: .5rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  font-weight: 600;
   color: var(--gold);
-  opacity: .85;
+  opacity: .8;
 }
 .fv2-map-addr {
   font-family: 'Cormorant Garamond', serif;
   font-style: normal;
-  font-size: 1rem;
+  font-size: .82rem;
   line-height: 1.4;
   color: var(--cream);
   opacity: .95;
@@ -4237,17 +4218,17 @@ body.dark .prose .prose-closing {
 .fv2-map-go {
   display: inline-flex;
   align-items: center;
-  gap: .55rem;
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: .85rem;
-  letter-spacing: .15em;
-  font-weight: 500;
+  gap: .4rem;
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  font-size: .54rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  font-weight: 600;
   color: var(--gold);
-  margin-top: .35rem;
-  transition: gap .4s ease;
+  margin-top: .25rem;
+  transition: gap .35s ease;
 }
-.fv2-map-go svg { width: 13px; height: 13px; transition: transform .4s ease; }
+.fv2-map-go svg { width: 11px; height: 11px; transition: transform .4s ease; }
 .fv2-map-card:hover {
   border-color: color-mix(in srgb, var(--gold) 65%, transparent);
 }
@@ -4267,39 +4248,38 @@ body.dark .prose .prose-closing {
   position: absolute;
   top: -1px; left: 50%;
   transform: translateX(-50%);
-  width: 120px; height: 14px;
+  width: 80px; height: 8px;
   background:
-    radial-gradient(circle at center, var(--gold) 0 2px, transparent 2.2px),
-    radial-gradient(circle at 15% center, var(--gold) 0 1.3px, transparent 1.6px),
-    radial-gradient(circle at 85% center, var(--gold) 0 1.3px, transparent 1.6px);
-  opacity: .85;
+    radial-gradient(circle at center, var(--gold) 0 1.2px, transparent 1.5px),
+    radial-gradient(circle at 18% center, var(--gold) 0 .8px, transparent 1.1px),
+    radial-gradient(circle at 82% center, var(--gold) 0 .8px, transparent 1.1px);
+  opacity: .7;
 }
 .fv2-bottom-inner {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1.7rem 3rem;
+  padding: 1rem 3rem;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 .fv2-copy {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: .9rem;
-  letter-spacing: .03em;
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  font-size: .6rem;
+  letter-spacing: .04em;
   color: var(--cream-dark);
-  opacity: .65;
+  opacity: .55;
   margin: 0;
   justify-self: start;
 }
 .fv2-legal {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: .82rem;
-  letter-spacing: .15em;
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  font-size: .52rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
   color: var(--cream-dark);
-  opacity: .55;
+  opacity: .45;
   margin: 0;
   justify-self: center;
   text-align: center;
@@ -4307,21 +4287,24 @@ body.dark .prose .prose-closing {
 .fv2-lang {
   display: inline-flex;
   align-items: center;
-  gap: .2rem;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: .95rem;
-  font-weight: 500;
-  letter-spacing: .2em;
-  padding: .25rem;
-  border: 1px solid color-mix(in srgb, var(--gold) 28%, transparent);
+  gap: .15rem;
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  font-size: .58rem;
+  font-weight: 600;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  padding: .15rem;
+  border: 1px solid color-mix(in srgb, var(--gold) 25%, transparent);
+  border-radius: 999px;
   justify-self: end;
 }
 .fv2-lang a {
   color: var(--cream-dark);
   opacity: .65;
   text-decoration: none;
-  padding: .35rem .9rem;
-  transition: all .35s ease;
+  padding: .25rem .65rem;
+  border-radius: 999px;
+  transition: all .3s ease;
 }
 .fv2-lang a:hover { color: var(--gold-light, var(--gold)); opacity: 1; }
 .fv2-lang a.active {
