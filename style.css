@@ -3706,17 +3706,18 @@ body.dark .prose .prose-closing {
 .footer-v2::after {
   content: '';
   position: absolute;
-  top: 18%; right: -180px;
-  width: 540px; height: 540px;
+  top: 22%; right: -220px;
+  width: 480px; height: 480px;
   border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--gold) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--gold) 10%, transparent);
   box-shadow:
-    inset 0 0 0 1px color-mix(in srgb, var(--gold) 0%, transparent),
-    0 0 0 60px color-mix(in srgb, var(--gold) 6%, transparent),
-    0 0 0 120px color-mix(in srgb, var(--gold) 3%, transparent);
+    0 0 0 50px color-mix(in srgb, var(--gold) 4%, transparent),
+    0 0 0 110px color-mix(in srgb, var(--gold) 2%, transparent);
   pointer-events: none;
   z-index: 0;
-  opacity: .7;
+  opacity: .55;
+  mask: radial-gradient(ellipse 70% 90% at 100% 50%, #000, transparent 75%);
+  -webkit-mask: radial-gradient(ellipse 70% 90% at 100% 50%, #000, transparent 75%);
 }
 
 /* ── Bloc CTA / Eyebrow / Titre / Action ───────────────────────── */
@@ -3724,13 +3725,24 @@ body.dark .prose .prose-closing {
   position: relative; z-index: 1;
   max-width: 1240px;
   margin: 0 auto;
-  padding: 6.5rem 3rem 3rem;
+  padding: 6.5rem 3rem 4rem;
 }
 .fv2-cta-inner {
+  position: relative;
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 1.6fr 1fr;
   gap: 5rem;
-  align-items: end;
+  align-items: center;
+  padding: 3rem 3rem 3rem 0;
+}
+.fv2-cta-inner::before {
+  content: '';
+  position: absolute;
+  left: 60%;
+  top: 15%; bottom: 15%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--gold) 28%, transparent), transparent);
+  pointer-events: none;
 }
 .fv2-eyebrow {
   display: inline-flex;
@@ -3779,38 +3791,67 @@ body.dark .prose .prose-closing {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.2rem;
-  padding-bottom: .4rem;
+  gap: 1.4rem;
+  padding-left: 1rem;
 }
+/* Bouton CTA — minimaliste, noble, outline or */
 .fv2-cta-btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: .8rem;
+  gap: 1rem;
   font-family: 'DM Sans', sans-serif;
-  font-size: .72rem;
+  font-size: .68rem;
   font-weight: 600;
-  letter-spacing: .28rem;
+  letter-spacing: .3rem;
   text-transform: uppercase;
-  color: var(--burgundy-ink, #0E261F);
-  background: var(--gold);
-  padding: 1.15rem 2.4rem;
-  border-radius: 999px;
+  color: var(--gold);
+  background: transparent;
+  padding: 1.25rem 2.6rem 1.25rem 2.2rem;
+  border: none;
   text-decoration: none;
-  border: 1px solid var(--gold);
-  transition: all .35s var(--ease-out, cubic-bezier(.2,.7,.2,1));
-  box-shadow: 0 8px 32px color-mix(in srgb, var(--gold) 25%, transparent);
+  transition: color .4s var(--ease-out, cubic-bezier(.2,.7,.2,1));
+  isolation: isolate;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.fv2-cta-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid color-mix(in srgb, var(--gold) 55%, transparent);
+  background: color-mix(in srgb, var(--gold) 4%, transparent);
+  transition: background .4s var(--ease-out, ease), border-color .4s ease;
+  z-index: -1;
 }
 .fv2-cta-btn::after {
-  content: '→';
-  font-family: serif;
-  transition: transform .35s var(--ease-out, ease);
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 0; height: 100%;
+  background: var(--gold);
+  transition: width .45s var(--ease-out, cubic-bezier(.7,0,.2,1));
+  z-index: -1;
 }
+.fv2-cta-btn .fv2-btn-arrow {
+  display: inline-flex;
+  align-items: center;
+  transition: transform .4s var(--ease-out, ease);
+}
+.fv2-cta-btn .fv2-btn-arrow svg { width: 18px; height: 12px; }
 .fv2-cta-btn:hover {
-  background: var(--gold-light, var(--gold));
-  transform: translateY(-2px);
-  box-shadow: 0 14px 40px color-mix(in srgb, var(--gold) 40%, transparent);
+  color: var(--burgundy-ink, #0E261F);
 }
-.fv2-cta-btn:hover::after { transform: translateX(4px); }
+.fv2-cta-btn:hover::before {
+  border-color: var(--gold);
+  background: transparent;
+}
+.fv2-cta-btn:hover::after { width: 100%; }
+.fv2-cta-btn:hover .fv2-btn-arrow { transform: translateX(6px); }
+.fv2-cta-btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
 .fv2-cta-meta {
   display: inline-flex;
   align-items: center;
@@ -3828,8 +3869,12 @@ body.dark .prose .prose-closing {
   width: 6px; height: 6px;
   border-radius: 50%;
   background: var(--gold);
-  opacity: .7;
-  box-shadow: 0 0 12px var(--gold);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--gold) 60%, transparent);
+  animation: fv2-pulse 2.6s ease-in-out infinite;
+}
+@keyframes fv2-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--gold) 60%, transparent); }
+  50%      { box-shadow: 0 0 0 6px color-mix(in srgb, var(--gold) 0%, transparent); }
 }
 
 /* ── Ornament minimaliste ──────────────────────────────────────── */
