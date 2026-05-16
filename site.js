@@ -12,22 +12,25 @@
   const DEFAULTS = /*EDITMODE-BEGIN*/{
     "theme": "day",
     "heroVariant": "v2",
-    "palette": "or"
+    "palette": "vert"
   }/*EDITMODE-END*/;
 
   const PALETTES = [
-    { id: 'or',       label: 'Or classique' },
-    { id: 'bleu',     label: 'Bleu byzantin' },
-    { id: 'bordeaux', label: 'Bordeaux profond' },
-    { id: 'vert',     label: 'Vert mosaique' },
-    { id: 'pourpre',  label: 'Pourpre imperial' },
-    { id: 'noir',     label: 'Noir & or' },
-    { id: 'terre',    label: 'Terre cuite' },
-    { id: 'nuit',     label: 'Bleu nuit' },
-    { id: 'sauge',    label: 'Sauge & lin' },
-    { id: 'marine',   label: 'Marine & cuivre' },
-    { id: 'lavande',  label: 'Lavande & creme' },
-    { id: 'charbon',  label: 'Charbon & brique' },
+    { id: 'or',            label: 'Or classique' },
+    { id: 'bleu',          label: 'Bleu byzantin' },
+    { id: 'bordeaux',      label: 'Bordeaux profond' },
+    { id: 'vert',          label: 'Vert mosaique' },
+    { id: 'vert-byzantin', label: 'Vert byzantin (olive)' },
+    { id: 'vert-emeraude', label: 'Vert emeraude liturgique' },
+    { id: 'vert-foret',    label: 'Vert foret profond' },
+    { id: 'sauge',         label: 'Vert sauge & lin' },
+    { id: 'pourpre',       label: 'Pourpre imperial' },
+    { id: 'noir',          label: 'Noir & or' },
+    { id: 'terre',         label: 'Terre cuite' },
+    { id: 'nuit',          label: 'Bleu nuit' },
+    { id: 'marine',        label: 'Marine & cuivre' },
+    { id: 'lavande',       label: 'Lavande & creme' },
+    { id: 'charbon',       label: 'Charbon & brique' },
   ];
 
   function load() {

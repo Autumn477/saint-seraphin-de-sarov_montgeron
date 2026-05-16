@@ -700,6 +700,33 @@ body.dark .saint-hero-lede { color: var(--ink-soft); }
 body.dark .saint-life-chapter h3 { color: var(--ink); }
 body.dark .saint-life-chapter p { color: var(--ink-soft); }
 
+.saint-life-figure {
+  margin: 1.8rem 0 .4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.saint-life-figure img {
+  max-width: 100%;
+  width: 360px;
+  height: auto;
+  border: 1px solid var(--gold-ink);
+  padding: 6px;
+  background: var(--stone-warm);
+  box-shadow: 0 6px 24px rgba(0,0,0,.18);
+}
+.saint-life-figure figcaption {
+  margin-top: .8rem;
+  font-family: 'Source Serif 4', serif;
+  font-style: italic;
+  font-size: .88rem;
+  color: var(--muted);
+  text-align: center;
+  max-width: 360px;
+  line-height: 1.5;
+}
+body.dark .saint-life-figure figcaption { color: var(--ink-soft); }
+
 @media (max-width: 768px) {
   .saint-life-chapter { grid-template-columns: 1fr; gap: 1rem; }
   .saint-life-chapter-num { text-align: left; font-size: 2.4rem; padding-top: 0; border-top: none; border-bottom: 1px solid var(--gold-ink); padding-bottom: .3rem; width: fit-content; }
