@@ -509,7 +509,7 @@ header {
 }
 
 /* ── NAVIGATION ──────────────────────────────────────────────── */
-nav {
+body > nav {
   background: var(--white);
   border-bottom: none;
   position: sticky;
@@ -518,7 +518,7 @@ nav {
   transition: all .4s ease;
 }
 
-nav.scrolled {
+body > nav.scrolled {
   background: rgba(255,255,255,.96);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
