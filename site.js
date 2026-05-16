@@ -6,7 +6,7 @@
 (function () {
   'use strict';
 
-  const STORE_KEY = 'sssarov.settings.v1';
+  const STORE_KEY = 'sssarov.settings.v2';
 
   // Defaults
   const DEFAULTS = /*EDITMODE-BEGIN*/{
