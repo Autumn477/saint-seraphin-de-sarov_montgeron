@@ -45,8 +45,8 @@ a:hover { color: var(--gold-ink); }
 }
 
 /* ── NAV polish ────────────────────────────────────────────── */
-nav { background: color-mix(in srgb, var(--stone) 88%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line-soft); }
-nav.scrolled { background: color-mix(in srgb, var(--stone) 96%, transparent); }
+body > nav { background: color-mix(in srgb, var(--stone) 88%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line-soft); }
+body > nav.scrolled { background: color-mix(in srgb, var(--stone) 96%, transparent); }
 
 .nav-inner { height: 64px; padding: 0 2rem; }
 
@@ -87,8 +87,8 @@ body.dark {
 }
 
 body.dark { background: var(--stone); color: var(--ink); }
-body.dark nav { background: color-mix(in srgb, var(--stone) 85%, transparent); border-bottom-color: var(--line-soft); }
-body.dark nav.scrolled { background: color-mix(in srgb, var(--stone) 95%, transparent); }
+body.dark > nav { background: color-mix(in srgb, var(--stone) 85%, transparent); border-bottom-color: var(--line-soft); }
+body.dark > nav.scrolled { background: color-mix(in srgb, var(--stone) 95%, transparent); }
 body.dark a { color: var(--ink); }
 body.dark a:hover { color: var(--gold-ink); }
 body.dark .logo-name { color: var(--ink); }
