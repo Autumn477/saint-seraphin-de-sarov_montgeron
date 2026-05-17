@@ -55,8 +55,8 @@
     }
     .opera-eyebrow {
       font-family: 'Cinzel', serif;
-      font-size: .65rem;
-      letter-spacing: .42em;
+      font-size: .52rem;
+      letter-spacing: .35em;
       text-transform: uppercase;
       color: var(--gold);
       font-weight: 500;
@@ -77,52 +77,53 @@
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-weight: 300;
+      font-size: .92rem;
       color: var(--cream);
-      opacity: .82;
-      line-height: 1.55;
+      opacity: .8;
+      line-height: 1.5;
     }
     .opera-col-h {
       font-family: 'Cinzel', serif;
-      font-size: .58rem;
-      letter-spacing: .38em;
+      font-size: .48rem;
+      letter-spacing: .32em;
       text-transform: uppercase;
       color: var(--gold);
       font-weight: 500;
-      margin-bottom: 1.1rem;
+      margin-bottom: .8rem;
       opacity: .9;
     }
-    .opera-list { display: flex; flex-direction: column; gap: .55rem; }
+    .opera-list { display: flex; flex-direction: column; gap: .3rem; }
     .opera-list a {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
+      font-size: .88rem;
       color: var(--cream);
-      opacity: .82;
-      transition: color .35s, padding-left .35s;
+      opacity: .8;
+      transition: color .3s, padding-left .3s;
       letter-spacing: .005em;
     }
     .opera-list a:hover {
       color: var(--gold-warm);
       opacity: 1;
-      padding-left: .35rem;
+      padding-left: .3rem;
     }
     .opera-list p {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
+      font-size: .85rem;
       color: var(--cream);
-      opacity: .8;
-      line-height: 1.55;
+      opacity: .78;
+      line-height: 1.5;
     }
     .opera-give {
       display: inline-flex;
       align-items: center;
-      gap: 1.2rem;
+      gap: .9rem;
       font-family: 'Cinzel', serif;
-      font-size: .68rem;
-      letter-spacing: .38em;
+      font-size: .56rem;
+      letter-spacing: .32em;
       text-transform: uppercase;
       font-weight: 500;
       color: var(--gold);
-      padding: 1.1rem 2.4rem;
+      padding: .8rem 1.6rem;
       border: 1px solid var(--gold);
       transition: all .55s cubic-bezier(.2,.7,.2,1);
       position: relative;
@@ -140,7 +141,7 @@
     .opera-give:hover { color: var(--green-vdeep); border-color: var(--gold-warm); }
     .opera-give:hover::before { transform: translateY(0); }
     .opera-give svg {
-      width: 14px; height: 10px;
+      width: 12px; height: 8px;
       stroke: currentColor;
       fill: none;
       stroke-width: 1.5;
@@ -148,29 +149,29 @@
     }
     .opera-give:hover svg { transform: translateX(6px); }
     .opera-bot {
-      padding: 1.3rem 3rem;
+      padding: .9rem 2.4rem;
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      gap: 1.5rem;
+      gap: 1.2rem;
       background: linear-gradient(180deg, transparent, rgba(0,0,0,.35));
       border-top: 1px solid rgba(201,168,107,.18);
       font-family: 'Cinzel', serif;
-      font-size: .58rem;
-      letter-spacing: .3em;
+      font-size: .5rem;
+      letter-spacing: .28em;
       text-transform: uppercase;
       color: var(--cream-mute);
     }
     .opera-bot .seal {
       justify-self: center;
-      width: 28px; height: 28px;
+      width: 22px; height: 22px;
       border: 1px solid rgba(201,168,107,.4);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
     }
-    .opera-bot .seal svg { width: 12px; height: 16px; color: var(--gold); fill: currentColor; }
+    .opera-bot .seal svg { width: 9px; height: 13px; color: var(--gold); fill: currentColor; }
     .opera-bot .lang { justify-self: end; display: inline-flex; align-items: center; gap: .4rem; }
-    .opera-bot .lang a { color: var(--cream); opacity: .55; padding: .35rem .55rem; border: 1px solid transparent; transition: all .3s; }
+    .opera-bot .lang a { color: var(--cream); opacity: .55; padding: .25rem .45rem; border: 1px solid transparent; transition: all .3s; }
     .opera-bot .lang a:hover, .opera-bot .lang a.act { color: var(--gold); opacity: 1; border-color: rgba(201,168,107,.35); }
     .opera-bot .copy { justify-self: start; }
 
@@ -185,16 +186,15 @@
        ════════════════════════════════════════════════════════════ */
     .op01 {
       background:
-        /* Faux velours vert moiré (gradient + noise SVG) */
         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 .12 0 0 0 0 .26 0 0 0 0 .2 0 0 0 .08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"),
-        radial-gradient(ellipse 70% 80% at 50% 0%, rgba(201,168,107,.14), transparent 60%),
+        radial-gradient(ellipse 70% 80% at 50% 0%, rgba(201,168,107,.12), transparent 60%),
         linear-gradient(180deg, var(--green-mid) 0%, var(--green-deep) 50%, var(--green-vdeep) 100%);
-      padding: 5rem 3rem 0;
+      padding: 3rem 2rem 0;
     }
     .op01-frame {
-      max-width: 880px;
+      max-width: 720px;
       margin: 0 auto;
-      padding: 4rem 3.5rem 3.5rem;
+      padding: 2.4rem 2.4rem 2.2rem;
       position: relative;
       border: 1px solid rgba(201,168,107,.5);
       box-shadow:
@@ -219,34 +219,34 @@
     .op01-corner.bl { bottom: -1px; left: -1px; border-right: none; border-top: none; }
 
     .op01-cross {
-      width: 32px; height: 44px;
-      margin: 0 auto 1.6rem;
+      width: 22px; height: 30px;
+      margin: 0 auto .9rem;
       display: block;
     }
-    .op01 .opera-eyebrow { margin-bottom: 1.4rem; display: block; }
-    .op01 .opera-h { font-size: clamp(2.2rem, 4vw, 3.4rem); margin-bottom: 1rem; }
-    .op01 .opera-rule { margin: 1.2rem auto; }
-    .op01 .opera-quote { font-size: 1.2rem; max-width: 520px; margin: 0 auto 2.2rem; }
-    .op01-cta-row { display: inline-flex; align-items: center; gap: 2rem; margin-top: .4rem; }
+    .op01 .opera-eyebrow { margin-bottom: .8rem; display: block; }
+    .op01 .opera-h { font-size: clamp(1.6rem, 2.4vw, 2rem); margin-bottom: .6rem; }
+    .op01 .opera-rule { margin: .7rem auto; }
+    .op01 .opera-quote { font-size: .92rem; max-width: 440px; margin: 0 auto 1.4rem; }
+    .op01-cta-row { display: inline-flex; align-items: center; gap: 1.2rem; margin-top: .2rem; }
     .op01-cta-row .meta {
       font-family: 'Cinzel', serif;
-      font-size: .56rem;
-      letter-spacing: .3em;
+      font-size: .46rem;
+      letter-spacing: .28em;
       text-transform: uppercase;
       color: var(--cream-mute);
     }
 
     .op01-base {
       max-width: 1100px;
-      margin: 4rem auto 0;
-      padding: 3rem 0 0;
+      margin: 2rem auto 0;
+      padding: 1.8rem 0 0;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 4rem;
+      gap: 2.4rem;
       border-top: 1px solid rgba(201,168,107,.22);
       text-align: left;
     }
-    .op01-base .opera-col-h { margin-bottom: 1.2rem; }
+    .op01-base .opera-col-h { margin-bottom: .8rem; }
 
     /* ════════════════════════════════════════════════════════════
        OPÉRA 02 — LOGE PRIVÉE
@@ -261,15 +261,15 @@
     }
     .op02-w {
       display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      min-height: 480px;
+      grid-template-columns: 1.5fr 1fr;
+      min-height: auto;
     }
     .op02-l {
-      padding: 4.5rem 3.5rem;
+      padding: 2.6rem 2.4rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 2rem;
+      gap: 1.4rem;
       position: relative;
       border-right: 1px solid rgba(201,168,107,.3);
     }
@@ -280,34 +280,34 @@
       width: 1px; height: 60px;
       background: var(--gold);
     }
-    .op02-l-top { display: flex; flex-direction: column; gap: 1.4rem; }
+    .op02-l-top { display: flex; flex-direction: column; gap: .9rem; }
     .op02-l-top .opera-eyebrow { display: block; }
-    .op02-l-top .opera-h { font-size: clamp(2.4rem, 4.5vw, 3.8rem); }
-    .op02-l-top .opera-quote { font-size: 1.15rem; max-width: 460px; margin-top: .6rem; }
-    .op02-l-bot { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(201,168,107,.2); }
+    .op02-l-top .opera-h { font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
+    .op02-l-top .opera-quote { font-size: .92rem; max-width: 420px; margin-top: .4rem; }
+    .op02-l-bot { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; padding-top: 1.4rem; border-top: 1px solid rgba(201,168,107,.2); }
 
     .op02-r {
-      padding: 4.5rem 3rem;
+      padding: 2.6rem 2.2rem;
       background:
         radial-gradient(ellipse 80% 60% at 80% 0%, rgba(201,168,107,.1), transparent 70%),
         rgba(0,0,0,.35);
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 1.2rem;
       justify-content: space-between;
     }
     .op02-r .ticket {
-      padding: 1.5rem 0;
-      border-top: 1px solid rgba(201,168,107,.25);
+      padding: .9rem 0;
+      border-top: 1px solid rgba(201,168,107,.22);
     }
-    .op02-r .ticket:last-of-type { border-bottom: 1px solid rgba(201,168,107,.25); }
+    .op02-r .ticket:last-of-type { border-bottom: 1px solid rgba(201,168,107,.22); }
     .op02-r .ticket .d {
       font-family: 'Cinzel', serif;
-      font-size: .6rem;
-      letter-spacing: .35em;
+      font-size: .48rem;
+      letter-spacing: .3em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: .5rem;
+      margin-bottom: .3rem;
     }
     .op02-r .ticket .t {
       display: flex;
@@ -318,26 +318,26 @@
     .op02-r .ticket .t .name {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      font-size: 1.4rem;
+      font-size: 1rem;
       color: var(--cream);
       font-weight: 400;
     }
     .op02-r .ticket .t .time {
       font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
+      font-size: 1.05rem;
       color: var(--gold-warm);
       font-weight: 400;
-      letter-spacing: -.02em;
+      letter-spacing: -.01em;
     }
     .op02-r .meta {
       font-family: 'Cinzel', serif;
-      font-size: .54rem;
-      letter-spacing: .35em;
+      font-size: .46rem;
+      letter-spacing: .3em;
       text-transform: uppercase;
       color: var(--cream-mute);
-      margin-bottom: .9rem;
+      margin-bottom: .55rem;
     }
-    .op02-r .opera-give { margin-top: 1rem; align-self: start; }
+    .op02-r .opera-give { margin-top: .5rem; align-self: start; }
 
     /* ════════════════════════════════════════════════════════════
        OPÉRA 03 — RIDEAU & VELOURS
@@ -378,29 +378,28 @@
 
     .op03-hero {
       position: relative; z-index: 1;
-      padding: 5.5rem 2rem 3.5rem;
-      max-width: 720px;
+      padding: 3rem 1.5rem 2rem;
+      max-width: 640px;
       margin: 0 auto;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1.4rem;
+      gap: .85rem;
     }
     .op03-monogram {
       position: relative;
-      width: 96px; height: 96px;
+      width: 60px; height: 60px;
       border: 1px solid rgba(201,168,107,.5);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: .4rem;
+      margin-bottom: .2rem;
       box-shadow:
-        inset 0 0 0 6px transparent,
-        inset 0 0 0 7px rgba(201,168,107,.18),
-        0 0 0 0 var(--gold),
-        0 0 30px rgba(201,168,107,.15);
+        inset 0 0 0 4px transparent,
+        inset 0 0 0 5px rgba(201,168,107,.18),
+        0 0 22px rgba(201,168,107,.15);
     }
     .op03-monogram::before, .op03-monogram::after {
       content: '';
@@ -408,39 +407,39 @@
       width: 1px;
       background: rgba(201,168,107,.5);
     }
-    .op03-monogram::before { left: -22px; top: 50%; width: 14px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
-    .op03-monogram::after { right: -22px; top: 50%; width: 14px; height: 1px; background: linear-gradient(-90deg, transparent, var(--gold)); }
-    .op03-monogram svg { width: 30px; height: 42px; }
+    .op03-monogram::before { left: -16px; top: 50%; width: 10px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
+    .op03-monogram::after { right: -16px; top: 50%; width: 10px; height: 1px; background: linear-gradient(-90deg, transparent, var(--gold)); }
+    .op03-monogram svg { width: 20px; height: 28px; }
 
     .op03-hero .opera-eyebrow { display: block; }
-    .op03-hero .opera-h { font-size: clamp(2.4rem, 4.5vw, 3.6rem); }
-    .op03-hero .opera-rule { margin-top: .4rem; }
-    .op03-hero .opera-quote { font-size: 1.2rem; max-width: 540px; }
-    .op03-hero .opera-give { margin-top: 1rem; }
+    .op03-hero .opera-h { font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
+    .op03-hero .opera-rule { margin-top: .2rem; }
+    .op03-hero .opera-quote { font-size: .92rem; max-width: 460px; }
+    .op03-hero .opera-give { margin-top: .4rem; }
 
     .op03-program {
       position: relative; z-index: 1;
-      max-width: 980px;
+      max-width: 880px;
       margin: 0 auto;
-      padding: 2.5rem 3rem;
+      padding: 1.4rem 2rem;
       display: grid;
       grid-template-columns: 1fr auto 1fr auto 1fr;
-      gap: 2rem;
+      gap: 1.4rem;
       align-items: center;
-      border-top: 1px solid rgba(201,168,107,.25);
-      border-bottom: 1px solid rgba(201,168,107,.25);
+      border-top: 1px solid rgba(201,168,107,.22);
+      border-bottom: 1px solid rgba(201,168,107,.22);
       background: linear-gradient(180deg, rgba(0,0,0,.15), transparent, rgba(0,0,0,.15));
     }
     .op03-program .sep {
       width: 1px;
-      height: 50px;
+      height: 32px;
       background: linear-gradient(180deg, transparent, rgba(201,168,107,.4), transparent);
     }
-    .op03-pcol { display: flex; flex-direction: column; gap: .5rem; text-align: center; }
+    .op03-pcol { display: flex; flex-direction: column; gap: .25rem; text-align: center; }
     .op03-pcol .lab {
       font-family: 'Cinzel', serif;
-      font-size: .56rem;
-      letter-spacing: .38em;
+      font-size: .46rem;
+      letter-spacing: .32em;
       text-transform: uppercase;
       color: var(--gold);
       opacity: .9;
@@ -448,7 +447,7 @@
     .op03-pcol .val {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      font-size: 1.2rem;
+      font-size: .92rem;
       color: var(--cream);
       font-weight: 400;
       line-height: 1.3;
@@ -459,25 +458,25 @@
 
     .op03-foot-links {
       position: relative; z-index: 1;
-      max-width: 980px;
+      max-width: 880px;
       margin: 0 auto;
-      padding: 2rem 3rem 0;
+      padding: 1.2rem 2rem 0;
       display: flex;
-      gap: 2.2rem;
+      gap: 1.6rem;
       justify-content: center;
       flex-wrap: wrap;
     }
     .op03-foot-links a {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: 1rem;
+      font-size: .88rem;
       color: var(--cream);
-      opacity: .82;
+      opacity: .8;
       transition: color .3s;
     }
     .op03-foot-links a:hover { color: var(--gold-warm); opacity: 1; }
 
-    .op03-bot { position: relative; z-index: 1; margin-top: 2rem; }
+    .op03-bot { position: relative; z-index: 1; margin-top: 1.2rem; }
 
     /* responsive */
     @media (max-width: 900px) {
