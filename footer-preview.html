@@ -387,6 +387,288 @@
     .v15-bot .l, .v15-bot .lang { font-size: .52rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(226,221,201,.45); }
     .v15-bot .lang a { color: var(--gold); padding: 0 .3rem; }
 
+    /* ═══════════ LOT 2 : V16 → V30 ═══════════ */
+
+    /* V16 CINÉMA SCOPE — letterboxed black bars top/bottom */
+    .v16 { background: #000; padding: 0; }
+    .v16-bar { height: 32px; background: #000; }
+    .v16-stage { background: linear-gradient(180deg, var(--green-deep), var(--green-ink)); padding: 3rem 2.5rem; }
+    .v16-credits { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.6fr; gap: 3rem; align-items: center; }
+    .v16-title { font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 4vw, 3rem); font-weight: 400; color: var(--gold); letter-spacing: .12em; line-height: 1; }
+    .v16-title small { display: block; font-size: .5em; letter-spacing: .35em; color: var(--cream-dark); opacity: .7; margin-top: .8rem; font-weight: 400; }
+    .v16-roll { display: grid; grid-template-columns: auto 1fr; gap: .4rem 1.5rem; font-family: 'Cinzel', serif; font-size: .8rem; line-height: 1.7; }
+    .v16-roll dt { font-size: .55rem; letter-spacing: .25em; color: var(--gold); opacity: .75; text-align: right; padding-top: .2rem; }
+    .v16-roll dd { color: var(--cream); }
+    .v16-roll dd a { color: var(--cream); border-bottom: 1px solid transparent; transition: border-color .25s; }
+    .v16-roll dd a:hover { border-color: var(--gold); }
+    .v16-end { text-align: center; padding-top: 1.5rem; font-family: 'Cinzel', serif; font-size: .55rem; letter-spacing: .35em; color: var(--gold); opacity: .7; }
+
+    /* V17 ICONOSTASE 3 PANNEAUX */
+    .v17 { background: linear-gradient(180deg, #14302a, var(--green-ink)); padding: 3rem 1.5rem 1.5rem; }
+    .v17-row { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.3fr 1fr; gap: 14px; }
+    .v17-p { padding: 2rem 1.4rem; background: rgba(0,0,0,.22); border: 1px solid rgba(196,154,58,.25); position: relative; text-align: center; display: flex; flex-direction: column; gap: .8rem; align-items: center; }
+    .v17-p.cent { background: linear-gradient(180deg, rgba(196,154,58,.08), transparent), rgba(0,0,0,.3); border-color: rgba(196,154,58,.55); padding: 2.4rem 1.6rem; }
+    .v17-p::before, .v17-p::after { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: var(--gold); opacity: .4; }
+    .v17-p::before { top: 0; } .v17-p::after { bottom: 0; }
+    .v17-p .arch { width: 100%; max-width: 130px; height: 38px; background: radial-gradient(ellipse at bottom, rgba(196,154,58,.18), transparent 70%); border-bottom: 1px solid rgba(196,154,58,.4); border-radius: 50% 50% 0 0 / 100% 100% 0 0; margin-bottom: -.4rem; }
+    .v17-p svg { width: 22px; height: 30px; }
+    .v17-p.cent svg { width: 32px; height: 44px; }
+    .v17-p .ttl { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--cream); font-weight: 500; }
+    .v17-p.cent .ttl { font-size: 1.6rem; color: var(--gold); }
+    .v17-p .lks { display: flex; flex-direction: column; gap: .25rem; }
+    .v17-p .lks a { font-family: 'Cormorant Garamond', serif; font-size: .85rem; color: var(--cream-dark); opacity: .75; padding: .2rem 0; }
+    .v17-p .lks a:hover { color: var(--gold); opacity: 1; }
+    .v17-p .desc { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: .82rem; color: var(--cream-dark); opacity: .7; line-height: 1.5; max-width: 240px; }
+    .v17-p .give { font-size: .58rem; letter-spacing: .28em; text-transform: uppercase; font-weight: 600; color: var(--green-ink); background: var(--gold); padding: .7rem 1.1rem; }
+    .v17-bot { max-width: 1100px; margin: 1.2rem auto 0; padding-top: 1rem; border-top: 1px solid rgba(196,154,58,.12); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-size: .5rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(226,221,201,.5); }
+    .v17-bot a { color: var(--gold); padding: 0 .3rem; }
+
+    /* V18 NEWSLETTER FOCUS — un seul gros message + input */
+    .v18 { background: radial-gradient(ellipse at 30% 0%, rgba(196,154,58,.1), transparent 60%), linear-gradient(180deg, var(--green-deep), var(--green-ink)); padding: 3.5rem 2.5rem 1.4rem; }
+    .v18-c { max-width: 720px; margin: 0 auto; text-align: center; }
+    .v18-eyo { font-family: 'Inter', sans-serif; font-size: .54rem; letter-spacing: .35em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 1.2rem; }
+    .v18-eyo::before, .v18-eyo::after { content: '·'; color: var(--gold); margin: 0 .8rem; opacity: .55; }
+    .v18-h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 4.5vw, 2.8rem); font-weight: 300; color: var(--cream); line-height: 1.05; letter-spacing: -.015em; margin-bottom: 1.4rem; }
+    .v18-h2 em { font-style: italic; color: var(--gold); }
+    .v18-p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; line-height: 1.55; color: var(--cream-dark); opacity: .75; margin-bottom: 1.8rem; max-width: 540px; margin-left: auto; margin-right: auto; }
+    .v18-form { display: flex; gap: 0; max-width: 460px; margin: 0 auto 2rem; border: 1px solid rgba(196,154,58,.4); border-radius: 999px; padding: 4px; }
+    .v18-form input { flex: 1; background: transparent; border: none; outline: none; color: var(--cream); font-family: 'Inter', sans-serif; font-size: .85rem; padding: .65rem 1.2rem; }
+    .v18-form input::placeholder { color: rgba(226,221,201,.45); font-style: italic; }
+    .v18-form button { font-size: .58rem; letter-spacing: .28em; text-transform: uppercase; font-weight: 600; color: var(--green-ink); background: var(--gold); border: none; padding: .65rem 1.4rem; border-radius: 999px; cursor: pointer; }
+    .v18-l2 { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; padding-top: 1.8rem; border-top: 1px solid rgba(196,154,58,.15); }
+    .v18-l2 a { font-size: .58rem; letter-spacing: .22em; text-transform: uppercase; color: var(--cream-dark); opacity: .65; }
+    .v18-l2 a:hover { color: var(--gold); opacity: 1; }
+    .v18-bot { max-width: 720px; margin: 1rem auto 0; padding-top: .8rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; font-size: .5rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(226,221,201,.4); }
+    .v18-bot a { color: var(--gold); padding: 0 .3rem; }
+
+    /* V19 CARTE TRÉSOR — vieille map */
+    .v19 { background: #1e3329; padding: 0; }
+    .v19-w { display: grid; grid-template-columns: 1.3fr 1fr; min-height: 380px; }
+    .v19-map { position: relative; background: repeating-linear-gradient(45deg, transparent 0 30px, rgba(196,154,58,.04) 30px 31px), repeating-linear-gradient(-45deg, transparent 0 30px, rgba(196,154,58,.04) 30px 31px), radial-gradient(ellipse at 30% 40%, rgba(196,154,58,.12), transparent 60%), #1a2c24; padding: 2.5rem; overflow: hidden; border-right: 1px dashed rgba(196,154,58,.35); }
+    .v19-map svg.contours { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .55; }
+    .v19-pin { position: absolute; top: 45%; left: 40%; width: 18px; height: 18px; background: var(--gold); border: 3px solid var(--green-ink); border-radius: 50% 50% 50% 0; transform: rotate(-45deg); box-shadow: 0 0 0 8px rgba(196,154,58,.18), 0 0 0 18px rgba(196,154,58,.08); }
+    .v19-cap { position: relative; font-family: 'EB Garamond', serif; font-style: italic; font-size: 1rem; color: var(--cream); margin-bottom: 1rem; }
+    .v19-coord { position: absolute; bottom: 1rem; left: 1rem; font-family: 'JetBrains Mono', monospace; font-size: .58rem; color: var(--gold); letter-spacing: .15em; padding: .4rem .7rem; background: rgba(0,0,0,.4); border: 1px solid rgba(196,154,58,.3); }
+    .v19-r { padding: 2.5rem 2rem; display: flex; flex-direction: column; gap: 1.5rem; justify-content: space-between; }
+    .v19-r .ey { font-family: 'EB Garamond', serif; font-size: .58rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
+    .v19-r h3 { font-family: 'EB Garamond', serif; font-size: 1.7rem; color: var(--cream); font-weight: 500; line-height: 1.1; }
+    .v19-r h3 em { color: var(--gold); }
+    .v19-r address { font-family: 'EB Garamond', serif; font-style: normal; font-size: 1rem; line-height: 1.55; color: var(--cream); opacity: .85; }
+    .v19-r .lks { display: flex; flex-wrap: wrap; gap: 1rem; padding-top: 1rem; border-top: 1px dashed rgba(196,154,58,.25); }
+    .v19-r .lks a { font-family: 'EB Garamond', serif; font-style: italic; font-size: .92rem; color: var(--cream-dark); opacity: .75; }
+    .v19-r .lks a:hover { color: var(--gold); opacity: 1; }
+    .v19-r .go { display: inline-flex; align-items: center; gap: .5rem; align-self: start; font-family: 'EB Garamond', serif; font-size: .82rem; letter-spacing: .15em; color: var(--gold); padding: .6rem 1rem; border: 1px solid rgba(196,154,58,.5); border-radius: 999px; }
+
+    /* V20 VITRAIL MOSAÏQUE */
+    .v20 { background: #06120e; padding: 2.5rem 1.5rem 1.4rem; }
+    .v20-mz { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 4px; aspect-ratio: 4 / 1; min-height: 220px; }
+    .v20-t { padding: 1.2rem 1.4rem; background: rgba(196,154,58,.08); border: 1px solid rgba(196,154,58,.25); display: flex; flex-direction: column; justify-content: space-between; transition: all .35s; cursor: pointer; }
+    .v20-t:hover { background: rgba(196,154,58,.18); border-color: rgba(196,154,58,.55); }
+    .v20-t.dk { background: rgba(0,0,0,.4); }
+    .v20-t.bg { grid-row: span 2; background: linear-gradient(135deg, rgba(196,154,58,.22), rgba(196,154,58,.06)); border-color: rgba(196,154,58,.55); padding: 1.6rem; }
+    .v20-t .h { font-size: .5rem; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); font-weight: 600; opacity: .85; }
+    .v20-t .v { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--cream); font-weight: 400; line-height: 1.1; }
+    .v20-t.bg .v { font-size: 1.7rem; }
+    .v20-t .v em { color: var(--gold); font-style: italic; }
+    .v20-bot { max-width: 1100px; margin: 1rem auto 0; padding-top: 1rem; border-top: 1px solid rgba(196,154,58,.12); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-size: .5rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(226,221,201,.5); }
+    .v20-bot a { color: var(--gold); padding: 0 .3rem; }
+
+    /* V21 LITURGIE HORAIRE (cadran horloge) */
+    .v21 { background: linear-gradient(180deg, var(--green-deep), var(--green-ink)); padding: 3rem 2.5rem 1.4rem; }
+    .v21-row { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr; gap: 3rem; align-items: center; }
+    .v21-clk { position: relative; width: 200px; height: 200px; border: 2px solid rgba(196,154,58,.45); border-radius: 50%; flex-shrink: 0; }
+    .v21-clk::before { content: ''; position: absolute; inset: 8px; border: 1px dashed rgba(196,154,58,.25); border-radius: 50%; }
+    .v21-num { position: absolute; font-family: 'Cinzel', serif; font-size: .75rem; color: var(--gold); top: 50%; left: 50%; }
+    .v21-c1 { transform: translate(-50%, -50%) rotate(0deg) translateY(-78px); }
+    .v21-c2 { transform: translate(-50%, -50%) rotate(45deg) translateY(-78px) rotate(-45deg); }
+    .v21-c3 { transform: translate(-50%, -50%) rotate(90deg) translateY(-78px) rotate(-90deg); }
+    .v21-c4 { transform: translate(-50%, -50%) rotate(135deg) translateY(-78px) rotate(-135deg); }
+    .v21-c5 { transform: translate(-50%, -50%) rotate(180deg) translateY(-78px) rotate(-180deg); }
+    .v21-c6 { transform: translate(-50%, -50%) rotate(225deg) translateY(-78px) rotate(-225deg); }
+    .v21-c7 { transform: translate(-50%, -50%) rotate(270deg) translateY(-78px) rotate(-270deg); }
+    .v21-c8 { transform: translate(-50%, -50%) rotate(315deg) translateY(-78px) rotate(-315deg); }
+    .v21-hand { position: absolute; left: 50%; top: 50%; width: 2px; height: 70px; background: var(--gold); transform-origin: top left; transform: rotate(225deg); border-radius: 1px; box-shadow: 0 0 12px var(--gold); }
+    .v21-ctr { position: absolute; left: 50%; top: 50%; width: 12px; height: 12px; border-radius: 50%; background: var(--gold); transform: translate(-50%, -50%); box-shadow: 0 0 16px var(--gold); }
+    .v21-cross { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+    .v21-content { display: flex; flex-direction: column; gap: 1.4rem; }
+    .v21-h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--cream); font-weight: 400; }
+    .v21-h3 em { color: var(--gold); }
+    .v21-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.4rem; }
+    .v21-grid h6 { font-family: 'Cinzel', serif; font-size: .54rem; letter-spacing: .25em; color: var(--gold); margin-bottom: .5rem; }
+    .v21-grid a, .v21-grid p { font-family: 'Cormorant Garamond', serif; font-size: .88rem; color: var(--cream); opacity: .82; display: block; line-height: 1.5; }
+    .v21-grid a:hover { color: var(--gold); }
+    .v21-bot { max-width: 1180px; margin: 1.2rem auto 0; padding-top: 1rem; border-top: 1px solid rgba(196,154,58,.12); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-family: 'Cinzel', serif; font-size: .5rem; letter-spacing: .22em; color: rgba(226,221,201,.5); }
+    .v21-bot a { color: var(--gold); padding: 0 .3rem; }
+
+    /* V22 MAGAZINE COVER — type cover éditorial */
+    .v22 { background: linear-gradient(180deg, var(--green-deep), var(--green-ink)); padding: 0; }
+    .v22-top { padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(196,154,58,.3); font-family: 'Cinzel', serif; font-size: .58rem; letter-spacing: .3em; color: var(--gold); }
+    .v22-top .iss { color: var(--cream); opacity: .7; }
+    .v22-h { padding: 3rem 2rem 2rem; text-align: center; max-width: 1000px; margin: 0 auto; }
+    .v22-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: .92rem; color: var(--gold); opacity: .85; margin-bottom: .5rem; }
+    .v22-megatitle { font-family: 'Playfair Display', 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 8vw, 5.5rem); font-weight: 400; color: var(--cream); line-height: .92; letter-spacing: -.02em; margin-bottom: 1.2rem; }
+    .v22-megatitle em { font-style: italic; color: var(--gold); }
+    .v22-sub { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--cream-dark); opacity: .7; max-width: 480px; margin: 0 auto; line-height: 1.55; }
+    .v22-rule { width: 30px; height: 1px; background: var(--gold); margin: 1.4rem auto; }
+    .v22-feat { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; border-top: 1px solid rgba(196,154,58,.25); border-bottom: 1px solid rgba(196,154,58,.25); }
+    .v22-feat > div { padding: 1.4rem 1.5rem; border-right: 1px solid rgba(196,154,58,.15); }
+    .v22-feat > div:last-child { border-right: none; }
+    .v22-feat .pp { font-family: 'Cinzel', serif; font-size: .52rem; letter-spacing: .35em; color: var(--gold); margin-bottom: .5rem; }
+    .v22-feat .tt { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--cream); }
+    .v22-feat .tt em { color: var(--gold); font-style: italic; }
+    .v22-bar { padding: .85rem 2rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-family: 'Cinzel', serif; font-size: .5rem; letter-spacing: .25em; color: rgba(226,221,201,.5); }
+    .v22-bar a { color: var(--gold); padding: 0 .25rem; }
+
+    /* V23 SCEAU WAX STAMP — sceau de cire */
+    .v23 { background: linear-gradient(180deg, var(--green-deep), var(--green-ink)); padding: 3rem 2rem 1.4rem; }
+    .v23-w { max-width: 920px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr; gap: 2.5rem; align-items: center; padding-bottom: 2rem; border-bottom: 1px solid rgba(196,154,58,.18); }
+    .v23-seal { position: relative; width: 140px; height: 140px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #d4ac3f, #9b7a2a 70%, #6d5318); box-shadow: 0 6px 24px rgba(0,0,0,.5), inset 0 4px 12px rgba(255,255,255,.18), inset 0 -6px 16px rgba(0,0,0,.45); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .v23-seal::before { content: ''; position: absolute; inset: 12px; border-radius: 50%; border: 1.5px solid rgba(0,0,0,.3); }
+    .v23-seal::after { content: '☩'; position: absolute; bottom: -2px; left: -2px; font-size: 2.4rem; color: var(--green-ink); opacity: .25; }
+    .v23-seal-cross { width: 56px; height: 76px; fill: rgba(20,40,30,.7); filter: drop-shadow(0 2px 0 rgba(255,255,255,.15)); }
+    .v23-ti { display: flex; flex-direction: column; gap: .6rem; }
+    .v23-ey { font-family: 'Cinzel', serif; font-size: .54rem; letter-spacing: .3em; color: var(--gold); }
+    .v23-ti h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: var(--cream); font-weight: 400; line-height: 1.1; }
+    .v23-ti h3 em { color: var(--gold); font-style: italic; }
+    .v23-ti p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: .92rem; color: var(--cream-dark); opacity: .72; line-height: 1.55; max-width: 440px; }
+    .v23-row2 { max-width: 920px; margin: 1.5rem auto 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; }
+    .v23-col h6 { font-family: 'Cinzel', serif; font-size: .5rem; letter-spacing: .25em; color: var(--gold); margin-bottom: .5rem; }
+    .v23-col a, .v23-col p { font-family: 'Cormorant Garamond', serif; font-size: .85rem; color: var(--cream); opacity: .82; display: block; line-height: 1.45; padding: .12rem 0; }
+    .v23-col a:hover { color: var(--gold); }
+    .v23-bot { max-width: 920px; margin: 1.5rem auto 0; padding-top: 1rem; border-top: 1px solid rgba(196,154,58,.1); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-family: 'Cinzel', serif; font-size: .5rem; letter-spacing: .22em; color: rgba(226,221,201,.5); }
+    .v23-bot a { color: var(--gold); padding: 0 .3rem; }
+
+    /* V24 ANTIPHONAIRE — partition chant byzantin */
+    .v24 { background: var(--green-ink); padding: 0; }
+    .v24-staff { padding: 1.8rem 2.5rem 1rem; border-bottom: 1px solid rgba(196,154,58,.25); position: relative; background: linear-gradient(180deg, transparent 22%, rgba(196,154,58,.18) 22%, rgba(196,154,58,.18) calc(22% + 1px), transparent calc(22% + 1px) 46%, rgba(196,154,58,.18) 46%, rgba(196,154,58,.18) calc(46% + 1px), transparent calc(46% + 1px) 70%, rgba(196,154,58,.18) 70%, rgba(196,154,58,.18) calc(70% + 1px), transparent calc(70% + 1px)); min-height: 110px; }
+    .v24-staff::before { content: 'C'; position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); font-family: 'EB Garamond', serif; font-size: 3.4rem; color: var(--gold); font-style: italic; }
+    .v24-text { padding: 1.8rem 2.5rem 1.4rem; max-width: 1100px; margin: 0 auto; }
+    .v24-lyr { font-family: 'EB Garamond', serif; font-style: italic; font-size: 1.4rem; color: var(--cream); text-align: center; margin-bottom: 1.4rem; letter-spacing: .02em; }
+    .v24-lyr em { color: var(--gold); }
+    .v24-g { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1.5rem; padding-top: 1.4rem; border-top: 1px solid rgba(196,154,58,.15); }
+    .v24-g h6 { font-family: 'EB Garamond', serif; font-size: .55rem; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); margin-bottom: .5rem; }
+    .v24-g a, .v24-g p { font-family: 'EB Garamond', serif; font-size: .92rem; color: var(--cream); opacity: .85; display: block; line-height: 1.5; }
+    .v24-g a:hover { color: var(--gold); }
+    .v24-bot { padding: 1rem 2.5rem 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-family: 'EB Garamond', serif; font-style: italic; font-size: .8rem; color: rgba(226,221,201,.55); }
+    .v24-bot a { color: var(--gold); }
+
+    /* V25 CATHÉDRALE 3 NEFS */
+    .v25 { background: linear-gradient(180deg, #14302a, var(--green-ink)); padding: 0; }
+    .v25-w { display: grid; grid-template-columns: 1fr 1.4fr 1fr; min-height: 360px; }
+    .v25-aisle { padding: 2.5rem 1.8rem; background: rgba(0,0,0,.18); border-right: 1px solid rgba(196,154,58,.25); display: flex; flex-direction: column; gap: 1.2rem; }
+    .v25-aisle:last-child { border-right: none; border-left: 1px solid rgba(196,154,58,.25); }
+    .v25-nave { padding: 3rem 2rem; text-align: center; background: radial-gradient(ellipse at top, rgba(196,154,58,.1), transparent 70%); display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+    .v25-vault { width: 60px; height: 100px; border-radius: 50% 50% 0 0 / 70% 70% 0 0; border: 1px solid var(--gold); border-bottom: none; position: relative; display: flex; align-items: end; justify-content: center; padding-bottom: 1rem; }
+    .v25-vault svg { width: 24px; height: 33px; }
+    .v25-nave h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; color: var(--cream); line-height: 1.05; font-weight: 400; }
+    .v25-nave h2 em { color: var(--gold); }
+    .v25-nave .sub { font-family: 'Cinzel', serif; font-size: .55rem; letter-spacing: .3em; color: var(--gold); }
+    .v25-nave p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: .9rem; color: var(--cream-dark); opacity: .75; max-width: 320px; line-height: 1.55; }
+    .v25-nave .give { display: inline-flex; align-items: center; gap: .6rem; font-size: .6rem; letter-spacing: .28em; text-transform: uppercase; font-weight: 600; color: var(--green-ink); background: var(--gold); padding: .8rem 1.3rem; border-radius: 999px; margin-top: .4rem; }
+    .v25-aisle h5 { font-family: 'Cinzel', serif; font-size: .52rem; letter-spacing: .3em; color: var(--gold); border-bottom: 1px solid rgba(196,154,58,.25); padding-bottom: .55rem; margin-bottom: .3rem; }
+    .v25-aisle a, .v25-aisle p { font-family: 'Cormorant Garamond', serif; font-size: .92rem; color: var(--cream); opacity: .85; padding: .2rem 0; display: block; line-height: 1.5; }
+    .v25-aisle a:hover { color: var(--gold); }
+    .v25-bot { padding: .9rem 2.5rem; background: rgba(0,0,0,.3); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-family: 'Cinzel', serif; font-size: .5rem; letter-spacing: .25em; color: rgba(226,221,201,.5); border-top: 1px solid rgba(196,154,58,.18); }
+    .v25-bot a { color: var(--gold); padding: 0 .3rem; }
+
+    /* V26 STÈLE GRAVÉE — emboss / engrave */
+    .v26 { background: linear-gradient(180deg, #1a2c24, #0a1812); padding: 3rem 2rem 1.4rem; position: relative; }
+    .v26-st { max-width: 880px; margin: 0 auto; padding: 2.8rem 2.5rem; background: linear-gradient(180deg, rgba(196,154,58,.08), rgba(196,154,58,.02)); border: 1px solid rgba(196,154,58,.3); border-radius: 6px 6px 0 0; box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 8px 36px rgba(0,0,0,.4); text-align: center; position: relative; }
+    .v26-st::before { content: ''; position: absolute; top: 1rem; left: 1rem; right: 1rem; bottom: 1rem; border: 1px solid rgba(196,154,58,.18); border-radius: 4px 4px 0 0; pointer-events: none; }
+    .v26-st h1 { font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 500; color: var(--gold); letter-spacing: .12em; line-height: 1.1; text-shadow: 0 1px 0 rgba(0,0,0,.6), 0 -1px 0 rgba(255,255,255,.06); margin-bottom: .9rem; }
+    .v26-st .anno { font-family: 'Cinzel', serif; font-size: .65rem; letter-spacing: .4em; color: var(--cream); opacity: .8; margin-bottom: 1.4rem; }
+    .v26-st .quote { font-family: 'EB Garamond', serif; font-style: italic; font-size: 1.05rem; line-height: 1.6; color: var(--cream); opacity: .92; max-width: 540px; margin: 0 auto; }
+    .v26-st svg { width: 26px; height: 36px; margin-bottom: .8rem; }
+    .v26-stbot { max-width: 880px; margin: 0 auto; padding: 1rem 2.5rem; background: linear-gradient(180deg, rgba(0,0,0,.4), rgba(0,0,0,.6)); border: 1px solid rgba(196,154,58,.3); border-top: none; border-radius: 0 0 6px 6px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+    .v26-stbot h6 { font-family: 'Cinzel', serif; font-size: .5rem; letter-spacing: .25em; color: var(--gold); margin-bottom: .4rem; }
+    .v26-stbot a, .v26-stbot p { font-family: 'EB Garamond', serif; font-size: .82rem; color: var(--cream); opacity: .82; display: block; line-height: 1.45; padding: .08rem 0; }
+    .v26-stbot a:hover { color: var(--gold); }
+    .v26-bot { max-width: 880px; margin: 1rem auto 0; padding-top: .9rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-family: 'Cinzel', serif; font-size: .5rem; letter-spacing: .25em; color: rgba(226,221,201,.5); }
+    .v26-bot a { color: var(--gold); padding: 0 .3rem; }
+
+    /* V27 LITURGIE RADIO — player audio dans le footer */
+    .v27 { background: linear-gradient(180deg, var(--green-deep), var(--green-ink)); padding: 2.5rem 2rem 1.4rem; }
+    .v27-pl { max-width: 1100px; margin: 0 auto; background: rgba(0,0,0,.28); border: 1px solid rgba(196,154,58,.3); padding: 1.5rem 2rem; display: grid; grid-template-columns: auto 1fr auto; gap: 1.8rem; align-items: center; border-radius: 999px; margin-bottom: 1.5rem; }
+    .v27-play { width: 48px; height: 48px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; }
+    .v27-play::before { content: ''; width: 0; height: 0; border-left: 12px solid var(--green-ink); border-top: 8px solid transparent; border-bottom: 8px solid transparent; margin-left: 3px; }
+    .v27-info { display: flex; flex-direction: column; gap: .25rem; min-width: 0; }
+    .v27-info .nw { font-family: 'Inter', sans-serif; font-size: .52rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); font-weight: 600; display: inline-flex; align-items: center; gap: .4rem; }
+    .v27-info .nw::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #ff4444; animation: blk2 1.5s infinite; }
+    .v27-info .ti { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--cream); }
+    .v27-bar { height: 4px; background: rgba(196,154,58,.15); border-radius: 2px; overflow: hidden; max-width: 320px; margin-top: .35rem; }
+    .v27-bar > div { height: 100%; width: 68%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); border-radius: 2px; box-shadow: 0 0 10px var(--gold); }
+    .v27-tm { font-family: 'JetBrains Mono', monospace; font-size: .7rem; color: var(--gold); }
+    .v27-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 1.8rem; padding: 1.4rem 0; border-top: 1px solid rgba(196,154,58,.15); border-bottom: 1px solid rgba(196,154,58,.08); }
+    .v27-grid .id { display: flex; flex-direction: column; gap: .6rem; }
+    .v27-grid .id svg { width: 22px; height: 30px; }
+    .v27-grid .id .n { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--cream); }
+    .v27-grid h6 { font-size: .52rem; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); margin-bottom: .55rem; font-weight: 600; }
+    .v27-grid a, .v27-grid p { font-size: .82rem; color: var(--cream); opacity: .8; display: block; padding: .15rem 0; }
+    .v27-grid a:hover { color: var(--gold); }
+    .v27-bot { max-width: 1100px; margin: .9rem auto 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-size: .5rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(226,221,201,.5); }
+    .v27-bot a { color: var(--gold); padding: 0 .3rem; }
+
+    /* V28 VELLUM MANUSCRIT — fond papier ancien */
+    .v28 { background: #f4ecd6; padding: 0; color: #3a2a14; position: relative; }
+    .v28::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3'/><feColorMatrix values='0 0 0 0 .42 0 0 0 0 .29 0 0 0 0 .12 0 0 0 .14 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"); opacity: .8; pointer-events: none; mix-blend-mode: multiply; }
+    .v28 a { color: #6b4d1f; }
+    .v28-c { position: relative; padding: 2.5rem 2.5rem 1.4rem; max-width: 980px; margin: 0 auto; }
+    .v28-h { text-align: center; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(58,42,20,.25); margin-bottom: 1.5rem; }
+    .v28-h .glyph { font-family: 'EB Garamond', serif; font-size: 2.2rem; color: #8a5a1f; }
+    .v28-h h2 { font-family: 'EB Garamond', serif; font-size: 1.9rem; font-weight: 500; color: #3a2a14; margin: .35rem 0; line-height: 1.1; }
+    .v28-h h2 em { font-style: italic; color: #8a5a1f; }
+    .v28-h .lat { font-family: 'Cinzel', serif; font-size: .58rem; letter-spacing: .35em; color: #6b4d1f; }
+    .v28-g { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(58,42,20,.2); }
+    .v28-g h6 { font-family: 'Cinzel', serif; font-size: .54rem; letter-spacing: .3em; color: #8a5a1f; margin-bottom: .6rem; }
+    .v28-g a, .v28-g p { font-family: 'EB Garamond', serif; font-size: .95rem; color: #3a2a14; opacity: .92; display: block; line-height: 1.55; padding: .12rem 0; }
+    .v28-g a:hover { color: #6b4d1f; text-decoration: underline; }
+    .v28-bot { padding-top: 1rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-family: 'Cinzel', serif; font-size: .5rem; letter-spacing: .25em; color: rgba(58,42,20,.65); }
+
+    /* V29 MONO NOIR & OR — luxe sobre */
+    .v29 { background: #000; padding: 3rem 2rem 1.4rem; color: var(--cream); }
+    .v29-w { max-width: 1180px; margin: 0 auto; }
+    .v29-mark { font-family: 'Cinzel', serif; font-size: clamp(2.4rem, 7vw, 5rem); font-weight: 400; color: var(--gold); letter-spacing: .15em; line-height: 1; margin-bottom: 2rem; text-align: center; text-shadow: 0 0 28px rgba(196,154,58,.4); }
+    .v29-rule { height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 auto 2rem; max-width: 240px; }
+    .v29-g { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(196,154,58,.18); }
+    .v29-g h6 { font-family: 'Cinzel', serif; font-size: .58rem; letter-spacing: .3em; color: var(--gold); margin-bottom: .8rem; }
+    .v29-g a, .v29-g p { font-family: 'Cormorant Garamond', serif; font-size: .98rem; color: var(--cream); opacity: .85; display: block; line-height: 1.6; padding: .15rem 0; transition: opacity .3s; }
+    .v29-g a:hover { opacity: 1; color: var(--gold); }
+    .v29-bot { padding-top: 1.2rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-family: 'Cinzel', serif; font-size: .52rem; letter-spacing: .3em; color: rgba(226,221,201,.5); }
+    .v29-bot a { color: var(--gold); padding: 0 .35rem; }
+
+    /* V30 COMPASS CARDINAL — N E S O orientation paroisse */
+    .v30 { background: linear-gradient(180deg, var(--green-deep), var(--green-ink)); padding: 2.5rem 2rem 1.4rem; }
+    .v30-w { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 280px 1fr; gap: 2.5rem; align-items: center; }
+    .v30-cp { width: 280px; height: 280px; position: relative; }
+    .v30-cp svg { width: 100%; height: 100%; }
+    .v30-c-l, .v30-c-r { display: flex; flex-direction: column; gap: 1.2rem; }
+    .v30-c-r { text-align: right; align-items: flex-end; }
+    .v30-it { display: flex; flex-direction: column; gap: .2rem; }
+    .v30-it .dir { font-family: 'Cinzel', serif; font-size: .56rem; letter-spacing: .35em; color: var(--gold); }
+    .v30-it .lbl { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--cream); }
+    .v30-it .lbl a:hover { color: var(--gold); }
+    .v30-it .sub { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: .82rem; color: var(--cream-dark); opacity: .65; }
+    .v30-bot { max-width: 1100px; margin: 1.4rem auto 0; padding-top: 1rem; border-top: 1px solid rgba(196,154,58,.12); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-family: 'Cinzel', serif; font-size: .5rem; letter-spacing: .25em; color: rgba(226,221,201,.5); }
+    .v30-bot a { color: var(--gold); padding: 0 .3rem; }
+
+    /* responsive lot 2 */
+    @media (max-width: 900px) {
+      .v16-credits, .v19-w, .v25-w, .v30-w { grid-template-columns: 1fr; }
+      .v17-row, .v20-mz, .v21-row, .v23-row2, .v27-grid, .v28-g, .v29-g { grid-template-columns: 1fr 1fr; }
+      .v17-row { gap: 8px; }
+      .v22-feat { grid-template-columns: 1fr; }
+      .v22-feat > div { border-right: none; border-bottom: 1px solid rgba(196,154,58,.15); }
+      .v22-feat > div:last-child { border-bottom: none; }
+      .v21-clk { width: 160px; height: 160px; }
+      .v21-row { gap: 2rem; }
+    }
+    @media (max-width: 580px) {
+      .v17-row, .v20-mz, .v21-row, .v23-row2, .v27-grid, .v28-g, .v29-g, .v24-g, .v26-stbot { grid-template-columns: 1fr; }
+      .v20-mz { grid-template-rows: auto; aspect-ratio: auto; }
+      .v20-t.bg { grid-row: auto; }
+      .v27-pl { grid-template-columns: 1fr; gap: 1rem; border-radius: 8px; }
+    }
+
     /* ────────── responsive global ──────── */
     @media (max-width: 900px) {
       .v1, .v12, .v10 { grid-template-columns: 1fr; }
@@ -404,8 +686,8 @@
 <body>
 
   <h1 class="preview-page-title">
-    Footer · 15 concepts originaux (lot 1/4)
-    <small>Lot suivant après ton retour. Indique les n° à garder.</small>
+    Footer · 30 concepts originaux (lots 1+2)
+    <small>Lots 3 et 4 à suivre. Indique les n° à garder.</small>
   </h1>
 
   <nav class="toc">
@@ -424,6 +706,21 @@
     <a href="#v13"><span>13</span>Orbite étoiles</a>
     <a href="#v14"><span>14</span>Liste verticale</a>
     <a href="#v15"><span>15</span>Dashboard liturgique</a>
+    <a href="#v16"><span>16</span>Cinéma scope</a>
+    <a href="#v17"><span>17</span>Iconostase 3 panneaux</a>
+    <a href="#v18"><span>18</span>Newsletter focus</a>
+    <a href="#v19"><span>19</span>Carte trésor</a>
+    <a href="#v20"><span>20</span>Vitrail mosaïque</a>
+    <a href="#v21"><span>21</span>Liturgie horaire (clock)</a>
+    <a href="#v22"><span>22</span>Magazine cover</a>
+    <a href="#v23"><span>23</span>Sceau wax stamp</a>
+    <a href="#v24"><span>24</span>Antiphonaire (chant)</a>
+    <a href="#v25"><span>25</span>Cathédrale 3 nefs</a>
+    <a href="#v26"><span>26</span>Stèle gravée</a>
+    <a href="#v27"><span>27</span>Liturgie radio</a>
+    <a href="#v28"><span>28</span>Vellum manuscrit</a>
+    <a href="#v29"><span>29</span>Mono noir & or</a>
+    <a href="#v30"><span>30</span>Compass cardinal</a>
   </nav>
 
   <!-- V1 -->
@@ -662,6 +959,328 @@
         <div class="v15-k"><div class="l">Adresse</div><div class="v" style="font-size:.95rem; font-style: italic;">Moulin de Senlis</div><div class="sb">91230 Montgeron</div></div>
       </div>
       <div class="v15-bot"><span class="l">© 2026 · Patriarcat de Moscou</span><div class="lk"><a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a><a href="#">Offices</a><a href="#">Contact</a><a href="#">Don</a></div><span class="lang"><a href="#">FR</a> · <a href="#">RU</a></span></div>
+    </footer></div>
+
+  <!-- V16 CINÉMA SCOPE -->
+  <div class="variant-wrap" id="v16"><div class="variant-label">16 <em>Cinéma scope — letterbox + générique de fin</em></div>
+    <footer class="ftr v16">
+      <div class="v16-bar"></div>
+      <div class="v16-stage">
+        <div class="v16-credits">
+          <h2 class="v16-title">Saint-Séraphim<small>De Sarov · Montgeron · MCMLVII</small></h2>
+          <dl class="v16-roll">
+            <dt>Adresse</dt><dd>Rue du Moulin de Senlis · 91230 Montgeron</dd>
+            <dt>Vêpres</dt><dd>Samedi · 18 h 00</dd>
+            <dt>Liturgie</dt><dd>Dimanche · 10 h 00</dd>
+            <dt>Visiter</dt><dd><a href="#">Accueil</a> · <a href="#">Le Saint</a> · <a href="#">Histoire</a> · <a href="#">Contact</a></dd>
+            <dt>Soutenir</dt><dd><a href="#">Faire un don</a></dd>
+            <dt>Juridiction</dt><dd>Patriarcat de Moscou · Diocèse de Chersonèse</dd>
+            <dt>Langues</dt><dd><a href="#">FR</a> · <a href="#">RU</a></dd>
+          </dl>
+        </div>
+        <div class="v16-end">— FIN · GLORIA IN EXCELSIS DEO —</div>
+      </div>
+      <div class="v16-bar"></div>
+    </footer></div>
+
+  <!-- V17 ICONOSTASE -->
+  <div class="variant-wrap" id="v17"><div class="variant-label">17 <em>Iconostase 3 panneaux — central plus haut</em></div>
+    <footer class="ftr v17">
+      <div class="v17-row">
+        <div class="v17-p">
+          <div class="arch"></div>
+          <svg class="cross" viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg>
+          <div class="ttl">Visiter</div>
+          <div class="lks"><a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a><a href="#">Offices</a></div>
+        </div>
+        <div class="v17-p cent">
+          <div class="arch"></div>
+          <svg class="cross" viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg>
+          <div class="ttl">Saint-Séraphim-de-Sarov</div>
+          <div class="desc">Paroisse orthodoxe russe à Montgeron, depuis 1957. Tradition liturgique russe.</div>
+          <a href="#" class="give">Faire un don →</a>
+        </div>
+        <div class="v17-p">
+          <div class="arch"></div>
+          <svg class="cross" viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg>
+          <div class="ttl">Offices</div>
+          <div class="lks"><a href="#">Samedi · 18 h</a><a href="#">Dimanche · 10 h</a><a href="#">Calendrier</a><a href="#">Contact</a></div>
+        </div>
+      </div>
+      <div class="v17-bot"><span>© 2026 · Patriarcat de Moscou · Diocèse de Chersonèse</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+    </footer></div>
+
+  <!-- V18 NEWSLETTER -->
+  <div class="variant-wrap" id="v18"><div class="variant-label">18 <em>Newsletter focus — un seul gros message</em></div>
+    <footer class="ftr v18">
+      <div class="v18-c">
+        <div class="v18-eyo">Lettre paroissiale</div>
+        <h2 class="v18-h2">Recevez les <em>offices</em><br>et la vie de la paroisse</h2>
+        <p class="v18-p">Annonces liturgiques, fêtes patronales, conférences et nouvelles de la communauté — directement dans votre boîte mail.</p>
+        <form class="v18-form" onsubmit="return false">
+          <input type="email" placeholder="votre adresse email"/>
+          <button type="submit">S'inscrire</button>
+        </form>
+        <div class="v18-l2"><a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a><a href="#">Offices</a><a href="#">Contact</a><a href="#">Faire un don</a></div>
+        <div class="v18-bot"><span>© 2026 · Patriarcat de Moscou</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+      </div>
+    </footer></div>
+
+  <!-- V19 CARTE TRÉSOR -->
+  <div class="variant-wrap" id="v19"><div class="variant-label">19 <em>Carte trésor — vieille map + épingle dorée</em></div>
+    <footer class="ftr v19"><div class="v19-w">
+      <div class="v19-map">
+        <svg class="contours" viewBox="0 0 100 60" preserveAspectRatio="none"><g stroke="rgba(196,154,58,.4)" stroke-width=".25" fill="none"><path d="M0 12 Q20 8 40 16 T80 20 T100 25"/><path d="M0 28 Q25 24 50 32 T100 38"/><path d="M0 42 Q30 36 60 44 T100 50"/><path d="M10 0 L20 60"/><path d="M55 0 L65 60"/><path d="M85 0 L92 60"/></g></svg>
+        <p class="v19-cap">Paroisse Saint-Séraphim-de-Sarov</p>
+        <div class="v19-pin"></div>
+        <div class="v19-coord">48.7144° N · 2.4518° E</div>
+      </div>
+      <div class="v19-r">
+        <div>
+          <div class="ey">ICI REPOSE LA PAROISSE</div>
+          <h3>Saint-Séraphim<br><em>de Sarov</em></h3>
+          <address>Rue du Moulin de Senlis<br>91230 Montgeron, France</address>
+        </div>
+        <div>
+          <div class="lks"><a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a><a href="#">Offices</a><a href="#">Contact</a><a href="#">Faire un don</a></div>
+        </div>
+        <a href="#" class="go">Itinéraire ↗</a>
+      </div>
+    </div></footer></div>
+
+  <!-- V20 VITRAIL MOSAÏQUE -->
+  <div class="variant-wrap" id="v20"><div class="variant-label">20 <em>Vitrail mosaïque — tuiles asymétriques</em></div>
+    <footer class="ftr v20">
+      <div class="v20-mz">
+        <div class="v20-t bg"><span class="h">Paroisse</span><div class="v">Saint-Séraphim<br>de-<em>Sarov</em></div></div>
+        <div class="v20-t"><span class="h">Samedi</span><div class="v">18:00<br><em>Vêpres</em></div></div>
+        <div class="v20-t dk"><span class="h">Adresse</span><div class="v" style="font-size:.85rem; font-style:italic">Rue du Moulin<br>91230 Montgeron</div></div>
+        <div class="v20-t"><span class="h">Visiter</span><a href="#" style="color:var(--cream); display:block; font-family:'Cormorant Garamond',serif; font-size:.95rem;">Accueil → Le Saint → Histoire</a></div>
+        <div class="v20-t dk"><span class="h">Dimanche</span><div class="v">10:00<br><em>Liturgie</em></div></div>
+        <div class="v20-t"><span class="h">Don</span><a href="#" style="color:var(--gold); font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-style:italic;">Faire un don →</a></div>
+        <div class="v20-t dk"><span class="h">FR · RU</span><div class="v" style="font-size:.95rem;"><a href="#" style="color:var(--gold)">FR</a> · <a href="#" style="color:var(--cream-dark); opacity:.7">RU</a></div></div>
+      </div>
+      <div class="v20-bot"><span>© 2026 · Patriarcat de Moscou</span><span>Diocèse de Chersonèse</span></div>
+    </footer></div>
+
+  <!-- V21 HORLOGE -->
+  <div class="variant-wrap" id="v21"><div class="variant-label">21 <em>Cadran horaire — heures liturgiques</em></div>
+    <footer class="ftr v21">
+      <div class="v21-row">
+        <div class="v21-clk">
+          <span class="v21-num v21-c1">XII</span>
+          <span class="v21-num v21-c2">I</span>
+          <span class="v21-num v21-c3">III</span>
+          <span class="v21-num v21-c4">V</span>
+          <span class="v21-num v21-c5">VI</span>
+          <span class="v21-num v21-c6">VII</span>
+          <span class="v21-num v21-c7">IX</span>
+          <span class="v21-num v21-c8">XI</span>
+          <div class="v21-hand"></div>
+          <div class="v21-ctr"></div>
+        </div>
+        <div class="v21-content">
+          <h3 class="v21-h3">Les heures <em>liturgiques</em><br>de la paroisse</h3>
+          <div class="v21-grid">
+            <div><h6>Samedi</h6><p>18 h 00<br><em>Grandes Vêpres</em></p></div>
+            <div><h6>Dimanche</h6><p>10 h 00<br><em>Divine Liturgie</em></p></div>
+            <div><h6>Visiter</h6><a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="v21-bot"><span>© MMXXVI · Patriarcat de Moscou</span><span><a href="#">FR</a> · <a href="#">RU</a> · <a href="#">Faire un don</a></span></div>
+    </footer></div>
+
+  <!-- V22 MAGAZINE COVER -->
+  <div class="variant-wrap" id="v22"><div class="variant-label">22 <em>Magazine cover — édition spéciale</em></div>
+    <footer class="ftr v22">
+      <div class="v22-top"><span>SÉRAPHIM · LE MENSUEL</span><span class="iss">№ 426 · Mai MMXXVI</span></div>
+      <div class="v22-h">
+        <div class="v22-tagline">Édition spéciale · Patrimoine orthodoxe</div>
+        <h1 class="v22-megatitle">Sara<em>phim</em></h1>
+        <p class="v22-sub">Paroisse orthodoxe russe à Montgeron, fondée en 1957 sur le domaine du Moulin de Senlis.</p>
+        <div class="v22-rule"></div>
+      </div>
+      <div class="v22-feat">
+        <div><div class="pp">P. I</div><div class="tt">Visiter <em>la paroisse</em> → Accueil, Le Saint, Histoire</div></div>
+        <div><div class="pp">P. II</div><div class="tt">Offices <em>liturgiques</em> · Samedi 18 h, Dimanche 10 h</div></div>
+        <div><div class="pp">P. III</div><div class="tt">Soutenir <em>la restauration</em> · Faire un don</div></div>
+      </div>
+      <div class="v22-bar"><span>© 2026 · Patriarcat de Moscou · Chersonèse</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+    </footer></div>
+
+  <!-- V23 SCEAU WAX -->
+  <div class="variant-wrap" id="v23"><div class="variant-label">23 <em>Sceau de cire — wax stamp doré</em></div>
+    <footer class="ftr v23">
+      <div class="v23-w">
+        <div class="v23-seal"><svg class="v23-seal-cross" viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg></div>
+        <div class="v23-ti">
+          <div class="v23-ey">PAR LE SCEAU DE LA PAROISSE</div>
+          <h3>Saint-Séraphim<br><em>de-Sarov · Montgeron</em></h3>
+          <p>Acquiers la paix intérieure et des milliers d'âmes trouveront le salut autour de toi.</p>
+        </div>
+      </div>
+      <div class="v23-row2">
+        <div class="v23-col"><h6>Visiter</h6><a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a></div>
+        <div class="v23-col"><h6>Offices</h6><p>Sam · 18 h<br>Dim · 10 h</p></div>
+        <div class="v23-col"><h6>Adresse</h6><p>Rue du Moulin<br>91230 Montgeron</p></div>
+        <div class="v23-col"><h6>Soutenir</h6><a href="#">Faire un don</a><a href="#">Contact</a></div>
+      </div>
+      <div class="v23-bot"><span>© MMXXVI · Patriarcat de Moscou</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+    </footer></div>
+
+  <!-- V24 ANTIPHONAIRE -->
+  <div class="variant-wrap" id="v24"><div class="variant-label">24 <em>Antiphonaire — partition byzantine</em></div>
+    <footer class="ftr v24">
+      <div class="v24-staff"></div>
+      <div class="v24-text">
+        <div class="v24-lyr">A-cquiers la paix in-té-rieu-re et des mil-liers d'â-mes trou-ve-ront le sa-<em>lut</em>...</div>
+        <div class="v24-g">
+          <div><h6>Visiter</h6><a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a></div>
+          <div><h6>Offices</h6><p>Sam · 18 h<br>Dim · 10 h</p></div>
+          <div><h6>Adresse</h6><p>Rue du Moulin<br>91230 Montgeron</p></div>
+          <div><h6>Soutenir</h6><a href="#">Faire un don</a><a href="#">Contact</a></div>
+        </div>
+        <div class="v24-bot"><span>© 2026 · Paroisse Saint-Séraphim — <em>Patriarcat de Moscou</em></span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+      </div>
+    </footer></div>
+
+  <!-- V25 CATHÉDRALE 3 NEFS -->
+  <div class="variant-wrap" id="v25"><div class="variant-label">25 <em>Cathédrale 3 nefs — nef centrale + bas-côtés</em></div>
+    <footer class="ftr v25">
+      <div class="v25-w">
+        <div class="v25-aisle">
+          <h5>Bas-côté Nord</h5>
+          <a href="#">Accueil</a>
+          <a href="#">Le Saint patron</a>
+          <a href="#">Histoire de la paroisse</a>
+          <a href="#">Offices liturgiques</a>
+        </div>
+        <div class="v25-nave">
+          <div class="v25-vault"><svg class="cross" viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg></div>
+          <span class="sub">PAROISSE · MONTGERON · 1957</span>
+          <h2>Saint-Séraphim<br><em>de Sarov</em></h2>
+          <p>Lieu de prière et de mémoire dans la tradition liturgique russe.</p>
+          <a href="#" class="give">Faire un don →</a>
+        </div>
+        <div class="v25-aisle">
+          <h5>Bas-côté Sud</h5>
+          <p>Rue du Moulin de Senlis<br>91230 Montgeron</p>
+          <p>Samedi 18 h · Vêpres<br>Dimanche 10 h · Liturgie</p>
+          <a href="#">Nous contacter</a>
+        </div>
+      </div>
+      <div class="v25-bot"><span>© MMXXVI · Patriarcat de Moscou · Chersonèse</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+    </footer></div>
+
+  <!-- V26 STÈLE GRAVÉE -->
+  <div class="variant-wrap" id="v26"><div class="variant-label">26 <em>Stèle gravée — pierre tombale dorée</em></div>
+    <footer class="ftr v26">
+      <div class="v26-st">
+        <svg class="cross" viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg>
+        <h1>SAINT-SÉRAPHIM<br>DE SAROV</h1>
+        <div class="anno">PAROISSE · ANNO MCMLVII · MONTGERON</div>
+        <p class="quote">Acquiers la paix intérieure et des milliers d'âmes trouveront le salut autour de toi.</p>
+      </div>
+      <div class="v26-stbot">
+        <div><h6>Visiter</h6><a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a></div>
+        <div><h6>Offices</h6><p>Sam · 18 h<br>Dim · 10 h</p></div>
+        <div><h6>Soutenir</h6><a href="#">Faire un don</a><a href="#">Contact</a></div>
+      </div>
+      <div class="v26-bot"><span>© MMXXVI · PATRIARCAT DE MOSCOU</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+    </footer></div>
+
+  <!-- V27 LITURGIE RADIO -->
+  <div class="variant-wrap" id="v27"><div class="variant-label">27 <em>Liturgie radio — player audio en cours</em></div>
+    <footer class="ftr v27">
+      <div class="v27-pl">
+        <div class="v27-play"></div>
+        <div class="v27-info">
+          <span class="nw">EN DIRECT · Office en cours</span>
+          <span class="ti">Grandes Vêpres — Chant byzantin · ton VIII</span>
+          <div class="v27-bar"><div></div></div>
+        </div>
+        <span class="v27-tm">42:18 / 1:02:34</span>
+      </div>
+      <div class="v27-grid">
+        <div class="id"><svg class="cross" viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg><span class="n">Saint-Séraphim-de-Sarov</span><p style="font-family:'Cormorant Garamond',serif; font-style:italic; opacity:.68; font-size:.85rem;">Paroisse · Montgeron · 1957</p></div>
+        <div><h6>Visiter</h6><a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a><a href="#">Offices</a></div>
+        <div><h6>Offices</h6><a href="#">Sam · 18 h</a><a href="#">Dim · 10 h</a><a href="#">Replay</a></div>
+        <div><h6>Soutenir</h6><a href="#">Faire un don</a><a href="#">Contact</a></div>
+      </div>
+      <div class="v27-bot"><span>© 2026 · Patriarcat de Moscou</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+    </footer></div>
+
+  <!-- V28 VELLUM MANUSCRIT -->
+  <div class="variant-wrap" id="v28"><div class="variant-label">28 <em>Vellum manuscrit — papier ancien beige</em></div>
+    <footer class="ftr v28">
+      <div class="v28-c">
+        <div class="v28-h">
+          <div class="glyph">☩</div>
+          <h2>Sancti Seraphim<br><em>de Sarov · Montgeron</em></h2>
+          <div class="lat">ANNO DOMINI MCMLVII</div>
+        </div>
+        <div class="v28-g">
+          <div><h6>Visitare</h6><a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a><a href="#">Offices</a></div>
+          <div><h6>Officia</h6><p>Sabbati · hora XVIII<br>Dominica · hora X</p></div>
+          <div><h6>Sustinere</h6><a href="#">Faire un don</a><a href="#">Contact</a></div>
+        </div>
+        <div class="v28-bot"><span>© MMXXVI · PATRIARCATUS MOSCOVIENSIS</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+      </div>
+    </footer></div>
+
+  <!-- V29 MONO NOIR & OR -->
+  <div class="variant-wrap" id="v29"><div class="variant-label">29 <em>Mono noir & or — luxe ultra sobre</em></div>
+    <footer class="ftr v29">
+      <div class="v29-w">
+        <h1 class="v29-mark">SARAPHIM</h1>
+        <div class="v29-rule"></div>
+        <div class="v29-g">
+          <div><h6>Paroisse</h6><p style="font-style:italic;">Russe orthodoxe<br>fondée en 1957</p></div>
+          <div><h6>Visiter</h6><a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a><a href="#">Offices</a></div>
+          <div><h6>Offices</h6><a href="#">Sam · 18 h</a><a href="#">Dim · 10 h</a><a href="#">Calendrier</a></div>
+          <div><h6>Soutenir</h6><a href="#">Faire un don</a><a href="#">Contact</a></div>
+        </div>
+        <div class="v29-bot"><span>© MMXXVI · PATRIARCATVS MOSCOVIENSIS</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+      </div>
+    </footer></div>
+
+  <!-- V30 COMPASS CARDINAL -->
+  <div class="variant-wrap" id="v30"><div class="variant-label">30 <em>Boussole cardinale — 4 points de repère</em></div>
+    <footer class="ftr v30">
+      <div class="v30-w">
+        <div class="v30-c-l">
+          <div class="v30-it"><span class="dir">N · NAVIGUER</span><span class="lbl"><a href="#">Accueil · Le Saint · Histoire</a></span><span class="sub">Découvrir la paroisse et son saint patron</span></div>
+          <div class="v30-it"><span class="dir">O · OFFICES</span><span class="lbl"><a href="#">Samedi 18 h · Dimanche 10 h</a></span><span class="sub">Grandes Vêpres et Divine Liturgie</span></div>
+        </div>
+        <div class="v30-cp">
+          <svg viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="92" fill="none" stroke="#C49A3A" stroke-width="1" opacity=".4"/>
+            <circle cx="100" cy="100" r="78" fill="none" stroke="#C49A3A" stroke-width=".5" opacity=".3" stroke-dasharray="2 4"/>
+            <g stroke="#C49A3A" stroke-width="1.5" opacity=".8">
+              <line x1="100" y1="14" x2="100" y2="32"/>
+              <line x1="100" y1="168" x2="100" y2="186"/>
+              <line x1="14" y1="100" x2="32" y2="100"/>
+              <line x1="168" y1="100" x2="186" y2="100"/>
+            </g>
+            <g fill="#C49A3A" font-family="Cinzel, serif" font-size="11" letter-spacing="2" text-anchor="middle">
+              <text x="100" y="10">N</text>
+              <text x="100" y="198">S</text>
+              <text x="10" y="105">O</text>
+              <text x="194" y="105">E</text>
+            </g>
+            <polygon points="100,40 110,100 100,108 90,100" fill="#C49A3A"/>
+            <polygon points="100,160 90,100 100,92 110,100" fill="#C49A3A" opacity=".4"/>
+            <circle cx="100" cy="100" r="6" fill="#0E261F" stroke="#C49A3A" stroke-width="1.5"/>
+            <svg x="86" y="60" width="28" height="38" viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1" fill="#C49A3A"/><rect x="16" y="8" width="28" height="7" rx="1" fill="#C49A3A"/><rect x="6" y="28" width="48" height="8" rx="1" fill="#C49A3A"/><polygon points="14,62 46,68 46,74 14,68" fill="#C49A3A"/></svg>
+          </svg>
+        </div>
+        <div class="v30-c-r">
+          <div class="v30-it"><span class="dir">E · ENTRÉE</span><span class="lbl"><a href="#">Rue du Moulin de Senlis</a></span><span class="sub">91230 Montgeron · France</span></div>
+          <div class="v30-it"><span class="dir">S · SOUTENIR</span><span class="lbl"><a href="#">Faire un don · Contact</a></span><span class="sub">Préserver ce lieu de prière</span></div>
+        </div>
+      </div>
+      <div class="v30-bot"><span>© MMXXVI · PATRIARCAT DE MOSCOU · CHERSONÈSE</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
     </footer></div>
 
 </body>
