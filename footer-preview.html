@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Footer — 5 variantes sobres</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-deep: #1B3D33;
+      --green-ink:  #0E261F;
+      --green-mid:  #2E5D4F;
+      --gold:       #C49A3A;
+      --gold-light: #E0BE6E;
+      --cream:      #F4F0E4;
+      --cream-dark: #E2DDC9;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #1a1a1a;
+      color: var(--cream);
+      font-family: 'Inter', sans-serif;
+      padding: 2rem;
+    }
+    .preview-page-title {
+      max-width: 1200px;
+      margin: 0 auto 2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--gold);
+      font-weight: 400;
+    }
+    .preview-page-title small {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: .7rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.5);
+      margin-top: .35rem;
+    }
+    .variant-wrap {
+      max-width: 1280px;
+      margin: 0 auto 3.5rem;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .variant-label {
+      padding: .9rem 1.5rem;
+      background: #111;
+      font-family: 'Inter', sans-serif;
+      font-size: .68rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .variant-label em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: .95rem;
+      letter-spacing: 0;
+      text-transform: none;
+      color: rgba(255,255,255,.55);
+      font-weight: 400;
+    }
+
+    /* ═══════════════ COMMUNES ═══════════════ */
+    .ftr {
+      background: linear-gradient(180deg, var(--green-deep) 0%, var(--green-ink) 100%);
+      color: var(--cream-dark);
+      font-family: 'Inter', sans-serif;
+    }
+    .ftr a { text-decoration: none; color: inherit; }
+    .ftr .cor { font-family: 'Cormorant Garamond', serif; }
+
+    /* ═════════════════════════════════════════════════════════
+       V1 — MINIMAL CENTRÉ
+       Tout centré, une seule ligne, juste l'essentiel
+       ═════════════════════════════════════════════════════════ */
+    .v1 { padding: 3rem 2rem; text-align: center; }
+    .v1-cross {
+      width: 18px; height: 25px;
+      fill: var(--gold);
+      opacity: .85;
+      margin-bottom: 1.4rem;
+    }
+    .v1-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--cream);
+      margin-bottom: .35rem;
+    }
+    .v1-sub {
+      font-size: .58rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      opacity: .8;
+      margin-bottom: 2rem;
+    }
+    .v1-rule {
+      width: 36px; height: 1px;
+      background: var(--gold);
+      opacity: .4;
+      margin: 0 auto 2rem;
+    }
+    .v1-links {
+      display: inline-flex;
+      gap: 2.2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .v1-links a {
+      font-size: .68rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--cream-dark);
+      opacity: .7;
+      font-weight: 500;
+      transition: color .3s, opacity .3s;
+    }
+    .v1-links a:hover { color: var(--gold); opacity: 1; }
+    .v1-bottom {
+      padding-top: 1.6rem;
+      border-top: 1px solid rgba(196,154,58,.12);
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      font-size: .58rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(226,221,201,.45);
+    }
+    .v1-bottom .sep { color: var(--gold); opacity: .5; }
+
+    /* ═════════════════════════════════════════════════════════
+       V2 — 2 COLONNES ÉPURÉES
+       Identité gauche / Liens + horaires droite
+       ═════════════════════════════════════════════════════════ */
+    .v2 { padding: 3.2rem 3rem 1.4rem; }
+    .v2-main {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 4rem;
+      padding-bottom: 2.4rem;
+      border-bottom: 1px solid rgba(196,154,58,.1);
+    }
+    .v2-brand-head {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      margin-bottom: 1rem;
+    }
+    .v2-brand-head svg { width: 20px; height: 28px; fill: var(--gold); }
+    .v2-brand-head .name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      color: var(--cream);
+      font-weight: 500;
+    }
+    .v2-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--cream-dark);
+      opacity: .75;
+      line-height: 1.6;
+      max-width: 380px;
+      margin-bottom: 1.2rem;
+    }
+    .v2-meta {
+      font-size: .56rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: .8;
+      font-weight: 600;
+    }
+    .v2-meta span { margin: 0 .6rem; opacity: .4; }
+    .v2-right { display: flex; flex-direction: column; gap: 1.4rem; }
+    .v2-col-title {
+      font-size: .58rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: .8;
+      font-weight: 600;
+      margin-bottom: .8rem;
+    }
+    .v2-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .25rem 1.4rem;
+    }
+    .v2-links a {
+      font-size: .82rem;
+      color: var(--cream-dark);
+      opacity: .72;
+      padding: .25rem 0;
+      transition: color .3s, opacity .3s;
+    }
+    .v2-links a:hover { color: var(--gold); opacity: 1; }
+    .v2-hours {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .v2-hour { display: flex; flex-direction: column; gap: .15rem; }
+    .v2-hour .d {
+      font-size: .54rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: .8;
+      font-weight: 600;
+    }
+    .v2-hour .t {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--cream);
+    }
+    .v2-bottom {
+      max-width: 1100px;
+      margin: 1.4rem auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: .56rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(226,221,201,.4);
+    }
+    .v2-lang a { padding: 0 .35rem; opacity: .55; color: var(--cream-dark); }
+    .v2-lang a:hover, .v2-lang a.act { color: var(--gold); opacity: 1; }
+
+    /* ═════════════════════════════════════════════════════════
+       V3 — LIGNE UNIQUE (TRÈS SOBRE)
+       Tout sur une ligne en pied de page, façon site éditorial
+       ═════════════════════════════════════════════════════════ */
+    .v3 { padding: 2rem 2.5rem; }
+    .v3-row {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    .v3-id {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+    }
+    .v3-id svg { width: 16px; height: 22px; fill: var(--gold); }
+    .v3-id span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--cream);
+    }
+    .v3-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+    .v3-links a {
+      font-size: .64rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--cream-dark);
+      opacity: .7;
+      transition: color .3s, opacity .3s;
+    }
+    .v3-links a:hover { color: var(--gold); opacity: 1; }
+    .v3-cta {
+      font-size: .62rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--gold);
+      border: 1px solid rgba(196,154,58,.4);
+      padding: .65rem 1.2rem;
+      transition: all .3s;
+    }
+    .v3-cta:hover { background: var(--gold); color: var(--green-ink); border-color: var(--gold); }
+    .v3-sub {
+      max-width: 1200px;
+      margin: 1.2rem auto 0;
+      padding-top: 1.1rem;
+      border-top: 1px solid rgba(196,154,58,.08);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: .56rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(226,221,201,.4);
+    }
+    .v3-sub a { color: var(--cream-dark); opacity: .55; padding: 0 .35rem; }
+    .v3-sub a:hover, .v3-sub a.act { color: var(--gold); opacity: 1; }
+
+    /* ═════════════════════════════════════════════════════════
+       V4 — STACK VERTICAL ÉLÉGANT
+       Tout aligné à gauche, en colonne, façon "À propos"
+       ═════════════════════════════════════════════════════════ */
+    .v4 { padding: 3.5rem 3rem; }
+    .v4-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+    .v4-cross {
+      width: 22px; height: 30px;
+      fill: var(--gold);
+      opacity: .9;
+    }
+    .v4-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--cream);
+      line-height: 1.25;
+    }
+    .v4-desc {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--cream-dark);
+      opacity: .72;
+      max-width: 520px;
+    }
+    .v4-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem 2.5rem;
+      padding: 1.6rem 0;
+      border-top: 1px solid rgba(196,154,58,.12);
+      border-bottom: 1px solid rgba(196,154,58,.12);
+    }
+    .v4-item .l {
+      font-size: .54rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: .8;
+      font-weight: 600;
+      display: block;
+      margin-bottom: .35rem;
+    }
+    .v4-item .v {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .95rem;
+      color: var(--cream);
+    }
+    .v4-item .v em {
+      font-style: italic;
+      color: var(--cream-dark);
+      opacity: .75;
+      font-size: .85rem;
+    }
+    .v4-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+    }
+    .v4-links a {
+      font-size: .66rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--cream-dark);
+      opacity: .7;
+      transition: color .3s;
+    }
+    .v4-links a:hover { color: var(--gold); opacity: 1; }
+    .v4-bot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: .56rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(226,221,201,.4);
+    }
+    .v4-bot a { color: var(--cream-dark); opacity: .55; padding: 0 .35rem; }
+    .v4-bot a:hover, .v4-bot a.act { color: var(--gold); opacity: 1; }
+
+    /* ═════════════════════════════════════════════════════════
+       V5 — 3 COLONNES CLASSIQUES (sobre, équilibré)
+       Identité / Liens / Contact — sans CTA tape-à-l'œil
+       ═════════════════════════════════════════════════════════ */
+    .v5 { padding: 3.2rem 3rem 1.4rem; }
+    .v5-main {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 3.5rem;
+      padding-bottom: 2.4rem;
+      border-bottom: 1px solid rgba(196,154,58,.1);
+    }
+    .v5-brand {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      margin-bottom: 1rem;
+    }
+    .v5-brand svg { width: 22px; height: 30px; fill: var(--gold); }
+    .v5-brand .n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--cream);
+      font-weight: 500;
+    }
+    .v5-brand .s {
+      display: block;
+      font-size: .54rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: .8;
+      font-weight: 600;
+      margin-top: .25rem;
+    }
+    .v5-desc {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: .92rem;
+      line-height: 1.65;
+      color: var(--cream-dark);
+      opacity: .68;
+      max-width: 320px;
+    }
+    .v5-col-h {
+      font-size: .56rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: .85;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .v5-list { list-style: none; display: flex; flex-direction: column; gap: .45rem; }
+    .v5-list a {
+      font-size: .82rem;
+      color: var(--cream-dark);
+      opacity: .72;
+      transition: color .3s, padding-left .3s;
+    }
+    .v5-list a:hover { color: var(--gold); opacity: 1; padding-left: .25rem; }
+    .v5-addr {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .92rem;
+      line-height: 1.55;
+      color: var(--cream);
+      opacity: .88;
+      margin-bottom: 1rem;
+      font-style: normal;
+    }
+    .v5-hours {
+      display: flex;
+      flex-direction: column;
+      gap: .35rem;
+    }
+    .v5-hours .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: .78rem;
+    }
+    .v5-hours .d {
+      font-size: .56rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: .85;
+      font-weight: 600;
+    }
+    .v5-hours .t {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--cream);
+      font-size: .92rem;
+    }
+    .v5-bottom {
+      max-width: 1180px;
+      margin: 1.4rem auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: .56rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(226,221,201,.4);
+    }
+    .v5-lang a { padding: 0 .35rem; opacity: .55; color: var(--cream-dark); }
+    .v5-lang a:hover, .v5-lang a.act { color: var(--gold); opacity: 1; }
+  </style>
+</head>
+<body>
+
+  <h1 class="preview-page-title">
+    Footer · 5 variantes sobres
+    <small>Indique laquelle tu veux que j'applique sur le site</small>
+  </h1>
+
+  <!-- ═════════════ V1 ═════════════ -->
+  <div class="variant-wrap">
+    <div class="variant-label">Variante 1 <em>Minimaliste centré</em></div>
+    <footer class="ftr v1">
+      <svg class="v1-cross" viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg>
+      <div class="v1-name">Saint-Séraphim-de-Sarov</div>
+      <div class="v1-sub">Paroisse orthodoxe · Montgeron</div>
+      <div class="v1-rule"></div>
+      <nav class="v1-links">
+        <a href="#">Accueil</a>
+        <a href="#">Le Saint</a>
+        <a href="#">Histoire</a>
+        <a href="#">Offices</a>
+        <a href="#">Contact</a>
+        <a href="#">Faire un don</a>
+      </nav>
+      <div class="v1-bottom">
+        <span>© 2026 · Paroisse Saint-Séraphim</span>
+        <span class="sep">·</span>
+        <span>Patriarcat de Moscou</span>
+        <span class="sep">·</span>
+        <span>FR · RU</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ═════════════ V2 ═════════════ -->
+  <div class="variant-wrap">
+    <div class="variant-label">Variante 2 <em>Deux colonnes équilibrées</em></div>
+    <footer class="ftr v2">
+      <div class="v2-main">
+        <div>
+          <div class="v2-brand-head">
+            <svg viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg>
+            <span class="name">Saint-Séraphim-de-Sarov</span>
+          </div>
+          <p class="v2-tagline">Paroisse orthodoxe russe fondée en 1957 sur le domaine du Moulin de Senlis, à Montgeron.</p>
+          <div class="v2-meta">Depuis 1957<span>·</span>Slavon · Français</div>
+        </div>
+        <div class="v2-right">
+          <div>
+            <div class="v2-col-title">Visiter</div>
+            <div class="v2-links">
+              <a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a><a href="#">Offices</a><a href="#">Contact</a><a href="#">Faire un don</a>
+            </div>
+          </div>
+          <div>
+            <div class="v2-col-title">Offices</div>
+            <div class="v2-hours">
+              <div class="v2-hour"><span class="d">Samedi</span><span class="t">18:00 — Grandes Vêpres</span></div>
+              <div class="v2-hour"><span class="d">Dimanche</span><span class="t">10:00 — Divine Liturgie</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="v2-bottom">
+        <span>© 2026 · Paroisse Saint-Séraphim-de-Sarov · Patriarcat de Moscou</span>
+        <span class="v2-lang"><a class="act" href="#">FR</a> · <a href="#">RU</a></span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ═════════════ V3 ═════════════ -->
+  <div class="variant-wrap">
+    <div class="variant-label">Variante 3 <em>Ligne unique éditoriale</em></div>
+    <footer class="ftr v3">
+      <div class="v3-row">
+        <div class="v3-id">
+          <svg viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg>
+          <span>Saint-Séraphim-de-Sarov</span>
+        </div>
+        <nav class="v3-links">
+          <a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a><a href="#">Offices</a><a href="#">Contact</a>
+        </nav>
+        <a href="#" class="v3-cta">Faire un don</a>
+      </div>
+      <div class="v3-sub">
+        <span>© 2026 · Paroisse orthodoxe russe · Montgeron · Patriarcat de Moscou</span>
+        <span><a class="act" href="#">FR</a> · <a href="#">RU</a></span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ═════════════ V4 ═════════════ -->
+  <div class="variant-wrap">
+    <div class="variant-label">Variante 4 <em>Stack vertical aligné</em></div>
+    <footer class="ftr v4">
+      <div class="v4-inner">
+        <svg class="v4-cross" viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg>
+        <div class="v4-name">Saint-Séraphim-de-Sarov<br>Paroisse orthodoxe russe</div>
+        <p class="v4-desc">Fondée en 1957 sur le domaine du Moulin de Senlis. Lieu de prière et de mémoire dans la tradition liturgique russe, à Montgeron.</p>
+        <div class="v4-grid">
+          <div class="v4-item">
+            <span class="l">Adresse</span>
+            <span class="v">Rue du Moulin de Senlis<br><em>91230 Montgeron, France</em></span>
+          </div>
+          <div class="v4-item">
+            <span class="l">Offices</span>
+            <span class="v">Samedi 18 h · Dimanche 10 h<br><em>Vêpres · Divine Liturgie</em></span>
+          </div>
+        </div>
+        <nav class="v4-links">
+          <a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a><a href="#">Offices</a><a href="#">Contact</a><a href="#">Faire un don</a>
+        </nav>
+        <div class="v4-bot">
+          <span>© 2026 · Patriarcat de Moscou · Diocèse de Chersonèse</span>
+          <span><a class="act" href="#">FR</a> · <a href="#">RU</a></span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ═════════════ V5 ═════════════ -->
+  <div class="variant-wrap">
+    <div class="variant-label">Variante 5 <em>Trois colonnes classiques</em></div>
+    <footer class="ftr v5">
+      <div class="v5-main">
+        <div>
+          <div class="v5-brand">
+            <svg viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg>
+            <div>
+              <span class="n">Saint-Séraphim-de-Sarov</span>
+              <span class="s">Paroisse orthodoxe russe</span>
+            </div>
+          </div>
+          <p class="v5-desc">Fondée en 1957 sur le domaine du Moulin de Senlis. Lieu de prière dans la tradition liturgique russe.</p>
+        </div>
+        <div>
+          <div class="v5-col-h">Visiter</div>
+          <ul class="v5-list">
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Le Saint</a></li>
+            <li><a href="#">Histoire</a></li>
+            <li><a href="#">Offices</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Faire un don</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="v5-col-h">Nous trouver</div>
+          <address class="v5-addr">Rue du Moulin de Senlis<br>91230 Montgeron, France</address>
+          <div class="v5-hours">
+            <div class="row"><span class="d">Samedi</span><span class="t">18:00 · Vêpres</span></div>
+            <div class="row"><span class="d">Dimanche</span><span class="t">10:00 · Liturgie</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="v5-bottom">
+        <span>© 2026 · Paroisse Saint-Séraphim-de-Sarov · Patriarcat de Moscou</span>
+        <span class="v5-lang"><a class="act" href="#">FR</a> · <a href="#">RU</a></span>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
