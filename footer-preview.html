@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Footer — 5 variantes sobres</title>
+  <title>Footer — 5 concepts originaux</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
       --green-deep: #1B3D33;
       --green-ink:  #0E261F;
       --green-mid:  #2E5D4F;
+      --green-soft: #243A33;
       --gold:       #C49A3A;
       --gold-light: #E0BE6E;
       --cream:      #F4F0E4;
@@ -19,7 +20,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background: #1a1a1a;
+      background: #0a0a0a;
       color: var(--cream);
       font-family: 'Inter', sans-serif;
       padding: 2rem;
@@ -35,32 +36,33 @@
     .preview-page-title small {
       display: block;
       font-family: 'Inter', sans-serif;
-      font-size: .7rem;
-      letter-spacing: .2em;
+      font-size: .68rem;
+      letter-spacing: .22em;
       text-transform: uppercase;
       color: rgba(255,255,255,.5);
       margin-top: .35rem;
     }
     .variant-wrap {
       max-width: 1280px;
-      margin: 0 auto 3.5rem;
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 4px;
+      margin: 0 auto 3rem;
+      border: 1px solid rgba(255,255,255,.06);
       overflow: hidden;
+      border-radius: 2px;
     }
     .variant-label {
       padding: .9rem 1.5rem;
       background: #111;
       font-family: 'Inter', sans-serif;
-      font-size: .68rem;
+      font-size: .66rem;
       letter-spacing: .25em;
       text-transform: uppercase;
       color: var(--gold);
       font-weight: 600;
-      border-bottom: 1px solid rgba(255,255,255,.06);
+      border-bottom: 1px solid rgba(255,255,255,.05);
       display: flex;
       justify-content: space-between;
       align-items: baseline;
+      gap: 1rem;
     }
     .variant-label em {
       font-family: 'Cormorant Garamond', serif;
@@ -68,617 +70,992 @@
       font-size: .95rem;
       letter-spacing: 0;
       text-transform: none;
-      color: rgba(255,255,255,.55);
+      color: rgba(255,255,255,.6);
       font-weight: 400;
     }
 
-    /* ═══════════════ COMMUNES ═══════════════ */
-    .ftr {
-      background: linear-gradient(180deg, var(--green-deep) 0%, var(--green-ink) 100%);
-      color: var(--cream-dark);
-      font-family: 'Inter', sans-serif;
-    }
+    .ftr { color: var(--cream-dark); font-family: 'Inter', sans-serif; }
     .ftr a { text-decoration: none; color: inherit; }
     .ftr .cor { font-family: 'Cormorant Garamond', serif; }
 
     /* ═════════════════════════════════════════════════════════
-       V1 — MINIMAL CENTRÉ
-       Tout centré, une seule ligne, juste l'essentiel
+       V1 — RIDEAU LITURGIQUE
+       Tendance "split screen" : moitié verte sombre / moitié image
+       icône en symétrie, calendrier liturgique vivant à gauche
        ═════════════════════════════════════════════════════════ */
-    .v1 { padding: 3rem 2rem; text-align: center; }
-    .v1-cross {
-      width: 18px; height: 25px;
-      fill: var(--gold);
-      opacity: .85;
-      margin-bottom: 1.4rem;
-    }
-    .v1-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      font-weight: 500;
-      color: var(--cream);
-      margin-bottom: .35rem;
-    }
-    .v1-sub {
-      font-size: .58rem;
-      letter-spacing: .28em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 600;
-      opacity: .8;
-      margin-bottom: 2rem;
-    }
-    .v1-rule {
-      width: 36px; height: 1px;
-      background: var(--gold);
-      opacity: .4;
-      margin: 0 auto 2rem;
-    }
-    .v1-links {
-      display: inline-flex;
-      gap: 2.2rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 2rem;
-    }
-    .v1-links a {
-      font-size: .68rem;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: var(--cream-dark);
-      opacity: .7;
-      font-weight: 500;
-      transition: color .3s, opacity .3s;
-    }
-    .v1-links a:hover { color: var(--gold); opacity: 1; }
-    .v1-bottom {
-      padding-top: 1.6rem;
-      border-top: 1px solid rgba(196,154,58,.12);
-      display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-      flex-wrap: wrap;
-      font-size: .58rem;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: rgba(226,221,201,.45);
-    }
-    .v1-bottom .sep { color: var(--gold); opacity: .5; }
-
-    /* ═════════════════════════════════════════════════════════
-       V2 — 2 COLONNES ÉPURÉES
-       Identité gauche / Liens + horaires droite
-       ═════════════════════════════════════════════════════════ */
-    .v2 { padding: 3.2rem 3rem 1.4rem; }
-    .v2-main {
-      max-width: 1100px;
-      margin: 0 auto;
+    .v1 {
       display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 4rem;
-      padding-bottom: 2.4rem;
+      grid-template-columns: 1fr 1fr;
+      min-height: 420px;
+      background: var(--green-ink);
+      position: relative;
+    }
+    .v1-left {
+      padding: 3.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
+      position: relative;
+      background:
+        radial-gradient(ellipse 60% 60% at 20% 30%, rgba(196,154,58,.08), transparent),
+        var(--green-ink);
+    }
+    .v1-tickers {
+      display: flex;
+      flex-direction: column;
+      gap: .9rem;
+    }
+    .v1-ticker {
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      align-items: baseline;
+      gap: 1.2rem;
+      padding-bottom: .7rem;
       border-bottom: 1px solid rgba(196,154,58,.1);
     }
-    .v2-brand-head {
-      display: flex;
-      align-items: center;
-      gap: .8rem;
-      margin-bottom: 1rem;
+    .v1-ticker.now { border-bottom-color: rgba(196,154,58,.45); }
+    .v1-ticker .date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .68rem;
+      color: var(--gold);
+      letter-spacing: .12em;
+      font-weight: 500;
     }
-    .v2-brand-head svg { width: 20px; height: 28px; fill: var(--gold); }
-    .v2-brand-head .name {
+    .v1-ticker .ev {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.15rem;
       color: var(--cream);
-      font-weight: 500;
+      letter-spacing: -.005em;
     }
-    .v2-tagline {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1.05rem;
+    .v1-ticker.now .ev { color: var(--gold-light); }
+    .v1-ticker .time {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .65rem;
       color: var(--cream-dark);
-      opacity: .75;
-      line-height: 1.6;
-      max-width: 380px;
-      margin-bottom: 1.2rem;
+      opacity: .55;
     }
-    .v2-meta {
-      font-size: .56rem;
-      letter-spacing: .25em;
+    .v1-ticker.now .time { color: var(--gold); opacity: .85; }
+    .v1-now-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .54rem;
+      letter-spacing: .3em;
       text-transform: uppercase;
       color: var(--gold);
-      opacity: .8;
       font-weight: 600;
+      margin-bottom: .8rem;
     }
-    .v2-meta span { margin: 0 .6rem; opacity: .4; }
-    .v2-right { display: flex; flex-direction: column; gap: 1.4rem; }
-    .v2-col-title {
-      font-size: .58rem;
+    .v1-now-pill::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 8px var(--gold);
+    }
+    .v1-foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      font-size: .56rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(226,221,201,.5);
+    }
+    .v1-foot a { color: var(--gold); opacity: .85; padding: 0 .3rem; }
+    .v1-right {
+      padding: 3.5rem 3rem;
+      background:
+        radial-gradient(ellipse at 70% 50%, rgba(196,154,58,.12), transparent 60%),
+        linear-gradient(135deg, #0a1c16 0%, var(--green-ink) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
+      position: relative;
+      border-left: 1px solid rgba(196,154,58,.18);
+    }
+    .v1-right::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 0;
+      transform: translate(-50%, -50%);
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 6px solid var(--green-ink);
+      z-index: 2;
+    }
+    .v1-icon {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+    }
+    .v1-icon svg {
+      width: 34px; height: 46px;
+      fill: var(--gold);
+      filter: drop-shadow(0 0 20px rgba(196,154,58,.35));
+    }
+    .v1-icon-text { display: flex; flex-direction: column; gap: .35rem; }
+    .v1-icon-text .name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1;
+    }
+    .v1-icon-text .sub {
+      font-size: .56rem;
       letter-spacing: .28em;
       text-transform: uppercase;
       color: var(--gold);
       opacity: .8;
       font-weight: 600;
-      margin-bottom: .8rem;
     }
-    .v2-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .25rem 1.4rem;
-    }
-    .v2-links a {
-      font-size: .82rem;
+    .v1-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      line-height: 1.5;
       color: var(--cream-dark);
-      opacity: .72;
-      padding: .25rem 0;
-      transition: color .3s, opacity .3s;
+      opacity: .82;
+      max-width: 380px;
     }
-    .v2-links a:hover { color: var(--gold); opacity: 1; }
-    .v2-hours {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .v2-hour { display: flex; flex-direction: column; gap: .15rem; }
-    .v2-hour .d {
+    .v1-quote::before { content: '« '; color: var(--gold); }
+    .v1-quote::after  { content: ' »'; color: var(--gold); }
+    .v1-cite {
+      display: block;
+      margin-top: .8rem;
+      font-family: 'Inter', sans-serif;
       font-size: .54rem;
-      letter-spacing: .25em;
+      letter-spacing: .28em;
       text-transform: uppercase;
       color: var(--gold);
       opacity: .8;
       font-weight: 600;
     }
-    .v2-hour .t {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      color: var(--cream);
+    .v1-give {
+      display: inline-flex;
+      align-items: center;
+      gap: .7rem;
+      align-self: flex-start;
+      font-size: .64rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--green-ink);
+      background: var(--gold);
+      padding: .9rem 1.5rem;
+      border-radius: 999px;
+      transition: transform .3s, background .3s;
     }
-    .v2-bottom {
+    .v1-give:hover { background: var(--gold-light); transform: translateX(4px); }
+    .v1-give svg { width: 14px; height: 10px; }
+
+    /* ═════════════════════════════════════════════════════════
+       V2 — ICÔNE TABLET
+       Footer en forme d'icône orthodoxe encadrée, contenu dans
+       un retable byzantin avec arches et tympan or
+       ═════════════════════════════════════════════════════════ */
+    .v2 {
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(196,154,58,.1), transparent 60%),
+        linear-gradient(180deg, #14302a 0%, var(--green-ink) 100%);
+      padding: 5rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .v2-frame {
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+      padding: 0;
+    }
+    .v2-arch {
+      position: relative;
+      padding: 3rem 2.5rem 2.5rem;
+      background:
+        linear-gradient(180deg, rgba(196,154,58,.04), transparent 80%);
+      border: 1px solid rgba(196,154,58,.25);
+      border-bottom: none;
+      border-radius: 50% 50% 0 0 / 80px 80px 0 0;
+      text-align: center;
+    }
+    .v2-arch::before, .v2-arch::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 8px; height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+    .v2-arch::before { left: -4px; }
+    .v2-arch::after  { right: -4px; }
+    .v2-arch-top {
+      width: 60px; height: 60px;
+      margin: 0 auto 1.4rem;
+      border-radius: 50%;
+      border: 1px solid rgba(196,154,58,.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--green-ink);
+    }
+    .v2-arch-top svg {
+      width: 24px; height: 33px;
+      fill: var(--gold);
+    }
+    .v2-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: var(--cream);
+      font-weight: 400;
+      line-height: 1.05;
+      margin-bottom: .35rem;
+    }
+    .v2-sub {
+      font-size: .56rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: .8;
+      font-weight: 600;
+      margin-bottom: 1.6rem;
+    }
+    .v2-rule {
+      width: 28px; height: 1px;
+      background: var(--gold);
+      opacity: .5;
+      margin: 0 auto 1.5rem;
+    }
+    .v2-prayer {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--cream-dark);
+      opacity: .82;
+      max-width: 460px;
+      margin: 0 auto 2rem;
+    }
+    .v2-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+      padding: 1.6rem 2rem;
+      border-top: 1px solid rgba(196,154,58,.18);
+      border-left: 1px solid rgba(196,154,58,.25);
+      border-right: 1px solid rgba(196,154,58,.25);
+      background: rgba(0,0,0,.18);
+    }
+    .v2-cols .col h4 {
+      font-size: .52rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: .8;
+      font-weight: 600;
+      margin-bottom: .55rem;
+    }
+    .v2-cols .col p, .v2-cols .col a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .82rem;
+      color: var(--cream);
+      opacity: .85;
+      display: block;
+      line-height: 1.5;
+    }
+    .v2-cols .col a { transition: color .3s; opacity: .72; }
+    .v2-cols .col a:hover { color: var(--gold); opacity: 1; }
+    .v2-base {
+      padding: .9rem 2rem;
+      border: 1px solid rgba(196,154,58,.25);
+      background: rgba(0,0,0,.3);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: .54rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(226,221,201,.45);
+    }
+    .v2-base a { color: var(--gold); opacity: .9; padding: 0 .35rem; }
+
+    /* ═════════════════════════════════════════════════════════
+       V3 — TYPO MASSIVE OUTLINE
+       Énorme mot-signature en outline orthodoxe, layout sous-titré
+       à la Spiritus / publication design
+       ═════════════════════════════════════════════════════════ */
+    .v3 {
+      background:
+        linear-gradient(180deg, var(--green-deep), var(--green-ink));
+      padding: 4rem 3rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .v3-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(4rem, 12vw, 11rem);
+      font-weight: 300;
+      line-height: .85;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(196,154,58,.6);
+      text-stroke: 1px rgba(196,154,58,.6);
+      letter-spacing: -.03em;
+      text-align: center;
+      font-style: italic;
+      margin: 0 0 2rem;
+      pointer-events: none;
+    }
+    .v3-mark em {
+      font-style: italic;
+      -webkit-text-stroke: 1px var(--gold);
+      color: var(--gold);
+      text-shadow: 0 0 30px rgba(196,154,58,.4);
+    }
+    .v3-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 2.4rem;
+      padding: 2rem 0;
+      border-top: 1px solid rgba(196,154,58,.18);
+      border-bottom: 1px solid rgba(196,154,58,.08);
+    }
+    .v3-col h5 {
+      font-size: .52rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: .8;
+      font-weight: 600;
+      margin-bottom: .7rem;
+    }
+    .v3-col p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .9rem;
+      line-height: 1.5;
+      color: var(--cream);
+      opacity: .82;
+    }
+    .v3-col ul { list-style: none; }
+    .v3-col ul a {
+      display: block;
+      font-size: .82rem;
+      color: var(--cream-dark);
+      opacity: .7;
+      padding: .25rem 0;
+      transition: padding-left .3s, color .3s;
+    }
+    .v3-col ul a:hover { color: var(--gold); opacity: 1; padding-left: .3rem; }
+    .v3-bot {
       max-width: 1100px;
       margin: 1.4rem auto 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 1rem;
       flex-wrap: wrap;
-      font-size: .56rem;
-      letter-spacing: .15em;
+      gap: 1rem;
+      font-size: .54rem;
+      letter-spacing: .2em;
       text-transform: uppercase;
-      color: rgba(226,221,201,.4);
+      color: rgba(226,221,201,.45);
     }
-    .v2-lang a { padding: 0 .35rem; opacity: .55; color: var(--cream-dark); }
-    .v2-lang a:hover, .v2-lang a.act { color: var(--gold); opacity: 1; }
+    .v3-bot .lang a { color: var(--gold); opacity: .85; padding: 0 .35rem; }
 
     /* ═════════════════════════════════════════════════════════
-       V3 — LIGNE UNIQUE (TRÈS SOBRE)
-       Tout sur une ligne en pied de page, façon site éditorial
+       V4 — TICKET / BULLETIN PAROISSIAL
+       Footer en forme de bulletin paroissial / coupon liturgique
+       avec perforations, numéro de tirage, et tampons
        ═════════════════════════════════════════════════════════ */
-    .v3 { padding: 2rem 2.5rem; }
-    .v3-row {
-      max-width: 1200px;
+    .v4 {
+      background:
+        repeating-linear-gradient(0deg, transparent 0 38px, rgba(196,154,58,.03) 38px 39px),
+        linear-gradient(180deg, var(--green-deep), var(--green-ink));
+      padding: 3rem 2rem;
+      position: relative;
+    }
+    .v4-ticket {
+      max-width: 1100px;
       margin: 0 auto;
+      background:
+        radial-gradient(circle at 24px 50%, transparent 8px, var(--green-soft) 9px),
+        radial-gradient(circle at calc(100% - 24px) 50%, transparent 8px, var(--green-soft) 9px),
+        var(--green-soft);
+      border: 1px dashed rgba(196,154,58,.3);
+      position: relative;
+      padding: 2.4rem 3rem 2rem;
       display: grid;
       grid-template-columns: auto 1fr auto;
-      align-items: center;
       gap: 2.5rem;
+      align-items: center;
     }
-    .v3-id {
+    .v4-ticket::before, .v4-ticket::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 16px; height: 16px;
+      background: #0a0a0a;
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+    .v4-ticket::before { left: -8px; }
+    .v4-ticket::after  { right: -8px; }
+    .v4-stamp {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .6rem;
+      padding-right: 2rem;
+      border-right: 1px dashed rgba(196,154,58,.25);
+    }
+    .v4-stamp-round {
+      width: 80px; height: 80px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
       display: flex;
       align-items: center;
-      gap: .7rem;
-    }
-    .v3-id svg { width: 16px; height: 22px; fill: var(--gold); }
-    .v3-id span {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--cream);
-    }
-    .v3-links {
-      display: flex;
       justify-content: center;
-      gap: 1.8rem;
-      flex-wrap: wrap;
+      position: relative;
+      box-shadow: inset 0 0 0 4px var(--green-soft), inset 0 0 0 5px rgba(196,154,58,.4);
     }
-    .v3-links a {
-      font-size: .64rem;
+    .v4-stamp-round svg { width: 26px; height: 36px; fill: var(--gold); }
+    .v4-stamp-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .5rem;
+      letter-spacing: .25em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    .v4-mid {
+      display: flex;
+      flex-direction: column;
+      gap: .9rem;
+    }
+    .v4-mid-head {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .v4-mid-head .num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .55rem;
+      letter-spacing: .2em;
+      color: var(--gold);
+      padding: .3rem .65rem;
+      border: 1px solid rgba(196,154,58,.3);
+      border-radius: 2px;
+    }
+    .v4-mid-head .year {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--gold);
+      opacity: .85;
+    }
+    .v4-mid h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      color: var(--cream);
+      font-weight: 400;
+      line-height: 1.05;
+    }
+    .v4-mid h3 em { color: var(--gold); font-style: italic; }
+    .v4-fields {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+      padding-top: 1rem;
+      border-top: 1px dashed rgba(196,154,58,.18);
+    }
+    .v4-field .l {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .5rem;
       letter-spacing: .22em;
       text-transform: uppercase;
-      font-weight: 500;
+      color: var(--gold);
+      opacity: .75;
+      display: block;
+      margin-bottom: .3rem;
+    }
+    .v4-field .v {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .92rem;
+      color: var(--cream);
+      line-height: 1.4;
+    }
+    .v4-action {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: .8rem;
+      padding-left: 2rem;
+      border-left: 1px dashed rgba(196,154,58,.25);
+      min-width: 180px;
+    }
+    .v4-give {
+      font-size: .62rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--green-ink);
+      background: var(--gold);
+      padding: .9rem 1.2rem;
+      text-align: center;
+      transition: background .3s;
+    }
+    .v4-give:hover { background: var(--gold-light); }
+    .v4-links-mini {
+      display: flex;
+      flex-direction: column;
+      gap: .3rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .58rem;
+      letter-spacing: .1em;
+    }
+    .v4-links-mini a {
       color: var(--cream-dark);
-      opacity: .7;
+      opacity: .65;
       transition: color .3s, opacity .3s;
     }
-    .v3-links a:hover { color: var(--gold); opacity: 1; }
-    .v3-cta {
-      font-size: .62rem;
-      letter-spacing: .25em;
-      text-transform: uppercase;
-      font-weight: 600;
-      color: var(--gold);
-      border: 1px solid rgba(196,154,58,.4);
-      padding: .65rem 1.2rem;
-      transition: all .3s;
-    }
-    .v3-cta:hover { background: var(--gold); color: var(--green-ink); border-color: var(--gold); }
-    .v3-sub {
-      max-width: 1200px;
+    .v4-links-mini a:hover { color: var(--gold); opacity: 1; }
+    .v4-bot {
+      max-width: 1100px;
       margin: 1.2rem auto 0;
-      padding-top: 1.1rem;
-      border-top: 1px solid rgba(196,154,58,.08);
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 1rem;
-      font-size: .56rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .5rem;
       letter-spacing: .15em;
       text-transform: uppercase;
       color: rgba(226,221,201,.4);
     }
-    .v3-sub a { color: var(--cream-dark); opacity: .55; padding: 0 .35rem; }
-    .v3-sub a:hover, .v3-sub a.act { color: var(--gold); opacity: 1; }
+    .v4-bot a { color: var(--gold); opacity: .85; }
 
     /* ═════════════════════════════════════════════════════════
-       V4 — STACK VERTICAL ÉLÉGANT
-       Tout aligné à gauche, en colonne, façon "À propos"
+       V5 — CARDS HOVER REVEAL
+       4 grandes cards qui se révèlent au hover (texte intérieur
+       glisse vers le haut), style très "design studio 2026"
        ═════════════════════════════════════════════════════════ */
-    .v4 { padding: 3.5rem 3rem; }
-    .v4-inner {
-      max-width: 720px;
-      margin: 0 auto;
+    .v5 {
+      background:
+        radial-gradient(ellipse at 80% 0%, rgba(196,154,58,.06), transparent 60%),
+        linear-gradient(180deg, var(--green-deep), var(--green-ink));
+      padding: 3rem 2rem 1.6rem;
+    }
+    .v5-head {
+      max-width: 1280px;
+      margin: 0 auto 2rem;
       display: flex;
-      flex-direction: column;
-      gap: 1.6rem;
+      justify-content: space-between;
+      align-items: end;
+      gap: 2rem;
+      flex-wrap: wrap;
+      padding-bottom: 1.6rem;
+      border-bottom: 1px solid rgba(196,154,58,.14);
     }
-    .v4-cross {
-      width: 22px; height: 30px;
-      fill: var(--gold);
-      opacity: .9;
+    .v5-brand-line {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
-    .v4-name {
+    .v5-brand-line svg { width: 22px; height: 30px; fill: var(--gold); }
+    .v5-brand-line .name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 500;
+      font-size: 1.4rem;
       color: var(--cream);
-      line-height: 1.25;
+      font-weight: 500;
     }
-    .v4-desc {
+    .v5-tag {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-size: 1rem;
-      line-height: 1.65;
       color: var(--cream-dark);
-      opacity: .72;
-      max-width: 520px;
+      opacity: .65;
+      max-width: 380px;
+      text-align: right;
     }
-    .v4-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem 2.5rem;
-      padding: 1.6rem 0;
-      border-top: 1px solid rgba(196,154,58,.12);
-      border-bottom: 1px solid rgba(196,154,58,.12);
-    }
-    .v4-item .l {
-      font-size: .54rem;
-      letter-spacing: .28em;
-      text-transform: uppercase;
-      color: var(--gold);
-      opacity: .8;
-      font-weight: 600;
-      display: block;
-      margin-bottom: .35rem;
-    }
-    .v4-item .v {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: .95rem;
-      color: var(--cream);
-    }
-    .v4-item .v em {
-      font-style: italic;
-      color: var(--cream-dark);
-      opacity: .75;
-      font-size: .85rem;
-    }
-    .v4-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.4rem;
-    }
-    .v4-links a {
-      font-size: .66rem;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      font-weight: 500;
-      color: var(--cream-dark);
-      opacity: .7;
-      transition: color .3s;
-    }
-    .v4-links a:hover { color: var(--gold); opacity: 1; }
-    .v4-bot {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      font-size: .56rem;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: rgba(226,221,201,.4);
-    }
-    .v4-bot a { color: var(--cream-dark); opacity: .55; padding: 0 .35rem; }
-    .v4-bot a:hover, .v4-bot a.act { color: var(--gold); opacity: 1; }
-
-    /* ═════════════════════════════════════════════════════════
-       V5 — 3 COLONNES CLASSIQUES (sobre, équilibré)
-       Identité / Liens / Contact — sans CTA tape-à-l'œil
-       ═════════════════════════════════════════════════════════ */
-    .v5 { padding: 3.2rem 3rem 1.4rem; }
-    .v5-main {
-      max-width: 1180px;
+    .v5-cards {
+      max-width: 1280px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
-      gap: 3.5rem;
-      padding-bottom: 2.4rem;
-      border-bottom: 1px solid rgba(196,154,58,.1);
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
     }
-    .v5-brand {
-      display: flex;
-      align-items: center;
-      gap: .8rem;
-      margin-bottom: 1rem;
-    }
-    .v5-brand svg { width: 22px; height: 30px; fill: var(--gold); }
-    .v5-brand .n {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      color: var(--cream);
-      font-weight: 500;
-    }
-    .v5-brand .s {
-      display: block;
-      font-size: .54rem;
-      letter-spacing: .25em;
-      text-transform: uppercase;
-      color: var(--gold);
-      opacity: .8;
-      font-weight: 600;
-      margin-top: .25rem;
-    }
-    .v5-desc {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: .92rem;
-      line-height: 1.65;
-      color: var(--cream-dark);
-      opacity: .68;
-      max-width: 320px;
-    }
-    .v5-col-h {
-      font-size: .56rem;
-      letter-spacing: .28em;
-      text-transform: uppercase;
-      color: var(--gold);
-      opacity: .85;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-    .v5-list { list-style: none; display: flex; flex-direction: column; gap: .45rem; }
-    .v5-list a {
-      font-size: .82rem;
-      color: var(--cream-dark);
-      opacity: .72;
-      transition: color .3s, padding-left .3s;
-    }
-    .v5-list a:hover { color: var(--gold); opacity: 1; padding-left: .25rem; }
-    .v5-addr {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: .92rem;
-      line-height: 1.55;
-      color: var(--cream);
-      opacity: .88;
-      margin-bottom: 1rem;
-      font-style: normal;
-    }
-    .v5-hours {
+    .v5-card {
+      position: relative;
+      height: 220px;
+      padding: 1.4rem 1.4rem 1.6rem;
+      background: rgba(0,0,0,.18);
+      border: 1px solid rgba(196,154,58,.14);
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: .35rem;
-    }
-    .v5-hours .row {
-      display: flex;
       justify-content: space-between;
-      gap: 1rem;
-      font-size: .78rem;
+      transition: background .4s, border-color .4s;
+      cursor: pointer;
     }
-    .v5-hours .d {
-      font-size: .56rem;
-      letter-spacing: .22em;
-      text-transform: uppercase;
+    .v5-card:hover {
+      background: rgba(196,154,58,.08);
+      border-color: rgba(196,154,58,.4);
+    }
+    .v5-card .num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .54rem;
+      letter-spacing: .25em;
       color: var(--gold);
-      opacity: .85;
-      font-weight: 600;
+      opacity: .7;
     }
-    .v5-hours .t {
+    .v5-card h3 {
       font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
       color: var(--cream);
-      font-size: .92rem;
+      font-weight: 400;
+      line-height: 1.05;
+      transition: transform .5s cubic-bezier(.2,.7,.2,1);
     }
-    .v5-bottom {
-      max-width: 1180px;
-      margin: 1.4rem auto 0;
+    .v5-card .reveal {
+      position: absolute;
+      left: 1.4rem; right: 1.4rem;
+      bottom: -100%;
+      transition: bottom .5s cubic-bezier(.2,.7,.2,1);
+    }
+    .v5-card:hover h3 { transform: translateY(-30%); }
+    .v5-card:hover .reveal { bottom: 1.4rem; }
+    .v5-card .reveal ul { list-style: none; display: flex; flex-direction: column; gap: .25rem; }
+    .v5-card .reveal a {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: .5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .92rem;
+      color: var(--cream-dark);
+      opacity: .85;
+      padding: .15rem 0;
+      border-bottom: 1px dotted rgba(196,154,58,.15);
+      transition: color .3s, padding-left .3s;
+    }
+    .v5-card .reveal a span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .55rem;
+      opacity: .55;
+      letter-spacing: .1em;
+    }
+    .v5-card .reveal a:hover { color: var(--gold); padding-left: .25rem; }
+    .v5-card .reveal p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: .88rem;
+      line-height: 1.45;
+      color: var(--cream-dark);
+      opacity: .8;
+    }
+    .v5-card .reveal .give {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .62rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--green-ink);
+      background: var(--gold);
+      padding: .7rem 1rem;
+      margin-top: .6rem;
+      text-align: center;
+      justify-content: center;
+    }
+    .v5-bot {
+      max-width: 1280px;
+      margin: 1.6rem auto 0;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(196,154,58,.1);
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
       flex-wrap: wrap;
-      font-size: .56rem;
-      letter-spacing: .15em;
+      gap: 1rem;
+      font-size: .54rem;
+      letter-spacing: .2em;
       text-transform: uppercase;
       color: rgba(226,221,201,.4);
     }
-    .v5-lang a { padding: 0 .35rem; opacity: .55; color: var(--cream-dark); }
-    .v5-lang a:hover, .v5-lang a.act { color: var(--gold); opacity: 1; }
+    .v5-bot .lang a { color: var(--gold); opacity: .85; padding: 0 .35rem; }
+
+    @media (max-width: 800px) {
+      .v1 { grid-template-columns: 1fr; }
+      .v1-right { border-left: none; border-top: 1px solid rgba(196,154,58,.18); }
+      .v1-right::before { display: none; }
+      .v2-cols { grid-template-columns: 1fr; }
+      .v3-grid { grid-template-columns: 1fr 1fr; }
+      .v4-ticket { grid-template-columns: 1fr; gap: 1.6rem; padding: 2rem 1.5rem; }
+      .v4-stamp, .v4-action { border: none; padding: 0; }
+      .v4-action { border-top: 1px dashed rgba(196,154,58,.25); padding-top: 1.6rem; }
+      .v4-fields { grid-template-columns: 1fr 1fr; }
+      .v5-cards { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 500px) {
+      .v3-grid { grid-template-columns: 1fr; }
+      .v5-cards { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
 
   <h1 class="preview-page-title">
-    Footer · 5 variantes sobres
-    <small>Indique laquelle tu veux que j'applique sur le site</small>
+    Footer · 5 concepts originaux
+    <small>Indique le numéro et j'applique sur le site</small>
   </h1>
 
-  <!-- ═════════════ V1 ═════════════ -->
+  <!-- ═════════════ V1 — RIDEAU LITURGIQUE ═════════════ -->
   <div class="variant-wrap">
-    <div class="variant-label">Variante 1 <em>Minimaliste centré</em></div>
+    <div class="variant-label">Variante 1 <em>Rideau liturgique — split avec agenda vivant</em></div>
     <footer class="ftr v1">
-      <svg class="v1-cross" viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg>
-      <div class="v1-name">Saint-Séraphim-de-Sarov</div>
-      <div class="v1-sub">Paroisse orthodoxe · Montgeron</div>
-      <div class="v1-rule"></div>
-      <nav class="v1-links">
-        <a href="#">Accueil</a>
-        <a href="#">Le Saint</a>
-        <a href="#">Histoire</a>
-        <a href="#">Offices</a>
-        <a href="#">Contact</a>
-        <a href="#">Faire un don</a>
-      </nav>
-      <div class="v1-bottom">
-        <span>© 2026 · Paroisse Saint-Séraphim</span>
-        <span class="sep">·</span>
-        <span>Patriarcat de Moscou</span>
-        <span class="sep">·</span>
-        <span>FR · RU</span>
-      </div>
-    </footer>
-  </div>
-
-  <!-- ═════════════ V2 ═════════════ -->
-  <div class="variant-wrap">
-    <div class="variant-label">Variante 2 <em>Deux colonnes équilibrées</em></div>
-    <footer class="ftr v2">
-      <div class="v2-main">
+      <div class="v1-left">
         <div>
-          <div class="v2-brand-head">
-            <svg viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg>
-            <span class="name">Saint-Séraphim-de-Sarov</span>
-          </div>
-          <p class="v2-tagline">Paroisse orthodoxe russe fondée en 1957 sur le domaine du Moulin de Senlis, à Montgeron.</p>
-          <div class="v2-meta">Depuis 1957<span>·</span>Slavon · Français</div>
-        </div>
-        <div class="v2-right">
-          <div>
-            <div class="v2-col-title">Visiter</div>
-            <div class="v2-links">
-              <a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a><a href="#">Offices</a><a href="#">Contact</a><a href="#">Faire un don</a>
+          <div class="v1-now-pill">Prochain office</div>
+          <div class="v1-tickers">
+            <div class="v1-ticker now">
+              <span class="date">Sam 17.05</span>
+              <span class="ev">Grandes Vêpres</span>
+              <span class="time">18:00</span>
+            </div>
+            <div class="v1-ticker">
+              <span class="date">Dim 18.05</span>
+              <span class="ev">Divine Liturgie</span>
+              <span class="time">10:00</span>
+            </div>
+            <div class="v1-ticker">
+              <span class="date">Mer 21.05</span>
+              <span class="ev">Liturgie présanctifiée</span>
+              <span class="time">19:00</span>
+            </div>
+            <div class="v1-ticker">
+              <span class="date">Sam 24.05</span>
+              <span class="ev">Vigile pascale</span>
+              <span class="time">22:00</span>
             </div>
           </div>
-          <div>
-            <div class="v2-col-title">Offices</div>
-            <div class="v2-hours">
-              <div class="v2-hour"><span class="d">Samedi</span><span class="t">18:00 — Grandes Vêpres</span></div>
-              <div class="v2-hour"><span class="d">Dimanche</span><span class="t">10:00 — Divine Liturgie</span></div>
-            </div>
-          </div>
+        </div>
+        <div class="v1-foot">
+          <span><a href="#">Accueil</a> <a href="#">Le Saint</a> <a href="#">Histoire</a> <a href="#">Contact</a></span>
+          <span>FR · <a href="#">RU</a></span>
         </div>
       </div>
-      <div class="v2-bottom">
-        <span>© 2026 · Paroisse Saint-Séraphim-de-Sarov · Patriarcat de Moscou</span>
-        <span class="v2-lang"><a class="act" href="#">FR</a> · <a href="#">RU</a></span>
-      </div>
-    </footer>
-  </div>
-
-  <!-- ═════════════ V3 ═════════════ -->
-  <div class="variant-wrap">
-    <div class="variant-label">Variante 3 <em>Ligne unique éditoriale</em></div>
-    <footer class="ftr v3">
-      <div class="v3-row">
-        <div class="v3-id">
+      <div class="v1-right">
+        <div class="v1-icon">
           <svg viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg>
-          <span>Saint-Séraphim-de-Sarov</span>
+          <div class="v1-icon-text">
+            <span class="name">Saint-Séraphim-de-Sarov</span>
+            <span class="sub">Paroisse · Montgeron · 1957</span>
+          </div>
         </div>
-        <nav class="v3-links">
-          <a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a><a href="#">Offices</a><a href="#">Contact</a>
-        </nav>
-        <a href="#" class="v3-cta">Faire un don</a>
-      </div>
-      <div class="v3-sub">
-        <span>© 2026 · Paroisse orthodoxe russe · Montgeron · Patriarcat de Moscou</span>
-        <span><a class="act" href="#">FR</a> · <a href="#">RU</a></span>
+        <p class="v1-quote">
+          Acquiers la paix intérieure et des milliers d'âmes trouveront le salut autour de toi.
+          <span class="v1-cite">Saint Séraphim de Sarov</span>
+        </p>
+        <a href="#" class="v1-give">
+          Faire un don
+          <svg viewBox="0 0 24 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 8h22M16 1l7 7-7 7"/></svg>
+        </a>
       </div>
     </footer>
   </div>
 
-  <!-- ═════════════ V4 ═════════════ -->
+  <!-- ═════════════ V2 — RETABLE BYZANTIN ═════════════ -->
   <div class="variant-wrap">
-    <div class="variant-label">Variante 4 <em>Stack vertical aligné</em></div>
-    <footer class="ftr v4">
-      <div class="v4-inner">
-        <svg class="v4-cross" viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg>
-        <div class="v4-name">Saint-Séraphim-de-Sarov<br>Paroisse orthodoxe russe</div>
-        <p class="v4-desc">Fondée en 1957 sur le domaine du Moulin de Senlis. Lieu de prière et de mémoire dans la tradition liturgique russe, à Montgeron.</p>
-        <div class="v4-grid">
-          <div class="v4-item">
-            <span class="l">Adresse</span>
-            <span class="v">Rue du Moulin de Senlis<br><em>91230 Montgeron, France</em></span>
-          </div>
-          <div class="v4-item">
-            <span class="l">Offices</span>
-            <span class="v">Samedi 18 h · Dimanche 10 h<br><em>Vêpres · Divine Liturgie</em></span>
-          </div>
-        </div>
-        <nav class="v4-links">
-          <a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a><a href="#">Offices</a><a href="#">Contact</a><a href="#">Faire un don</a>
-        </nav>
-        <div class="v4-bot">
-          <span>© 2026 · Patriarcat de Moscou · Diocèse de Chersonèse</span>
-          <span><a class="act" href="#">FR</a> · <a href="#">RU</a></span>
-        </div>
-      </div>
-    </footer>
-  </div>
-
-  <!-- ═════════════ V5 ═════════════ -->
-  <div class="variant-wrap">
-    <div class="variant-label">Variante 5 <em>Trois colonnes classiques</em></div>
-    <footer class="ftr v5">
-      <div class="v5-main">
-        <div>
-          <div class="v5-brand">
+    <div class="variant-label">Variante 2 <em>Retable byzantin — arche + tympan or</em></div>
+    <footer class="ftr v2">
+      <div class="v2-frame">
+        <div class="v2-arch">
+          <div class="v2-arch-top">
             <svg viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg>
-            <div>
-              <span class="n">Saint-Séraphim-de-Sarov</span>
-              <span class="s">Paroisse orthodoxe russe</span>
-            </div>
           </div>
-          <p class="v5-desc">Fondée en 1957 sur le domaine du Moulin de Senlis. Lieu de prière dans la tradition liturgique russe.</p>
+          <h2 class="v2-name">Saint-Séraphim-de-Sarov</h2>
+          <div class="v2-sub">Paroisse orthodoxe russe · Montgeron · 1957</div>
+          <div class="v2-rule"></div>
+          <p class="v2-prayer">Acquiers la paix intérieure et des milliers d'âmes trouveront le salut autour de toi.</p>
         </div>
-        <div>
-          <div class="v5-col-h">Visiter</div>
-          <ul class="v5-list">
+        <div class="v2-cols">
+          <div class="col">
+            <h4>Visiter</h4>
+            <a href="#">Accueil</a>
+            <a href="#">Le Saint</a>
+            <a href="#">Histoire</a>
+            <a href="#">Offices</a>
+          </div>
+          <div class="col">
+            <h4>Adresse</h4>
+            <p>Rue du Moulin de Senlis<br>91230 Montgeron</p>
+          </div>
+          <div class="col">
+            <h4>Offices</h4>
+            <p>Samedi 18 h · Vêpres<br>Dimanche 10 h · Liturgie</p>
+          </div>
+        </div>
+        <div class="v2-base">
+          <span>© 2026 · Patriarcat de Moscou · Diocèse de Chersonèse</span>
+          <span><a href="#">FR</a> · <a href="#">RU</a> · <a href="#">Faire un don</a></span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ═════════════ V3 — TYPO MASSIVE OUTLINE ═════════════ -->
+  <div class="variant-wrap">
+    <div class="variant-label">Variante 3 <em>Typo massive outline — éditorial luxe</em></div>
+    <footer class="ftr v3">
+      <h2 class="v3-mark">Sera<em>phim</em></h2>
+      <div class="v3-grid">
+        <div class="v3-col">
+          <h5>Paroisse</h5>
+          <p>Fondée en 1957 sur le domaine du Moulin de Senlis, à Montgeron. Tradition liturgique russe.</p>
+        </div>
+        <div class="v3-col">
+          <h5>Visiter</h5>
+          <ul>
             <li><a href="#">Accueil</a></li>
             <li><a href="#">Le Saint</a></li>
             <li><a href="#">Histoire</a></li>
             <li><a href="#">Offices</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Faire un don</a></li>
           </ul>
         </div>
-        <div>
-          <div class="v5-col-h">Nous trouver</div>
-          <address class="v5-addr">Rue du Moulin de Senlis<br>91230 Montgeron, France</address>
-          <div class="v5-hours">
-            <div class="row"><span class="d">Samedi</span><span class="t">18:00 · Vêpres</span></div>
-            <div class="row"><span class="d">Dimanche</span><span class="t">10:00 · Liturgie</span></div>
+        <div class="v3-col">
+          <h5>Offices</h5>
+          <ul>
+            <li><a href="#">Samedi · 18 h</a></li>
+            <li><a href="#">Dimanche · 10 h</a></li>
+            <li><a href="#">Calendrier</a></li>
+          </ul>
+        </div>
+        <div class="v3-col">
+          <h5>Soutenir</h5>
+          <ul>
+            <li><a href="#">Faire un don</a></li>
+            <li><a href="#">Restauration</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="v3-bot">
+        <span>© 2026 · Paroisse Saint-Séraphim-de-Sarov · Patriarcat de Moscou</span>
+        <span class="lang"><a href="#">FR</a> · <a href="#">RU</a></span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ═════════════ V4 — BULLETIN PAROISSIAL ═════════════ -->
+  <div class="variant-wrap">
+    <div class="variant-label">Variante 4 <em>Ticket / bulletin paroissial — perforations, tampon</em></div>
+    <footer class="ftr v4">
+      <div class="v4-ticket">
+        <div class="v4-stamp">
+          <div class="v4-stamp-round">
+            <svg viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg>
+          </div>
+          <span class="v4-stamp-text">EST · MCMLVII</span>
+        </div>
+        <div class="v4-mid">
+          <div class="v4-mid-head">
+            <span class="num">N° 0426 / 2026</span>
+            <span class="year">Bulletin paroissial</span>
+          </div>
+          <h3>Paroisse Saint-Séraphim<br><em>de Sarov · Montgeron</em></h3>
+          <div class="v4-fields">
+            <div class="v4-field">
+              <span class="l">Adresse</span>
+              <span class="v">Rue du Moulin<br>de Senlis, 91230</span>
+            </div>
+            <div class="v4-field">
+              <span class="l">Vêpres</span>
+              <span class="v">Samedi<br>18 h 00</span>
+            </div>
+            <div class="v4-field">
+              <span class="l">Liturgie</span>
+              <span class="v">Dimanche<br>10 h 00</span>
+            </div>
+          </div>
+        </div>
+        <div class="v4-action">
+          <a href="#" class="v4-give">Faire un don</a>
+          <div class="v4-links-mini">
+            <a href="#">→ Le Saint</a>
+            <a href="#">→ Histoire</a>
+            <a href="#">→ Contact</a>
+            <a href="#">→ Offices</a>
           </div>
         </div>
       </div>
-      <div class="v5-bottom">
+      <div class="v4-bot">
+        <span>© 2026 · PATRIARCAT DE MOSCOU · DIOCÈSE DE CHERSONÈSE</span>
+        <span><a href="#">FR</a> · <a href="#">RU</a></span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ═════════════ V5 — CARDS HOVER REVEAL ═════════════ -->
+  <div class="variant-wrap">
+    <div class="variant-label">Variante 5 <em>Cards interactives — survole pour révéler</em></div>
+    <footer class="ftr v5">
+      <div class="v5-head">
+        <div class="v5-brand-line">
+          <svg viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg>
+          <span class="name">Saint-Séraphim-de-Sarov</span>
+        </div>
+        <p class="v5-tag">Paroisse orthodoxe russe fondée en 1957 sur le domaine du Moulin de Senlis.</p>
+      </div>
+      <div class="v5-cards">
+        <div class="v5-card">
+          <span class="num">01 — VISITER</span>
+          <h3>Le site</h3>
+          <div class="reveal">
+            <ul>
+              <li><a href="#">Accueil<span>I</span></a></li>
+              <li><a href="#">Le Saint<span>II</span></a></li>
+              <li><a href="#">Histoire<span>III</span></a></li>
+              <li><a href="#">Offices<span>IV</span></a></li>
+              <li><a href="#">Contact<span>V</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="v5-card">
+          <span class="num">02 — OFFICES</span>
+          <h3>Horaires</h3>
+          <div class="reveal">
+            <ul>
+              <li><a href="#">Grandes Vêpres<span>SAM 18:00</span></a></li>
+              <li><a href="#">Divine Liturgie<span>DIM 10:00</span></a></li>
+              <li><a href="#">Calendrier liturgique<span>→</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="v5-card">
+          <span class="num">03 — VENIR</span>
+          <h3>Adresse</h3>
+          <div class="reveal">
+            <p>Rue du Moulin de Senlis<br>91230 Montgeron, France</p>
+            <a href="#" class="give" style="margin-top: .5rem; display: inline-flex;">Itinéraire ↗</a>
+          </div>
+        </div>
+        <div class="v5-card">
+          <span class="num">04 — SOUTENIR</span>
+          <h3>Faire un don</h3>
+          <div class="reveal">
+            <p>Chaque don préserve ce lieu de prière et de patrimoine orthodoxe.</p>
+            <a href="#" class="give">Faire un don →</a>
+          </div>
+        </div>
+      </div>
+      <div class="v5-bot">
         <span>© 2026 · Paroisse Saint-Séraphim-de-Sarov · Patriarcat de Moscou</span>
-        <span class="v5-lang"><a class="act" href="#">FR</a> · <a href="#">RU</a></span>
+        <span class="lang"><a href="#">FR</a> · <a href="#">RU</a></span>
       </div>
     </footer>
   </div>
