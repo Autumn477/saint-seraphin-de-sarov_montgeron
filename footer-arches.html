@@ -3,419 +3,722 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Footer · réalistes avec vraies photos</title>
+  <title>Footer · élégant opéra vert & or</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;500;600&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --green-deep: #1B3D33;
-      --green-ink:  #0E261F;
-      --gold:       #C49A3A;
-      --gold-light: #E0BE6E;
-      --cream:      #F4F0E4;
-      --cream-dark: #E2DDC9;
+      --green-vdeep: #0A1F18;
+      --green-deep:  #11302A;
+      --green-mid:   #1B3D33;
+      --green-soft:  #243A33;
+      --gold:        #C9A86B;
+      --gold-warm:   #D6B978;
+      --gold-pale:   #E8D6A8;
+      --gold-shadow: #8A7240;
+      --cream:       #F4ECD8;
+      --cream-soft:  #E5DCC4;
+      --cream-mute:  rgba(244,236,216,.62);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { background: #0a0a0a; color: var(--cream); font-family: 'Inter', sans-serif; padding: 2rem; }
+    body {
+      background: #0a0a0a;
+      color: var(--cream);
+      font-family: 'Inter', sans-serif;
+      padding: 2rem;
+    }
+    ::selection { background: var(--gold); color: var(--green-vdeep); }
 
     .pt { max-width: 1280px; margin: 0 auto 1rem; font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: var(--gold); font-weight: 400; }
     .pt small { display: block; font-family: 'Inter', sans-serif; font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.5); margin-top: .35rem; }
-    .toc { max-width: 1280px; margin: 0 auto 2.5rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: .4rem; padding: 1rem; background: #111; border: 1px solid rgba(255,255,255,.06); border-radius: 2px; }
-    .toc a { font-family: 'Inter', sans-serif; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.55); text-decoration: none; padding: .45rem .55rem; border: 1px solid rgba(255,255,255,.05); border-radius: 2px; transition: all .2s; }
-    .toc a:hover { color: var(--gold); border-color: rgba(196,154,58,.35); background: rgba(196,154,58,.04); }
+    .toc { max-width: 1280px; margin: 0 auto 2.5rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .4rem; padding: 1rem; background: #111; border: 1px solid rgba(255,255,255,.06); border-radius: 2px; }
+    .toc a { font-family: 'Inter', sans-serif; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.55); text-decoration: none; padding: .55rem .7rem; border: 1px solid rgba(255,255,255,.05); border-radius: 2px; transition: all .2s; }
+    .toc a:hover { color: var(--gold); border-color: rgba(201,168,107,.4); background: rgba(201,168,107,.05); }
     .toc a span { color: var(--gold); margin-right: .4rem; font-weight: 600; }
 
     .wrap { max-width: 1280px; margin: 0 auto 3rem; border: 1px solid rgba(255,255,255,.06); overflow: hidden; border-radius: 2px; }
-    .lbl { padding: .9rem 1.5rem; background: #111; font-family: 'Inter', sans-serif; font-size: .64rem; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); font-weight: 600; border-bottom: 1px solid rgba(255,255,255,.05); display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
-    .lbl em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: .95rem; letter-spacing: 0; text-transform: none; color: rgba(255,255,255,.6); font-weight: 400; }
+    .vlbl { padding: .9rem 1.5rem; background: #111; font-family: 'Inter', sans-serif; font-size: .64rem; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); font-weight: 600; border-bottom: 1px solid rgba(255,255,255,.05); display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+    .vlbl em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: .95rem; letter-spacing: 0; text-transform: none; color: rgba(255,255,255,.6); font-weight: 400; }
 
     .ftr { color: var(--cream); font-family: 'Inter', sans-serif; position: relative; }
     .ftr a { text-decoration: none; color: inherit; }
 
-    /* tokens partagés */
-    .ey { font-family: 'Inter', sans-serif; font-size: .58rem; letter-spacing: .35em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
-    .h-name { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.9rem, 3vw, 2.6rem); color: var(--cream); line-height: 1; letter-spacing: -.015em; }
-    .h-name em { color: var(--gold); font-style: italic; font-weight: 400; }
-    .quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; line-height: 1.55; color: var(--cream); opacity: .88; }
-    .col-h { font-family: 'Inter', sans-serif; font-size: .56rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: .9rem; }
-    .col-list { display: flex; flex-direction: column; gap: .35rem; }
-    .col-list a { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--cream); opacity: .88; transition: color .25s, padding-left .25s; }
-    .col-list a:hover { color: var(--gold); opacity: 1; padding-left: .3rem; }
-    .col-list p { font-family: 'Cormorant Garamond', serif; font-size: .95rem; color: var(--cream); opacity: .85; line-height: 1.55; }
-    .give { display: inline-flex; align-items: center; gap: .7rem; font-family: 'Inter', sans-serif; font-size: .62rem; letter-spacing: .3em; text-transform: uppercase; font-weight: 600; color: var(--gold); padding: .9rem 1.6rem; border: 1px solid var(--gold); transition: all .35s; position: relative; isolation: isolate; overflow: hidden; cursor: pointer; }
-    .give::before { content: ''; position: absolute; inset: 0; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .4s cubic-bezier(.7,0,.2,1); z-index: -1; }
-    .give:hover { color: #1a1a1a; }
-    .give:hover::before { transform: scaleX(1); }
-    .bot { padding: 1.1rem 2.4rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-family: 'Inter', sans-serif; font-size: .58rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.6); border-top: 1px solid rgba(196,154,58,.18); background: rgba(0,0,0,.5); }
-    .bot a { color: var(--gold-light); padding: 0 .35rem; }
-
     /* ════════════════════════════════════════════════════════════
-       R01 — FAÇADE PLEIN ÉCRAN
-       Photo extérieur église en bg fixée, overlay dégradé sombre,
-       contenu superposé centré
+       ÉLÉMENTS COMMUNS — Style opéra
        ════════════════════════════════════════════════════════════ */
-    .r01 {
-      min-height: 480px;
-      background: url('assets/eglise-exterieur.jpg') center/cover no-repeat;
-      position: relative;
-      isolation: isolate;
+    .opera-rule {
+      display: inline-block;
+      width: 38px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
     }
-    .r01::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        linear-gradient(180deg, rgba(14,38,31,.55) 0%, rgba(14,38,31,.85) 60%, rgba(14,38,31,.95) 100%);
-      z-index: 0;
-    }
-    .r01-inner { position: relative; z-index: 1; padding: 5rem 2rem 0; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: end; }
-    .r01-l { display: flex; flex-direction: column; gap: 1.4rem; }
-    .r01-l .ey { display: block; }
-    .r01-l .h-name { font-size: 3.2rem; }
-    .r01-l .quote { max-width: 460px; }
-    .r01-l .give { align-self: start; }
-    .r01-r { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; padding-bottom: 1rem; }
-    .r01-base { position: relative; z-index: 1; padding: 2rem 2rem 0; max-width: 1100px; margin: 2rem auto 0; border-top: 1px solid rgba(196,154,58,.25); display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-    .r01-base .lks { display: flex; gap: 1.6rem; flex-wrap: wrap; }
-    .r01-base .lks a { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: var(--cream); opacity: .85; }
-    .r01-base .lks a:hover { color: var(--gold); }
-
-    /* ════════════════════════════════════════════════════════════
-       R02 — DIPTYQUE PHOTO + CONTENU
-       Photo extérieur à gauche pleine hauteur, contenu à droite
-       sur fond sombre, contraste éditorial fort
-       ════════════════════════════════════════════════════════════ */
-    .r02 { display: grid; grid-template-columns: 1fr 1.2fr; min-height: 460px; background: var(--green-ink); }
-    .r02-img {
-      background: url('assets/eglise-exterieur.jpg') center/cover no-repeat;
-      position: relative;
-    }
-    .r02-img::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, transparent 60%, rgba(14,38,31,.55) 100%);
-      pointer-events: none;
-    }
-    .r02-img-cap {
-      position: absolute;
-      bottom: 1.4rem; left: 1.4rem;
-      padding: .4rem .8rem;
-      background: rgba(0,0,0,.55);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      font-family: 'Inter', sans-serif;
-      font-size: .55rem;
-      letter-spacing: .22em;
+    .opera-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: .65rem;
+      letter-spacing: .42em;
       text-transform: uppercase;
       color: var(--gold);
-      font-weight: 600;
-      border: 1px solid rgba(196,154,58,.3);
+      font-weight: 500;
     }
-    .r02-r { padding: 3rem 2.5rem 1.5rem; display: flex; flex-direction: column; gap: 1.4rem; justify-content: center; }
-    .r02-r .ey { display: block; }
-    .r02-r .h-name { font-size: 2.6rem; }
-    .r02-r .quote { max-width: 420px; }
-    .r02-r .give { align-self: start; }
-    .r02-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.6rem; padding-top: 1.6rem; border-top: 1px solid rgba(196,154,58,.18); }
-
-    /* ════════════════════════════════════════════════════════════
-       R03 — INTÉRIEUR ICONOSTASE
-       Photo iconostase en arrière-plan, contenu sur lame de verre
-       au centre style hero immersif
-       ════════════════════════════════════════════════════════════ */
-    .r03 {
-      min-height: 520px;
-      background: url('assets/iconostasis.jpg') center/cover no-repeat;
+    .opera-h {
+      font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+      font-weight: 400;
+      color: var(--cream);
+      letter-spacing: -.012em;
+      line-height: .95;
+    }
+    .opera-h em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold-warm);
+    }
+    .opera-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--cream);
+      opacity: .82;
+      line-height: 1.55;
+    }
+    .opera-col-h {
+      font-family: 'Cinzel', serif;
+      font-size: .58rem;
+      letter-spacing: .38em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 1.1rem;
+      opacity: .9;
+    }
+    .opera-list { display: flex; flex-direction: column; gap: .55rem; }
+    .opera-list a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      color: var(--cream);
+      opacity: .82;
+      transition: color .35s, padding-left .35s;
+      letter-spacing: .005em;
+    }
+    .opera-list a:hover {
+      color: var(--gold-warm);
+      opacity: 1;
+      padding-left: .35rem;
+    }
+    .opera-list p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--cream);
+      opacity: .8;
+      line-height: 1.55;
+    }
+    .opera-give {
+      display: inline-flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-family: 'Cinzel', serif;
+      font-size: .68rem;
+      letter-spacing: .38em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--gold);
+      padding: 1.1rem 2.4rem;
+      border: 1px solid var(--gold);
+      transition: all .55s cubic-bezier(.2,.7,.2,1);
       position: relative;
       isolation: isolate;
+      overflow: hidden;
     }
-    .r03::before {
+    .opera-give::before {
       content: '';
       position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 60% 50% at 50% 60%, rgba(0,0,0,.2), rgba(0,0,0,.8) 80%);
+      background: var(--gold);
+      transform: translateY(101%);
+      transition: transform .55s cubic-bezier(.7,0,.2,1);
+      z-index: -1;
     }
-    .r03-card {
-      position: relative; z-index: 1;
-      max-width: 720px;
+    .opera-give:hover { color: var(--green-vdeep); border-color: var(--gold-warm); }
+    .opera-give:hover::before { transform: translateY(0); }
+    .opera-give svg {
+      width: 14px; height: 10px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+      transition: transform .45s cubic-bezier(.2,.7,.2,1);
+    }
+    .opera-give:hover svg { transform: translateX(6px); }
+    .opera-bot {
+      padding: 1.3rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 1.5rem;
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,.35));
+      border-top: 1px solid rgba(201,168,107,.18);
+      font-family: 'Cinzel', serif;
+      font-size: .58rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--cream-mute);
+    }
+    .opera-bot .seal {
+      justify-self: center;
+      width: 28px; height: 28px;
+      border: 1px solid rgba(201,168,107,.4);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .opera-bot .seal svg { width: 12px; height: 16px; color: var(--gold); fill: currentColor; }
+    .opera-bot .lang { justify-self: end; display: inline-flex; align-items: center; gap: .4rem; }
+    .opera-bot .lang a { color: var(--cream); opacity: .55; padding: .35rem .55rem; border: 1px solid transparent; transition: all .3s; }
+    .opera-bot .lang a:hover, .opera-bot .lang a.act { color: var(--gold); opacity: 1; border-color: rgba(201,168,107,.35); }
+    .opera-bot .copy { justify-self: start; }
+
+    /* SVG croix orthodoxe propre (réutilisable) */
+    .ortho-cross-fill rect,
+    .ortho-cross-fill polygon { fill: var(--gold); }
+
+    /* ════════════════════════════════════════════════════════════
+       OPÉRA 01 — GRAND THÉÂTRE
+       Cartouche central encadré or, eyebrow centré, hero majeur,
+       trois colonnes en dessous très espacées
+       ════════════════════════════════════════════════════════════ */
+    .op01 {
+      background:
+        /* Faux velours vert moiré (gradient + noise SVG) */
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 .12 0 0 0 0 .26 0 0 0 0 .2 0 0 0 .08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"),
+        radial-gradient(ellipse 70% 80% at 50% 0%, rgba(201,168,107,.14), transparent 60%),
+        linear-gradient(180deg, var(--green-mid) 0%, var(--green-deep) 50%, var(--green-vdeep) 100%);
+      padding: 5rem 3rem 0;
+    }
+    .op01-frame {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 4rem 3.5rem 3.5rem;
+      position: relative;
+      border: 1px solid rgba(201,168,107,.5);
+      box-shadow:
+        inset 0 0 0 7px transparent,
+        inset 0 0 0 8px rgba(201,168,107,.22),
+        0 30px 80px rgba(0,0,0,.5);
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(201,168,107,.06), transparent 60%),
+        rgba(10,31,24,.55);
+    }
+    .op01-frame::before, .op01-frame::after {
+      content: '';
+      position: absolute;
+      width: 18px; height: 18px;
+      border: 1px solid var(--gold);
+    }
+    .op01-frame::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+    .op01-frame::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+    .op01-corner { position: absolute; width: 18px; height: 18px; border: 1px solid var(--gold); }
+    .op01-corner.tr { top: -1px; right: -1px; border-left: none; border-bottom: none; }
+    .op01-corner.bl { bottom: -1px; left: -1px; border-right: none; border-top: none; }
+
+    .op01-cross {
+      width: 32px; height: 44px;
+      margin: 0 auto 1.6rem;
+      display: block;
+    }
+    .op01 .opera-eyebrow { margin-bottom: 1.4rem; display: block; }
+    .op01 .opera-h { font-size: clamp(2.2rem, 4vw, 3.4rem); margin-bottom: 1rem; }
+    .op01 .opera-rule { margin: 1.2rem auto; }
+    .op01 .opera-quote { font-size: 1.2rem; max-width: 520px; margin: 0 auto 2.2rem; }
+    .op01-cta-row { display: inline-flex; align-items: center; gap: 2rem; margin-top: .4rem; }
+    .op01-cta-row .meta {
+      font-family: 'Cinzel', serif;
+      font-size: .56rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--cream-mute);
+    }
+
+    .op01-base {
+      max-width: 1100px;
       margin: 4rem auto 0;
-      padding: 3rem 2.5rem;
-      background: rgba(14,38,31,.78);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(196,154,58,.4);
+      padding: 3rem 0 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 4rem;
+      border-top: 1px solid rgba(201,168,107,.22);
+      text-align: left;
+    }
+    .op01-base .opera-col-h { margin-bottom: 1.2rem; }
+
+    /* ════════════════════════════════════════════════════════════
+       OPÉRA 02 — LOGE PRIVÉE
+       Layout 2 colonnes asymétrique, gauche grand hero éditorial,
+       droite "programme" liturgique en bandeau noir
+       ════════════════════════════════════════════════════════════ */
+    .op02 {
+      background:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 .1 0 0 0 0 .22 0 0 0 0 .17 0 0 0 .06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"),
+        linear-gradient(135deg, var(--green-deep) 0%, var(--green-vdeep) 100%);
+      padding: 0;
+    }
+    .op02-w {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      min-height: 480px;
+    }
+    .op02-l {
+      padding: 4.5rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
+      position: relative;
+      border-right: 1px solid rgba(201,168,107,.3);
+    }
+    .op02-l::before {
+      content: '';
+      position: absolute;
+      top: 2.5rem; right: -1px;
+      width: 1px; height: 60px;
+      background: var(--gold);
+    }
+    .op02-l-top { display: flex; flex-direction: column; gap: 1.4rem; }
+    .op02-l-top .opera-eyebrow { display: block; }
+    .op02-l-top .opera-h { font-size: clamp(2.4rem, 4.5vw, 3.8rem); }
+    .op02-l-top .opera-quote { font-size: 1.15rem; max-width: 460px; margin-top: .6rem; }
+    .op02-l-bot { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(201,168,107,.2); }
+
+    .op02-r {
+      padding: 4.5rem 3rem;
+      background:
+        radial-gradient(ellipse 80% 60% at 80% 0%, rgba(201,168,107,.1), transparent 70%),
+        rgba(0,0,0,.35);
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+    .op02-r .ticket {
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(201,168,107,.25);
+    }
+    .op02-r .ticket:last-of-type { border-bottom: 1px solid rgba(201,168,107,.25); }
+    .op02-r .ticket .d {
+      font-family: 'Cinzel', serif;
+      font-size: .6rem;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .5rem;
+    }
+    .op02-r .ticket .t {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .op02-r .ticket .t .name {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.4rem;
+      color: var(--cream);
+      font-weight: 400;
+    }
+    .op02-r .ticket .t .time {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--gold-warm);
+      font-weight: 400;
+      letter-spacing: -.02em;
+    }
+    .op02-r .meta {
+      font-family: 'Cinzel', serif;
+      font-size: .54rem;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      color: var(--cream-mute);
+      margin-bottom: .9rem;
+    }
+    .op02-r .opera-give { margin-top: 1rem; align-self: start; }
+
+    /* ════════════════════════════════════════════════════════════
+       OPÉRA 03 — RIDEAU & VELOURS
+       Centré symétrique, ornement vertical (drapé) gauche/droite,
+       hero majeur, "programme" sous forme de carte sobre
+       ════════════════════════════════════════════════════════════ */
+    .op03 {
+      background:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 .1 0 0 0 0 .22 0 0 0 0 .18 0 0 0 .07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"),
+        radial-gradient(ellipse 50% 70% at 50% 100%, rgba(201,168,107,.08), transparent 70%),
+        linear-gradient(180deg, var(--green-vdeep) 0%, var(--green-deep) 100%);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Drapés latéraux subtils (gradients verticaux) */
+    .op03::before, .op03::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 12%;
+      background:
+        repeating-linear-gradient(90deg,
+          rgba(201,168,107,.05) 0 1px,
+          transparent 1px 22px,
+          rgba(201,168,107,.07) 22px 23px,
+          transparent 23px 60px,
+          rgba(201,168,107,.04) 60px 61px,
+          transparent 61px 85px
+        ),
+        linear-gradient(90deg, rgba(0,0,0,.4), transparent);
+      pointer-events: none;
+      mask: linear-gradient(180deg, transparent, #000 15%, #000 85%, transparent);
+      -webkit-mask: linear-gradient(180deg, transparent, #000 15%, #000 85%, transparent);
+    }
+    .op03::before { left: 0; }
+    .op03::after { right: 0; transform: scaleX(-1); }
+
+    .op03-hero {
+      position: relative; z-index: 1;
+      padding: 5.5rem 2rem 3.5rem;
+      max-width: 720px;
+      margin: 0 auto;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1.3rem;
+      gap: 1.4rem;
     }
-    .r03-card .ey { display: block; }
-    .r03-card .h-name { font-size: 2.6rem; }
-    .r03-card .quote { max-width: 460px; }
-    .r03-rule { width: 28px; height: 1px; background: var(--gold); opacity: .55; }
-    .r03-links { display: flex; gap: 1.8rem; flex-wrap: wrap; justify-content: center; padding-top: 1.2rem; border-top: 1px solid rgba(196,154,58,.18); width: 100%; margin-top: .4rem; }
-    .r03-links a { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: .95rem; color: var(--cream); opacity: .9; }
-    .r03-links a:hover { color: var(--gold); }
-    .r03-bot { position: relative; z-index: 1; margin-top: 3rem; }
-
-    /* ════════════════════════════════════════════════════════════
-       R04 — TRIPTYQUE PHOTOS
-       3 photos (extérieur, intérieur, iconostase) en bandes
-       verticales avec contenu superposé sur chacune
-       ════════════════════════════════════════════════════════════ */
-    .r04 { display: grid; grid-template-columns: 1fr 1fr 1fr; min-height: 420px; background: var(--green-ink); }
-    .r04-pn { position: relative; padding: 2rem 1.6rem; display: flex; flex-direction: column; justify-content: end; gap: 1rem; isolation: isolate; cursor: pointer; overflow: hidden; }
-    .r04-pn::before {
-      content: '';
-      position: absolute; inset: 0;
-      background-size: cover; background-position: center;
-      z-index: -2;
-      transition: transform .6s cubic-bezier(.2,.7,.2,1);
-    }
-    .r04-pn::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(14,38,31,.35) 0%, rgba(14,38,31,.55) 45%, rgba(14,38,31,.92) 100%);
-      z-index: -1;
-      transition: background .4s;
-    }
-    .r04-pn:hover::before { transform: scale(1.06); }
-    .r04-pn:hover::after { background: linear-gradient(180deg, rgba(14,38,31,.25) 0%, rgba(14,38,31,.45) 40%, rgba(14,38,31,.88) 100%); }
-    .r04-pn.p1::before { background-image: url('assets/eglise-exterieur.jpg'); }
-    .r04-pn.p2::before { background-image: url('assets/church-interior.jpg'); }
-    .r04-pn.p3::before { background-image: url('assets/iconostasis.jpg'); }
-    .r04-pn .num { font-family: 'Inter', sans-serif; font-size: .54rem; letter-spacing: .35em; text-transform: uppercase; color: var(--gold); font-weight: 600; opacity: .9; }
-    .r04-pn h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: var(--cream); font-weight: 400; line-height: 1.05; letter-spacing: -.01em; }
-    .r04-pn h3 em { color: var(--gold-light); font-style: italic; }
-    .r04-pn .desc { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: .9rem; color: var(--cream); opacity: .88; line-height: 1.5; }
-    .r04-pn .links { display: flex; flex-direction: column; gap: .2rem; max-height: 0; overflow: hidden; transition: max-height .5s ease; }
-    .r04-pn:hover .links { max-height: 200px; }
-    .r04-pn .links a { font-family: 'Cormorant Garamond', serif; font-size: .92rem; color: var(--cream); opacity: .88; padding: .15rem 0; border-bottom: 1px solid rgba(196,154,58,.18); }
-    .r04-pn .links a:hover { color: var(--gold); }
-
-    /* ════════════════════════════════════════════════════════════
-       R05 — PORTRAIT SAINT + TEXTE LITURGIQUE
-       Photo St Séraphim (avec ours) à gauche, parchemin/citation
-       à droite avec texte sur fond chaud
-       ════════════════════════════════════════════════════════════ */
-    .r05 {
-      background: linear-gradient(180deg, #1a2c24, #0E261F);
-      padding: 0;
-    }
-    .r05-w { display: grid; grid-template-columns: 1fr 1.3fr; min-height: 480px; }
-    .r05-portrait {
-      background: url('assets/seraphin-ours.jpg') center/cover no-repeat;
+    .op03-monogram {
       position: relative;
-      border-right: 1px solid rgba(196,154,58,.3);
+      width: 96px; height: 96px;
+      border: 1px solid rgba(201,168,107,.5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: .4rem;
+      box-shadow:
+        inset 0 0 0 6px transparent,
+        inset 0 0 0 7px rgba(201,168,107,.18),
+        0 0 0 0 var(--gold),
+        0 0 30px rgba(201,168,107,.15);
     }
-    .r05-portrait::after {
+    .op03-monogram::before, .op03-monogram::after {
       content: '';
-      position: absolute; inset: 0;
-      background:
-        linear-gradient(180deg, rgba(20,40,30,.15), rgba(20,40,30,.4)),
-        radial-gradient(ellipse at 30% 30%, rgba(196,154,58,.1), transparent 60%);
-    }
-    .r05-tag {
       position: absolute;
-      bottom: 1.4rem; left: 1.4rem;
-      z-index: 2;
-      padding: .5rem .9rem;
-      background: rgba(0,0,0,.6);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(196,154,58,.35);
+      width: 1px;
+      background: rgba(201,168,107,.5);
+    }
+    .op03-monogram::before { left: -22px; top: 50%; width: 14px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
+    .op03-monogram::after { right: -22px; top: 50%; width: 14px; height: 1px; background: linear-gradient(-90deg, transparent, var(--gold)); }
+    .op03-monogram svg { width: 30px; height: 42px; }
+
+    .op03-hero .opera-eyebrow { display: block; }
+    .op03-hero .opera-h { font-size: clamp(2.4rem, 4.5vw, 3.6rem); }
+    .op03-hero .opera-rule { margin-top: .4rem; }
+    .op03-hero .opera-quote { font-size: 1.2rem; max-width: 540px; }
+    .op03-hero .opera-give { margin-top: 1rem; }
+
+    .op03-program {
+      position: relative; z-index: 1;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 2.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 2rem;
+      align-items: center;
+      border-top: 1px solid rgba(201,168,107,.25);
+      border-bottom: 1px solid rgba(201,168,107,.25);
+      background: linear-gradient(180deg, rgba(0,0,0,.15), transparent, rgba(0,0,0,.15));
+    }
+    .op03-program .sep {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(180deg, transparent, rgba(201,168,107,.4), transparent);
+    }
+    .op03-pcol { display: flex; flex-direction: column; gap: .5rem; text-align: center; }
+    .op03-pcol .lab {
       font-family: 'Cinzel', serif;
-      font-size: .58rem;
-      letter-spacing: .25em;
-      color: var(--gold-light);
-    }
-    .r05-r { padding: 3rem 2.5rem; display: flex; flex-direction: column; gap: 1.4rem; justify-content: center; }
-    .r05-r .ey { display: block; }
-    .r05-r .h-name { font-size: 2.5rem; }
-    .r05-r blockquote {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1.3rem;
-      line-height: 1.4;
-      color: var(--cream);
-      opacity: .95;
-      padding: 1.2rem 0 1.2rem 1.4rem;
-      border-left: 2px solid var(--gold);
-      max-width: 480px;
-    }
-    .r05-r blockquote cite {
-      display: block;
-      margin-top: .8rem;
-      font-family: 'Inter', sans-serif;
-      font-style: normal;
       font-size: .56rem;
-      letter-spacing: .28em;
+      letter-spacing: .38em;
       text-transform: uppercase;
       color: var(--gold);
-      font-weight: 600;
+      opacity: .9;
     }
-    .r05-r .give { align-self: start; }
-    .r05-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; padding-top: 1.4rem; border-top: 1px solid rgba(196,154,58,.18); }
+    .op03-pcol .val {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--cream);
+      font-weight: 400;
+      line-height: 1.3;
+    }
+    .op03-pcol .val a { color: var(--cream); transition: color .25s; }
+    .op03-pcol .val a:hover { color: var(--gold-warm); }
+    .op03-pcol .val em { color: var(--gold-warm); }
+
+    .op03-foot-links {
+      position: relative; z-index: 1;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 2rem 3rem 0;
+      display: flex;
+      gap: 2.2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .op03-foot-links a {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--cream);
+      opacity: .82;
+      transition: color .3s;
+    }
+    .op03-foot-links a:hover { color: var(--gold-warm); opacity: 1; }
+
+    .op03-bot { position: relative; z-index: 1; margin-top: 2rem; }
 
     /* responsive */
     @media (max-width: 900px) {
-      .r01-inner { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem 0; }
-      .r01-r { grid-template-columns: 1fr 1fr; }
-      .r02, .r05-w { grid-template-columns: 1fr; }
-      .r02-img { min-height: 240px; }
-      .r02-grid, .r05-grid { grid-template-columns: 1fr 1fr; }
-      .r04 { grid-template-columns: 1fr; }
-      .r04-pn { min-height: 240px; }
-      .r04-pn .links { max-height: 200px; }
-      .r03-card { margin: 3rem 1rem 0; padding: 2rem 1.5rem; }
-    }
-    @media (max-width: 600px) {
-      .r02-grid, .r05-grid { grid-template-columns: 1fr; }
-      .r01-r { grid-template-columns: 1fr; }
+      .op01 { padding: 3rem 1.5rem 0; }
+      .op01-frame { padding: 3rem 1.5rem 2.5rem; }
+      .op01-base { grid-template-columns: 1fr; gap: 2.5rem; padding: 2rem 1rem 0; }
+      .op02-w { grid-template-columns: 1fr; }
+      .op02-l { padding: 3rem 2rem; border-right: none; border-bottom: 1px solid rgba(201,168,107,.3); }
+      .op02-l::before { display: none; }
+      .op02-l-bot { grid-template-columns: 1fr; gap: 1.6rem; }
+      .op02-r { padding: 3rem 2rem; }
+      .op03-hero { padding: 3.5rem 1.5rem 2.5rem; }
+      .op03-program { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 1.5rem; }
+      .op03-program .sep { display: none; }
+      .opera-bot { grid-template-columns: 1fr; gap: 1rem; padding: 1.3rem 1.5rem; text-align: center; }
+      .opera-bot .copy, .opera-bot .seal, .opera-bot .lang { justify-self: center; }
     }
   </style>
 </head>
 <body>
 
   <h1 class="pt">
-    Footer · 5 versions réalistes (vraies photos église)
-    <small>Plus de schémas dessinés — vraies images en background, traitement éditorial.</small>
+    Footer · élégant opéra · vert profond & or fin
+    <small>3 versions soignées dans l'esprit palace / fine art / théâtre</small>
   </h1>
 
   <nav class="toc">
-    <a href="#r01"><span>01</span>Façade plein écran</a>
-    <a href="#r02"><span>02</span>Diptyque photo + contenu</a>
-    <a href="#r03"><span>03</span>Iconostase immersive</a>
-    <a href="#r04"><span>04</span>Triptyque 3 photos</a>
-    <a href="#r05"><span>05</span>Portrait du saint + citation</a>
+    <a href="#op01"><span>01</span>Grand Théâtre — cartouche encadré</a>
+    <a href="#op02"><span>02</span>Loge privée — programme liturgique</a>
+    <a href="#op03"><span>03</span>Rideau & velours — drapés latéraux</a>
   </nav>
 
-  <!-- R01 -->
-  <div class="wrap" id="r01"><div class="lbl">01 <em>Façade plein écran — photo extérieur en background</em></div>
-    <footer class="ftr r01">
-      <div class="r01-inner">
-        <div class="r01-l">
-          <span class="ey">Paroisse · Montgeron · 1957</span>
-          <h2 class="h-name">Saint-Séraphim<br><em>de Sarov</em></h2>
-          <p class="quote">Acquiers la paix intérieure et des milliers d'âmes trouveront le salut autour de toi.</p>
-          <a href="#" class="give">Faire un don →</a>
-        </div>
-        <div class="r01-r">
-          <div><div class="col-h">Visiter</div><div class="col-list"><a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a><a href="#">Contact</a></div></div>
-          <div><div class="col-h">Offices</div><div class="col-list"><p>Samedi · 18 h<br>Vêpres</p><p>Dimanche · 10 h<br>Liturgie</p></div></div>
-        </div>
-      </div>
-      <div class="r01-base">
-        <div class="lks"><a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a><a href="#">Offices</a><a href="#">Don</a></div>
-        <span style="font-family:'Inter', sans-serif; font-size:.56rem; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.6); padding-top:.3rem;">Rue du Moulin de Senlis · 91230 Montgeron</span>
-      </div>
-      <div class="bot"><span>© MMXXVI · Patriarcat de Moscou · Diocèse de Chersonèse</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
-    </footer></div>
+  <!-- OPÉRA 01 -->
+  <div class="wrap" id="op01"><div class="vlbl">01 <em>Grand Théâtre — cartouche encadré or, hero majeur centré</em></div>
+    <footer class="ftr op01">
+      <div class="op01-frame">
+        <span class="op01-corner tr"></span>
+        <span class="op01-corner bl"></span>
 
-  <!-- R02 -->
-  <div class="wrap" id="r02"><div class="lbl">02 <em>Diptyque — photo extérieur à gauche, contenu à droite</em></div>
-    <footer class="ftr r02">
-      <div class="r02-img"><span class="r02-img-cap">Façade · Moulin de Senlis</span></div>
-      <div class="r02-r">
-        <span class="ey">Paroisse orthodoxe · 1957</span>
-        <h2 class="h-name">Saint-Séraphim<br><em>de Sarov · Montgeron</em></h2>
-        <p class="quote">Lieu de prière dans la tradition liturgique russe, depuis bientôt 70 ans en Île-de-France.</p>
-        <a href="#" class="give">Faire un don →</a>
-        <div class="r02-grid">
-          <div><div class="col-h">Visiter</div><div class="col-list"><a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a></div></div>
-          <div><div class="col-h">Offices</div><div class="col-list"><p>Sam · 18 h<br>Dim · 10 h</p></div></div>
-          <div><div class="col-h">Adresse</div><div class="col-list"><p>Moulin de Senlis<br>91230 Montgeron</p></div></div>
+        <svg class="op01-cross ortho-cross-fill" viewBox="0 0 60 90">
+          <rect x="26" y="0" width="8" height="86" rx="1"/>
+          <rect x="16" y="8" width="28" height="6" rx=".5"/>
+          <rect x="6" y="28" width="48" height="7" rx=".5"/>
+          <polygon points="12,62 48,68 48,76 12,70"/>
+        </svg>
+
+        <span class="opera-eyebrow">Paroisse · Montgeron · MCMLVII</span>
+        <h2 class="opera-h">Saint-Séraphim<br><em>de Sarov</em></h2>
+        <div class="opera-rule"></div>
+        <p class="opera-quote">Acquiers la paix intérieure et des milliers d'âmes trouveront le salut autour de toi.</p>
+
+        <div class="op01-cta-row">
+          <a href="#" class="opera-give">
+            Faire un don
+            <svg viewBox="0 0 14 10"><path d="M1 5h12M9 1l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <span class="meta">Reçu fiscal · Don sécurisé</span>
         </div>
       </div>
-      <div class="bot" style="grid-column: 1 / -1;"><span>© MMXXVI · Patriarcat de Moscou</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
-    </footer></div>
 
-  <!-- R03 -->
-  <div class="wrap" id="r03"><div class="lbl">03 <em>Iconostase immersive — photo intérieur, carte verre dessus</em></div>
-    <footer class="ftr r03">
-      <div class="r03-card">
-        <span class="ey">Paroisse · Montgeron · MCMLVII</span>
-        <h2 class="h-name">Saint-Séraphim <em>de Sarov</em></h2>
-        <div class="r03-rule"></div>
-        <p class="quote">Acquiers la paix intérieure et des milliers d'âmes trouveront le salut autour de toi.</p>
-        <a href="#" class="give" style="margin-top:.4rem;">Faire un don →</a>
-        <div class="r03-links">
-          <a href="#">Accueil</a>
-          <a href="#">Le Saint</a>
-          <a href="#">Histoire</a>
-          <a href="#">Offices</a>
-          <a href="#">Contact</a>
-        </div>
-      </div>
-      <div class="r03-bot bot"><span>© MMXXVI · Patriarcat de Moscou · Chersonèse</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
-    </footer></div>
-
-  <!-- R04 -->
-  <div class="wrap" id="r04"><div class="lbl">04 <em>Triptyque 3 photos — extérieur · intérieur · iconostase</em></div>
-    <footer class="ftr">
-      <div class="r04">
-        <div class="r04-pn p1">
-          <span class="num">01 · Visiter</span>
-          <h3>Notre <em>église</em></h3>
-          <p class="desc">Façade et histoire de la paroisse.</p>
-          <div class="links">
+      <div class="op01-base">
+        <div>
+          <div class="opera-col-h">Visiter</div>
+          <div class="opera-list">
             <a href="#">Accueil</a>
             <a href="#">Le Saint patron</a>
             <a href="#">Histoire</a>
-          </div>
-        </div>
-        <div class="r04-pn p2">
-          <span class="num">02 · Liturgie</span>
-          <h3>Les <em>offices</em></h3>
-          <p class="desc">Samedi 18 h · Dimanche 10 h.</p>
-          <div class="links">
-            <a href="#">Grandes Vêpres</a>
-            <a href="#">Divine Liturgie</a>
-            <a href="#">Calendrier</a>
-          </div>
-        </div>
-        <div class="r04-pn p3">
-          <span class="num">03 · Soutenir</span>
-          <h3>L'iconostase<br><em>à préserver</em></h3>
-          <p class="desc">Patrimoine orthodoxe à entretenir.</p>
-          <div class="links">
-            <a href="#">Faire un don</a>
-            <a href="#">Restauration</a>
             <a href="#">Contact</a>
           </div>
         </div>
-      </div>
-      <div class="bot" style="background:#0E261F;"><span>© MMXXVI · Patriarcat de Moscou · Diocèse de Chersonèse</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
-    </footer></div>
-
-  <!-- R05 -->
-  <div class="wrap" id="r05"><div class="lbl">05 <em>Portrait du saint patron — photo + citation à droite</em></div>
-    <footer class="ftr r05">
-      <div class="r05-w">
-        <div class="r05-portrait">
-          <span class="r05-tag">St Séraphim de Sarov · 1759-1833</span>
+        <div>
+          <div class="opera-col-h">Offices</div>
+          <div class="opera-list">
+            <p>Samedi · 18 h<br><em style="color: var(--gold); font-style: italic;">Grandes Vêpres</em></p>
+            <p>Dimanche · 10 h<br><em style="color: var(--gold); font-style: italic;">Divine Liturgie</em></p>
+          </div>
         </div>
-        <div class="r05-r">
-          <span class="ey">Paroisse · Montgeron · 1957</span>
-          <h2 class="h-name">Saint-Séraphim<br><em>de Sarov</em></h2>
-          <blockquote>
-            Acquiers la paix intérieure et des milliers d'âmes trouveront le salut autour de toi.
-            <cite>— Saint Séraphim de Sarov</cite>
-          </blockquote>
-          <a href="#" class="give">Faire un don →</a>
-          <div class="r05-grid">
-            <div><div class="col-h">Visiter</div><div class="col-list"><a href="#">Accueil</a><a href="#">Le Saint</a></div></div>
-            <div><div class="col-h">Histoire</div><div class="col-list"><a href="#">Depuis 1957</a></div></div>
-            <div><div class="col-h">Offices</div><div class="col-list"><p>Sam · 18 h<br>Dim · 10 h</p></div></div>
-            <div><div class="col-h">Adresse</div><div class="col-list"><p>Moulin de Senlis<br>Montgeron</p></div></div>
+        <div>
+          <div class="opera-col-h">Trouvez-nous</div>
+          <div class="opera-list">
+            <p>Rue du Moulin de Senlis<br>91230 Montgeron, France</p>
+            <a href="#">Voir l'itinéraire</a>
           </div>
         </div>
       </div>
-      <div class="bot"><span>© MMXXVI · Patriarcat de Moscou · Diocèse de Chersonèse</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
-    </footer></div>
+
+      <div class="opera-bot">
+        <span class="copy">© MMXXVI · Patriarcat de Moscou · Diocèse de Chersonèse</span>
+        <span class="seal">
+          <svg viewBox="0 0 60 90">
+            <rect x="26" y="0" width="8" height="86" rx="1"/>
+            <rect x="16" y="8" width="28" height="6" rx=".5"/>
+            <rect x="6" y="28" width="48" height="7" rx=".5"/>
+            <polygon points="12,62 48,68 48,76 12,70"/>
+          </svg>
+        </span>
+        <span class="lang"><a href="#" class="act">FR</a> · <a href="#">RU</a></span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- OPÉRA 02 -->
+  <div class="wrap" id="op02"><div class="vlbl">02 <em>Loge privée — split éditorial + programme liturgique</em></div>
+    <footer class="ftr op02">
+      <div class="op02-w">
+        <div class="op02-l">
+          <div class="op02-l-top">
+            <span class="opera-eyebrow">Paroisse · Montgeron · Anno MCMLVII</span>
+            <h2 class="opera-h">Saint-Séraphim<br><em>de Sarov</em></h2>
+            <span class="opera-rule"></span>
+            <p class="opera-quote">Lieu de prière, d'art liturgique et de mémoire orthodoxe en Île-de-France, dans la tradition liturgique russe.</p>
+            <a href="#" class="opera-give" style="align-self: start;">
+              Faire un don
+              <svg viewBox="0 0 14 10"><path d="M1 5h12M9 1l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="op02-l-bot">
+            <div>
+              <div class="opera-col-h">Visiter</div>
+              <div class="opera-list">
+                <a href="#">Accueil</a>
+                <a href="#">Le Saint patron</a>
+                <a href="#">Histoire</a>
+                <a href="#">Contact</a>
+              </div>
+            </div>
+            <div>
+              <div class="opera-col-h">Trouvez-nous</div>
+              <div class="opera-list">
+                <p>Rue du Moulin de Senlis<br>91230 Montgeron</p>
+                <a href="#">Voir l'itinéraire</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="op02-r">
+          <div>
+            <div class="meta">Programme liturgique</div>
+            <div class="ticket">
+              <div class="d">Samedi · soir</div>
+              <div class="t">
+                <span class="name">Grandes Vêpres</span>
+                <span class="time">18:00</span>
+              </div>
+            </div>
+            <div class="ticket">
+              <div class="d">Dimanche · matin</div>
+              <div class="t">
+                <span class="name">Divine Liturgie</span>
+                <span class="time">10:00</span>
+              </div>
+            </div>
+            <div class="ticket">
+              <div class="d">Fêtes patronales</div>
+              <div class="t">
+                <span class="name">St Séraphim</span>
+                <span class="time">15 · I</span>
+              </div>
+            </div>
+          </div>
+          <a href="#" style="font-family: 'Cinzel', serif; font-size: .58rem; letter-spacing: .35em; text-transform: uppercase; color: var(--gold); opacity: .9;">Calendrier complet  →</a>
+        </div>
+      </div>
+
+      <div class="opera-bot">
+        <span class="copy">© MMXXVI · Patriarcat de Moscou · Diocèse de Chersonèse</span>
+        <span class="seal">
+          <svg viewBox="0 0 60 90">
+            <rect x="26" y="0" width="8" height="86" rx="1"/>
+            <rect x="16" y="8" width="28" height="6" rx=".5"/>
+            <rect x="6" y="28" width="48" height="7" rx=".5"/>
+            <polygon points="12,62 48,68 48,76 12,70"/>
+          </svg>
+        </span>
+        <span class="lang"><a href="#" class="act">FR</a> · <a href="#">RU</a></span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- OPÉRA 03 -->
+  <div class="wrap" id="op03"><div class="vlbl">03 <em>Rideau & velours — drapés latéraux, monogramme central</em></div>
+    <footer class="ftr op03">
+      <div class="op03-hero">
+        <div class="op03-monogram">
+          <svg class="ortho-cross-fill" viewBox="0 0 60 90">
+            <rect x="26" y="0" width="8" height="86" rx="1"/>
+            <rect x="16" y="8" width="28" height="6" rx=".5"/>
+            <rect x="6" y="28" width="48" height="7" rx=".5"/>
+            <polygon points="12,62 48,68 48,76 12,70"/>
+          </svg>
+        </div>
+        <span class="opera-eyebrow">Paroisse · Montgeron · Anno MCMLVII</span>
+        <h2 class="opera-h">Saint-Séraphim <em>de Sarov</em></h2>
+        <div class="opera-rule"></div>
+        <p class="opera-quote">Acquiers la paix intérieure et des milliers d'âmes trouveront le salut autour de toi.</p>
+        <a href="#" class="opera-give">
+          Faire un don
+          <svg viewBox="0 0 14 10"><path d="M1 5h12M9 1l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="op03-program">
+        <div class="op03-pcol">
+          <span class="lab">Vêpres</span>
+          <span class="val">Samedi · <em>18 h</em></span>
+        </div>
+        <span class="sep"></span>
+        <div class="op03-pcol">
+          <span class="lab">Liturgie</span>
+          <span class="val">Dimanche · <em>10 h</em></span>
+        </div>
+        <span class="sep"></span>
+        <div class="op03-pcol">
+          <span class="lab">Adresse</span>
+          <span class="val"><a href="#">Moulin de Senlis · 91230</a></span>
+        </div>
+      </div>
+
+      <nav class="op03-foot-links">
+        <a href="#">Accueil</a>
+        <a href="#">Le Saint patron</a>
+        <a href="#">Histoire</a>
+        <a href="#">Offices</a>
+        <a href="#">Contact</a>
+      </nav>
+
+      <div class="opera-bot op03-bot">
+        <span class="copy">© MMXXVI · Patriarcat de Moscou · Diocèse de Chersonèse</span>
+        <span class="seal">
+          <svg viewBox="0 0 60 90">
+            <rect x="26" y="0" width="8" height="86" rx="1"/>
+            <rect x="16" y="8" width="28" height="6" rx=".5"/>
+            <rect x="6" y="28" width="48" height="7" rx=".5"/>
+            <polygon points="12,62 48,68 48,76 12,70"/>
+          </svg>
+        </span>
+        <span class="lang"><a href="#" class="act">FR</a> · <a href="#">RU</a></span>
+      </div>
+    </footer>
+  </div>
 
 </body>
 </html>
