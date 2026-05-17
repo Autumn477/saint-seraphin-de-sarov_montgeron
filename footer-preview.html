@@ -651,6 +651,315 @@
     .v30-bot { max-width: 1100px; margin: 1.4rem auto 0; padding-top: 1rem; border-top: 1px solid rgba(196,154,58,.12); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-family: 'Cinzel', serif; font-size: .5rem; letter-spacing: .25em; color: rgba(226,221,201,.5); }
     .v30-bot a { color: var(--gold); padding: 0 .3rem; }
 
+    /* ═══════════ LOT 3 : V31 → V45 ═══════════ */
+
+    /* V31 TABULAR MINIMAL — table dense type catalogue */
+    .v31 { background: var(--green-ink); padding: 2.5rem 2.5rem 1.4rem; }
+    .v31-h { max-width: 1180px; margin: 0 auto 1.2rem; display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; padding-bottom: 1rem; border-bottom: 1px solid rgba(196,154,58,.3); }
+    .v31-h h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--cream); font-weight: 400; }
+    .v31-h h2 em { color: var(--gold); }
+    .v31-h .ref { font-family: 'JetBrains Mono', monospace; font-size: .58rem; letter-spacing: .15em; color: var(--gold); opacity: .8; }
+    .v31-tbl { max-width: 1180px; margin: 0 auto; width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; }
+    .v31-tbl tr { border-bottom: 1px solid rgba(196,154,58,.1); transition: background .25s; }
+    .v31-tbl tr:hover { background: rgba(196,154,58,.04); }
+    .v31-tbl td { padding: .85rem 1rem; vertical-align: baseline; }
+    .v31-tbl td:first-child { font-family: 'JetBrains Mono', monospace; font-size: .55rem; letter-spacing: .15em; color: var(--gold); opacity: .65; width: 60px; }
+    .v31-tbl td:nth-child(2) { font-size: .56rem; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); font-weight: 600; width: 180px; }
+    .v31-tbl td:nth-child(3) { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--cream); }
+    .v31-tbl td:nth-child(3) a { color: var(--cream); border-bottom: 1px solid transparent; transition: border-color .25s; }
+    .v31-tbl td:nth-child(3) a:hover { border-color: var(--gold); color: var(--gold); }
+    .v31-tbl td:last-child { text-align: right; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: .85rem; color: var(--cream-dark); opacity: .55; }
+    .v31-bot { max-width: 1180px; margin: 1.2rem auto 0; padding-top: 1rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-family: 'JetBrains Mono', monospace; font-size: .5rem; letter-spacing: .15em; color: rgba(226,221,201,.5); }
+    .v31-bot a { color: var(--gold); padding: 0 .3rem; }
+
+    /* V32 STICKER BADGES — collection collée */
+    .v32 { background: linear-gradient(180deg, var(--green-deep), var(--green-ink)); padding: 3rem 2rem 1.4rem; }
+    .v32-h { text-align: center; margin-bottom: 2rem; }
+    .v32-h h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: var(--cream); font-weight: 400; margin-bottom: .35rem; }
+    .v32-h h2 em { color: var(--gold); }
+    .v32-h .s { font-family: 'Inter', sans-serif; font-size: .56rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); font-weight: 600; opacity: .8; }
+    .v32-stk { max-width: 980px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; padding-bottom: 1.6rem; border-bottom: 1px solid rgba(196,154,58,.15); }
+    .v32-bd { padding: 1rem 1.4rem; background: rgba(196,154,58,.08); border: 1px dashed rgba(196,154,58,.45); border-radius: 4px; display: flex; flex-direction: column; align-items: center; gap: .25rem; transition: all .3s; cursor: pointer; transform: rotate(0deg); }
+    .v32-bd:nth-child(2n) { transform: rotate(-1.5deg); }
+    .v32-bd:nth-child(3n) { transform: rotate(1deg); }
+    .v32-bd:nth-child(5n) { transform: rotate(-2deg); }
+    .v32-bd:hover { transform: rotate(0deg) scale(1.04); background: rgba(196,154,58,.18); border-color: var(--gold); border-style: solid; }
+    .v32-bd .lb { font-family: 'Inter', sans-serif; font-size: .54rem; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+    .v32-bd .vl { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--cream); }
+    .v32-bd.fil { background: var(--gold); border-color: var(--gold); border-style: solid; }
+    .v32-bd.fil .lb, .v32-bd.fil .vl { color: var(--green-ink); }
+    .v32-bot { max-width: 980px; margin: 1rem auto 0; padding-top: .8rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-size: .5rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(226,221,201,.5); }
+    .v32-bot a { color: var(--gold); padding: 0 .3rem; }
+
+    /* V33 TRIPTYQUE VIDÉO — 3 panneaux image */
+    .v33 { background: var(--green-ink); padding: 0; }
+    .v33-w { display: grid; grid-template-columns: 1fr 1fr 1fr; min-height: 360px; }
+    .v33-pn { position: relative; padding: 1.6rem; overflow: hidden; cursor: pointer; transition: flex-grow .4s; display: flex; flex-direction: column; justify-content: flex-end; }
+    .v33-pn:nth-child(1) { background: linear-gradient(135deg, #14302a, #0a1812), radial-gradient(circle at 30% 40%, rgba(196,154,58,.25), transparent 60%); }
+    .v33-pn:nth-child(2) { background: linear-gradient(135deg, #1B3D33, #0E261F); border-left: 1px solid rgba(196,154,58,.25); border-right: 1px solid rgba(196,154,58,.25); }
+    .v33-pn:nth-child(3) { background: linear-gradient(135deg, #243A33, #0a1812), radial-gradient(circle at 70% 50%, rgba(196,154,58,.15), transparent 60%); }
+    .v33-pn::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,.6) 100%); pointer-events: none; }
+    .v33-pn .icn { position: absolute; top: 1.6rem; left: 1.6rem; }
+    .v33-pn .icn svg { width: 24px; height: 33px; opacity: .75; }
+    .v33-pn .meta { position: relative; font-family: 'Inter', sans-serif; font-size: .52rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: .4rem; opacity: .85; }
+    .v33-pn h3 { position: relative; font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; color: var(--cream); font-weight: 400; line-height: 1; letter-spacing: -.01em; margin-bottom: .8rem; }
+    .v33-pn h3 em { color: var(--gold); font-style: italic; }
+    .v33-pn .lks { position: relative; display: flex; flex-direction: column; gap: .2rem; max-height: 0; overflow: hidden; transition: max-height .45s ease; }
+    .v33-pn:hover .lks { max-height: 300px; }
+    .v33-pn .lks a { font-family: 'Cormorant Garamond', serif; font-size: .92rem; color: var(--cream-dark); opacity: .82; padding: .15rem 0; border-bottom: 1px dotted rgba(196,154,58,.15); }
+    .v33-pn .lks a:hover { color: var(--gold); opacity: 1; }
+    .v33-bot { padding: .9rem 2rem; background: rgba(0,0,0,.3); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-size: .5rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(226,221,201,.5); }
+    .v33-bot a { color: var(--gold); padding: 0 .3rem; }
+
+    /* V34 ARCHITECTURE PLAN — blueprint */
+    .v34 { background: #0a1812; padding: 2.5rem 2.5rem 1.4rem; position: relative; overflow: hidden; }
+    .v34::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(196,154,58,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(196,154,58,.05) 1px, transparent 1px); background-size: 30px 30px; pointer-events: none; }
+    .v34-w { position: relative; max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 2rem; align-items: start; }
+    .v34-plan { position: relative; height: 320px; border: 1px solid rgba(196,154,58,.45); background: rgba(196,154,58,.03); }
+    .v34-plan svg { width: 100%; height: 100%; }
+    .v34-info { display: flex; flex-direction: column; gap: 1rem; }
+    .v34-info .ey { font-family: 'JetBrains Mono', monospace; font-size: .58rem; letter-spacing: .2em; color: var(--gold); opacity: .85; }
+    .v34-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--cream); font-weight: 400; line-height: 1.05; }
+    .v34-info h3 em { color: var(--gold); font-style: italic; }
+    .v34-info .specs { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem 1.5rem; padding: 1rem 0; border-top: 1px solid rgba(196,154,58,.18); border-bottom: 1px solid rgba(196,154,58,.18); font-family: 'JetBrains Mono', monospace; font-size: .65rem; }
+    .v34-info .specs .l { color: var(--gold); opacity: .8; letter-spacing: .12em; text-transform: uppercase; font-size: .54rem; }
+    .v34-info .specs .v { color: var(--cream); font-family: 'Cormorant Garamond', serif; font-size: .92rem; font-style: italic; }
+    .v34-info .lks { display: flex; flex-wrap: wrap; gap: 1.2rem; }
+    .v34-info .lks a { font-family: 'JetBrains Mono', monospace; font-size: .58rem; letter-spacing: .15em; color: var(--cream); opacity: .8; }
+    .v34-info .lks a:hover { color: var(--gold); opacity: 1; }
+    .v34-bot { position: relative; max-width: 1180px; margin: 1.2rem auto 0; padding-top: 1rem; border-top: 1px dashed rgba(196,154,58,.25); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-family: 'JetBrains Mono', monospace; font-size: .5rem; letter-spacing: .15em; color: rgba(226,221,201,.5); }
+    .v34-bot a { color: var(--gold); padding: 0 .3rem; }
+
+    /* V35 COUPOLE VUE DESSUS — vue ciel */
+    .v35 { background: radial-gradient(ellipse at center, #1f4438 0%, var(--green-ink) 60%, #050b08 100%); padding: 3rem 2rem 1.4rem; }
+    .v35-d { max-width: 540px; margin: 0 auto 1.5rem; aspect-ratio: 1 / 1; position: relative; }
+    .v35-r1, .v35-r2, .v35-r3 { position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(196,154,58,.35); display: flex; align-items: center; justify-content: center; }
+    .v35-r2 { inset: 15%; border-color: rgba(196,154,58,.5); }
+    .v35-r3 { inset: 32%; border-color: rgba(196,154,58,.7); background: radial-gradient(circle, rgba(196,154,58,.15), transparent 70%); }
+    .v35-r4 { position: absolute; inset: 45%; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px rgba(196,154,58,.6); }
+    .v35-r4 svg { width: 16px; height: 22px; fill: var(--green-ink); }
+    .v35-orb { position: absolute; font-family: 'Cinzel', serif; font-size: .68rem; letter-spacing: .25em; color: var(--gold); padding: .5rem 1rem; background: var(--green-ink); border: 1px solid rgba(196,154,58,.4); border-radius: 999px; white-space: nowrap; }
+    .v35-orb a { color: var(--cream); border-bottom: 1px solid transparent; }
+    .v35-orb a:hover { color: var(--gold); border-color: var(--gold); }
+    .v35-o1 { top: 0; left: 50%; transform: translate(-50%, -50%); }
+    .v35-o2 { right: 0; top: 50%; transform: translate(50%, -50%); }
+    .v35-o3 { bottom: 0; left: 50%; transform: translate(-50%, 50%); }
+    .v35-o4 { left: 0; top: 50%; transform: translate(-50%, -50%); }
+    .v35-bot { text-align: center; padding-top: 1rem; border-top: 1px solid rgba(196,154,58,.12); font-family: 'Cinzel', serif; font-size: .55rem; letter-spacing: .25em; color: rgba(226,221,201,.55); }
+    .v35-bot a { color: var(--gold); padding: 0 .3rem; }
+
+    /* V36 GALERIE PORTRAITS — saints en grille */
+    .v36 { background: var(--green-ink); padding: 2.5rem 2rem 1.4rem; }
+    .v36-h { max-width: 1180px; margin: 0 auto 1.5rem; text-align: center; }
+    .v36-h h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--cream); font-weight: 400; }
+    .v36-h h2 em { color: var(--gold); font-style: italic; }
+    .v36-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+    .v36-card { position: relative; aspect-ratio: 3 / 4; background: linear-gradient(180deg, #1B3D33, #0a1812); border: 1px solid rgba(196,154,58,.3); padding: 1rem .8rem .9rem; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; transition: all .3s; cursor: pointer; }
+    .v36-card:hover { border-color: var(--gold); background: linear-gradient(180deg, #2E5D4F, #14302a); }
+    .v36-card.feat { grid-column: span 2; grid-row: span 1; background: radial-gradient(ellipse at top, rgba(196,154,58,.15), transparent 60%), linear-gradient(180deg, #14302a, #0E261F); border-color: rgba(196,154,58,.55); }
+    .v36-halo { width: 50%; aspect-ratio: 1; margin: 0 auto .6rem; border-radius: 50%; background: radial-gradient(circle, rgba(196,154,58,.25), transparent 70%); border: 1px solid rgba(196,154,58,.5); display: flex; align-items: center; justify-content: center; position: relative; }
+    .v36-halo svg { width: 60%; height: 60%; fill: var(--gold); }
+    .v36-card .ttl { font-family: 'Cormorant Garamond', serif; font-size: .85rem; color: var(--cream); text-align: center; line-height: 1.15; }
+    .v36-card .ttl em { color: var(--gold); font-style: italic; font-size: .65rem; display: block; margin-top: .15rem; letter-spacing: .15em; text-transform: uppercase; }
+    .v36-card.feat .ttl { font-size: 1.15rem; }
+    .v36-bot { max-width: 1180px; margin: 1.5rem auto 0; padding-top: 1rem; border-top: 1px solid rgba(196,154,58,.12); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-family: 'Cinzel', serif; font-size: .5rem; letter-spacing: .25em; color: rgba(226,221,201,.5); }
+    .v36-bot .lk { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .v36-bot a { color: var(--gold); }
+
+    /* V37 BIBLIOTHÈQUE LIVRES — étagère */
+    .v37 { background: linear-gradient(180deg, #1a2c24, var(--green-ink)); padding: 2.5rem 2.5rem 1.4rem; }
+    .v37-h { max-width: 1180px; margin: 0 auto 1rem; text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--cream); font-weight: 400; }
+    .v37-h em { color: var(--gold); }
+    .v37-shelf { max-width: 1180px; margin: 0 auto; display: flex; gap: 8px; align-items: flex-end; padding-bottom: 12px; border-bottom: 6px solid var(--gold); box-shadow: 0 6px 0 #0a1812; min-height: 200px; }
+    .v37-bk { flex: 1; min-width: 70px; padding: 1.4rem .8rem 1rem; display: flex; flex-direction: column; justify-content: space-between; align-items: center; cursor: pointer; transition: transform .3s, box-shadow .3s; position: relative; }
+    .v37-bk:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0,0,0,.4); }
+    .v37-bk .ttl { font-family: 'Cinzel', serif; font-size: .58rem; letter-spacing: .15em; color: var(--cream); writing-mode: vertical-rl; transform: rotate(180deg); text-transform: uppercase; opacity: .9; }
+    .v37-bk .num { font-family: 'Cormorant Garamond', serif; font-size: .85rem; color: var(--gold); }
+    .v37-bk.c1 { background: linear-gradient(180deg, #2E5D4F, #1B3D33); height: 220px; border: 1px solid rgba(196,154,58,.4); border-bottom: none; }
+    .v37-bk.c2 { background: linear-gradient(180deg, #6B1A1A, #4A1010); height: 180px; border: 1px solid rgba(196,154,58,.4); border-bottom: none; }
+    .v37-bk.c3 { background: linear-gradient(180deg, #14241F, #0a1812); height: 200px; border: 1px solid rgba(196,154,58,.4); border-bottom: none; }
+    .v37-bk.c4 { background: linear-gradient(180deg, #C49A3A, #9b7a2a); height: 210px; border: 1px solid rgba(196,154,58,.4); border-bottom: none; }
+    .v37-bk.c4 .ttl, .v37-bk.c4 .num { color: var(--green-ink); }
+    .v37-bk.c5 { background: linear-gradient(180deg, #3B1A4A, #25102F); height: 195px; border: 1px solid rgba(196,154,58,.4); border-bottom: none; }
+    .v37-bk.c6 { background: linear-gradient(180deg, #243A33, #14241F); height: 175px; border: 1px solid rgba(196,154,58,.4); border-bottom: none; }
+    .v37-bot { max-width: 1180px; margin: 1.5rem auto 0; padding-top: 1rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: .82rem; color: rgba(226,221,201,.6); }
+    .v37-bot a { color: var(--gold); padding: 0 .3rem; }
+
+    /* V38 CHRONOLOGIE VERTICALE */
+    .v38 { background: var(--green-ink); padding: 2.5rem 2.5rem 1.4rem; }
+    .v38-w { max-width: 720px; margin: 0 auto; }
+    .v38-h { text-align: center; margin-bottom: 1.8rem; }
+    .v38-h h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--cream); font-weight: 400; }
+    .v38-h h2 em { color: var(--gold); }
+    .v38-tl { position: relative; padding-left: 2rem; }
+    .v38-tl::before { content: ''; position: absolute; left: 8px; top: 12px; bottom: 12px; width: 1px; background: linear-gradient(180deg, transparent, rgba(196,154,58,.45) 10%, rgba(196,154,58,.45) 90%, transparent); }
+    .v38-it { position: relative; padding: .9rem 0 .9rem 1.6rem; display: grid; grid-template-columns: auto 1fr auto; gap: 1rem; align-items: baseline; }
+    .v38-it::before { content: ''; position: absolute; left: -1.6rem; top: 1.15rem; width: 16px; height: 16px; border-radius: 50%; background: var(--green-ink); border: 2px solid rgba(196,154,58,.5); }
+    .v38-it.on::before { background: var(--gold); border-color: var(--gold); box-shadow: 0 0 12px var(--gold); }
+    .v38-it .yr { font-family: 'JetBrains Mono', monospace; font-size: .58rem; letter-spacing: .15em; color: var(--gold); }
+    .v38-it .ev { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--cream); }
+    .v38-it.on .ev { color: var(--gold-light); }
+    .v38-it .ln a { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: .82rem; color: var(--gold); opacity: .85; }
+    .v38-bot { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(196,154,58,.12); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-size: .5rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(226,221,201,.5); }
+    .v38-bot a { color: var(--gold); padding: 0 .3rem; }
+
+    /* V39 CALENDRIER MOIS */
+    .v39 { background: var(--green-ink); padding: 2.5rem 2rem 1.4rem; }
+    .v39-w { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 320px 1fr; gap: 2.5rem; }
+    .v39-cal { background: rgba(0,0,0,.22); border: 1px solid rgba(196,154,58,.3); padding: 1.2rem; }
+    .v39-cal-h { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: .8rem; padding-bottom: .6rem; border-bottom: 1px solid rgba(196,154,58,.2); }
+    .v39-cal-h .m { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--cream); }
+    .v39-cal-h .m em { color: var(--gold); }
+    .v39-cal-h .y { font-family: 'JetBrains Mono', monospace; font-size: .58rem; letter-spacing: .15em; color: var(--gold); }
+    .v39-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+    .v39-grid .day { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: .7rem; color: var(--cream); opacity: .55; cursor: pointer; transition: all .25s; }
+    .v39-grid .day:hover { background: rgba(196,154,58,.15); opacity: 1; color: var(--gold); }
+    .v39-grid .day.dow { font-size: .5rem; letter-spacing: .15em; color: var(--gold); opacity: .6; cursor: default; }
+    .v39-grid .day.dow:hover { background: transparent; opacity: .6; }
+    .v39-grid .day.act { background: var(--gold); color: var(--green-ink); opacity: 1; font-weight: 600; }
+    .v39-grid .day.lt { color: var(--gold); opacity: .85; position: relative; }
+    .v39-grid .day.lt::after { content: ''; position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%); width: 4px; height: 4px; border-radius: 50%; background: var(--gold); }
+    .v39-info { display: flex; flex-direction: column; justify-content: space-between; gap: 1.2rem; }
+    .v39-info .ey { font-family: 'JetBrains Mono', monospace; font-size: .55rem; letter-spacing: .2em; color: var(--gold); }
+    .v39-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: var(--cream); font-weight: 400; line-height: 1.05; }
+    .v39-info h3 em { color: var(--gold); font-style: italic; }
+    .v39-info p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: .92rem; color: var(--cream-dark); opacity: .72; line-height: 1.55; max-width: 460px; }
+    .v39-info .lks { display: flex; gap: 1.4rem; flex-wrap: wrap; padding-top: .8rem; border-top: 1px solid rgba(196,154,58,.18); }
+    .v39-info .lks a { font-size: .58rem; letter-spacing: .22em; text-transform: uppercase; color: var(--cream-dark); opacity: .7; }
+    .v39-info .lks a:hover { color: var(--gold); opacity: 1; }
+    .v39-bot { max-width: 1180px; margin: 1.2rem auto 0; padding-top: 1rem; border-top: 1px solid rgba(196,154,58,.12); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-size: .5rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(226,221,201,.5); }
+    .v39-bot a { color: var(--gold); padding: 0 .3rem; }
+
+    /* V40 CONSOLE TERMINAL V2 — split panes IDE */
+    .v40 { background: #04130d; padding: 1.5rem; font-family: 'JetBrains Mono', monospace; }
+    .v40-bar { display: flex; gap: 6px; padding: .5rem .8rem; background: #021008; border-bottom: 1px solid rgba(196,154,58,.2); }
+    .v40-bar span { width: 10px; height: 10px; border-radius: 50%; background: rgba(196,154,58,.3); }
+    .v40-bar span:nth-child(1) { background: #ff5f56; }
+    .v40-bar span:nth-child(2) { background: #ffbd2e; }
+    .v40-bar span:nth-child(3) { background: #27c93f; }
+    .v40-bar .ttl { font-size: .55rem; letter-spacing: .12em; color: var(--gold); margin-left: 1rem; opacity: .8; }
+    .v40-spl { display: grid; grid-template-columns: 200px 1fr; min-height: 240px; }
+    .v40-side { background: #021008; padding: 1rem; border-right: 1px solid rgba(196,154,58,.2); }
+    .v40-side .lbl { font-size: .5rem; letter-spacing: .2em; color: var(--gold); opacity: .7; margin-bottom: .6rem; text-transform: uppercase; }
+    .v40-side a { display: block; font-size: .62rem; color: #6FAA8E; padding: .2rem .3rem; border-radius: 2px; transition: all .25s; }
+    .v40-side a:hover { background: rgba(196,154,58,.1); color: var(--gold); }
+    .v40-side a.on { background: rgba(196,154,58,.15); color: var(--gold); }
+    .v40-main { padding: 1rem 1.2rem; font-size: .68rem; line-height: 1.7; color: var(--cream); }
+    .v40-ln { display: grid; grid-template-columns: 28px 1fr; gap: .8rem; }
+    .v40-ln .n { color: var(--gold); opacity: .5; text-align: right; }
+    .v40-ln .c { color: var(--cream); }
+    .v40-ln .c .kw { color: var(--gold); }
+    .v40-ln .c .str { color: #6FAA8E; }
+    .v40-ln .c .cm { color: rgba(196,154,58,.5); font-style: italic; }
+    .v40-stat { padding: .55rem 1rem; background: var(--gold); color: var(--green-ink); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-size: .55rem; letter-spacing: .15em; text-transform: uppercase; font-weight: 700; }
+
+    /* V41 BOUTON GÉANT — un seul énorme CTA */
+    .v41 { background: linear-gradient(180deg, var(--green-deep), var(--green-ink)); padding: 4rem 2rem 1.4rem; text-align: center; position: relative; overflow: hidden; }
+    .v41::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(196,154,58,.18), transparent 60%); pointer-events: none; }
+    .v41-eye { position: relative; font-family: 'Inter', sans-serif; font-size: .58rem; letter-spacing: .4em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 1.2rem; opacity: .85; }
+    .v41-mega { position: relative; display: inline-flex; flex-direction: column; align-items: center; gap: .35rem; padding: 2rem 4rem; border: 1px solid var(--gold); color: var(--cream); text-decoration: none; transition: all .5s; cursor: pointer; background: transparent; isolation: isolate; }
+    .v41-mega::before { content: ''; position: absolute; inset: 0; background: var(--gold); transform: scaleY(0); transform-origin: bottom; transition: transform .5s cubic-bezier(.7,0,.2,1); z-index: -1; }
+    .v41-mega:hover { color: var(--green-ink); border-color: var(--gold); }
+    .v41-mega:hover::before { transform: scaleY(1); }
+    .v41-mega .sml { font-family: 'Inter', sans-serif; font-size: .58rem; letter-spacing: .35em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+    .v41-mega:hover .sml { color: var(--green-ink); }
+    .v41-mega .big { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 400; line-height: 1; letter-spacing: -.015em; }
+    .v41-mega .big em { font-style: italic; color: var(--gold); transition: color .5s; }
+    .v41-mega:hover .big em { color: var(--green-ink); }
+    .v41-sub { position: relative; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: var(--cream-dark); opacity: .7; margin: 1.4rem auto 2rem; max-width: 460px; }
+    .v41-lks { position: relative; display: flex; gap: 1.8rem; justify-content: center; flex-wrap: wrap; padding: 1.6rem 0 1rem; border-top: 1px solid rgba(196,154,58,.18); }
+    .v41-lks a { font-size: .58rem; letter-spacing: .22em; text-transform: uppercase; color: var(--cream-dark); opacity: .65; }
+    .v41-lks a:hover { color: var(--gold); opacity: 1; }
+    .v41-bot { position: relative; padding-top: .8rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; font-size: .5rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(226,221,201,.4); }
+    .v41-bot a { color: var(--gold); padding: 0 .3rem; }
+
+    /* V42 CARTES EMPILÉES — stack 3D */
+    .v42 { background: linear-gradient(180deg, var(--green-deep), var(--green-ink)); padding: 3rem 2rem 1.4rem; }
+    .v42-stk { max-width: 720px; margin: 0 auto; position: relative; }
+    .v42-c { background: rgba(0,0,0,.3); border: 1px solid rgba(196,154,58,.4); padding: 1.8rem 2rem; border-radius: 4px; }
+    .v42-c.s1 { background: rgba(196,154,58,.05); border-color: rgba(196,154,58,.6); position: relative; z-index: 3; }
+    .v42-c.s2 { margin: -1.6rem 1rem 0 1rem; opacity: .85; position: relative; z-index: 2; }
+    .v42-c.s3 { margin: -1.6rem 2rem 0 2rem; opacity: .7; position: relative; z-index: 1; }
+    .v42-c h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--cream); font-weight: 400; margin-bottom: .5rem; }
+    .v42-c h3 em { color: var(--gold); }
+    .v42-c .ey { font-family: 'Inter', sans-serif; font-size: .54rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: .8rem; }
+    .v42-c .ln { display: flex; gap: 1.2rem; flex-wrap: wrap; padding-top: .8rem; border-top: 1px solid rgba(196,154,58,.18); }
+    .v42-c .ln a { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: .92rem; color: var(--cream); opacity: .8; }
+    .v42-c .ln a:hover { color: var(--gold); opacity: 1; }
+    .v42-c.s1 .give { display: inline-flex; align-items: center; gap: .6rem; font-size: .6rem; letter-spacing: .28em; text-transform: uppercase; font-weight: 600; color: var(--green-ink); background: var(--gold); padding: .7rem 1.2rem; margin-top: .8rem; }
+    .v42-bot { max-width: 720px; margin: 1.5rem auto 0; padding-top: 1rem; border-top: 1px solid rgba(196,154,58,.12); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-size: .5rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(226,221,201,.5); }
+    .v42-bot a { color: var(--gold); padding: 0 .3rem; }
+
+    /* V43 NÉON ORTHODOXE — fluorescent vert/or */
+    .v43 { background: #000; padding: 3.5rem 2rem 1.4rem; position: relative; }
+    .v43::before, .v43::after { content: ''; position: absolute; pointer-events: none; }
+    .v43::before { inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(0,255,180,.06), transparent 60%); }
+    .v43::after { inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(255,200,80,.06), transparent 60%); }
+    .v43-w { position: relative; max-width: 1180px; margin: 0 auto; text-align: center; }
+    .v43-neo { font-family: 'Cinzel', serif; font-size: clamp(2.6rem, 7vw, 5rem); color: #fff; letter-spacing: .12em; font-weight: 500; text-shadow: 0 0 8px #ffd966, 0 0 18px #ffb142, 0 0 36px #d18c2f, 0 0 56px #b27220; margin-bottom: .5rem; }
+    .v43-tag { font-family: 'Inter', sans-serif; font-size: .58rem; letter-spacing: .4em; text-transform: uppercase; color: #6affc5; text-shadow: 0 0 8px #6affc5, 0 0 18px #4dcc92; font-weight: 500; margin-bottom: 2.2rem; }
+    .v43-g { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; padding: 1.6rem 0; border-top: 1px solid rgba(255,217,102,.3); border-bottom: 1px solid rgba(255,217,102,.15); }
+    .v43-g h6 { font-family: 'Inter', sans-serif; font-size: .55rem; letter-spacing: .3em; text-transform: uppercase; color: #ffd966; text-shadow: 0 0 6px rgba(255,217,102,.5); margin-bottom: .6rem; font-weight: 600; }
+    .v43-g a, .v43-g p { font-family: 'Cormorant Garamond', serif; font-size: .92rem; color: #fff; opacity: .85; display: block; padding: .12rem 0; transition: text-shadow .25s; }
+    .v43-g a:hover { color: #ffd966; text-shadow: 0 0 8px rgba(255,217,102,.5); opacity: 1; }
+    .v43-bot { padding-top: 1rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-size: .5rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+    .v43-bot a { color: #ffd966; padding: 0 .3rem; }
+
+    /* V44 CARTE POSTALE */
+    .v44 { background: #1a2c24; padding: 3rem 2rem 1.4rem; }
+    .v44-cd { max-width: 980px; margin: 0 auto; background: #faf3df; color: #3a2a14; aspect-ratio: 5 / 3; min-height: 320px; display: grid; grid-template-columns: 1fr 1fr; box-shadow: 0 24px 60px rgba(0,0,0,.5), 0 6px 12px rgba(0,0,0,.3); position: relative; }
+    .v44-cd::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='.65' numOctaves='2'/><feColorMatrix values='0 0 0 0 .42 0 0 0 0 .29 0 0 0 0 .12 0 0 0 .12 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"); pointer-events: none; mix-blend-mode: multiply; opacity: .9; }
+    .v44-l { padding: 2rem 1.6rem; position: relative; border-right: 2px dashed #c4a76b; }
+    .v44-stamp { width: 80px; height: 100px; background: #e8c46a; border: 8px solid #faf3df; outline: 1px dashed #8a5a1f; position: absolute; top: 1.2rem; right: 1.2rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0,0,0,.25); }
+    .v44-stamp svg { width: 30px; height: 42px; fill: #6b4d1f; }
+    .v44-cm { font-family: 'EB Garamond', serif; font-style: italic; font-size: .95rem; line-height: 1.55; color: #3a2a14; max-width: 240px; margin-top: 4rem; }
+    .v44-cm strong { font-weight: 500; color: #8a5a1f; }
+    .v44-r { padding: 2rem 1.6rem; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+    .v44-r h2 { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 500; color: #3a2a14; line-height: 1.1; }
+    .v44-r h2 em { color: #8a5a1f; font-style: italic; }
+    .v44-r .a { font-family: 'EB Garamond', serif; font-style: italic; font-size: .9rem; color: #6b4d1f; line-height: 1.5; }
+    .v44-r .lks { display: flex; gap: 1rem; flex-wrap: wrap; padding-top: .8rem; border-top: 1px solid rgba(58,42,20,.25); }
+    .v44-r .lks a { font-family: 'EB Garamond', serif; font-style: italic; font-size: .85rem; color: #6b4d1f; border-bottom: 1px solid transparent; }
+    .v44-r .lks a:hover { border-color: #8a5a1f; }
+    .v44-bot { max-width: 980px; margin: 1.2rem auto 0; padding-top: 1rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-family: 'EB Garamond', serif; font-style: italic; font-size: .8rem; color: rgba(226,221,201,.6); }
+    .v44-bot a { color: var(--gold); padding: 0 .3rem; }
+
+    /* V45 INDEX ALPHABÉTIQUE */
+    .v45 { background: var(--green-ink); padding: 2.5rem 2.5rem 1.4rem; }
+    .v45-h { max-width: 1180px; margin: 0 auto 1.5rem; text-align: center; }
+    .v45-h h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: var(--cream); font-weight: 400; }
+    .v45-h h2 em { color: var(--gold); }
+    .v45-alpha { max-width: 1180px; margin: 0 auto 1.5rem; display: flex; gap: .3rem; justify-content: center; flex-wrap: wrap; padding-bottom: 1.2rem; border-bottom: 1px solid rgba(196,154,58,.2); }
+    .v45-alpha a { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: .8rem; color: var(--cream-dark); opacity: .55; border: 1px solid transparent; transition: all .25s; border-radius: 2px; }
+    .v45-alpha a:hover, .v45-alpha a.has { opacity: 1; color: var(--gold); border-color: rgba(196,154,58,.3); }
+    .v45-alpha a.has:hover { background: rgba(196,154,58,.1); border-color: var(--gold); }
+    .v45-g { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem 2rem; }
+    .v45-it { display: flex; flex-direction: column; gap: .2rem; padding: .55rem .8rem; border-left: 2px solid rgba(196,154,58,.3); transition: border-color .25s, background .25s; cursor: pointer; }
+    .v45-it:hover { border-left-color: var(--gold); background: rgba(196,154,58,.04); }
+    .v45-it .ttl { display: flex; align-items: baseline; gap: .6rem; font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--cream); }
+    .v45-it .ttl span { font-family: 'JetBrains Mono', monospace; font-size: .58rem; color: var(--gold); opacity: .8; }
+    .v45-it .ds { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: .78rem; color: var(--cream-dark); opacity: .6; }
+    .v45-bot { max-width: 1180px; margin: 1.4rem auto 0; padding-top: 1rem; border-top: 1px solid rgba(196,154,58,.12); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; font-size: .5rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(226,221,201,.5); }
+    .v45-bot a { color: var(--gold); padding: 0 .3rem; }
+
+    /* responsive lot 3 */
+    @media (max-width: 900px) {
+      .v33-w, .v34-w, .v39-w, .v44-cd { grid-template-columns: 1fr; }
+      .v36-grid { grid-template-columns: repeat(3, 1fr); }
+      .v36-card.feat { grid-column: span 1; }
+      .v37-shelf { flex-wrap: wrap; }
+      .v37-bk { min-width: 56px; }
+      .v40-spl { grid-template-columns: 1fr; }
+      .v40-side { border-right: none; border-bottom: 1px solid rgba(196,154,58,.2); }
+      .v43-g, .v45-g { grid-template-columns: 1fr 1fr; }
+      .v31-tbl td:last-child { display: none; }
+      .v34-info .specs { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 580px) {
+      .v36-grid, .v43-g, .v45-g, .v34-info .specs { grid-template-columns: 1fr; }
+      .v44-cd { aspect-ratio: auto; }
+    }
+
     /* responsive lot 2 */
     @media (max-width: 900px) {
       .v16-credits, .v19-w, .v25-w, .v30-w { grid-template-columns: 1fr; }
@@ -686,8 +995,8 @@
 <body>
 
   <h1 class="preview-page-title">
-    Footer · 30 concepts originaux (lots 1+2)
-    <small>Lots 3 et 4 à suivre. Indique les n° à garder.</small>
+    Footer · 45 concepts originaux (lots 1+2+3)
+    <small>Lot 4 (V46-V50) à suivre. Indique les n° à garder.</small>
   </h1>
 
   <nav class="toc">
@@ -721,6 +1030,21 @@
     <a href="#v28"><span>28</span>Vellum manuscrit</a>
     <a href="#v29"><span>29</span>Mono noir & or</a>
     <a href="#v30"><span>30</span>Compass cardinal</a>
+    <a href="#v31"><span>31</span>Tabular minimal</a>
+    <a href="#v32"><span>32</span>Sticker badges</a>
+    <a href="#v33"><span>33</span>Triptyque vidéo</a>
+    <a href="#v34"><span>34</span>Architecture plan</a>
+    <a href="#v35"><span>35</span>Coupole vue dessus</a>
+    <a href="#v36"><span>36</span>Galerie portraits</a>
+    <a href="#v37"><span>37</span>Bibliothèque livres</a>
+    <a href="#v38"><span>38</span>Chronologie verticale</a>
+    <a href="#v39"><span>39</span>Calendrier mois</a>
+    <a href="#v40"><span>40</span>Console terminal v2</a>
+    <a href="#v41"><span>41</span>Bouton géant</a>
+    <a href="#v42"><span>42</span>Cartes empilées</a>
+    <a href="#v43"><span>43</span>Néon orthodoxe</a>
+    <a href="#v44"><span>44</span>Carte postale</a>
+    <a href="#v45"><span>45</span>Index alphabétique</a>
   </nav>
 
   <!-- V1 -->
@@ -1281,6 +1605,325 @@
         </div>
       </div>
       <div class="v30-bot"><span>© MMXXVI · PATRIARCAT DE MOSCOU · CHERSONÈSE</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+    </footer></div>
+
+  <!-- V31 TABULAR MINIMAL -->
+  <div class="variant-wrap" id="v31"><div class="variant-label">31 <em>Tabular minimal — catalogue tabulaire dense</em></div>
+    <footer class="ftr v31">
+      <div class="v31-h"><h2>Index <em>de la paroisse</em></h2><span class="ref">REF · SSDS / MTG / 1957</span></div>
+      <table class="v31-tbl"><tbody>
+        <tr><td>I.</td><td>Visiter</td><td><a href="#">Accueil</a> · <a href="#">Le Saint</a> · <a href="#">Histoire</a> · <a href="#">Offices</a></td><td>pages principales</td></tr>
+        <tr><td>II.</td><td>Offices</td><td>Samedi 18 h · Dimanche 10 h</td><td>chant byzantin</td></tr>
+        <tr><td>III.</td><td>Adresse</td><td>Rue du Moulin de Senlis · 91230 Montgeron</td><td>Île-de-France</td></tr>
+        <tr><td>IV.</td><td>Contact</td><td><a href="#">paroisse@montgeron.fr</a> · <a href="#">+33 1 69 03 XX XX</a></td><td>réponse sous 48 h</td></tr>
+        <tr><td>V.</td><td>Soutenir</td><td><a href="#">Faire un don sécurisé</a></td><td>reçu fiscal</td></tr>
+        <tr><td>VI.</td><td>Juridiction</td><td>Patriarcat de Moscou · Diocèse de Chersonèse</td><td>fondée 1957</td></tr>
+      </tbody></table>
+      <div class="v31-bot"><span>© 2026 · PAROISSE SAINT-SÉRAPHIM-DE-SAROV</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+    </footer></div>
+
+  <!-- V32 STICKER BADGES -->
+  <div class="variant-wrap" id="v32"><div class="variant-label">32 <em>Sticker badges — collection collée façon valise</em></div>
+    <footer class="ftr v32">
+      <div class="v32-h"><h2>Saint-Séraphim <em>de Sarov</em></h2><span class="s">paroisse · montgeron · depuis 1957</span></div>
+      <div class="v32-stk">
+        <div class="v32-bd fil"><span class="lb">EST</span><span class="vl">1957</span></div>
+        <div class="v32-bd"><span class="lb">Adresse</span><span class="vl">Moulin de Senlis</span></div>
+        <div class="v32-bd"><span class="lb">Samedi</span><span class="vl">18 h · Vêpres</span></div>
+        <div class="v32-bd"><span class="lb">Dimanche</span><span class="vl">10 h · Liturgie</span></div>
+        <div class="v32-bd"><span class="lb">Langues</span><span class="vl">Slavon · Français</span></div>
+        <div class="v32-bd"><span class="lb">Tradition</span><span class="vl">Russe</span></div>
+        <div class="v32-bd"><span class="lb">Lieu</span><span class="vl">91230 Montgeron</span></div>
+        <div class="v32-bd fil"><span class="lb">Faire</span><span class="vl">un don ↗</span></div>
+        <div class="v32-bd"><span class="lb">Visiter</span><span class="vl"><a href="#" style="color:inherit">Accueil</a></span></div>
+        <div class="v32-bd"><span class="lb">Patron</span><span class="vl">St Séraphim</span></div>
+      </div>
+      <div class="v32-bot"><span>© MMXXVI · Patriarcat de Moscou · Chersonèse</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+    </footer></div>
+
+  <!-- V33 TRIPTYQUE VIDÉO -->
+  <div class="variant-wrap" id="v33"><div class="variant-label">33 <em>Triptyque — 3 panneaux qui s'ouvrent au survol</em></div>
+    <footer class="ftr v33">
+      <div class="v33-w">
+        <div class="v33-pn">
+          <div class="icn"><svg class="cross" viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg></div>
+          <div class="meta">01 · Visiter</div>
+          <h3>Le <em>site</em></h3>
+          <div class="lks"><a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a><a href="#">Contact</a></div>
+        </div>
+        <div class="v33-pn">
+          <div class="icn"><svg class="cross" viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg></div>
+          <div class="meta">02 · Liturgie</div>
+          <h3>Les <em>offices</em></h3>
+          <div class="lks"><a href="#">Samedi · 18 h</a><a href="#">Dimanche · 10 h</a><a href="#">Calendrier</a></div>
+        </div>
+        <div class="v33-pn">
+          <div class="icn"><svg class="cross" viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg></div>
+          <div class="meta">03 · Soutenir</div>
+          <h3>Faire un <em>don</em></h3>
+          <div class="lks"><a href="#">Don sécurisé</a><a href="#">Restauration</a><a href="#">Contact</a></div>
+        </div>
+      </div>
+      <div class="v33-bot"><span>© 2026 · Patriarcat de Moscou · Chersonèse</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+    </footer></div>
+
+  <!-- V34 ARCHITECTURE PLAN -->
+  <div class="variant-wrap" id="v34"><div class="variant-label">34 <em>Plan architecture — blueprint technique</em></div>
+    <footer class="ftr v34">
+      <div class="v34-w">
+        <div class="v34-plan">
+          <svg viewBox="0 0 400 300">
+            <g stroke="#C49A3A" stroke-width="1" fill="none">
+              <rect x="50" y="60" width="300" height="180"/>
+              <rect x="50" y="60" width="100" height="60"/>
+              <rect x="250" y="60" width="100" height="60"/>
+              <circle cx="200" cy="150" r="40"/>
+              <path d="M50 150 L150 150"/>
+              <path d="M250 150 L350 150"/>
+              <path d="M200 110 L200 190"/>
+              <path d="M160 150 L240 150"/>
+              <rect x="180" y="240" width="40" height="20"/>
+            </g>
+            <g fill="#C49A3A" font-family="JetBrains Mono" font-size="7" opacity=".75">
+              <text x="55" y="55">A — Narthex</text>
+              <text x="305" y="55">B — Sacristie</text>
+              <text x="180" y="155">C</text>
+              <text x="180" y="275">Entrée</text>
+            </g>
+            <g stroke="#C49A3A" stroke-width=".5" fill="none" opacity=".5" stroke-dasharray="3 3">
+              <path d="M40 60 L40 240"/>
+              <path d="M360 60 L360 240"/>
+            </g>
+            <g fill="#C49A3A" font-family="JetBrains Mono" font-size="6" opacity=".6">
+              <text x="20" y="155" transform="rotate(-90 20 155)">18 m</text>
+              <text x="365" y="155" transform="rotate(90 365 155)">18 m</text>
+              <text x="195" y="40">30 m</text>
+            </g>
+          </svg>
+        </div>
+        <div class="v34-info">
+          <div class="ey">PLAN · ÉCHELLE 1:200 · 1957</div>
+          <h3>Paroisse Saint-Séraphim<br><em>de Sarov · Montgeron</em></h3>
+          <div class="specs">
+            <div><div class="l">Construite</div><div class="v">1957</div></div>
+            <div><div class="l">Architecte</div><div class="v">A. Schebliakov</div></div>
+            <div><div class="l">Surface</div><div class="v">540 m²</div></div>
+            <div><div class="l">Capacité</div><div class="v">180 places</div></div>
+          </div>
+          <div class="lks"><a href="#">/accueil</a><a href="#">/le-saint</a><a href="#">/histoire</a><a href="#">/offices</a><a href="#">/contact</a><a href="#">/don</a></div>
+        </div>
+      </div>
+      <div class="v34-bot"><span>// © 2026 PAROISSE SAINT-SÉRAPHIM // PATRIARCATUS MOSCOVIENSIS</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+    </footer></div>
+
+  <!-- V35 COUPOLE VUE DESSUS -->
+  <div class="variant-wrap" id="v35"><div class="variant-label">35 <em>Coupole vue du dessus — cercles concentriques</em></div>
+    <footer class="ftr v35">
+      <div class="v35-d">
+        <div class="v35-r1"></div>
+        <div class="v35-r2"></div>
+        <div class="v35-r3"></div>
+        <div class="v35-r4"><svg viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg></div>
+        <span class="v35-orb v35-o1">N · <a href="#">Visiter</a></span>
+        <span class="v35-orb v35-o2">E · <a href="#">Offices</a></span>
+        <span class="v35-orb v35-o3">S · <a href="#">Don</a></span>
+        <span class="v35-orb v35-o4">O · <a href="#">Adresse</a></span>
+      </div>
+      <div class="v35-bot">© MMXXVI · PATRIARCAT DE MOSCOU · <a href="#">FR</a> · <a href="#">RU</a></div>
+    </footer></div>
+
+  <!-- V36 GALERIE PORTRAITS -->
+  <div class="variant-wrap" id="v36"><div class="variant-label">36 <em>Galerie de portraits — saints en grille</em></div>
+    <footer class="ftr v36">
+      <div class="v36-h"><h2>Communion des <em>saints</em></h2></div>
+      <div class="v36-grid">
+        <div class="v36-card feat"><div class="v36-halo"><svg viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg></div><div class="ttl">Saint-Séraphim<br><em>Patron · 1759-1833</em></div></div>
+        <div class="v36-card"><div class="v36-halo"><svg viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg></div><div class="ttl">St Nicolas<em>Visiter</em></div></div>
+        <div class="v36-card"><div class="v36-halo"><svg viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg></div><div class="ttl">St Serge<em>Histoire</em></div></div>
+        <div class="v36-card"><div class="v36-halo"><svg viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg></div><div class="ttl">St Vladimir<em>Offices</em></div></div>
+        <div class="v36-card"><div class="v36-halo"><svg viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg></div><div class="ttl">Theotokos<em>Contact</em></div></div>
+      </div>
+      <div class="v36-bot"><span>© MMXXVI · Patriarcat de Moscou</span><div class="lk"><a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a><a href="#">Offices</a><a href="#">Don</a></div><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+    </footer></div>
+
+  <!-- V37 BIBLIOTHÈQUE -->
+  <div class="variant-wrap" id="v37"><div class="variant-label">37 <em>Bibliothèque — rangée de livres dorés</em></div>
+    <footer class="ftr v37">
+      <div class="v37-h">La <em>bibliothèque</em> de la paroisse</div>
+      <div class="v37-shelf">
+        <a href="#" class="v37-bk c1"><span class="ttl">Accueil</span><span class="num">I</span></a>
+        <a href="#" class="v37-bk c2"><span class="ttl">Le Saint patron</span><span class="num">II</span></a>
+        <a href="#" class="v37-bk c3"><span class="ttl">Histoire</span><span class="num">III</span></a>
+        <a href="#" class="v37-bk c4"><span class="ttl">Offices</span><span class="num">IV</span></a>
+        <a href="#" class="v37-bk c5"><span class="ttl">Contact</span><span class="num">V</span></a>
+        <a href="#" class="v37-bk c6"><span class="ttl">Faire un don</span><span class="num">VI</span></a>
+      </div>
+      <div class="v37-bot"><span>© 2026 · <em>Paroisse Saint-Séraphim-de-Sarov · Montgeron</em></span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+    </footer></div>
+
+  <!-- V38 CHRONOLOGIE VERTICALE -->
+  <div class="variant-wrap" id="v38"><div class="variant-label">38 <em>Chronologie verticale — frise paroisse</em></div>
+    <footer class="ftr v38"><div class="v38-w">
+      <div class="v38-h"><h2>La paroisse, <em>repères</em></h2></div>
+      <div class="v38-tl">
+        <div class="v38-it"><span class="yr">1953</span><span class="ev">Orphelinat russe au Moulin de Senlis</span><span class="ln"><a href="#">Histoire ↗</a></span></div>
+        <div class="v38-it"><span class="yr">1957</span><span class="ev">Fondation de la paroisse</span><span class="ln"><a href="#">Le Saint ↗</a></span></div>
+        <div class="v38-it"><span class="yr">1960</span><span class="ev">Installation de l'iconostase</span><span class="ln"><a href="#">Visite ↗</a></span></div>
+        <div class="v38-it"><span class="yr">1980</span><span class="ev">Restauration des coupoles</span><span class="ln"><a href="#">Patrimoine ↗</a></span></div>
+        <div class="v38-it on"><span class="yr">2026</span><span class="ev"><em>Aujourd'hui — paroisse vivante</em></span><span class="ln"><a href="#">Don ↗</a></span></div>
+      </div>
+      <div class="v38-bot"><span>© 2026 · Patriarcat de Moscou</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+    </div></footer></div>
+
+  <!-- V39 CALENDRIER MOIS -->
+  <div class="variant-wrap" id="v39"><div class="variant-label">39 <em>Calendrier mensuel — offices marqués</em></div>
+    <footer class="ftr v39">
+      <div class="v39-w">
+        <div class="v39-cal">
+          <div class="v39-cal-h"><span class="m">Mai <em>MMXXVI</em></span><span class="y">17 / 05</span></div>
+          <div class="v39-grid">
+            <span class="day dow">L</span><span class="day dow">M</span><span class="day dow">M</span><span class="day dow">J</span><span class="day dow">V</span><span class="day dow">S</span><span class="day dow">D</span>
+            <span class="day"></span><span class="day"></span><span class="day"></span><span class="day">1</span><span class="day">2</span><span class="day lt">3</span><span class="day lt">4</span>
+            <span class="day">5</span><span class="day">6</span><span class="day">7</span><span class="day">8</span><span class="day">9</span><span class="day lt">10</span><span class="day lt">11</span>
+            <span class="day">12</span><span class="day">13</span><span class="day">14</span><span class="day">15</span><span class="day">16</span><span class="day act">17</span><span class="day lt">18</span>
+            <span class="day">19</span><span class="day">20</span><span class="day lt">21</span><span class="day">22</span><span class="day">23</span><span class="day lt">24</span><span class="day lt">25</span>
+            <span class="day">26</span><span class="day">27</span><span class="day">28</span><span class="day lt">29</span><span class="day">30</span><span class="day lt">31</span><span class="day"></span>
+          </div>
+        </div>
+        <div class="v39-info">
+          <div>
+            <div class="ey">SAM 17 MAI · AUJOURD'HUI</div>
+            <h3>Grandes Vêpres<br><em>18 h 00 · chant byzantin</em></h3>
+            <p>Office du soir préparant la Divine Liturgie dominicale. Chants byzantins, lecture de l'Évangile.</p>
+          </div>
+          <div class="lks"><a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a><a href="#">Calendrier complet</a><a href="#">Don</a></div>
+        </div>
+      </div>
+      <div class="v39-bot"><span>© 2026 · Patriarcat de Moscou</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+    </footer></div>
+
+  <!-- V40 CONSOLE TERMINAL V2 -->
+  <div class="variant-wrap" id="v40"><div class="variant-label">40 <em>Console terminal v2 — IDE split panes</em></div>
+    <footer class="ftr v40">
+      <div class="v40-bar"><span></span><span></span><span></span><span class="ttl">paroisse — montgeron — bash · 80×24</span></div>
+      <div class="v40-spl">
+        <div class="v40-side">
+          <div class="lbl">/site</div>
+          <a href="#" class="on">~/accueil.html</a>
+          <a href="#">~/le-saint.html</a>
+          <a href="#">~/histoire.html</a>
+          <a href="#">~/offices.html</a>
+          <a href="#">~/contact.html</a>
+          <a href="#">~/don.html</a>
+        </div>
+        <div class="v40-main">
+          <div class="v40-ln"><span class="n">1</span><span class="c"><span class="cm"># Paroisse Saint-Séraphim-de-Sarov</span></span></div>
+          <div class="v40-ln"><span class="n">2</span><span class="c"><span class="cm"># Montgeron · depuis 1957</span></span></div>
+          <div class="v40-ln"><span class="n">3</span><span class="c"></span></div>
+          <div class="v40-ln"><span class="n">4</span><span class="c"><span class="kw">const</span> paroisse = {</span></div>
+          <div class="v40-ln"><span class="n">5</span><span class="c">  saint: <span class="str">'Séraphim de Sarov'</span>,</span></div>
+          <div class="v40-ln"><span class="n">6</span><span class="c">  fondee: <span class="str">1957</span>,</span></div>
+          <div class="v40-ln"><span class="n">7</span><span class="c">  vepres: <span class="str">'Samedi 18:00'</span>,</span></div>
+          <div class="v40-ln"><span class="n">8</span><span class="c">  liturgie: <span class="str">'Dimanche 10:00'</span>,</span></div>
+          <div class="v40-ln"><span class="n">9</span><span class="c">  langues: [<span class="str">'fr'</span>, <span class="str">'ru'</span>],</span></div>
+          <div class="v40-ln"><span class="n">10</span><span class="c">};</span></div>
+        </div>
+      </div>
+      <div class="v40-stat"><span>● MAIN · © 2026 · PATRIARCAT DE MOSCOU</span><span><a href="#" style="color:inherit">FR</a> · <a href="#" style="color:inherit">RU</a></span></div>
+    </footer></div>
+
+  <!-- V41 BOUTON GÉANT -->
+  <div class="variant-wrap" id="v41"><div class="variant-label">41 <em>Bouton géant — un seul énorme CTA</em></div>
+    <footer class="ftr v41">
+      <div class="v41-eye">Soutenez la paroisse</div>
+      <a href="#" class="v41-mega">
+        <span class="sml">Faire un don</span>
+        <span class="big">Préservons <em>ensemble</em></span>
+      </a>
+      <p class="v41-sub">Chaque don contribue à la restauration et à la vie liturgique de la paroisse, depuis 1957 à Montgeron.</p>
+      <div class="v41-lks"><a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a><a href="#">Offices</a><a href="#">Contact</a></div>
+      <div class="v41-bot"><span>© 2026 · Patriarcat de Moscou</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+    </footer></div>
+
+  <!-- V42 CARTES EMPILÉES -->
+  <div class="variant-wrap" id="v42"><div class="variant-label">42 <em>Cartes empilées — stack 3D</em></div>
+    <footer class="ftr v42">
+      <div class="v42-stk">
+        <div class="v42-c s1">
+          <div class="ey">CARTE I · IDENTITÉ</div>
+          <h3>Saint-Séraphim<br><em>de Sarov · Montgeron</em></h3>
+          <div class="ln"><a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a></div>
+          <a href="#" class="give">Faire un don →</a>
+        </div>
+        <div class="v42-c s2">
+          <div class="ey">CARTE II · OFFICES</div>
+          <h3>Samedi 18 h · <em>Vêpres</em></h3>
+          <div class="ln"><a href="#">Calendrier</a><a href="#">Dimanche 10 h</a></div>
+        </div>
+        <div class="v42-c s3">
+          <div class="ey">CARTE III · CONTACT</div>
+          <h3>Rue du Moulin <em>de Senlis</em></h3>
+          <div class="ln"><a href="#">91230 Montgeron</a></div>
+        </div>
+      </div>
+      <div class="v42-bot"><span>© 2026 · Patriarcat de Moscou</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+    </footer></div>
+
+  <!-- V43 NÉON ORTHODOXE -->
+  <div class="variant-wrap" id="v43"><div class="variant-label">43 <em>Néon orthodoxe — fluo or & vert</em></div>
+    <footer class="ftr v43">
+      <div class="v43-w">
+        <h1 class="v43-neo">SARAPHIM</h1>
+        <div class="v43-tag">Paroisse · Montgeron · MCMLVII</div>
+        <div class="v43-g">
+          <div><h6>Visiter</h6><a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a><a href="#">Offices</a></div>
+          <div><h6>Offices</h6><a href="#">Samedi · 18 h</a><a href="#">Dimanche · 10 h</a></div>
+          <div><h6>Adresse</h6><p>Rue du Moulin<br>91230 Montgeron</p></div>
+          <div><h6>Soutenir</h6><a href="#">Faire un don</a><a href="#">Contact</a></div>
+        </div>
+        <div class="v43-bot"><span>© 2026 · PATRIARCAT DE MOSCOU</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+      </div>
+    </footer></div>
+
+  <!-- V44 CARTE POSTALE -->
+  <div class="variant-wrap" id="v44"><div class="variant-label">44 <em>Carte postale — vintage avec timbre</em></div>
+    <footer class="ftr v44">
+      <div class="v44-cd">
+        <div class="v44-l">
+          <div class="v44-stamp"><svg viewBox="0 0 60 84"><rect x="26" y="0" width="8" height="84" rx="1"/><rect x="16" y="8" width="28" height="7" rx="1"/><rect x="6" y="28" width="48" height="8" rx="1"/><polygon points="14,62 46,68 46,74 14,68"/></svg></div>
+          <p class="v44-cm"><strong>Cher visiteur,</strong><br>Bienvenue à la paroisse Saint-Séraphim. Nos vêpres du samedi à 18 h vous attendent...</p>
+        </div>
+        <div class="v44-r">
+          <h2>Saint-Séraphim<br><em>de Sarov</em></h2>
+          <address class="a">Rue du Moulin de Senlis<br>91230 Montgeron, France</address>
+          <div class="lks"><a href="#">Accueil</a><a href="#">Le Saint</a><a href="#">Histoire</a><a href="#">Offices</a><a href="#">Don</a></div>
+        </div>
+      </div>
+      <div class="v44-bot"><span>© 2026 · Patriarcat de Moscou</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
+    </footer></div>
+
+  <!-- V45 INDEX ALPHABÉTIQUE -->
+  <div class="variant-wrap" id="v45"><div class="variant-label">45 <em>Index alphabétique — type encyclopédie</em></div>
+    <footer class="ftr v45">
+      <div class="v45-h"><h2>Index <em>de la paroisse</em></h2></div>
+      <div class="v45-alpha">
+        <a href="#" class="has">A</a><a href="#">B</a><a href="#" class="has">C</a><a href="#" class="has">D</a><a href="#">E</a><a href="#">F</a>
+        <a href="#">G</a><a href="#" class="has">H</a><a href="#">I</a><a href="#">J</a><a href="#">K</a><a href="#" class="has">L</a>
+        <a href="#" class="has">M</a><a href="#">N</a><a href="#" class="has">O</a><a href="#" class="has">P</a><a href="#">Q</a><a href="#" class="has">R</a>
+        <a href="#" class="has">S</a><a href="#">T</a><a href="#">U</a><a href="#" class="has">V</a><a href="#">W</a><a href="#">X</a><a href="#">Y</a><a href="#">Z</a>
+      </div>
+      <div class="v45-g">
+        <div class="v45-it"><div class="ttl">Accueil <span>· A</span></div><div class="ds">Page d'accueil principale</div></div>
+        <div class="v45-it"><div class="ttl">Contact <span>· C</span></div><div class="ds">Coordonnées et formulaire</div></div>
+        <div class="v45-it"><div class="ttl">Don, faire un <span>· D</span></div><div class="ds">Soutenir la paroisse</div></div>
+        <div class="v45-it"><div class="ttl">Histoire <span>· H</span></div><div class="ds">Depuis 1957 à Montgeron</div></div>
+        <div class="v45-it"><div class="ttl">Liturgie <span>· L</span></div><div class="ds">Divine Liturgie · Dimanche 10 h</div></div>
+        <div class="v45-it"><div class="ttl">Montgeron <span>· M</span></div><div class="ds">Localisation paroisse</div></div>
+        <div class="v45-it"><div class="ttl">Offices <span>· O</span></div><div class="ds">Horaires des célébrations</div></div>
+        <div class="v45-it"><div class="ttl">Patriarcat <span>· P</span></div><div class="ds">Juridiction · Moscou</div></div>
+        <div class="v45-it"><div class="ttl">Saint, Le <span>· S</span></div><div class="ds">Vie de St Séraphim de Sarov</div></div>
+      </div>
+      <div class="v45-bot"><span>© 2026 · Patriarcat de Moscou · Diocèse de Chersonèse</span><span><a href="#">FR</a> · <a href="#">RU</a></span></div>
     </footer></div>
 
 </body>
