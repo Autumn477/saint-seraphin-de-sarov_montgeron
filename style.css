@@ -1087,7 +1087,7 @@ main { min-height: 60vh; }
 /* ── FEATURES (numbered items replacing cards) ───────────────── */
 .features {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 0;
   border-top: 1px solid rgba(0,0,0,.06);
 }
@@ -1164,7 +1164,16 @@ main { min-height: 60vh; }
   line-height: 1.65;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .feature-item:nth-child(2n) { border-right: none; }
+  .feature-item:nth-child(1), .feature-item:nth-child(2) {
+    border-bottom: 1px solid rgba(0,0,0,.06);
+  }
+}
+@media (max-width: 560px) {
   .features {
     grid-template-columns: 1fr;
   }
@@ -1488,7 +1497,6 @@ main { min-height: 60vh; }
 .card {
   background: var(--white);
   border: 1px solid rgba(232,223,208,.6);
-  border-left: 3px solid var(--gold);
   border-radius: 16px;
   padding: 2.2rem 1.8rem;
   text-align: left;
@@ -1502,7 +1510,6 @@ main { min-height: 60vh; }
   transform: translateY(-4px);
   box-shadow: 0 8px 32px rgba(44,24,16,.12);
   border-color: rgba(201,168,76,.2);
-  border-left-color: var(--gold);
 }
 
 .card-icon {
@@ -4341,4 +4348,33 @@ body.dark .prose .prose-closing {
   .fv2-lang { justify-self: start; order: 2; }
   .fv2-legal { order: 3; }
   .fv2-marquee-track { font-size: 1rem; gap: 1.8rem; }
+}
+
+/* ── TABLET REFINEMENTS (769–1024px) ─────────────────────────────
+   Scoped to a range so it never overrides the mobile (<=768) rules. */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-modern { grid-template-columns: 1fr 1.2fr; min-height: 70vh; }
+  .hero-modern-content { padding: 3rem 2.5rem; }
+  .hero-modern-title { font-size: clamp(2.4rem, 6vw, 3.4rem); }
+  .horaires-grid { gap: 2.5rem; }
+  .saint-hero { gap: 2.5rem; }
+  .footer-main { gap: 2rem; }
+  .section-inner { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .feasts-list { columns: 2; }
+}
+
+/* ── WEEKLY BULLETIN — small screens ─────────────────────────── */
+@media (max-width: 560px) {
+  .weekly-bulletin-card { padding: 1.2rem 1rem; }
+  .weekly-bulletin-actions { flex-direction: column; gap: .7rem; }
+  .weekly-bulletin-actions .btn { width: 100%; text-align: center; }
+}
+
+/* ── Extra small phones (<=380px): prevent horizontal overflow ── */
+@media (max-width: 380px) {
+  .hero-modern-title,
+  .donate-hero h1,
+  .page-header h1 { word-break: break-word; }
+  .nav-inner { padding: .6rem .9rem; }
+  .feast-banner-inner { padding: 1.2rem 1rem; }
 }

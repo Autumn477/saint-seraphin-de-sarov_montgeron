@@ -7,6 +7,7 @@ MAP = {
     "offices.html":  "bogoslujeniya.html",
     "dons.html":     "pozhertvovaniya.html",
     "contact.html":  "kontakty.html",
+    "saint.html":    "svyatoy.html",
 }
 
 try:

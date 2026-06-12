@@ -60,18 +60,6 @@
       <span class="donate-hero-eyebrow">Paroisse Saint‑Séraphim‑de‑Sarov</span>
       <h1>Campagne de<br><em>restauration</em></h1>
       <p class="donate-hero-quote">« Préservons ensemble ce lieu de prière et de mémoire pour les générations futures. »</p>
-      <div class="progress-wrap">
-        <div class="progress-label">
-          <span>Objectif de restauration</span>
-          <span id="progress-pct">Mise à jour en cours…</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" data-percent="35"></div>
-        </div>
-        <p style="font-size:.82rem; color:var(--cream-dark); margin-top:.6rem; font-style:italic; opacity:.7;">
-          Montant collecté mis à jour régulièrement — contactez-nous pour les détails.
-        </p>
-      </div>
     </div>
     <section class="section section-alt">
       <div class="section-inner">
@@ -98,23 +86,23 @@
           <h3>Coordonnées bancaires</h3>
           <div class="bank-row">
             <span class="bank-label">Bénéficiaire</span>
-            <span class="bank-value">Paroisse Orthodoxe Saint-Séraphim-de-Sarov à Montgeron</span>
+            <span class="bank-value" data-content="bank.beneficiary">Paroisse Orthodoxe Saint-Séraphim-de-Sarov à Montgeron</span>
           </div>
           <div class="bank-row">
             <span class="bank-label">IBAN</span>
-            <span class="bank-value placeholder">[À compléter par la paroisse]</span>
+            <span class="bank-value" data-content="bank.iban">FR76 3000 3040 7600 0372 6130 856</span>
           </div>
           <div class="bank-row">
             <span class="bank-label">BIC / SWIFT</span>
-            <span class="bank-value placeholder">[À compléter par la paroisse]</span>
+            <span class="bank-value" data-content="bank.bic">SOGEFRPP</span>
           </div>
           <div class="bank-row">
             <span class="bank-label">Banque</span>
-            <span class="bank-value placeholder">[Nom de la banque]</span>
+            <span class="bank-value" data-content="bank.bank">Société Générale (Montgeron Mairie)</span>
           </div>
           <div class="bank-row">
             <span class="bank-label">Référence</span>
-            <span class="bank-value"><span class="bank-ref">DON RESTAURATION</span></span>
+            <span class="bank-value"><span class="bank-ref" data-content="bank.reference">DON RESTAURATION</span></span>
           </div>
         </div>
         <p class="donation-note">
@@ -296,9 +284,6 @@
   <button class="back-to-top" aria-label="Retour en haut">&uarr;</button>
   <script src="main.js?v=20260517j"></script>
   <script src="site.js?v=20260517j"></script>
-  <script>
-    var fill = document.querySelector('.progress-fill');
-    if (fill) { document.getElementById('progress-pct').textContent = fill.dataset.percent + '% atteint'; }
-  </script>
+  <script src="content.js?v=20260517j"></script>
 </body>
 </html>

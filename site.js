@@ -1,12 +1,15 @@
 /* Saint-Séraphim-de-Sarov — site enhancements (v2)
    - Theme toggle (jour/nuit) with localStorage
    - Hero variants cycling (accueil only)
-   - Tweaks panel (edit mode integration)
+   - Palette locked to "vert" (vert mosaique) — dev color switcher removed
 */
 (function () {
   'use strict';
 
   const STORE_KEY = 'sssarov.settings.v3';
+
+  // Palette is locked site-wide to "vert" (vert mosaique).
+  const LOCKED_PALETTE = 'vert';
 
   // Defaults
   const DEFAULTS = /*EDITMODE-BEGIN*/{
@@ -37,6 +40,8 @@
   }
 
   const settings = load();
+  // Force the locked palette regardless of any value persisted by older versions.
+  settings.palette = LOCKED_PALETTE;
 
   // ── Theme ──────────────────────────────────────────────────
   function applyTheme(t) {
@@ -61,43 +66,15 @@
     });
   }
 
-  // ── Palette ───────────────────────────────────────────────
+  // ── Palette (locked) ──────────────────────────────────────
   function applyPalette(p) {
     document.documentElement.setAttribute('data-palette', p);
   }
-  applyPalette(settings.palette);
+  applyPalette(LOCKED_PALETTE);
 
-  function setPalette(p) {
-    settings.palette = p;
-    applyPalette(p);
-    save(settings);
-    updateAllUI();
-    notifyHost({ palette: p });
-  }
-
-  function buildPaletteSwitch() {
-    const hosts = new Set(document.querySelectorAll('.nav-tools'));
-    if (hosts.size === 0) {
-      document.querySelectorAll('nav .lang-toggle').forEach(lt => {
-        if (lt.parentElement) hosts.add(lt.parentElement);
-      });
-    }
-    hosts.forEach(host => {
-      if (host.querySelector('.palette-select')) return;
-
-      const sel = document.createElement('select');
-      sel.className = 'palette-select';
-      sel.setAttribute('aria-label', 'Palette de couleurs');
-      sel.title = 'Changer la palette';
-      sel.innerHTML = PALETTES.map(p =>
-        `<option value="${p.id}"${settings.palette === p.id ? ' selected' : ''}>${p.label}</option>`
-      ).join('');
-      sel.addEventListener('change', () => setPalette(sel.value));
-
-      const lang = host.querySelector('.lang-toggle');
-      if (lang) host.insertBefore(sel, lang);
-      else host.appendChild(sel);
-    });
+  // Remove any color switcher injected by a cached/older version of this script.
+  function removePaletteSwitch() {
+    document.querySelectorAll('.palette-select').forEach(el => el.remove());
   }
 
   // ── Hero variants (accueil only) ──────────────────────────
@@ -128,9 +105,6 @@
     document.querySelectorAll('.tweaks-opt').forEach(b => {
       b.classList.toggle('on', settings[b.dataset.k] === b.dataset.v);
     });
-    document.querySelectorAll('.palette-select').forEach(s => {
-      s.value = settings.palette;
-    });
   }
 
   // ── Host edit-mode integration ────────────────────────────
@@ -147,7 +121,7 @@
 
   function init() {
     removeLegacyTweaks();
-    buildPaletteSwitch();
+    removePaletteSwitch();
     wireThemeToggles();
     setFooterYear();
     updateAllUI();

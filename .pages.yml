@@ -1,0 +1,69 @@
+# PagesCMS configuration — https://pagescms.org
+# Espace d'administration du site de la paroisse.
+# Le prêtre se connecte sur https://app.pagescms.org avec son compte GitHub,
+# choisit ce dépôt, puis modifie le contenu ci-dessous sans toucher au code.
+
+media:
+  - name: uploads
+    label: "Documents (PDF) et photos"
+    input: uploads
+    output: uploads
+    extensions: [pdf, jpg, jpeg, png, webp, gif]
+  - name: photos
+    label: "Photos du site"
+    input: assets
+    output: assets
+    extensions: [jpg, jpeg, png, webp, gif]
+
+content:
+  - name: bulletin
+    label: "Programme de la semaine"
+    description: "Feuille liturgique PDF affichée sur la page Offices, mise à jour chaque semaine."
+    type: file
+    path: content/offices.json
+    fields:
+      - name: weekly
+        label: "Feuille liturgique de la semaine"
+        type: object
+        fields:
+          - name: title
+            label: "Titre (ex. Semaine du 15 au 21 juin)"
+            type: string
+          - name: date
+            label: "Date de mise à jour (ex. 12 juin 2026)"
+            type: string
+          - name: pdf
+            label: "Fichier PDF de la semaine"
+            description: "Choisir ou téléverser le PDF. Laisser vide pour ne rien afficher."
+            type: image
+            options:
+              media: uploads
+              extensions: [pdf]
+
+  - name: textes
+    label: "Textes du site"
+    description: "Coordonnées, banque et texte d'accueil. Les modifications apparaissent sur tout le site."
+    type: file
+    path: content/site.json
+    fields:
+      - name: contact
+        label: "Coordonnées"
+        type: object
+        fields:
+          - { name: phone, label: "Téléphone", type: string }
+          - { name: email, label: "Adresse e-mail", type: string }
+      - name: bank
+        label: "Coordonnées bancaires (page Dons)"
+        type: object
+        fields:
+          - { name: beneficiary, label: "Bénéficiaire", type: string }
+          - { name: iban, label: "IBAN", type: string }
+          - { name: bic, label: "BIC / SWIFT", type: string }
+          - { name: bank, label: "Banque", type: string }
+          - { name: reference, label: "Référence du virement", type: string }
+      - name: home
+        label: "Page d'accueil"
+        type: object
+        fields:
+          - { name: introFr, label: "Texte de présentation (français)", type: text }
+          - { name: introRu, label: "Texte de présentation (russe)", type: text }

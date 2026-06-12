@@ -37,7 +37,7 @@
       </a>
       <ul class="nav-links">
         <li><a href="ru-accueil.html">Главная</a></li>
-        <li><a href="saint.html">Святой</a></li>
+        <li><a href="svyatoy.html">Святой</a></li>
         <li><a href="istoriya.html">История</a></li>
         <li><a href="bogoslujeniya.html">Богослужения</a></li>
         <li><a href="kontakty.html">Контакты</a></li>
@@ -61,18 +61,6 @@
       <span class="donate-hero-eyebrow">Приход преподобного Серафима Саровского</span>
       <h1>Сбор средств<br><em>на реставрацию</em></h1>
       <p class="donate-hero-quote">«Сохраним вместе это место молитвы и памяти для будущих поколений.»</p>
-      <div class="progress-wrap">
-        <div class="progress-label">
-          <span>Цель сбора</span>
-          <span id="progress-pct">Обновляется…</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" data-percent="35"></div>
-        </div>
-        <p style="font-size:.82rem; color:var(--cream-dark); margin-top:.6rem; font-style:italic; opacity:.7;">
-          Сумма обновляется регулярно — свяжитесь с нами для подробностей.
-        </p>
-      </div>
     </div>
     <section class="section section-alt">
       <div class="section-inner">
@@ -99,23 +87,23 @@
           <h3>Банковские реквизиты</h3>
           <div class="bank-row">
             <span class="bank-label">Получатель</span>
-            <span class="bank-value">Paroisse Orthodoxe Saint-Séraphim-de-Sarov à Montgeron</span>
+            <span class="bank-value" data-content="bank.beneficiary">Paroisse Orthodoxe Saint-Séraphim-de-Sarov à Montgeron</span>
           </div>
           <div class="bank-row">
             <span class="bank-label">IBAN</span>
-            <span class="bank-value placeholder">[Заполняется приходом]</span>
+            <span class="bank-value" data-content="bank.iban">FR76 3000 3040 7600 0372 6130 856</span>
           </div>
           <div class="bank-row">
             <span class="bank-label">BIC / SWIFT</span>
-            <span class="bank-value placeholder">[Заполняется приходом]</span>
+            <span class="bank-value" data-content="bank.bic">SOGEFRPP</span>
           </div>
           <div class="bank-row">
             <span class="bank-label">Банк</span>
-            <span class="bank-value placeholder">[Название банка]</span>
+            <span class="bank-value" data-content="bank.bank">Société Générale (Montgeron Mairie)</span>
           </div>
           <div class="bank-row">
             <span class="bank-label">Назначение</span>
-            <span class="bank-value"><span class="bank-ref">DON RESTAURATION</span></span>
+            <span class="bank-value"><span class="bank-ref" data-content="bank.reference">DON RESTAURATION</span></span>
           </div>
         </div>
         <p class="donation-note">
@@ -217,7 +205,7 @@
         <div class="fv2-cell-label">Разделы</div>
         <ul class="fv2-links">
           <li><a href="ru-accueil.html"><span class="fv2-link-idx">I</span><span class="fv2-link-text">Главная</span></a></li>
-          <li><a href="saint.html"><span class="fv2-link-idx">II</span><span class="fv2-link-text">Святой</span></a></li>
+          <li><a href="svyatoy.html"><span class="fv2-link-idx">II</span><span class="fv2-link-text">Святой</span></a></li>
           <li><a href="istoriya.html"><span class="fv2-link-idx">III</span><span class="fv2-link-text">История</span></a></li>
           <li><a href="bogoslujeniya.html"><span class="fv2-link-idx">IV</span><span class="fv2-link-text">Богослужения</span></a></li>
           <li><a href="kontakty.html"><span class="fv2-link-idx">V</span><span class="fv2-link-text">Контакты</span></a></li>
@@ -296,9 +284,6 @@
   <button class="back-to-top" aria-label="Наверх">&uarr;</button>
   <script src="main.js?v=20260517j"></script>
   <script src="site.js?v=20260517j"></script>
-  <script>
-    var fill = document.querySelector('.progress-fill');
-    if (fill) { document.getElementById('progress-pct').textContent = fill.dataset.percent + '% собрано'; }
-  </script>
+  <script src="content.js?v=20260517j"></script>
 </body>
 </html>

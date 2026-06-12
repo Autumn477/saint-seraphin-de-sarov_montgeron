@@ -131,7 +131,8 @@
       rootMargin: '0px 0px -40px 0px'
     });
 
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-stagger, .tl, .tl-event, .tl-center, .tl-center-event, .histoire-showcase, .histoire-split, .histoire-cinematic, .quote-section').forEach(function (el) {
+    var revealSel = '.reveal, .reveal-left, .reveal-right, .reveal-stagger, .tl, .tl-event, .tl-center, .tl-center-event, .histoire-showcase, .histoire-split, .histoire-cinematic, .quote-section';
+    document.querySelectorAll(revealSel).forEach(function (el) {
       // If element is already above or within the viewport at page load
       // (e.g. after a refresh on a scrolled page), mark it visible immediately
       var rect = el.getBoundingClientRect();
@@ -141,6 +142,16 @@
         observer.observe(el);
       }
     });
+
+    // Failsafe: never leave content stuck at opacity:0 if the observer
+    // misfires (e.g. some mobile browsers, restored scroll, layout shifts).
+    function revealAll() {
+      document.querySelectorAll(revealSel).forEach(function (el) {
+        el.classList.add('visible');
+      });
+    }
+    window.addEventListener('load', function () { setTimeout(revealAll, 1200); });
+    setTimeout(revealAll, 2500);
   }
 
   initReveal();

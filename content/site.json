@@ -1,0 +1,17 @@
+{
+  "contact": {
+    "phone": "06 52 54 82 97",
+    "email": "nikodim2003@gmail.com"
+  },
+  "bank": {
+    "beneficiary": "Paroisse Orthodoxe Saint-Séraphim-de-Sarov à Montgeron",
+    "iban": "FR76 3000 3040 7600 0372 6130 856",
+    "bic": "SOGEFRPP",
+    "bank": "Société Générale (Montgeron Mairie)",
+    "reference": "DON RESTAURATION"
+  },
+  "home": {
+    "introFr": "Fondée en 1957 sur le domaine du Moulin de Senlis, la paroisse Saint-Séraphim-de-Sarov accueille les fidèles orthodoxes de toutes nationalités dans la tradition liturgique russe.",
+    "introRu": "Наш приход преподобного Серафима Саровского, основанный в 1957 году на территории усадьбы «Мулен-де-Санли», открыт для православных верующих любых национальностей, в традиции Русской Православной Церкви."
+  }
+}
