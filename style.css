@@ -922,9 +922,7 @@ body > nav.scrolled {
   }
 }
 
-/* ── BUTTONS (CXLIV cartouche — SVG absolute overlay) ──────── */
-/* Boutons unifies — cartouche biseaute : double filet or, coins biseautes, remplissage au survol.
-   Meme forme partout. */
+/* ── BUTTONS — cartouche biseaute, or plein, texte sombre lisible. Identique partout. */
 .btn {
   position: relative;
   display: inline-flex;
@@ -932,63 +930,35 @@ body > nav.scrolled {
   justify-content: center;
   gap: .55rem;
   padding: .95rem 2.2rem;
-  background: transparent;
+  background: var(--gold);
+  color: #1F1510;
   border: none;
   cursor: pointer;
   font-family: 'DM Sans', 'Inter', sans-serif;
   font-size: .72rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: .2rem;
   text-transform: uppercase;
-  color: var(--gold);
   text-decoration: none;
   text-align: center;
   -webkit-clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px);
   clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px);
-  transition: color .4s ease;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.32);
+  transition: background .35s ease, transform .35s ease, box-shadow .35s ease;
   z-index: 0;
 }
-/* filet or exterieur */
-.btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--gold);
-  -webkit-clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px);
-  clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px);
-  z-index: -2;
-  transition: background .4s ease;
+.btn:hover {
+  background: var(--gold-light, #EDD98A);
+  transform: translateY(-1px);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.5);
 }
-/* centre transparent + 2e filet interieur (cartouche) — identique sur TOUS les fonds */
-.btn::after {
-  content: "";
-  position: absolute;
-  inset: 2px;
-  background: transparent;
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--gold) 40%, transparent);
-  -webkit-clip-path: polygon(7px 0, calc(100% - 7px) 0, 100% 7px, 100% calc(100% - 7px), calc(100% - 7px) 100%, 7px 100%, 0 calc(100% - 7px), 0 7px);
-  clip-path: polygon(7px 0, calc(100% - 7px) 0, 100% 7px, 100% calc(100% - 7px), calc(100% - 7px) 100%, 7px 100%, 0 calc(100% - 7px), 0 7px);
-  z-index: -1;
-  transition: background .4s ease;
-}
-.btn:hover { color: var(--burgundy-ink, #1F1510); }
-.btn:hover::after { background: var(--gold); box-shadow: none; }
-.btn:hover::before { background: var(--gold-light, #EDD98A); }
-.btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 
-/* Sur fond sombre (footer, section cinematique) : meme cartouche, texte plus clair */
-.footer-cta .btn,
-.histoire-cinematic .btn { color: var(--gold-light, #EDD98A); }
-.footer-cta .btn:hover,
-.histoire-cinematic .btn:hover { color: var(--burgundy-ink, #1F1510); }
-/* Au-dessus d'une photo : voile sombre dans le bouton pour la lisibilite */
-.histoire-cinematic .btn::after { background: rgba(12,20,16,.55); }
-
-.btn-gold, .btn-burgundy, .btn-outline { color: var(--gold); }
+/* Les modificateurs gardent le meme rendu (or plein, texte sombre) */
+.btn-gold, .btn-burgundy, .btn-outline { color: #1F1510; }
 
 .hero-btn { align-self: flex-start; animation: fadeUp .8s .6s var(--ease-out) both; }
-.histoire-showcase-btn { color: var(--gold); }
-.histoire-showcase-btn:hover { color: var(--dark-brown); }
+.histoire-showcase-btn { color: #1F1510; }
 
 /* ── BANNER (restoration alert) ─────────────────────────────── */
 .banner {
