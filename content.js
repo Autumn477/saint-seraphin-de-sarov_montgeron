@@ -79,27 +79,62 @@
     }, obj);
   }
 
-  function applySiteContent() {
-    const nodes = document.querySelectorAll('[data-content]');
-    if (!nodes.length) return;
+  function applySiteContent(data) {
+    document.querySelectorAll('[data-content]').forEach(function (el) {
+      const val = getPath(data, el.getAttribute('data-content'));
+      if (typeof val === 'string' && val.trim() !== '') {
+        el.textContent = val;
+      }
+    });
+  }
 
+  // ── Bandeau "fête / annonce" (content/site.json → feast) ──
+  // Tout est vide dans le HTML : le bandeau reste MASQUÉ tant que le prêtre
+  // n'a pas renseigné le titre (champ désigné par data-feast-key). Dès qu'un
+  // titre existe, le bandeau s'affiche et chaque champ rempli est injecté.
+  function applyFeast(data) {
+    const section = document.querySelector('[data-feast]');
+    if (!section) return;
+
+    const feast = data && data.feast ? data.feast : null;
+    const gate = section.getAttribute('data-feast-key') || 'titleFr';
+    if (!feast || typeof feast[gate] !== 'string' || feast[gate].trim() === '') {
+      return; // rien renseigné → bandeau caché
+    }
+
+    section.querySelectorAll('[data-feast-field]').forEach(function (el) {
+      const val = feast[el.getAttribute('data-feast-field')];
+      if (typeof val === 'string' && val.trim() !== '') {
+        el.textContent = val;
+      }
+    });
+
+    // Bloc "prochain office" seulement si le prêtre l'a renseigné.
+    const next = section.querySelector('[data-feast-next]');
+    const nextField = next && next.querySelector('[data-feast-field]');
+    if (nextField) {
+      const nv = feast[nextField.getAttribute('data-feast-field')];
+      if (typeof nv === 'string' && nv.trim() !== '') next.hidden = false;
+    }
+
+    section.hidden = false;
+  }
+
+  function loadSite() {
+    if (!document.querySelector('[data-content], [data-feast]')) return;
     fetch('content/site.json', { cache: 'no-store' })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) {
         if (!data) return;
-        nodes.forEach(function (el) {
-          const val = getPath(data, el.getAttribute('data-content'));
-          if (typeof val === 'string' && val.trim() !== '') {
-            el.textContent = val;
-          }
-        });
+        applySiteContent(data);
+        applyFeast(data);
       })
       .catch(function () { /* keep the static HTML fallback */ });
   }
 
   function init() {
     renderBulletins();
-    applySiteContent();
+    loadSite();
   }
 
   if (document.readyState === 'loading') {

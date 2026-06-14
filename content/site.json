@@ -13,5 +13,18 @@
   "home": {
     "introFr": "Fondée en 1957 sur le domaine du Moulin de Senlis, la paroisse Saint-Séraphim-de-Sarov accueille les fidèles orthodoxes de toutes nationalités dans la tradition liturgique russe.",
     "introRu": "Наш приход преподобного Серафима Саровского, основанный в 1957 году на территории усадьбы «Мулен-де-Санли», открыт для православных верующих любых национальностей, в традиции Русской Православной Церкви."
+  },
+  "feast": {
+    "day": "15",
+    "monthFr": "Janvier",
+    "monthRu": "января",
+    "kickerFr": "Fête patronale",
+    "kickerRu": "Престольный праздник",
+    "titleFr": "Saint Séraphim de Sarov",
+    "titleRu": "Преподобный Серафим Саровский",
+    "descFr": "Chaque 15 janvier, la paroisse célèbre la mémoire de son saint patron. La Divine Liturgie est suivie d'un repas fraternel. La fête d'été est célébrée le 1ᵉʳ août pour la découverte de ses reliques.",
+    "descRu": "Каждый год 15 января приход празднует память небесного покровителя. Божественная литургия завершается братской трапезой. Летний праздник совершается 1 августа, в день обретения мощей.",
+    "nextFr": "Samedi 18 h 00",
+    "nextRu": "Суббота 18:00"
   }
 }

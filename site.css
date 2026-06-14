@@ -48,7 +48,7 @@ a:hover { color: var(--gold-ink); }
 body > nav { background: color-mix(in srgb, var(--stone) 88%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line-soft); }
 body > nav.scrolled { background: color-mix(in srgb, var(--stone) 96%, transparent); }
 
-.nav-inner { height: 64px; padding: 0 2rem; }
+.nav-inner { height: 74px; padding: 0 2rem; }
 
 .site-logo svg { width: 20px; height: 28px; opacity: .45; }
 .logo-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1rem; color: var(--ink); font-weight: 600; letter-spacing: 0; }
@@ -907,6 +907,7 @@ footer { background: var(--burgundy-ink); }
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
+.feast-banner[hidden], .feast-banner-next[hidden] { display: none !important; }
 .feast-banner-inner {
   max-width: 1100px; margin: 0 auto;
   display: grid; grid-template-columns: auto 1fr auto; gap: 2.5rem; align-items: center;

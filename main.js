@@ -6,6 +6,103 @@
 (function () {
   'use strict';
 
+  // ── Prechargeur : tracage de la silhouette de l'eglise ───────
+  // La silhouette (assets/church-silhouette.svg) se dessine au trait
+  // dore puis se remplit en vert. Croix orthodoxe en secours si le
+  // SVG ne charge pas. Injecte ici -> toutes les pages FR + RU.
+  (function initLoader() {
+    // NOTE : affichage a CHAQUE chargement (mode validation).
+    // Pour revenir a "une fois par session", decommenter le bloc ci-dessous.
+    // try {
+    //   if (sessionStorage.getItem('ssp_loaded')) return;
+    //   sessionStorage.setItem('ssp_loaded', '1');
+    // } catch (e) { /* sessionStorage indispo : on affiche quand meme */ }
+
+    var loader = document.createElement('div');
+    loader.className = 'site-loader';
+    loader.setAttribute('role', 'status');
+    loader.setAttribute('aria-label', 'Chargement du site');
+    loader.innerHTML =
+      '<div class="site-loader-inner">' +
+        '<div class="site-loader-art-wrap"></div>' +
+        '<div class="site-loader-name">Saint-Séraphim-de-Sarov</div>' +
+        '<div class="site-loader-sub">Paroisse orthodoxe · Montgeron</div>' +
+      '</div>';
+    document.body.prepend(loader);
+
+    var wrap = loader.querySelector('.site-loader-art-wrap');
+    var prefersReduced = window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Tracage : on fige d'abord l'etat "non dessine" SANS transition,
+    // on force un reflow, puis on relance la transition vers dashoffset 0.
+    function drawPaths(paths, stagger) {
+      paths.forEach(function (p) {
+        var len = p.getTotalLength();
+        p.style.transition = 'none';
+        p.style.strokeDasharray = len;
+        p.style.strokeDashoffset = len;
+      });
+      loader.getBoundingClientRect(); // reflow : fige l'etat initial
+      requestAnimationFrame(function () {
+        paths.forEach(function (p, i) {
+          p.style.transition = '';                       // reprend la duree du CSS
+          p.style.transitionDelay = (0.1 + i * stagger) + 's';
+          p.style.strokeDashoffset = '0';                // -> le trait se dessine
+        });
+      });
+    }
+
+    // Croix orthodoxe — secours si la silhouette ne charge pas
+    function injectCross() {
+      wrap.innerHTML =
+        '<svg class="site-loader-cross" viewBox="0 0 60 84" aria-hidden="true">' +
+          '<path d="M30 4 L30 80"/><path d="M16 11.5 L44 11.5"/>' +
+          '<path d="M6 32 L54 32"/><path d="M14 64 L46 70"/>' +
+        '</svg>';
+      if (!prefersReduced) drawPaths(wrap.querySelectorAll('path'), 0.3);
+    }
+
+    // Silhouette de l'eglise
+    fetch('assets/church-silhouette.svg')
+      .then(function (r) { if (!r.ok) throw new Error('http'); return r.text(); })
+      .then(function (txt) {
+        wrap.innerHTML = txt;
+        var svg = wrap.querySelector('svg');
+        if (!svg) throw new Error('no svg');
+        svg.classList.add('site-loader-art');
+        svg.removeAttribute('width');
+        svg.removeAttribute('height');
+        svg.setAttribute('aria-hidden', 'true');
+        var paths = svg.querySelectorAll('path');
+        if (prefersReduced) return; // contour affiche statiquement (pas de trace)
+        drawPaths(paths, 0.05); // trace du contour dore, sans remplissage
+      })
+      .catch(injectCross);
+
+    var start = (window.performance && performance.now) ? performance.now() : 0;
+    var minVisible = prefersReduced ? 300 : 2600;
+    var hidden = false;
+
+    function hideLoader() {
+      if (hidden) return;
+      hidden = true;
+      loader.classList.add('is-hidden');
+      setTimeout(function () {
+        if (loader.parentNode) loader.parentNode.removeChild(loader);
+      }, 800);
+    }
+
+    function scheduleHide() {
+      var elapsed = ((window.performance && performance.now) ? performance.now() : 0) - start;
+      setTimeout(hideLoader, Math.max(0, minVisible - elapsed));
+    }
+
+    if (document.readyState === 'complete') scheduleHide();
+    else window.addEventListener('load', scheduleHide);
+    setTimeout(hideLoader, 6000); // failsafe : ne jamais rester bloque
+  })();
+
   // ── Scroll progress bar ──────────────────────────────────────
   var progressBar = document.createElement('div');
   progressBar.className = 'scroll-progress';

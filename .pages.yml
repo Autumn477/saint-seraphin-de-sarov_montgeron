@@ -67,3 +67,19 @@ content:
         fields:
           - { name: introFr, label: "Texte de présentation (français)", type: text }
           - { name: introRu, label: "Texte de présentation (russe)", type: text }
+      - name: feast
+        label: "Bandeau d'annonce / fête (page d'accueil)"
+        description: "Bandeau facultatif en haut de l'accueil. Laisser le Titre vide pour ne RIEN afficher. Dès qu'un titre (FR ou RU) est renseigné, le bandeau apparaît dans la langue correspondante."
+        type: object
+        fields:
+          - { name: day, label: "Jour (ex. 15)", type: string }
+          - { name: monthFr, label: "Mois — français (ex. Janvier)", type: string }
+          - { name: monthRu, label: "Mois — russe (ex. января)", type: string }
+          - { name: kickerFr, label: "Surtitre — français (ex. Fête patronale)", type: string }
+          - { name: kickerRu, label: "Surtitre — russe (ex. Престольный праздник)", type: string }
+          - { name: titleFr, label: "Titre — français (laisser vide = bandeau masqué)", type: string }
+          - { name: titleRu, label: "Titre — russe (laisser vide = bandeau masqué)", type: string }
+          - { name: descFr, label: "Description — français", type: text }
+          - { name: descRu, label: "Description — russe", type: text }
+          - { name: nextFr, label: "Prochain office — français (ex. Samedi 18 h 00)", type: string }
+          - { name: nextRu, label: "Prochain office — russe (ex. Суббота 18:00)", type: string }

@@ -450,14 +450,20 @@ header {
   flex-shrink: 0;
 }
 
-.site-logo svg {
-  width: 24px;
-  height: 32px;
+/* Logo d'en-tete : silhouette de l'eglise (masque dore) a la place de la croix */
+.site-logo svg { display: none; }
+.site-logo::before {
+  content: '';
+  width: 64px;
+  height: 57px;
   flex-shrink: 0;
-  opacity: .35;
+  background: var(--burgundy);
+  opacity: 1;
   transition: opacity .3s;
+  -webkit-mask: url('assets/church-silhouette.svg') center / contain no-repeat;
+          mask: url('assets/church-silhouette.svg') center / contain no-repeat;
 }
-.site-logo:hover svg { opacity: .55; }
+.site-logo:hover::before { opacity: .72; }
 
 .logo-text {
   text-align: left;
@@ -536,7 +542,7 @@ body > nav.scrolled {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  height: 68px;
+  height: 74px;
 }
 
 .nav-links {
@@ -2300,78 +2306,81 @@ main { min-height: 60vh; }
 .office-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
-  max-width: 1100px;
-  margin: 1rem auto 0;
+  gap: 1.6rem;
+  max-width: 1080px;
+  margin: 1.5rem auto 0;
+  align-items: stretch;
 }
 
 .office-card {
   display: grid;
-  grid-template-columns: 110px 1fr;
+  grid-template-columns: 122px 1fr;
   background: var(--white);
-  border: 1px solid rgba(107,75,60,.08);
-  border-radius: 2px;
+  border: 1px solid rgba(46,93,79,.12);
+  border-radius: 5px;
   overflow: hidden;
   transition: border-color .35s var(--ease-out), transform .35s var(--ease-out), box-shadow .35s var(--ease-out);
   position: relative;
-}
-.office-card::before {
-  content: '';
-  position: absolute;
-  top: 0; bottom: 0;
-  left: 150px;
-  width: 1px;
-  background: linear-gradient(to bottom, transparent, rgba(201,168,76,.35), transparent);
+  box-shadow: 0 1px 3px rgba(20,36,31,.05);
 }
 .office-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 32px -16px rgba(44,24,16,.2);
+  border-color: rgba(196,154,58,.45);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px -22px rgba(20,36,31,.4);
 }
 
 .office-card-day {
-  background: var(--burgundy);
+  background: linear-gradient(158deg, var(--burgundy-mid) 0%, var(--burgundy) 48%, var(--burgundy-dark) 100%);
   color: var(--cream);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem 1rem;
+  padding: 1.9rem 1rem;
   text-align: center;
-  gap: .4rem;
+  gap: .55rem;
   position: relative;
+}
+/* filet dore aligne pile sur la jointure vert / creme */
+.office-card-day::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; right: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(224,190,110,.55) 16%, rgba(224,190,110,.55) 84%, transparent);
 }
 .office-card-day::after {
   content: '';
   position: absolute;
-  bottom: 14px; left: 50%;
+  bottom: 16px; left: 50%;
   transform: translateX(-50%);
-  width: 20px;
+  width: 22px;
   height: 1px;
-  background: var(--gold);
-  opacity: .5;
+  background: var(--gold-light);
+  opacity: .55;
 }
 
 .office-card-weekday {
   font-family: 'DM Sans', sans-serif;
-  font-size: .66rem;
+  font-size: .62rem;
   letter-spacing: .3em;
+  text-indent: .3em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-light);
   font-weight: 500;
 }
 
 .office-card-time {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2.6rem;
+  font-size: 2.75rem;
   line-height: 1;
-  color: var(--cream);
+  color: #fff;
   font-weight: 400;
   font-feature-settings: 'lnum';
 }
 
 .office-card-body {
-  padding: 1.6rem 1.8rem;
+  padding: 1.75rem 1.9rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2379,36 +2388,39 @@ main { min-height: 60vh; }
 
 .office-card-kicker {
   font-family: 'DM Sans', sans-serif;
-  font-size: .64rem;
+  font-size: .62rem;
   letter-spacing: .28em;
+  text-indent: .28em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: .5rem;
+  margin-bottom: .55rem;
 }
 
 .office-card-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
-  font-weight: 400;
+  font-size: 1.7rem;
+  font-weight: 500;
   color: var(--dark-brown);
-  line-height: 1.15;
-  margin: 0 0 .15rem;
+  line-height: 1.12;
+  margin: 0 0 .2rem;
 }
 
 .office-card-ru {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 1rem;
+  font-size: 1.02rem;
   color: var(--burgundy);
-  margin: 0 0 .7rem;
-  opacity: .85;
+  margin: 0 0 .8rem;
+  padding-bottom: .8rem;
+  border-bottom: 1px solid rgba(46,93,79,.1);
+  opacity: .9;
 }
 
 .office-card-note {
   font-family: 'Source Serif 4', serif;
   font-size: .88rem;
   color: var(--text-muted);
-  line-height: 1.55;
+  line-height: 1.6;
   margin: 0;
 }
 
@@ -2426,14 +2438,14 @@ main { min-height: 60vh; }
 /* Tablette : 3 encadres trop serres -> on empile */
 @media (max-width: 900px) {
   .office-cards { grid-template-columns: 1fr; max-width: 560px; }
-  .office-card { grid-template-columns: 110px 1fr; }
+  .office-card { grid-template-columns: 122px 1fr; }
 }
 @media (max-width: 760px) {
   .office-card { grid-template-columns: 1fr; }
-  .office-card::before { display: none; }
-  .office-card-day { flex-direction: row; gap: 1rem; padding: 1rem; align-items: baseline; }
+  .office-card-day { flex-direction: row; gap: 1rem; padding: 1rem 1.4rem; align-items: baseline; justify-content: flex-start; }
+  .office-card-day::before { top: auto; bottom: 0; left: 1.4rem; right: 1.4rem; width: auto; height: 1px; background: linear-gradient(to right, transparent, rgba(224,190,110,.55), transparent); }
   .office-card-day::after { display: none; }
-  .office-card-time { font-size: 1.8rem; }
+  .office-card-time { font-size: 1.9rem; }
 }
 
 /* ── FEASTS LIST — refined ─────────────────────────────────── */
@@ -2928,10 +2940,19 @@ footer::after {
   background: linear-gradient(90deg, transparent, rgba(201,168,76,.3), transparent);
 }
 
+/* Footer : eglise (or) UNIQUEMENT sur la marque. L'ornement separateur
+   garde la CROIX pour eviter la repetition avec la marque juste en dessous. */
+.footer-brand svg > * { display: none; }
+.footer-brand svg {
+  background: var(--gold);
+  -webkit-mask: url('assets/church-silhouette.svg') center / contain no-repeat;
+          mask: url('assets/church-silhouette.svg') center / contain no-repeat;
+}
+
 .footer-divider-ornament svg {
-  width: 20px;
-  height: 28px;
-  opacity: .45;
+  width: 18px;
+  height: 26px;
+  opacity: .5;
   flex-shrink: 0;
 }
 
@@ -2958,11 +2979,11 @@ footer::after {
 }
 
 .footer-brand svg {
-  width: 32px;
-  height: 44px;
+  width: 50px;
+  height: 45px;
   flex-shrink: 0;
-  opacity: .75;
-  margin-top: 2px;
+  opacity: .8;
+  margin-top: 0;
   filter: drop-shadow(0 0 10px rgba(201,168,76,.25));
   transition: opacity .5s ease;
 }
@@ -3569,7 +3590,9 @@ body.dark .prose .prose-closing {
 }
 
 /* ── RESPONSIVE ─────────────────────────────────────────────── */
-@media (max-width: 768px) {
+/* Nav mobile : MEME seuil (960px) que le hamburger de site.css, sinon
+   entre 769 et 960px le menu deroulant ne s'ouvrait pas (bug navigation). */
+@media (max-width: 960px) {
   .nav-inner { flex-wrap: wrap; height: auto; padding: .6rem 1.2rem; }
 
   .nav-links {
@@ -3587,7 +3610,7 @@ body.dark .prose .prose-closing {
     border-bottom: 1px solid rgba(0,0,0,.04);
     border-radius: 0;
     text-align: left;
-    padding: .8rem 1rem;
+    padding: .9rem 1rem;
   }
 
   .nav-links a.active,
@@ -3606,7 +3629,9 @@ body.dark .prose .prose-closing {
   .nav-toggle { display: flex; }
 
   .lang-toggle { margin-left: 0; margin-right: .3rem; }
+}
 
+@media (max-width: 768px) {
   .hero { min-height: 75vh; }
 
   .section { padding: 3.5rem 1.2rem; }
@@ -3635,9 +3660,10 @@ body.dark .prose .prose-closing {
   .footer-nav-title { margin-top: .5rem; }
   .footer-nav-title::after { left: 50%; transform: translateX(-50%); }
   .footer-nav-links { align-items: center; }
-  .footer-nav-links a { margin-left: 0; text-align: center; }
+  .footer-nav-links a { margin-left: 0; text-align: center; padding: .7rem 0; }
   .footer-contact-item { justify-content: center; text-align: left; }
   .footer-bottom-inner { justify-content: center; }
+  .footer-lang-switch a { padding: .55rem 1rem; }
   .back-to-top { bottom: 1.2rem; right: 1.2rem; width: 40px; height: 40px; }
 }
 
@@ -3645,9 +3671,14 @@ body.dark .prose .prose-closing {
   .section { padding: 2.5rem 1rem; }
   .card-grid { grid-template-columns: 1fr; }
   .bank-row { flex-direction: column; }
-  .bank-value { text-align: left; }
+  .bank-value { text-align: left; overflow-wrap: anywhere; }
   .hero { min-height: 60vh; }
   .hero-content { padding: 3rem 1.2rem; }
+  /* carte horaire accueil : ne pas forcer de largeurs mini qui debordent */
+  .horaire-card { flex-wrap: wrap; }
+  .horaire-day, .horaire-time { min-width: 0; }
+  /* nom du prechargeur sur tres petit ecran */
+  .site-loader-name { font-size: 1.25rem; }
 }
 
 
@@ -4321,7 +4352,11 @@ body.dark .prose .prose-closing {
   .saint-hero { gap: 2.5rem; }
   .footer-main { gap: 2rem; }
   .section-inner { padding-left: 1.5rem; padding-right: 1.5rem; }
-  .feasts-list { columns: 2; }
+}
+
+/* Feasts : 1 colonne sous 900px (dates longues trop serrees en 2 colonnes) */
+@media (max-width: 900px) {
+  .feasts-list { columns: 1; }
 }
 
 /* ── WEEKLY BULLETIN — small screens ─────────────────────────── */
@@ -4367,4 +4402,91 @@ body.dark .prose .prose-closing {
   .hero-modern { display: block !important; }
   .hero-modern-content { width: 100%; max-width: 100%; }
   .hero-modern-image { width: 100%; }
+}
+
+/* ── PRECHARGEUR — tracage de la croix orthodoxe ──────────────── */
+.site-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(125% 125% at 50% 38%, var(--white) 0%, var(--cream) 68%, var(--cream-dark) 100%);
+  opacity: 1;
+  transition: opacity .7s var(--ease-out), visibility .7s var(--ease-out);
+}
+.site-loader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.site-loader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.site-loader-cross {
+  width: 78px;
+  height: auto;
+  overflow: visible;
+}
+.site-loader-cross path {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 1px 7px rgba(196,154,58,.38));
+  transition: stroke-dashoffset 1s var(--ease-out);
+}
+/* Variante silhouette de l'eglise : trace du contour puis remplissage */
+.site-loader-art {
+  width: 290px;
+  max-width: 62vw;
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 1px 5px rgba(196,154,58,.28));
+}
+.site-loader-art path {
+  fill: transparent;
+  stroke: var(--gold);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  transition: stroke-dashoffset 1.8s var(--ease-out);
+}
+.site-loader-art.is-filled path {
+  fill: var(--burgundy);
+}
+.site-loader-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: .01em;
+  color: var(--burgundy);
+  opacity: 0;
+  transform: translateY(9px);
+  animation: loaderFadeUp .85s var(--ease-out) 1.9s forwards;
+}
+.site-loader-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: .6rem;
+  letter-spacing: .3em;
+  text-indent: .3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0;
+  transform: translateY(9px);
+  animation: loaderFadeUp .85s var(--ease-out) 2.1s forwards;
+}
+@keyframes loaderFadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-loader-cross path { transition: none; stroke-dashoffset: 0 !important; }
+  .site-loader-art path { transition: none; stroke-dashoffset: 0 !important; }
+  .site-loader-name, .site-loader-sub { animation: none; opacity: 1; transform: none; }
 }
