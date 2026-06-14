@@ -1,2 +1,5 @@
 saint-seraphin-de-sarov_montgeron/
 .DS_Store
+
+# Local Netlify folder
+.netlify

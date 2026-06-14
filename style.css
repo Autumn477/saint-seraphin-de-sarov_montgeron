@@ -460,8 +460,8 @@ header {
   background: var(--burgundy);
   opacity: 1;
   transition: opacity .3s;
-  -webkit-mask: url('assets/church-silhouette.svg') center / contain no-repeat;
-          mask: url('assets/church-silhouette.svg') center / contain no-repeat;
+  -webkit-mask: url('assets/church-bold.svg') center / contain no-repeat;
+          mask: url('assets/church-bold.svg') center / contain no-repeat;
 }
 .site-logo:hover::before { opacity: .72; }
 
@@ -2945,8 +2945,8 @@ footer::after {
 .footer-brand svg > * { display: none; }
 .footer-brand svg {
   background: var(--gold);
-  -webkit-mask: url('assets/church-silhouette.svg') center / contain no-repeat;
-          mask: url('assets/church-silhouette.svg') center / contain no-repeat;
+  -webkit-mask: url('assets/church-bold.svg') center / contain no-repeat;
+          mask: url('assets/church-bold.svg') center / contain no-repeat;
 }
 
 .footer-divider-ornament svg {

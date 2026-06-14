@@ -4,51 +4,493 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="robots" content="noindex, nofollow"/>
-  <title>Espace administration · Paroisse Saint-Séraphim-de-Sarov</title>
+  <title>Administration du site · Paroisse Saint-Séraphim-de-Sarov</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260614b"/>
-  <link rel="stylesheet" href="site.css?v=20260614b"/>
   <style>
-    .admin-wrap { max-width: 760px; margin: 0 auto; padding: 4rem 1.4rem 5rem; }
-    .admin-kicker { font-family:'DM Sans',sans-serif; font-size:.7rem; font-weight:600; letter-spacing:.25rem; text-transform:uppercase; color:var(--gold,#C9A84C); display:block; margin-bottom:1rem; }
-    .admin-wrap h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,5vw,3rem); font-weight:500; color:var(--dark-brown,#2a1d12); line-height:1.1; margin:0 0 1rem; }
-    .admin-wrap p.lead { font-family:'Source Serif 4',serif; font-size:1.02rem; line-height:1.75; color:var(--muted,#5b5045); margin-bottom:2.4rem; }
-    .admin-btn { display:inline-block; background:var(--gold,#C9A84C); color:#1f1510; font-family:'DM Sans',sans-serif; font-weight:600; font-size:.85rem; letter-spacing:.06rem; text-decoration:none; padding:.95rem 1.8rem; border-radius:6px; transition:background .2s; }
-    .admin-btn:hover { background:var(--gold-light,#EDD98A); }
-    .admin-steps { list-style:none; counter-reset:s; padding:0; margin:2.6rem 0 0; }
-    .admin-steps li { counter-increment:s; position:relative; padding:0 0 1.6rem 3.2rem; font-family:'Source Serif 4',serif; font-size:.97rem; line-height:1.7; color:var(--dark-brown,#2a1d12); }
-    .admin-steps li::before { content:counter(s); position:absolute; left:0; top:0; width:2.1rem; height:2.1rem; border-radius:50%; background:var(--gold-pale,#f7efd0); color:var(--gold-deep,#8a6d1e); font-family:'Cormorant Garamond',serif; font-weight:700; font-size:1.1rem; display:flex; align-items:center; justify-content:center; border:1px solid var(--gold,#C9A84C); }
-    .admin-card { border:1px solid var(--gold-soft,rgba(201,168,76,.35)); border-radius:8px; padding:1.5rem 1.7rem; background:var(--gold-pale,#f7efd0); margin-top:2.6rem; }
-    .admin-card h2 { font-family:'Cormorant Garamond',serif; font-size:1.4rem; margin:0 0 .6rem; color:var(--dark-brown,#2a1d12); }
-    .admin-card p { font-family:'Source Serif 4',serif; font-size:.92rem; line-height:1.7; color:var(--muted,#5b5045); margin:0; }
-    .admin-back { display:inline-block; margin-top:2.5rem; font-family:'DM Sans',sans-serif; font-size:.78rem; letter-spacing:.1rem; text-transform:uppercase; color:var(--gold-deep,#8a6d1e); text-decoration:none; border-bottom:1px solid rgba(201,168,76,.4); padding-bottom:.2rem; }
-    code { background:rgba(0,0,0,.06); padding:.1rem .4rem; border-radius:4px; font-size:.85em; }
+    :root{
+      --stone:#EFE9DF; --stone-warm:#E6DED0; --ink:#1F1510; --muted:#6D5B4E;
+      --line:rgba(31,21,16,.14); --gold:#A8894C; --gold-soft:#C9A84C; --gold-pale:#F5EDD6;
+      --ok:#3f7a3f; --err:#9a2a2a;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--stone);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.6}
+    .wrap{max-width:780px;margin:0 auto;padding:2.5rem 1.4rem 5rem}
+    .kicker{font-family:'DM Sans',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.25rem;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.7rem}
+    h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.9rem,5vw,2.8rem);margin:0 0 .6rem;line-height:1.1}
+    h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.35rem;margin:0 0 .2rem}
+    p.lead{color:var(--muted);margin:0 0 2rem}
+    label{display:block;font-family:'DM Sans',sans-serif;font-size:.74rem;font-weight:600;letter-spacing:.04rem;color:var(--ink);margin:1rem 0 .35rem}
+    label .hint{display:block;font-weight:400;color:var(--muted);font-size:.72rem;letter-spacing:0;margin-top:.15rem}
+    input[type=text],input[type=password],input[type=email],textarea{
+      width:100%;font-family:'Source Serif 4',serif;font-size:.95rem;color:var(--ink);
+      background:#fff;border:1px solid var(--line);border-radius:7px;padding:.7rem .8rem;outline:none;transition:border-color .2s}
+    input:focus,textarea:focus{border-color:var(--gold-soft)}
+    textarea{min-height:5.5rem;resize:vertical;line-height:1.6}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.04rem;border:none;border-radius:7px;padding:.8rem 1.5rem;transition:background .2s,opacity .2s}
+    .btn-gold{background:var(--gold-soft);color:#1f1510}
+    .btn-gold:hover{background:#d8b85e}
+    .btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}
+    .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+    .btn:disabled{opacity:.5;cursor:default}
+    fieldset{border:1px solid var(--line);border-radius:10px;padding:1.1rem 1.3rem 1.4rem;margin:0 0 1.6rem;background:rgba(255,255,255,.45)}
+    legend{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;padding:0 .5rem;color:var(--ink)}
+    fieldset .desc{font-size:.84rem;color:var(--muted);margin:-.2rem 0 .6rem}
+    .card{border:1px solid var(--gold);border-radius:10px;padding:1.2rem 1.4rem;background:var(--gold-pale);margin-bottom:1.6rem}
+    .card ol{margin:.6rem 0 0;padding-left:1.2rem}
+    .card li{margin-bottom:.5rem;font-size:.92rem}
+    .card a{color:var(--gold)}
+    .tabs{display:flex;gap:.4rem;border-bottom:1px solid var(--line);margin:1.5rem 0 2rem}
+    .tab{font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:600;color:var(--muted);background:none;border:none;cursor:pointer;padding:.7rem 1rem;border-bottom:2px solid transparent;margin-bottom:-1px}
+    .tab.active{color:var(--ink);border-bottom-color:var(--gold-soft)}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.5rem}
+    .who{font-family:'DM Sans',sans-serif;font-size:.78rem;color:var(--muted)}
+    .who b{color:var(--ink)}
+    .actions{display:flex;gap:.7rem;align-items:center;margin-top:1.2rem;flex-wrap:wrap}
+    .toast{position:fixed;left:50%;bottom:1.6rem;transform:translateX(-50%) translateY(140%);background:var(--ink);color:var(--stone);font-family:'DM Sans',sans-serif;font-size:.85rem;padding:.8rem 1.3rem;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,.25);transition:transform .35s ease;z-index:50;max-width:90vw}
+    .toast.show{transform:translateX(-50%) translateY(0)}
+    .toast.ok{background:var(--ok)} .toast.err{background:var(--err)}
+    .hidden{display:none!important}
+    .pdf-current{font-family:'DM Sans',sans-serif;font-size:.82rem;color:var(--muted);margin:.5rem 0;display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
+    .pdf-current a{color:var(--gold)}
+    .muted{color:var(--muted);font-size:.85rem}
+    .row2{display:grid;grid-template-columns:1fr 1fr;gap:.4rem 1rem}
+    @media(max-width:560px){.row2{grid-template-columns:1fr}}
+    .backlink{display:inline-block;margin-top:2.5rem;font-family:'DM Sans',sans-serif;font-size:.76rem;letter-spacing:.08rem;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(168,137,76,.4);padding-bottom:.2rem}
+    code{background:rgba(0,0,0,.06);padding:.12rem .4rem;border-radius:4px;font-size:.85em}
+    .spin{display:inline-block;width:.9em;height:.9em;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite}
+    @keyframes sp{to{transform:rotate(360deg)}}
   </style>
 </head>
 <body>
-  <main class="admin-wrap">
-    <span class="admin-kicker">Espace réservé à la paroisse</span>
+  <main class="wrap">
+    <span class="kicker">Espace réservé à la paroisse</span>
     <h1>Administration du site</h1>
-    <p class="lead">Cet espace permet de mettre à jour le contenu du site sans connaissance technique : importer le programme PDF de la semaine, ajouter des photos, et modifier les textes. Les modifications sont enregistrées automatiquement et apparaissent sur le site en ligne.</p>
 
-    <a class="admin-btn" href="https://app.pagescms.org/Autumn477/saint-seraphin-de-sarov_montgeron/main/collection/bulletin" target="_blank" rel="noopener">Ouvrir l'éditeur du site</a>
+    <!-- ÉCRAN DE CONNEXION -->
+    <section id="gate">
+      <p class="lead">Connectez-vous avec le compte GitHub de la paroisse pour modifier le contenu du site (textes, coordonnées, fête, programme de la semaine). Les changements sont publiés automatiquement.</p>
+      <div class="actions">
+        <button class="btn btn-gold" id="loginBtn">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          Se connecter avec GitHub
+        </button>
+        <a class="btn btn-ghost" href="index.html">Retour au site</a>
+      </div>
+      <p class="muted" id="gateMsg" style="margin-top:1.1rem"></p>
 
-    <ol class="admin-steps">
-      <li>Cliquez sur <strong>« Ouvrir l'éditeur du site »</strong> ci-dessus, puis connectez-vous avec le compte <strong>GitHub</strong> de la paroisse (la première fois, autorisez l'accès).</li>
-      <li>Pour publier le <strong>programme de la semaine</strong> : ouvrez la rubrique <strong>« Programme de la semaine »</strong>, choisissez le <strong>Fichier PDF</strong> (vous pouvez en téléverser un nouveau), indiquez un titre et une date, puis cliquez sur <strong>Save</strong>.</li>
-      <li>Pour modifier les <strong>textes du site</strong> (téléphone, e-mail, coordonnées bancaires, texte d'accueil) : ouvrez la rubrique <strong>« Textes du site »</strong>, changez ce que vous voulez, puis <strong>Save</strong>. Ces informations se mettent à jour partout automatiquement.</li>
-      <li>Pour ajouter des <strong>photos</strong> : ouvrez l'onglet <strong>Media</strong> et glissez-déposez vos images.</li>
-      <li>Les changements sont visibles sur le site quelques instants après l'enregistrement. Rien d'autre à faire.</li>
-    </ol>
+      <!-- Écran "entrez ce code sur GitHub" (Device Flow) -->
+      <div class="card hidden" id="deviceBox" style="margin-top:1.6rem">
+        <h2>Dernière étape</h2>
+        <p style="margin:.2rem 0 .8rem">Sur GitHub, entrez ce code pour autoriser l'accès :</p>
+        <div id="userCode" style="font-family:'DM Sans',sans-serif;font-size:1.9rem;font-weight:600;letter-spacing:.3rem;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:8px;padding:.7rem 1rem;text-align:center;margin-bottom:.9rem"></div>
+        <div class="actions" style="margin-top:0">
+          <a class="btn btn-gold" id="deviceLink" href="https://github.com/login/device" target="_blank" rel="noopener">Ouvrir GitHub et saisir le code</a>
+          <span class="muted" id="devicePoll"></span>
+        </div>
+        <p class="muted" style="margin-top:.8rem">Laissez cette page ouverte : la connexion se fait automatiquement après validation sur GitHub.</p>
+      </div>
+    </section>
 
-    <div class="admin-card">
-      <h2>Le programme de la semaine</h2>
-      <p>Une fois le PDF importé et enregistré, il s'affiche automatiquement sur la page <strong>Offices</strong>, juste sous le titre « Programme de la semaine », côté français comme côté russe. Pour retirer le programme, videz simplement le champ du fichier PDF.</p>
-    </div>
+    <!-- ÉDITEUR -->
+    <section id="app" class="hidden">
+      <div class="topbar">
+        <p class="who">Connecté · dépôt <b id="repoName"></b></p>
+        <button class="btn btn-ghost" id="logoutBtn">Se déconnecter</button>
+      </div>
 
-    <a class="admin-back" href="index.html">Retour au site</a>
+      <div class="tabs">
+        <button class="tab active" data-panel="textes">Textes &amp; fête</button>
+        <button class="tab" data-panel="programme">Programme de la semaine</button>
+      </div>
+
+      <!-- PANEL TEXTES -->
+      <div id="panel-textes">
+        <form id="formTextes"></form>
+        <div class="actions">
+          <button class="btn btn-gold" id="saveTextes">Enregistrer les textes</button>
+          <span class="muted" id="textesStatus"></span>
+        </div>
+      </div>
+
+      <!-- PANEL PROGRAMME -->
+      <div id="panel-programme" class="hidden">
+        <fieldset>
+          <legend>Programme de la semaine (PDF)</legend>
+          <p class="desc">La feuille liturgique affichée sur la page Offices. Laissez le PDF vide pour ne rien afficher.</p>
+          <label>Titre <span class="hint">ex. Semaine du 15 au 21 juin</span></label>
+          <input type="text" id="weeklyTitle"/>
+          <label>Date de mise à jour <span class="hint">ex. 12 juin 2026</span></label>
+          <input type="text" id="weeklyDate"/>
+          <label>Fichier PDF de la semaine</label>
+          <div class="pdf-current" id="weeklyPdfCurrent"></div>
+          <input type="file" id="weeklyPdfFile" accept="application/pdf"/>
+        </fieldset>
+        <div class="actions">
+          <button class="btn btn-gold" id="saveProgramme">Enregistrer le programme</button>
+          <span class="muted" id="programmeStatus"></span>
+        </div>
+      </div>
+
+      <a class="backlink" href="index.html">Voir le site</a>
+    </section>
   </main>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+  (function(){
+    'use strict';
+
+    var OWNER = 'Autumn477';
+    var REPO  = 'saint-seraphin-de-sarov_montgeron';
+    var BRANCH = 'main';
+
+    // ── Configuration OAuth (à renseigner une fois) ───────────
+    // CLIENT_ID : ID public de l'OAuth App GitHub (pas un secret).
+    // OAUTH_FN  : URL de la fonction Netlify qui détient le secret.
+    var GH = {
+      CLIENT_ID: 'Ov23liLIGbad3EG54SvY',
+      OAUTH_FN:  'https://paroisse-seraphim-montgeron.netlify.app/.netlify/functions/auth'
+    };
+    var SCOPE = 'repo';
+
+    var state = { token:'', files:{} }; // files[path] = {sha, data}
+
+    // ── helpers base64 / unicode ──────────────────────────────
+    function encB64(str){
+      var bytes = new TextEncoder().encode(str), bin='';
+      for(var i=0;i<bytes.length;i++) bin += String.fromCharCode(bytes[i]);
+      return btoa(bin);
+    }
+    function decB64(b64){
+      var bin = atob((b64||'').replace(/\s/g,'')), bytes = new Uint8Array(bin.length);
+      for(var i=0;i<bin.length;i++) bytes[i] = bin.charCodeAt(i);
+      return new TextDecoder().decode(bytes);
+    }
+    function fileToB64(file){
+      return new Promise(function(res,rej){
+        var r = new FileReader();
+        r.onload = function(){
+          var bytes = new Uint8Array(r.result), bin='';
+          for(var i=0;i<bytes.length;i++) bin += String.fromCharCode(bytes[i]);
+          res(btoa(bin));
+        };
+        r.onerror = rej;
+        r.readAsArrayBuffer(file);
+      });
+    }
+
+    function toast(msg, kind){
+      var t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className = 'toast show' + (kind ? ' '+kind : '');
+      clearTimeout(t._t);
+      t._t = setTimeout(function(){ t.className = 'toast' + (kind?' '+kind:''); }, 3200);
+    }
+
+    function gh(path, opts){
+      opts = opts || {};
+      opts.headers = Object.assign({
+        'Authorization': 'Bearer ' + state.token,
+        'Accept': 'application/vnd.github+json',
+        'X-GitHub-Api-Version': '2022-11-28'
+      }, opts.headers || {});
+      return fetch('https://api.github.com' + path, opts);
+    }
+
+    // ── lecture / écriture d'un fichier du dépôt ──────────────
+    function loadFile(p){
+      return gh('/repos/'+OWNER+'/'+REPO+'/contents/'+p+'?ref='+BRANCH+'&t='+Date.now())
+        .then(function(r){
+          if(r.status === 404){ state.files[p] = {sha:null, data:null}; return null; }
+          if(!r.ok) throw new Error('Lecture '+p+' : '+r.status);
+          return r.json();
+        })
+        .then(function(j){
+          if(!j) return null;
+          var data = j.content ? JSON.parse(decB64(j.content)) : null;
+          state.files[p] = { sha:j.sha, data:data };
+          return data;
+        });
+    }
+
+    function putJson(p, data, message){
+      var body = {
+        message: message,
+        content: encB64(JSON.stringify(data, null, 2) + '\n'),
+        branch: BRANCH
+      };
+      if(state.files[p] && state.files[p].sha) body.sha = state.files[p].sha;
+      return gh('/repos/'+OWNER+'/'+REPO+'/contents/'+p, {
+        method:'PUT', body: JSON.stringify(body)
+      }).then(function(r){
+        return r.json().then(function(j){
+          if(!r.ok) throw new Error((j && j.message) || ('Écriture '+p+' : '+r.status));
+          state.files[p] = { sha: j.content.sha, data: data };
+          return j;
+        });
+      });
+    }
+
+    function putBinary(p, b64, message){
+      var body = { message:message, content:b64, branch:BRANCH };
+      // si le fichier existe déjà il faut son sha
+      return gh('/repos/'+OWNER+'/'+REPO+'/contents/'+p+'?ref='+BRANCH)
+        .then(function(r){ return r.ok ? r.json() : null; })
+        .then(function(j){ if(j && j.sha) body.sha = j.sha;
+          return gh('/repos/'+OWNER+'/'+REPO+'/contents/'+p, { method:'PUT', body:JSON.stringify(body) });
+        })
+        .then(function(r){ return r.json().then(function(j){
+          if(!r.ok) throw new Error((j && j.message) || ('Upload '+p+' : '+r.status));
+          return j;
+        });});
+    }
+
+    // ── schéma des textes (miroir de content/site.json) ───────
+    var GROUPS = [
+      { path:'contact', legend:'Coordonnées', fields:[
+        {k:'phone', label:'Téléphone'},
+        {k:'email', label:'Adresse e-mail'}
+      ]},
+      { path:'bank', legend:'Coordonnées bancaires (page Dons)', fields:[
+        {k:'beneficiary', label:'Bénéficiaire'},
+        {k:'iban', label:'IBAN'},
+        {k:'bic', label:'BIC / SWIFT'},
+        {k:'bank', label:'Banque'},
+        {k:'reference', label:'Référence du virement'}
+      ]},
+      { path:'home', legend:'Page d’accueil', fields:[
+        {k:'introFr', label:'Présentation (français)', t:'textarea'},
+        {k:'introRu', label:'Présentation (russe)', t:'textarea'}
+      ]},
+      { path:'feast', legend:'Bandeau d’annonce / fête', desc:'Bandeau facultatif en haut de l’accueil. Laissez les deux Titres vides pour ne RIEN afficher.', fields:[
+        {k:'day', label:'Jour (ex. 15)'},
+        {k:'monthFr', label:'Mois — français (ex. Janvier)'},
+        {k:'monthRu', label:'Mois — russe (ex. января)'},
+        {k:'kickerFr', label:'Surtitre — français (ex. Fête patronale)'},
+        {k:'kickerRu', label:'Surtitre — russe'},
+        {k:'titleFr', label:'Titre — français (vide = bandeau masqué)'},
+        {k:'titleRu', label:'Titre — russe (vide = bandeau masqué)'},
+        {k:'descFr', label:'Description — français', t:'textarea'},
+        {k:'descRu', label:'Description — russe', t:'textarea'},
+        {k:'nextFr', label:'Prochain office — français (ex. Samedi 18 h 00)'},
+        {k:'nextRu', label:'Prochain office — russe (ex. Суббота 18:00)'}
+      ]}
+    ];
+
+    function fid(path,k){ return 'f-'+path+'-'+k; }
+
+    function renderTextes(site){
+      site = site || {};
+      var html = '';
+      GROUPS.forEach(function(g){
+        html += '<fieldset><legend>'+g.legend+'</legend>';
+        if(g.desc) html += '<p class="desc">'+g.desc+'</p>';
+        var obj = site[g.path] || {};
+        g.fields.forEach(function(f){
+          var val = (obj[f.k] != null ? String(obj[f.k]) : '');
+          val = val.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+          html += '<label>'+f.label+'</label>';
+          if(f.t === 'textarea') html += '<textarea id="'+fid(g.path,f.k)+'">'+val+'</textarea>';
+          else html += '<input type="text" id="'+fid(g.path,f.k)+'" value="'+val+'"/>';
+        });
+        html += '</fieldset>';
+      });
+      document.getElementById('formTextes').innerHTML = html;
+    }
+
+    function collectTextes(){
+      var out = {};
+      GROUPS.forEach(function(g){
+        out[g.path] = {};
+        g.fields.forEach(function(f){
+          out[g.path][f.k] = document.getElementById(fid(g.path,f.k)).value.trim();
+        });
+      });
+      return out;
+    }
+
+    function renderProgramme(off){
+      var w = (off && off.weekly) || {};
+      document.getElementById('weeklyTitle').value = w.title || '';
+      document.getElementById('weeklyDate').value  = w.date  || '';
+      var cur = document.getElementById('weeklyPdfCurrent');
+      if(w.pdf){
+        cur.innerHTML = 'PDF actuel : <a href="'+w.pdf+'" target="_blank" rel="noopener">'+w.pdf+'</a>'
+          + ' <button type="button" class="btn btn-ghost" id="removePdf" style="padding:.3rem .8rem;font-size:.74rem">Retirer</button>';
+        document.getElementById('removePdf').onclick = function(){ cur.dataset.removed = '1'; cur.innerHTML = '<span class="muted">PDF retiré (pensez à enregistrer)</span>'; };
+      } else {
+        cur.innerHTML = '<span class="muted">Aucun PDF pour l’instant.</span>';
+      }
+      cur.dataset.removed = '';
+    }
+
+    // ── connexion ─────────────────────────────────────────────
+    function connect(token){
+      state.token = token;
+      var msg = document.getElementById('gateMsg');
+      if(msg) msg.innerHTML = '<span class="spin"></span> Connexion...';
+      gh('/repos/'+OWNER+'/'+REPO).then(function(r){
+        if(r.status === 401) throw new Error('Session GitHub expirée, reconnectez-vous.');
+        if(!r.ok) throw new Error('Connexion impossible ('+r.status+').');
+        return r.json();
+      }).then(function(repo){
+        if(!repo.permissions || !repo.permissions.push)
+          throw new Error('Ce compte GitHub n’a pas le droit d’écriture sur le dépôt.');
+        sessionStorage.setItem('sssarov.cms.token', token);
+        document.getElementById('repoName').textContent = OWNER + '/' + REPO;
+        return Promise.all([ loadFile('content/site.json'), loadFile('content/offices.json') ]);
+      }).then(function(res){
+        renderTextes(res[0] || {});
+        renderProgramme(res[1] || {});
+        if(msg) msg.textContent = '';
+        clearTimeout(_pollTimer);
+        document.getElementById('deviceBox').classList.add('hidden');
+        document.getElementById('gate').classList.add('hidden');
+        document.getElementById('app').classList.remove('hidden');
+        toast('Connecté', 'ok');
+      }).catch(function(e){
+        state.token = '';
+        sessionStorage.removeItem('sssarov.cms.token');
+        if(msg) msg.textContent = '';
+        toast(e.message || 'Erreur de connexion', 'err');
+      });
+    }
+
+    // ── Connexion GitHub par Device Flow (aucun secret) ───────
+    var _pollTimer = null;
+
+    function fn(payload){
+      return fetch(GH.OAUTH_FN, {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify(payload)
+      }).then(function(r){ return r.json(); });
+    }
+
+    function beginLogin(){
+      if(GH.CLIENT_ID.indexOf('REMPLACER') === 0 || GH.OAUTH_FN.indexOf('REMPLACER') !== -1){
+        toast('Connexion pas encore configurée (voir ADMIN-SETUP.md).', 'err'); return;
+      }
+      var msg = document.getElementById('gateMsg');
+      var btn = document.getElementById('loginBtn');
+      btn.disabled = true; if(msg) msg.innerHTML = '<span class="spin"></span> Préparation...';
+      fn({ action:'code', scope: SCOPE }).then(function(d){
+        if(!d || !d.device_code){
+          throw new Error(d && d.error === 'device_flow_disabled'
+            ? 'Activez « Device Flow » dans l’app GitHub (voir ADMIN-SETUP.md).'
+            : 'Connexion indisponible.');
+        }
+        if(msg) msg.textContent = '';
+        document.getElementById('userCode').textContent = d.user_code;
+        var link = document.getElementById('deviceLink');
+        link.href = d.verification_uri || 'https://github.com/login/device';
+        document.getElementById('deviceBox').classList.remove('hidden');
+        window.open(link.href, '_blank', 'noopener');
+        pollToken(d.device_code, (d.interval || 5));
+      }).catch(function(e){
+        if(msg) msg.textContent = '';
+        toast(e.message || 'Erreur', 'err');
+      }).finally(function(){ btn.disabled = false; });
+    }
+
+    function pollToken(deviceCode, interval){
+      var poll = document.getElementById('devicePoll');
+      poll.innerHTML = '<span class="spin"></span> En attente de validation...';
+      clearTimeout(_pollTimer);
+      var tick = function(){
+        fn({ action:'token', device_code: deviceCode }).then(function(d){
+          if(d.access_token){ poll.textContent = ''; connect(d.access_token); return; }
+          if(d.error === 'authorization_pending'){ _pollTimer = setTimeout(tick, interval*1000); return; }
+          if(d.error === 'slow_down'){ interval += 5; _pollTimer = setTimeout(tick, interval*1000); return; }
+          if(d.error === 'expired_token'){ poll.textContent = 'Code expiré, recommencez.'; return; }
+          if(d.error === 'access_denied'){ poll.textContent = 'Accès refusé.'; return; }
+          poll.textContent = 'Erreur : ' + (d.error || 'inconnue');
+        }).catch(function(){ _pollTimer = setTimeout(tick, interval*1000); });
+      };
+      _pollTimer = setTimeout(tick, interval*1000);
+    }
+
+    function logout(){
+      clearTimeout(_pollTimer);
+      sessionStorage.removeItem('sssarov.cms.token');
+      state = { token:'', files:{} };
+      document.getElementById('deviceBox').classList.add('hidden');
+      document.getElementById('app').classList.add('hidden');
+      document.getElementById('gate').classList.remove('hidden');
+    }
+
+    // ── sauvegardes ───────────────────────────────────────────
+    function saveTextes(){
+      var btn = document.getElementById('saveTextes');
+      btn.disabled = true; btn.innerHTML = '<span class="spin"></span> Enregistrement...';
+      putJson('content/site.json', collectTextes(), 'admin: maj des textes du site')
+        .then(function(){ toast('Textes enregistrés. En ligne dans ~1 min.', 'ok'); })
+        .catch(function(e){ toast(e.message, 'err'); })
+        .finally(function(){ btn.disabled = false; btn.textContent = 'Enregistrer les textes'; });
+    }
+
+    function saveProgramme(){
+      var btn = document.getElementById('saveProgramme');
+      btn.disabled = true; btn.innerHTML = '<span class="spin"></span> Enregistrement...';
+      var p = 'content/offices.json';
+      var cur = (state.files[p] && state.files[p].data) || {};
+      var weekly = Object.assign({}, cur.weekly || {});
+      weekly.title = document.getElementById('weeklyTitle').value.trim();
+      weekly.date  = document.getElementById('weeklyDate').value.trim();
+
+      var fileInput = document.getElementById('weeklyPdfFile');
+      var removed = document.getElementById('weeklyPdfCurrent').dataset.removed === '1';
+
+      var chain = Promise.resolve();
+      if(fileInput.files && fileInput.files[0]){
+        var f = fileInput.files[0];
+        var name = f.name.replace(/[^a-zA-Z0-9._-]/g,'_');
+        var dest = 'uploads/' + name;
+        chain = fileToB64(f).then(function(b64){
+          return putBinary(dest, b64, 'admin: upload programme ' + name);
+        }).then(function(){ weekly.pdf = dest; });
+      } else if(removed){
+        weekly.pdf = '';
+      } else {
+        weekly.pdf = cur.weekly ? (cur.weekly.pdf || '') : '';
+      }
+
+      chain.then(function(){
+        var data = Object.assign({}, cur, { weekly: weekly });
+        return putJson(p, data, 'admin: maj du programme de la semaine');
+      }).then(function(){
+        toast('Programme enregistré. En ligne dans ~1 min.', 'ok');
+        fileInput.value = '';
+        renderProgramme(state.files[p].data);
+      }).catch(function(e){ toast(e.message, 'err'); })
+        .finally(function(){ btn.disabled = false; btn.textContent = 'Enregistrer le programme'; });
+    }
+
+    // ── onglets ───────────────────────────────────────────────
+    function setupTabs(){
+      document.querySelectorAll('.tab').forEach(function(t){
+        t.onclick = function(){
+          document.querySelectorAll('.tab').forEach(function(x){ x.classList.remove('active'); });
+          t.classList.add('active');
+          document.getElementById('panel-textes').classList.toggle('hidden', t.dataset.panel !== 'textes');
+          document.getElementById('panel-programme').classList.toggle('hidden', t.dataset.panel !== 'programme');
+        };
+      });
+    }
+
+    // ── init ──────────────────────────────────────────────────
+    document.getElementById('loginBtn').onclick = beginLogin;
+    document.getElementById('logoutBtn').onclick = logout;
+    document.getElementById('saveTextes').onclick = saveTextes;
+    document.getElementById('saveProgramme').onclick = saveProgramme;
+    setupTabs();
+
+    // Session déjà active ?
+    var saved = sessionStorage.getItem('sssarov.cms.token');
+    if(saved) connect(saved);
+  })();
+  </script>
 </body>
 </html>
