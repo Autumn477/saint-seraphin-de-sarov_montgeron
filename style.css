@@ -577,16 +577,17 @@ body > nav.scrolled {
   background: var(--dark-brown);
 }
 
-/* Donate CTA — octagonal badge, ALWAYS gold (signature CTA, palette-agnostic).
+/* Donate CTA — rectangle or plein (signature CTA, palette-agnostic).
+   Meme forme rectangulaire que les autres boutons.
    Text is pure black + bold weight to clear WCAG AA on gold (#C9A84C) */
 .nav-links a.nav-donate {
   position: relative;
   color: #000;
   background: #C9A84C;
-  -webkit-clip-path: polygon(14px 0%, calc(100% - 14px) 0%, 100% 50%, calc(100% - 14px) 100%, 14px 100%, 0% 50%);
-  clip-path: polygon(14px 0%, calc(100% - 14px) 0%, 100% 50%, calc(100% - 14px) 100%, 14px 100%, 0% 50%);
   border: none;
-  border-radius: 0;
+  -webkit-clip-path: polygon(6px 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px), 0 6px);
+  clip-path: polygon(6px 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px), 0 6px);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.32);
   margin-left: .8rem;
   padding: .55rem 1.6rem;
   font-size: .72rem;
@@ -922,10 +923,15 @@ body > nav.scrolled {
 }
 
 /* ── BUTTONS (CXLIV cartouche — SVG absolute overlay) ──────── */
+/* Boutons unifies — cartouche biseaute : double filet or, coins biseautes, remplissage au survol.
+   Meme forme partout. */
 .btn {
   position: relative;
-  display: inline-block;
-  padding: 1rem 2.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  padding: .95rem 2.2rem;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -937,64 +943,46 @@ body > nav.scrolled {
   color: var(--gold);
   text-decoration: none;
   text-align: center;
-  transition: color .35s ease;
-  z-index: 1;
+  -webkit-clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px);
+  clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px);
+  transition: color .4s ease;
+  z-index: 0;
 }
-
-/* Outer trapezoidal frame — drawn with clip-path, border via ::before */
+/* filet or exterieur */
 .btn::before {
   content: "";
   position: absolute;
   inset: 0;
-  clip-path: polygon(
-    14px 0%, calc(100% - 14px) 0%,
-    100% 50%, calc(100% - 14px) 100%,
-    14px 100%, 0% 50%
-  );
   background: var(--gold);
+  -webkit-clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px);
+  clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px);
   z-index: -2;
-  transition: background .35s ease;
+  transition: background .4s ease;
 }
+/* centre transparent + 2e filet interieur (cartouche) — identique sur TOUS les fonds */
 .btn::after {
   content: "";
   position: absolute;
-  inset: 1.5px;
-  clip-path: polygon(
-    13px 0%, calc(100% - 13px) 0%,
-    100% 50%, calc(100% - 13px) 100%,
-    13px 100%, 0% 50%
-  );
-  background: var(--white);
+  inset: 2px;
+  background: transparent;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--gold) 40%, transparent);
+  -webkit-clip-path: polygon(7px 0, calc(100% - 7px) 0, 100% 7px, 100% calc(100% - 7px), calc(100% - 7px) 100%, 7px 100%, 0 calc(100% - 7px), 0 7px);
+  clip-path: polygon(7px 0, calc(100% - 7px) 0, 100% 7px, 100% calc(100% - 7px), calc(100% - 7px) 100%, 7px 100%, 0 calc(100% - 7px), 0 7px);
   z-index: -1;
-  transition: background .35s ease;
+  transition: background .4s ease;
 }
+.btn:hover { color: var(--burgundy-ink, #1F1510); }
+.btn:hover::after { background: var(--gold); box-shadow: none; }
+.btn:hover::before { background: var(--gold-light, #EDD98A); }
+.btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 
-.btn:hover {
-  color: var(--white);
-}
-.btn:hover::after {
-  background: var(--gold);
-}
-.btn:hover::before {
-  background: var(--burgundy);
-}
-
-/* Footer CTA "Faire un don" — ALWAYS gold (signature CTA, palette-agnostic).
-   Black + bold for AA contrast on gold */
-.footer-cta .btn { color: #000; font-weight: 700; }
-.footer-cta .btn::before { background: #C9A84C; }
-.footer-cta .btn::after { background: #C9A84C; }
-.footer-cta .btn:hover { color: #000; }
-.footer-cta .btn:hover::before { background: #EDD98A; }
-.footer-cta .btn:hover::after { background: #EDD98A; }
-
-/* Dark cinematic context — gold frame, transparent inner, gold text (palette-agnostic) */
-.histoire-cinematic .btn { color: #C9A84C; }
-.histoire-cinematic .btn::before { background: #C9A84C; }
-.histoire-cinematic .btn::after { background: transparent; }
-.histoire-cinematic .btn:hover { color: #1F1510; }
-.histoire-cinematic .btn:hover::before { background: #EDD98A; }
-.histoire-cinematic .btn:hover::after { background: #C9A84C; }
+/* Sur fond sombre (footer, section cinematique) : meme cartouche, texte plus clair */
+.footer-cta .btn,
+.histoire-cinematic .btn { color: var(--gold-light, #EDD98A); }
+.footer-cta .btn:hover,
+.histoire-cinematic .btn:hover { color: var(--burgundy-ink, #1F1510); }
+/* Au-dessus d'une photo : voile sombre dans le bouton pour la lisibilite */
+.histoire-cinematic .btn::after { background: rgba(12,20,16,.55); }
 
 .btn-gold, .btn-burgundy, .btn-outline { color: var(--gold); }
 
@@ -2885,11 +2873,6 @@ footer::after {
   max-width: 460px;
   line-height: 1.7;
   font-style: italic;
-}
-
-.footer-cta .btn {
-  font-size: .7rem;
-  padding: 1rem 2.4rem;
 }
 
 /* ── Footer quote/verse ─────────────────────────────────────── */
