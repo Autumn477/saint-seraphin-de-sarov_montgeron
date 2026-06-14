@@ -362,6 +362,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* Garde-fou responsive : jamais de defilement horizontal */
+html, body { max-width: 100%; overflow-x: hidden; }
+img, svg, video, iframe, object { max-width: 100%; }
+*, *::before, *::after { min-width: 0; }
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--burgundy); text-decoration: none; transition: color .25s ease; }
 a:hover { color: var(--gold); }
@@ -2295,15 +2299,15 @@ main { min-height: 60vh; }
 /* ── OFFICE CARDS (Samedi / Dimanche) ─────────────────────── */
 .office-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  max-width: 900px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  max-width: 1100px;
   margin: 1rem auto 0;
 }
 
 .office-card {
   display: grid;
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 110px 1fr;
   background: var(--white);
   border: 1px solid rgba(107,75,60,.08);
   border-radius: 2px;
@@ -2419,11 +2423,15 @@ main { min-height: 60vh; }
   line-height: 1.7;
 }
 
+/* Tablette : 3 encadres trop serres -> on empile */
+@media (max-width: 900px) {
+  .office-cards { grid-template-columns: 1fr; max-width: 560px; }
+  .office-card { grid-template-columns: 110px 1fr; }
+}
 @media (max-width: 760px) {
-  .office-cards { grid-template-columns: 1fr; }
   .office-card { grid-template-columns: 1fr; }
   .office-card::before { display: none; }
-  .office-card-day { flex-direction: row; gap: 1rem; padding: 1rem; }
+  .office-card-day { flex-direction: row; gap: 1rem; padding: 1rem; align-items: baseline; }
   .office-card-day::after { display: none; }
   .office-card-time { font-size: 1.8rem; }
 }
@@ -4330,4 +4338,33 @@ body.dark .prose .prose-closing {
   .page-header h1 { word-break: break-word; }
   .nav-inner { padding: .6rem .9rem; }
   .feast-banner-inner { padding: 1.2rem 1rem; }
+}
+
+/* ── Petits telephones (<=440px) : anti-debordement hero ───────── */
+@media (max-width: 440px) {
+  .hero-modern-content { padding: 2.5rem 1.2rem 1.8rem; }
+  .hero-modern-label { font-size: .6rem; letter-spacing: .12rem; line-height: 1.5; }
+  .hero-modern-title { font-size: clamp(1.5rem, 8.5vw, 2rem); overflow-wrap: break-word; }
+  .hero-modern-desc { font-size: .9rem; max-width: 100%; }
+  .hero-modern-meta { flex-wrap: wrap; justify-content: center; gap: .4rem .8rem; }
+  .hero-modern-meta-item { font-size: .56rem; letter-spacing: .08rem; }
+  .page-header h1 { font-size: clamp(1.8rem, 9vw, 2.6rem); overflow-wrap: break-word; }
+  .donate-hero h1 { overflow-wrap: break-word; }
+}
+
+/* Fix debordement hero : enfants du flex centre doivent occuper 100% pour que le texte revienne a la ligne */
+@media (max-width: 768px) {
+  .hero-modern-content > * { max-width: 100%; }
+  .hero-modern-label,
+  .hero-modern-title,
+  .hero-modern-desc,
+  .hero-modern-meta { width: 100%; }
+  .hero-modern-meta { flex-wrap: wrap; justify-content: center; }
+}
+
+/* Mobile : abandonner la grille du hero (evite tout debordement de piste grid) */
+@media (max-width: 768px) {
+  .hero-modern { display: block !important; }
+  .hero-modern-content { width: 100%; max-width: 100%; }
+  .hero-modern-image { width: 100%; }
 }
