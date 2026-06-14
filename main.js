@@ -11,12 +11,13 @@
   // dore puis se remplit en vert. Croix orthodoxe en secours si le
   // SVG ne charge pas. Injecte ici -> toutes les pages FR + RU.
   (function initLoader() {
-    // NOTE : affichage a CHAQUE chargement (mode validation).
-    // Pour revenir a "une fois par session", decommenter le bloc ci-dessous.
-    // try {
-    //   if (sessionStorage.getItem('ssp_loaded')) return;
-    //   sessionStorage.setItem('ssp_loaded', '1');
-    // } catch (e) { /* sessionStorage indispo : on affiche quand meme */ }
+    // Affichage UNE FOIS PAR SESSION : animation complete a la 1re arrivee,
+    // navigation instantanee ensuite (le drapeau survit aux rechargements
+    // du meme onglet, se reinitialise a la fermeture de l'onglet).
+    try {
+      if (sessionStorage.getItem('ssp_loaded')) return;
+      sessionStorage.setItem('ssp_loaded', '1');
+    } catch (e) { /* sessionStorage indispo : on affiche quand meme */ }
 
     var loader = document.createElement('div');
     loader.className = 'site-loader';
@@ -76,12 +77,12 @@
         svg.setAttribute('aria-hidden', 'true');
         var paths = svg.querySelectorAll('path');
         if (prefersReduced) return; // contour affiche statiquement (pas de trace)
-        drawPaths(paths, 0.05); // trace du contour dore, sans remplissage
+        drawPaths(paths, 0.28); // trace sequentiel cinematique (decalage 0.28s/trait)
       })
       .catch(injectCross);
 
     var start = (window.performance && performance.now) ? performance.now() : 0;
-    var minVisible = prefersReduced ? 300 : 2600;
+    var minVisible = prefersReduced ? 300 : 4600;
     var hidden = false;
 
     function hideLoader() {
@@ -100,7 +101,7 @@
 
     if (document.readyState === 'complete') scheduleHide();
     else window.addEventListener('load', scheduleHide);
-    setTimeout(hideLoader, 6000); // failsafe : ne jamais rester bloque
+    setTimeout(hideLoader, 7000); // failsafe : ne jamais rester bloque
   })();
 
   // ── Scroll progress bar ──────────────────────────────────────
