@@ -536,7 +536,7 @@ body > nav.scrolled {
 }
 
 .nav-inner {
-  max-width: 1200px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 0 2.5rem;
   display: flex;
@@ -548,7 +548,7 @@ body > nav.scrolled {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: .1rem;
+  gap: .25rem;
   margin-left: auto;
 }
 
@@ -930,6 +930,8 @@ body > nav.scrolled {
   .hero-modern-image {
     height: 50vh;
   }
+  /* plus specifique que `.hero-btn{align-self:flex-start}` (defini plus bas) */
+  .hero-modern-content .hero-btn { align-self: center; }
 }
 
 /* ── BUTTONS — cartouche biseaute, or plein, texte sombre lisible. Identique partout. */
@@ -3590,45 +3592,75 @@ body.dark .prose .prose-closing {
 }
 
 /* ── RESPONSIVE ─────────────────────────────────────────────── */
-/* Nav mobile : MEME seuil (960px) que le hamburger de site.css, sinon
-   entre 769 et 960px le menu deroulant ne s'ouvrait pas (bug navigation). */
-@media (max-width: 960px) {
-  .nav-inner { flex-wrap: wrap; height: auto; padding: .6rem 1.2rem; }
+/* Nav mobile : MEME seuil (1200px) que le hamburger de site.css, sinon
+   le menu deroulant ne s'ouvrirait pas dans la plage concernee (bug navigation). */
+@media (max-width: 1200px) {
+  /* Barre figee : logo a gauche, hamburger a droite. Le menu s'ouvre en
+     panneau OVERLAY (position: fixed) -> la barre et le logo ne bougent JAMAIS. */
+  .nav-inner { flex-wrap: nowrap; height: 64px; min-height: 64px; padding: .5rem 1.2rem; position: relative; }
+  .site-logo { min-width: 0; }
+  .nav-tools { display: none !important; }       /* mobile = logo + hamburger seulement */
+  .nav-toggle { display: flex !important; margin-left: auto; }
 
   .nav-links {
-    display: none;
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: -1.2rem;
+    right: -1.2rem;
     flex-direction: column;
-    width: 100%;
-    padding: .5rem 0;
+    gap: .3rem;
+    padding: 1.1rem 1.2rem 1.5rem;
+    background: var(--stone);
     border-top: 1px solid rgba(0,0,0,.06);
-    order: 3;
+    box-shadow: 0 22px 44px rgba(0,0,0,.20);
+    transform: translateY(-14px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .26s ease, transform .26s ease, visibility .26s;
+    z-index: 200;
   }
 
-  .nav-links.open { display: flex; }
+  .nav-links.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
 
   .nav-links a {
-    border-bottom: 1px solid rgba(0,0,0,.04);
-    border-radius: 0;
-    text-align: left;
-    padding: .9rem 1rem;
+    border-bottom: none;
+    border-radius: 12px;
+    text-align: center;
+    padding: 1rem;
+    font-size: .98rem;
+    letter-spacing: .02rem;
+    opacity: 1;
   }
 
   .nav-links a.active,
   .nav-links a:hover {
-    background: rgba(0,0,0,.02);
+    background: rgba(0,0,0,.05);
+    color: var(--dark-brown);
   }
 
   .nav-links a.active::after { display: none; }
 
   .nav-links a.nav-donate {
-    margin: .6rem 0;
-    text-align: center;
-    border-radius: 20px;
+    margin-top: .5rem;
+    border-radius: 12px;
   }
 
-  .nav-toggle { display: flex; }
+  /* Le panneau mobile suit le theme sombre */
+  body.dark .nav-links { background: var(--cream); border-top-color: rgba(255,255,255,.08); }
+  body.dark .nav-links a.active,
+  body.dark .nav-links a:hover { background: rgba(255,255,255,.06); }
+}
 
-  .lang-toggle { margin-left: 0; margin-right: .3rem; }
+/* Petits mobiles : logo (icone eglise) + hamburger uniquement. */
+@media (max-width: 560px) {
+  .logo-text { display: none; }
 }
 
 @media (max-width: 768px) {

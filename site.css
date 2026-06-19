@@ -54,10 +54,10 @@ body > nav.scrolled { background: color-mix(in srgb, var(--stone) 96%, transpare
 .logo-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1rem; color: var(--ink); font-weight: 600; letter-spacing: 0; }
 .logo-sub { font-size: .58rem; color: var(--muted); letter-spacing: .18rem; opacity: .65; }
 
-.nav-links a { font-size: .68rem; padding: .4rem .7rem; color: var(--muted); opacity: .8; }
+.nav-links a { font-size: .64rem; padding: .35rem .48rem; color: var(--muted); opacity: .8; white-space: nowrap; flex-shrink: 0; }
 .nav-links a:hover { color: var(--ink); opacity: 1; }
 .nav-links a.active { color: var(--ink); opacity: 1; }
-.nav-links a.active::after { background: var(--gold-ink); bottom: -6px; left: .7rem; right: .7rem; }
+.nav-links a.active::after { background: var(--gold-ink); bottom: -6px; left: .48rem; right: .48rem; }
 
 /* Theme toggle + lang toggle styled together */
 .nav-tools { display: flex; align-items: center; gap: .8rem; margin-left: .4rem; }
@@ -963,17 +963,12 @@ body.dark .feast-banner-next .v { color: var(--ink); }
   .feast-banner-next { text-align: left; border-top: 1px solid var(--line); padding-top: 1.2rem; }
 }
 
-/* Nav responsive: tighten at narrow widths so 6 links + tools fit */
-@media (max-width: 1180px) {
-  .nav-links a { padding: .35rem .5rem; letter-spacing: .08rem; font-size: .62rem; }
+/* Nav responsive: tighten the inline menu only in the 1201-1280 band so the
+   8 links fit. At <=1200px the mobile panel (style.css) takes over entirely,
+   so we must NOT touch .nav-links here (it would override the panel). */
+@media (min-width: 1201px) and (max-width: 1280px) {
+  .nav-links a { padding: .3rem .42rem; letter-spacing: .06rem; font-size: .6rem; }
   .nav-inner { padding: 0 1.2rem; }
-}
-@media (max-width: 1040px) {
-  .nav-tools .lang-toggle { display: none; }
-}
-@media (max-width: 960px) {
-  .nav-links { display: none; }
-  .nav-toggle { display: flex !important; }
 }
 .tweaks-toggle-btn {
   position: fixed;
